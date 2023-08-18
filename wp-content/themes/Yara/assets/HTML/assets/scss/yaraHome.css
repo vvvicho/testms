@@ -1,0 +1,279 @@
+/*
+$H1Dfs: 56px;
+$H2Dfs: 44px;
+$H3Dfs: 38px;
+$H4Dfs: 32px;
+$H5Dfs: 26px;
+$H6Dfs: 20px;
+$H7Dfs: 14px;
+$H8Dfs: 8px;
+*/
+.yaraHome main {
+  margin-bottom: calc(var(--gap) / 2);
+}
+.yaraHome main section .warper,
+.yaraHome main .section .warper {
+  transition: 0.5s;
+  display: block;
+  padding-bottom: var(--sectionSpacer);
+  padding-top: var(--sectionSpacer);
+  margin-left: calc(var(--spacer) * 3);
+  margin-right: calc(var(--spacer) * 3);
+}
+.yaraHome main section .warper h3,
+.yaraHome main .section .warper h3 {
+  margin-top: 0;
+  margin-bottom: var(--sectionSpacer);
+  font-weight: 900;
+}
+.yaraHome main section .warper .articleInfo,
+.yaraHome main .section .warper .articleInfo {
+  margin-bottom: calc(var(--spacer) * 3);
+}
+.yaraHome main section .warper figure,
+.yaraHome main .section .warper figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+.yaraHome main section .warper figure img,
+.yaraHome main .section .warper figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto 677/508;
+}
+.yaraHome main section .warper .articleInfo--qrCode .articleContent,
+.yaraHome main .section .warper .articleInfo--qrCode .articleContent {
+  display: none;
+}
+.yaraHome main section .warper .articleInfo--qrCode .articleContent--store p,
+.yaraHome main .section .warper .articleInfo--qrCode .articleContent--store p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+.yaraHome main section .warper .articleInfo--qrCode .articleContent--store figure,
+.yaraHome main .section .warper .articleInfo--qrCode .articleContent--store figure {
+  text-align: center;
+}
+.yaraHome main section .warper .articleInfo--qrCode .articleContent--store figure img,
+.yaraHome main .section .warper .articleInfo--qrCode .articleContent--store figure img {
+  max-width: 214px;
+  margin: auto;
+}
+.yaraHome main section .warper .articleInfo .articleContent h4,
+.yaraHome main .section .warper .articleInfo .articleContent h4 {
+  margin-top: 0;
+  margin-bottom: var(--spacer);
+  font-weight: 700;
+}
+.yaraHome main section .warper .articleInfo .articleContent P:last-of-type,
+.yaraHome main .section .warper .articleInfo .articleContent P:last-of-type {
+  padding-bottom: calc(var(--spacer) * 2);
+}
+.yaraHome main section .warper .slider,
+.yaraHome main .section .warper .slider {
+  overflow: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  transition: 0.5s;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+.yaraHome main section .warper .slider ul,
+.yaraHome main .section .warper .slider ul {
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+  gap: calc(var(--spacer) * 3);
+}
+.yaraHome main section .warper .slider ul li,
+.yaraHome main .section .warper .slider ul li {
+  scroll-snap-align: start;
+  width: calc(100vw - var(--spacer) * 12);
+  padding-top: calc(var(--spacer) * 5);
+  padding-left: calc(var(--spacer) * 3);
+  padding-right: calc(var(--spacer) * 3);
+  min-height: 360px;
+  display: block;
+  background-color: #FFF;
+}
+.yaraHome main section .warper .slider ul li p,
+.yaraHome main .section .warper .slider ul li p {
+  padding-bottom: calc(var(--spacer) * 3);
+  font-size: 14px;
+  line-height: 20px;
+}
+.yaraHome main section .warper--gallery .galleryItem,
+.yaraHome main .section .warper--gallery .galleryItem {
+  display: none;
+}
+.yaraHome main section .warper--gallery .galleryItem:first-of-type,
+.yaraHome main .section .warper--gallery .galleryItem:first-of-type {
+  display: block;
+}
+.yaraHome main section .warper--gallery .galleryItem figure figcaption,
+.yaraHome main .section .warper--gallery .galleryItem figure figcaption {
+  display: none;
+}
+.yaraHome main section .warper .buttonHolder,
+.yaraHome main .section .warper .buttonHolder {
+  text-align: center;
+  margin-top: 30px;
+}
+.yaraHome main section .warper .articleNavigation,
+.yaraHome main .section .warper .articleNavigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 599px) {
+  .yaraHome main section .warper,
+  .yaraHome main .section .warper {
+    max-width: var(--maxContentWidth);
+    margin: auto;
+    padding-left: calc(var(--spacer) * 3);
+    padding-right: calc(var(--spacer) * 3);
+  }
+  .yaraHome main section .warper .item_4,
+  .yaraHome main .section .warper .item_4 {
+    grid-column: span 4;
+  }
+  .yaraHome main section .warper .item_8,
+  .yaraHome main .section .warper .item_8 {
+    grid-column: span 8;
+  }
+  .yaraHome main section .warper .item_12,
+  .yaraHome main .section .warper .item_12 {
+    grid-column: span 12;
+  }
+  .yaraHome main section .warper .articleInfo,
+  .yaraHome main .section .warper .articleInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .yaraHome main section .warper .articleInfo .articleContent h4,
+  .yaraHome main .section .warper .articleInfo .articleContent h4 {
+    margin-bottom: calc(var(--spacer) * 2);
+  }
+  .yaraHome main section .warper .articleInfo .articleContent P:last-of-type,
+  .yaraHome main .section .warper .articleInfo .articleContent P:last-of-type {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+  .yaraHome main section .warper .articleInfo--qrCode .articleContent,
+  .yaraHome main .section .warper .articleInfo--qrCode .articleContent {
+    display: flex;
+    justify-content: space-between;
+  }
+  .yaraHome main section .warper .articleInfo--qrCode .articleContent--store,
+  .yaraHome main .section .warper .articleInfo--qrCode .articleContent--store {
+    display: none;
+  }
+  .yaraHome main section .warper .articleInfo--qrCode .articleContent figure,
+  .yaraHome main .section .warper .articleInfo--qrCode .articleContent figure {
+    margin-bottom: calc(var(--spacer) * 5);
+  }
+  .yaraHome main section .warper .articleInfo--qrCode .articleContent figure img,
+  .yaraHome main .section .warper .articleInfo--qrCode .articleContent figure img {
+    width: 80%;
+  }
+  .yaraHome main section .warper .slider ul li,
+  .yaraHome main .section .warper .slider ul li {
+    width: 28.5714285714vw;
+  }
+  .yaraHome main section .warper .slider ul li p,
+  .yaraHome main .section .warper .slider ul li p {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+}
+@media screen and (min-width: 739px) {
+  .yaraHome main section .warper,
+  .yaraHome main .section .warper {
+    display: grid;
+    gap: 0px var(--sectionSpacer);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  }
+  .yaraHome main section .warper .item_3,
+  .yaraHome main .section .warper .item_3 {
+    grid-column: span 3;
+  }
+  .yaraHome main section .warper figure,
+  .yaraHome main .section .warper figure {
+    margin-bottom: calc(var(--spacer) * 2);
+  }
+  .yaraHome main section .warper .articleInfo,
+  .yaraHome main .section .warper .articleInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .yaraHome main section .warper .articleInfo .articleContent h4,
+  .yaraHome main .section .warper .articleInfo .articleContent h4 {
+    margin-bottom: calc(var(--spacer) * 2);
+  }
+  .yaraHome main section .warper .articleInfo .articleContent P:last-of-type,
+  .yaraHome main .section .warper .articleInfo .articleContent P:last-of-type {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+  .yaraHome main section .warper .articleInfo--qrCode .articleContent,
+  .yaraHome main .section .warper .articleInfo--qrCode .articleContent {
+    display: block;
+  }
+  .yaraHome main section .warper .articleInfo--qrCode .articleContent figure,
+  .yaraHome main .section .warper .articleInfo--qrCode .articleContent figure {
+    margin-bottom: calc(var(--spacer) * 5);
+  }
+  .yaraHome main section .warper .articleInfo--qrCode .articleContent figure img,
+  .yaraHome main .section .warper .articleInfo--qrCode .articleContent figure img {
+    width: 80%;
+  }
+  .yaraHome main section .warper .slider ul li,
+  .yaraHome main .section .warper .slider ul li {
+    width: calc(var(--maxContentWidth) / 5.4);
+  }
+  .yaraHome main section .warper .slider ul li p,
+  .yaraHome main .section .warper .slider ul li p {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+  .yaraHome main section .warper--gallery,
+  .yaraHome main .section .warper--gallery {
+    gap: 0px 20px;
+  }
+  .yaraHome main section .warper--gallery .galleryItem,
+  .yaraHome main .section .warper--gallery .galleryItem {
+    display: block;
+    background-color: #f3f6f9;
+  }
+  .yaraHome main section .warper--gallery .galleryItem figure,
+  .yaraHome main .section .warper--gallery .galleryItem figure {
+    width: 100%;
+    height: auto;
+  }
+  .yaraHome main section .warper--gallery .galleryItem figure figcaption,
+  .yaraHome main .section .warper--gallery .galleryItem figure figcaption {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: var(--spacer);
+    padding-right: var(--spacer);
+    padding-bottom: var(--spacer);
+  }
+  .yaraHome main section .warper--gallery .buttonHolder,
+  .yaraHome main .section .warper--gallery .buttonHolder {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .yaraHome main section .warper--gallery div figure figcaption,
+  .yaraHome main .section .warper--gallery div figure figcaption {
+    font-size: 18px;
+    line-height: 25px;
+    padding-left: calc(var(--spacer) * 2);
+    padding-right: calc(var(--spacer) * 2);
+    padding-bottom: calc(var(--spacer) * 2);
+  }
+}/*# sourceMappingURL=yaraHome.css.map */

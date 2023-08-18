@@ -1,0 +1,22 @@
+@media screen and (min-width: $mobile) {
+
+    footer {
+        margin: auto;
+
+    
+        .footer {
+            &--items {
+                display: flex;
+                //gap: 100px 0px;
+                flex-wrap: wrap;
+                ul { 
+                    margin-right: 100px;
+                    &:last-child {
+                        width: 100%;                        
+                    }
+                }
+            }
+        }
+    }
+   
+}

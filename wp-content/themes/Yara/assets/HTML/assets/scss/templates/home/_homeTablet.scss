@@ -1,0 +1,45 @@
+.home{
+    @media screen and (min-width: $mobile) {
+        main {
+            display: grid;
+            gap: 0px calc(var(--gap) / 2);
+            grid-template-columns: #{repeats("1fr", 12)};
+            grid-template-rows: auto;
+            grid-template-areas:
+                "#{repeats("#{$_1lead}", 12)}"
+                "#{repeats("#{$_2article}", 8)} #{repeats("\.", 4)}"
+                "#{repeats("\.", 8)} #{repeats("#{$_3news}", 4)}"
+                "#{repeats("\.", 8)} #{repeats("#{$_4team}", 4)}"
+                "#{repeats("\.", 8)} #{repeats("#{$_5related}", 4)}"
+                "#{repeats("#{$_6connections}", 12)}"
+                "#{repeats("#{$_7feedback}", 12)}";
+
+            .#{$_1lead} {
+                grid-area: #{$_1lead};
+            }
+            .#{$_2article} {
+                grid-area: #{$_2article};
+                grid-row: span 3;
+            }
+            .#{$_3news} {
+                grid-area: #{$_3news};
+                grid-row: 2;
+            }
+            .#{$_4team} {
+                grid-area: #{$_4team};
+                grid-row: 3;
+            }
+            .#{$_5related} {
+                grid-area: #{$_5related};
+                grid-row: 4;
+            }
+            .#{$_6connections} {
+                grid-area: #{$_6connections};
+            }
+            .#{$_7feedback} {
+                grid-area: #{$_7feedback};
+                margin-bottom: 0;
+            }
+        }
+    }
+}

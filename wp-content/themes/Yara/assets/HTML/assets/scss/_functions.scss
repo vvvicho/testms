@@ -1,0 +1,7 @@
+@function repeats($data, $counts) {
+   $output: "";
+    @for $i from 1 through $counts {
+        $output: $output + $data + " ";           
+    }
+    @return $output;
+}

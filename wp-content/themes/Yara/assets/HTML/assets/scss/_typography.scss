@@ -1,0 +1,68 @@
+@font-face {
+    font-family: "NatoSans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/NatoSansCyr_400.woff2) format("woff2");
+}
+@font-face {
+    font-family: "NatoSans";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../fonts/NatoSansCyr_500.woff2) format("woff2");
+}
+@font-face {
+    font-family: "NatoSans";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../fonts/NatoSansCyr_700.woff2) format("woff2");
+}
+@font-face {
+    font-family: "NatoSans";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(../fonts/NatoSansCyr_900.woff2) format("woff2");
+}
+
+$generalFont: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+
+
+
+h1{
+    font-size: var(--H1fs);
+    line-height: calc( var(--H1fs) + (var(--gap) / 4));
+}
+
+h2{
+    font-size: var(--H2fs);
+    line-height: calc( var(--H2fs) + (var(--gap) / 4));
+}
+
+h3{
+    font-size: var(--H3fs);
+    line-height: var(--H3lh);     
+}
+
+h4{
+    font-size: var(--H4fs);
+    line-height: var(--H4lh);     
+    line-height: calc( var(--H4fs) + (var(--gap) / 3));
+}
+
+h5{
+    font-size: var(--H5fs);
+    line-height: calc( var(--H5fs) + (var(--gap) / 4));
+}
+
+h6{
+    font-size: var(--H6fs);
+    line-height: calc( var(--H6fs) + (var(--gap) / 4));
+}
+
+p{
+    font-size: var(--pfs);
+    line-height: var(--plh);
+}

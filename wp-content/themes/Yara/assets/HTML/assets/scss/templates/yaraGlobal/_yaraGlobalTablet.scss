@@ -1,0 +1,199 @@
+@media screen and (min-width: $mobile) {
+    main {
+        section,
+        .section {
+            .warper {
+                max-width: var(--maxContentWidth);
+                margin: auto;
+                padding-left: calc(var(--spacer) * 3);
+                padding-right: calc(var(--spacer) * 3);
+                .item_4 {
+                    grid-column: span 4;
+                }
+                .item_5 {
+                    grid-column: span 5;
+                }
+                .item_6 {
+                    grid-column: span 6;
+                }
+                .item_7 {
+                    grid-column: span 7;
+                }
+                .item_8 {
+                    grid-column: span 8;
+                }
+                .item_12 {
+                    grid-column: span 12;
+                }
+                .articleInfo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .articleContent {
+                        h4 {
+                            margin-bottom: calc(var(--spacer) * 2);
+                        }
+                        ul {
+                            li {
+                                font-size: 16px;
+                            }
+                        }
+                        p {
+                            font-size: 16px;
+                            &:last-of-type {
+                                padding-bottom: calc(var(--spacer) * 3);
+                            }
+                        }
+                    }
+                    &--qrCode {
+                        .articleContent {
+                            display: flex;
+                            justify-content: space-between;
+                            &--store {
+                                display: none;
+                            }
+                            figure {
+                                margin-bottom: calc(var(--spacer) * 5);
+                                img {
+                                    width: 80%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .slider {
+                    ul {
+                        li {
+                            width: calc(100vw / 3.5);
+                            p {
+                                padding-bottom: calc(var(--spacer) * 3);
+                            }
+                        }
+                    }
+                }
+                &--boxGallery {
+                    &--lineGrid {
+                        padding-left: calc(var(--spacer) * 7);
+                        padding-right: calc(var(--spacer) * 7);
+                        gap: 0 16px;
+                        .galleryItem {
+                            display: grid;
+                            gap: 0 16px;
+                            grid-template-columns: 60% 1fr;
+                            margin-bottom: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: $tablet) {
+    main {
+        section,
+        .section {
+            .warper {
+                display: grid;
+                gap: 0px var(--sectionSpacer);
+                grid-template-columns: #{repeats("1fr", 12)};
+                .item_3 {
+                    grid-column: span 3;
+                }
+                figure {
+                    margin-bottom: calc(var(--spacer) * 2);
+                }
+                .articleInfo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .articleContent {
+                        h4 {
+                            margin-bottom: calc(var(--spacer) * 2);
+                        }
+                        P {
+                            &:last-of-type {
+                                padding-bottom: calc(var(--spacer) * 3);
+                            }
+                        }
+                    }
+                    &--qrCode {
+                        .articleContent {
+                            display: block;
+                            figure {
+                                margin-bottom: calc(var(--spacer) * 5);
+                                img {
+                                    width: 80%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .slider {
+                    ul {
+                        li {
+                            width: calc(var(--maxContentWidth) / 5.4);
+
+                            p {
+                                padding-bottom: calc(var(--spacer) * 3);
+                            }
+                        }
+                    }
+                }
+                &--gallery {
+                    gap: 0px 20px;
+                    .galleryItem {
+                        display: block;                        
+                        figure {
+                            width: 100%;
+                            height: auto;
+                            figcaption {
+                                display: block;
+                            }
+                        }
+                    }
+                    .buttonHolder {
+                        margin-top: 40px;
+                    }
+                    &--five, &--six {                        
+                        .galleryItem {                           
+                            figure {
+                                img{
+                                    display: block;
+                                }                            
+                            }
+                        }                        
+                    }
+                }
+                &--boxGallery {
+                    padding-left: calc(var(--spacer) * 3);
+                    padding-right: calc(var(--spacer) * 3);
+                    gap: 0 16px;
+                    .galleryItem {
+                        display: block;
+                        h4 {
+                            font-size: 18px;
+                        }
+/*
+                        span{
+                            p{
+                            font-weight: 500;
+                            font-size: 14px;
+                            }    
+                        }*/
+
+                        p {
+                            font-size: 14px;
+                            &.leadLine{
+                                font-weight: 500;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .box {
+                        display: grid;
+                    }
+                }
+            }
+        }
+    }
+}
