@@ -278,6 +278,14 @@ footer {
 .icons-searchB {
   background-image: url(../../../../assets/HTML/assets/images/icons/searchB.png);
 }
+.icons-ok {
+  width: 24px;
+  height: 24px;
+  margin: 16px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/ok.webp);
+  background-size: 24px;
+  background-position: center center;
+}
 
 .bgColors--sectionLNormal {
   background-color: #FFF;
