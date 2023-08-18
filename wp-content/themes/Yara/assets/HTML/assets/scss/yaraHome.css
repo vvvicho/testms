@@ -85,6 +85,7 @@ $H8Dfs: 8px;
 .yaraHome main .section .warper .slider ul {
   display: flex;
   flex-wrap: nowrap;
+  width: -moz-fit-content;
   width: fit-content;
   gap: calc(var(--spacer) * 3);
 }

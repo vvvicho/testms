@@ -201,6 +201,7 @@ footer {
   line-height: var(--buttonFS);
   font-weight: 700;
   letter-spacing: -0.015em;
+  width: -moz-max-content;
   width: max-content;
 }
 .button-dark {
@@ -224,12 +225,22 @@ footer {
 .flafIcons::before {
   content: " ";
   display: block;
-  min-width: 60px;
+  min-width: 40px;
   min-height: 60px;
 }
 .flafIcons--uk::before {
   background-image: url(../../../../assets/HTML/assets/images/icons/flags/uk.webp);
-  background-position: center center;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--it::before {
+  background-image: url(../../../../assets/HTML/assets/images/icons/flags/it.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--fr::before {
+  background-image: url(../../../../assets/HTML/assets/images/icons/flags/fr.webp);
+  background-position: left center;
   background-repeat: no-repeat;
 }
 
@@ -501,7 +512,8 @@ footer {
 }
 .generaldivigation:hover {
   background-color: rgb(245, 245, 247);
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 .generaldivigation:hover h2 img {
   background-image: url(../../../../assets/HTML/assets/images/atfarmLogoBW.png);
@@ -595,7 +607,8 @@ footer {
 }
 .generaldivigation--lightTheme {
   background: rgba(245, 245, 247, 0.6);
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 .generaldivigation--lightTheme h2 img {
   background-image: url(../../../../assets/HTML/assets/images/atfarmLogoBW.png) !important;
@@ -626,7 +639,8 @@ footer {
   }
   .generaldivigation:hover {
     background-color: rgb(245, 245, 247);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
   }
   .generaldivigation:hover nav ul.desktopNav[data-status="0"] li a {
     color: rgba(15, 15, 15, 0.97);
@@ -678,7 +692,8 @@ footer {
   .generaldivigation nav ul.desktopNav li.--subnav a + ul li {
     display: block;
     background-color: rgb(245, 245, 247);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
     margin: 0;
     padding: 0;
     padding-left: calc(var(--spacer) * 3);
@@ -739,7 +754,8 @@ footer {
   }
   .generaldivigation--lightTheme {
     background: rgba(245, 245, 247, 0.6);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
   }
   .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li a {
     color: rgba(15, 15, 15, 0.97);
