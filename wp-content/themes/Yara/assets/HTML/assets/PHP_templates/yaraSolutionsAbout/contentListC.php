@@ -10,7 +10,7 @@
                     <div class="articleContent">
                         <p>“Atfarm is very simple to use, taking just 10 minutes to load all my field boundaries over the 2200 hectares of the farm. I like to use satellite imagery to scout for any management issues.</p>
                         <p>The maps are a very visual way of picking out differences in growth and development to help prioritise decisions. There are plenty of products being developed for farmers, but some do not deliver and I wouldn’t recommend, however, I would recommend farmers to Atfarm.”</p>
-                        <p>ICON John Grimsdale,
+                        <p class="flafIcons flafIcons--uk ">John Grimsdale,
                             Mountfair Farming in the United Kingdom</p>
 
                         <div class="button button-dark">
