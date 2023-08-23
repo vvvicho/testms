@@ -1,6 +1,7 @@
 <section class="bgColors--sectionLight mhide thide">
             <div class="warper warper--gallery warper--gallery--five warper--gallery--bordered">
-                <h3 class="item_5">When should I use my N-Tester BT? </h3>
+                <h3 class="item_5">When should I use my N-Tester BT?</h3>
+                <h4 class="item_5">Perfect the n-rate for your 1st application during tillering.</h4>
                 <div class="galleryItem">
                     <figure>
                         <img src="../HTML/assets/images/m1.webp" width="208" height="278" alt="my image">
