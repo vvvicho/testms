@@ -4,7 +4,7 @@
             <a href="?p=yaraHome"><img src="../HTML/assets/images/YaraLogo.webp?v=2" width="48" height="48" alt="Yara Digital Products"></a>
         </h1>
         <h2>
-            <a href="?p=yaraHome"><img src="../HTML/assets/images/pixel.png?v=4" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
+            <a href="?p=yaraHome"><img src="../HTML/assets/images/logo.png?v=5" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
         </h2>
     </div>
     <nav>
