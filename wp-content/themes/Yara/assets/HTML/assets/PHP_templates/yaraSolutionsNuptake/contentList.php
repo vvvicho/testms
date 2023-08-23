@@ -10,8 +10,7 @@
                     <div class="articleContent">                        
                         <p>The N-Uptake is the newest map view in Atfarm on desktop. You can see estimates of the total nitrogen (N) your crops have absorbed in the canopy so far in kg of N per hectare.</p>
                         <p>"We created the N-Uptake map view in Atfarm to help farmers monitor their fields remotely. The N-Uptake map also enables farmers to make the most of each field visit or even minimise their field visits each season while allowing them to more accurately predict yield."</p>
-                        <p>ICON 
-                            Mykola Panchuk, Yara Agronomist
+                        <p  class="flafIcons flafIcons--uk ">Mykola Panchuk, Yara Agronomist
                         </p>
                         <div class="button button-dark">
                             Try it now
