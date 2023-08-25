@@ -1,11 +1,8 @@
-console.log("HELLO ADMIN");
-
 let allEditableItems = document.querySelectorAll('[data-type="edit-headline"],[data-type="edit-paragraf"],[data-type="edit-imageHolder"],[data-type="edit-button"]');
 //edit-paragraf edit-imageHolder edit-button
 
-//console.log(allEditableItems);
 
-function returnINPUTtype(data,type) {
+function returnINPUTtype(data, type) {
     data = data.replace(/\s+/g, ' ');
     return `<input type="${type}" value="${data}">`;
 }
@@ -15,40 +12,62 @@ function returnTextArea(data) {
     return `<textarea rows="4" cols="50">${data}</textarea>`;
 }
 
-function editHeadline(headLine, type) {
+
+function makeVissible(headLine, controllButton) {
+
+    controllButton.onclick = null;
+    controllButton.classList.add("used");
+    headLine.removeAttribute('data-status');
+   
+
+}
+
+
+function editHeadline(headLine, type, contentBlock) {
     let currentContentisEdited = headLine.querySelector('editcontent input');
-    if (type === 0) { 
+    if (type === 0) {
         if (currentContentisEdited) {
-           return;
+            return;
         } else {
             let currentContent = headLine.querySelector('editcontent').innerHTML;
-            headLine.querySelector('editcontent').innerHTML = returnINPUTtype(currentContent,"text");
+            headLine.querySelector('editcontent').innerHTML = returnINPUTtype(currentContent, "text");
         }
-    }else {       
-        if (currentContentisEdited) {
-            console.log("have");
+    } else if (type === 1) {
+        if (currentContentisEdited) {            
             headLine.querySelector('editcontent').innerHTML = currentContentisEdited.value;
-        } 
+        }
+    } else if (type === 3) {     
+        let controllButton = contentBlock.querySelector('[data-button="' + headLine.nodeName.toLowerCase() + 'controller"]');
+        headLine.setAttribute('data-status', 'noContent');
+        controllButton.classList.remove("used");
+        controllButton.onclick = function () {
+            makeVissible(headLine, this);
+        }
     }
 }
 // 8888888888888888888888888
 function editParagraf(headLine, type) {
-    console.log(headLine);
-    console.log(type);
-
     let currentContentisEdited = headLine.querySelector('editcontent textarea');
-    if (type === 0) { 
+    if (type === 0) {
         if (currentContentisEdited) {
-           return;
+            return;
         } else {
             let currentContent = headLine.querySelector('editcontent').innerHTML;
             headLine.querySelector('editcontent').innerHTML = returnTextArea(currentContent);
         }
-    }else {       
-        if (currentContentisEdited) {
-            console.log("have");
+    } else if (type === 1) {
+        if (currentContentisEdited) {          
             headLine.querySelector('editcontent').innerHTML = currentContentisEdited.value;
-        } 
+        }
+    } else if (type === 2) {
+        let allParagrafe = headLine.parentElement.querySelectorAll("P");        
+
+        if (allParagrafe.length > 1) {
+            headLine.remove();
+        }
+
+
+
     }
 }
 
@@ -84,18 +103,46 @@ let paragrafEditPannelINPUTfield =
 `;
 
 //<editcontent>
-console.log(headlineEditPannelHTML);
 
 
 
+
+
+function duplicateItem(obj) {   
+
+    if (obj.parentElement.nodeName == "P") {    
+
+        let newParagraf = document.createElement("P");
+        newParagraf.setAttribute("data-type", "edit-paragraf");
+        newParagraf.classList.add("editableHeadLine");
+
+        newParagraf.innerHTML = paragrafEditPannelHTML + "<editcontent>" + "add content" + "</editcontent><addButton onClick='duplicateItem(this)'> + Insert </addButton>";
+
+        obj.parentElement.parentNode.insertBefore(newParagraf, obj.parentElement.nextSibling);
+
+
+
+        newParagraf.querySelector('[data-type="edit-paragraf-edit"]').onclick = function () {
+            editParagraf(newParagraf, 0);
+        }
+        newParagraf.querySelector('[data-type="edit-paragraf-save"]').onclick = function () {
+            editParagraf(newParagraf, 1);
+        }
+        newParagraf.querySelector('[data-type="edit-paragraf-delete"]').onclick = function () {
+            editParagraf(newParagraf, 2);
+        }
+
+    }
+
+
+
+}
 
 
 allEditableItems.forEach(async (item) => {
     //sum = await sumFunction(sum, rating);
-    //console.log(HeadLine);
+  
     item.classList.add("editableHeadLine");
-
-    console.log(item.getAttribute("data-type"));
     if (item.getAttribute("data-type") == "edit-headline") {
         item.innerHTML = headlineEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent>";
         item.querySelector('[data-type="edit-headline-edit"]').onclick = function () {
@@ -104,17 +151,39 @@ allEditableItems.forEach(async (item) => {
         item.querySelector('[data-type="edit-headline-save"]').onclick = function () {
             editHeadline(item, 1);
         }
-    }else if (item.getAttribute("data-type") == "edit-paragraf") {
+        item.querySelector('[data-type="edit-headline-delete"]').onclick = function () {
+            editHeadline(item, 3, contentBlock001);
+        }
+    } else if (item.getAttribute("data-type") == "edit-paragraf") {
 
-        item.innerHTML = paragrafEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent>";
-        
+        item.innerHTML = paragrafEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent><addButton onClick='duplicateItem(this)'> + Insert </addButton>";
+
 
         item.querySelector('[data-type="edit-paragraf-edit"]').onclick = function () {
             editParagraf(item, 0);
         }
         item.querySelector('[data-type="edit-paragraf-save"]').onclick = function () {
             editParagraf(item, 1);
-        }      
+        }
+        item.querySelector('[data-type="edit-paragraf-delete"]').onclick = function () {
+            editParagraf(item, 2);
+        }
+
+
+    } else if (item.getAttribute("data-type") == "edit-imageHolder") {
+
+        item.innerHTML = paragrafEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent>";
+
+
+        item.querySelector('[data-type="edit-paragraf-edit"]').onclick = function () {
+            editParagraf(item, 0);
+        }
+        item.querySelector('[data-type="edit-paragraf-save"]').onclick = function () {
+            editParagraf(item, 1);
+        }
+        item.querySelector('[data-type="edit-paragraf-delete"]').onclick = function () {
+            editParagraf(item, 2);
+        }
 
 
     }
@@ -438,8 +507,7 @@ templates[5] =
 }
 
 
-function insertTemplate(obj,HTMLcode){
-    console.log(HTMLcode);
+function insertTemplate(obj, HTMLcode) {   
     //blockconstructor
     let contentHolder = document.querySelector('main');
     let blockconstructor = document.createElement("blockconstructor");
@@ -452,23 +520,17 @@ function insertTemplate(obj,HTMLcode){
 
 
 
-function adminLEfNavBuilder(){
+function adminLEfNavBuilder() {
     let leftNavigationHolder = document.querySelector('[data-type="adminHolder--leftNav"] ul');
-    console.log(leftNavigationHolder);
-
 
     templates.forEach(async (template, key) => {
-        //target.classList.remove(`${color.class}--${color.option}`);
-        console.log(template.name);
         let li = document.createElement("LI");
-
-        li.setAttribute('class', 'adminHolder--leftNav--templatesList--button');  
+        li.setAttribute('class', 'adminHolder--leftNav--templatesList--button');
         li.setAttribute('data-type', 'templateHolder');
-        li.setAttribute('data-type', `${template.type}`);       
-        li.onclick = () => insertTemplate(li,template.HTMLcode);
-
-        li.innerHTML = 
-        `
+        li.setAttribute('data-type', `${template.type}`);
+        li.onclick = () => insertTemplate(li, template.HTMLcode);
+        li.innerHTML =
+            `
             <figure>
             <img src="../HTML/assets/imagesAdmin/${template.imgPath}.png" alt="my image">
             <span>${template.name}</span>

@@ -15,7 +15,6 @@
 $navWidth: 320px;
 $spacer: 20px;
 
-
 .adminHolder {
     .icon {
         display: block;
@@ -107,16 +106,15 @@ $spacer: 20px;
     border-bottom: solid 2px rgba(0, 0, 255, 0);
     border-left: solid 2px rgba(0, 0, 255, 0);
     border-right: solid 2px rgba(0, 0, 255, 0);
-    padding: 10px; 
-    
+    padding: 10px;
+
     &:hover {
         border-bottom: dashed 2px rgb(134, 170, 236);
         background-color: white;
-        padding: 10px;        
+        padding: 10px;
         border-left: dashed 2px rgb(134, 170, 236);
         border-right: dashed 2px rgb(134, 170, 236);
         filter: drop-shadow(2px 2px 4px #00000076);
-       
 
         cursor: pointer;
         position: relative;
@@ -300,6 +298,23 @@ blockconstructor {
             // border-radius: 32px;
         }
     }
+
+    addbutton {
+        position: absolute;
+        background-color: #132b76;
+        padding: 5px 20px;
+        z-index: 10000;
+        bottom: -15px;
+        right: 0;
+        color: #ccc;
+    }
+
+    [data-status="noContent"]{
+        display: none;
+
+    }
+
+    //data-status="noContent"
 
     blockFooter {
         display: block;

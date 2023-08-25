@@ -1,5 +1,3 @@
-console.log("HELLO");
-
 let resizeProgress = 0, scrollProgress = 0;
 let mobileOpenCloseButton = document.getElementById("mobileOpenCloseButton");
 let desktopNav = document.getElementById("desktopNav");
@@ -13,8 +11,7 @@ if(desktopNav){
 
 
 if(mobileOpenCloseButton){
-    mobileOpenCloseButton.onclick = function(){
-        console.log(this.getAttribute("data-status"));
+    mobileOpenCloseButton.onclick = function(){    
         if(this.getAttribute("data-status") == "0"){
             this.setAttribute("data-status", "1");
             desktopNav.setAttribute("data-status", "1");
@@ -33,23 +30,13 @@ function navigationWatcher(){
 
     if(generaldivigation){
         let atfarmLogo = document.getElementById("atfarmLogo"); 
-        
-        //let lightAtfarmLogoSRC = assetsPATH + "/images/atfarmLogoLight.webp";
-        //let darkAtfarmLogoSRC = assetsPATH + "/images/atfarmLogoBlue.webp";
-        console.log("Navigation exist");
-        console.log(window.scrollY);
-        console.log(atfarmLogo.src);
-        if(window.scrollY < 21){
-            console.log("APPLY DARk STYLE");
-            generaldivigation.classList.remove("generaldivigation--lightTheme");
-            //atfarmLogo.src = lightAtfarmLogoSRC;
-        }else {
-            console.log("APPLY WHITe STYLE");
+
+
+        if(window.scrollY < 21){          
+            generaldivigation.classList.remove("generaldivigation--lightTheme");          
+        }else {         
 
             generaldivigation.classList.add("generaldivigation--lightTheme");
-           // atfarmLogo.src = darkAtfarmLogoSRC;
-
-            //generaldivigation--lightTheme
         }
 
     }else {
@@ -64,8 +51,7 @@ function navigationWatcher(){
 
 window.onresize = function () {
     if (!resizeProgress) {
-        resizeProgress = 1;
-        console.log("RESIZE");
+        resizeProgress = 1; 
         setTimeout(() => {
             resizeProgress = 0;
         }, 20);
@@ -76,7 +62,6 @@ window.onresize = function () {
 window.onscroll = function () {
     if (!scrollProgress) {
         scrollProgress = 1;
-    console.log("SCROLL");
     navigationWatcher();
     setTimeout(() => {
         scrollProgress = 0;

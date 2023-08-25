@@ -259,6 +259,18 @@ blockconstructor blockheader blocksetup {
   height: 64px;
   background: url(../imagesAdmin/icons/toolbar-cog.png) center center no-repeat;
 }
+blockconstructor addbutton {
+  position: absolute;
+  background-color: #132b76;
+  padding: 5px 20px;
+  z-index: 10000;
+  bottom: -15px;
+  right: 0;
+  color: #ccc;
+}
+blockconstructor [data-status=noContent] {
+  display: none;
+}
 blockconstructor blockFooter {
   display: block;
   height: 100px;
