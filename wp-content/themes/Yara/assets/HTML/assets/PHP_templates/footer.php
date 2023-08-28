@@ -1,12 +1,12 @@
 <footer>
         <div class="footer--items">
-            <ul>
+            <!--ul>
                 <li class="list--title">
                     Social media
                 </li>
                 <li>Facebook</li>
                 <li>Linkedin</li>
-            </ul>
+            </ul-->
 
             <ul>
                 <li class="list--title">
@@ -17,7 +17,7 @@
             </ul>
             <ul>
                 <li>
-                    © Atfarm 2022 All rights reserved
+                    © Atfarm 2023 All rights reserved
                 </li>
             </ul>
         </div>
