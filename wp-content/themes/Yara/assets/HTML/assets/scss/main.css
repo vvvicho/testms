@@ -290,6 +290,48 @@ footer {
   background-size: 24px;
   background-position: center center;
 }
+.icons-searchBlue {
+  position: relative;
+  padding-left: 55px;
+}
+.icons-searchBlue::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/SearchBlue.png);
+}
+.icons-crop {
+  position: relative;
+  padding-left: 55px;
+}
+.icons-crop::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/Crop.png);
+}
+.icons-plans {
+  position: relative;
+  padding-left: 55px;
+}
+.icons-plans::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/LaptopAlt.png);
+}
 
 .bgColors--sectionLNormal {
   background-color: #FFF;

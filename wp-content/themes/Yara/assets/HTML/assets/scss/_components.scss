@@ -105,6 +105,49 @@
         
         background-position: center center;
     }
+    &-searchBlue{
+        position: relative;
+        padding-left: 55px;
+        &::before{
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/SearchBlue.png) ;
+        }
+        
+    }
+    &-crop{
+        position: relative;
+        padding-left: 55px;
+        &::before{
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/Crop.png) ;
+        }      
+    }
+    &-plans{
+        position: relative;
+        padding-left: 55px;
+        &::before{
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/LaptopAlt.png) ;
+        }        
+    }
 
     
 }
