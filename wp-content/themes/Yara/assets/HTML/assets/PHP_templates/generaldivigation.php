@@ -33,12 +33,13 @@
                 <a href="?p=yaraSolutionsAbout">About</a>
             </li>
             <li>
-                <a href="#">Contacts</a>
+                <a href="https://support.at.farm/hc/" target="_blank">Help Center</a>
             </li>
         </ul>
     </nav>
     <div class="navLeftButtons">
         <div id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></div>
+        <div class="flafIcons  flafIcons--navigation flafIcons--uk"></div>
         <div class="button button-light">Login</div>
         <div class="button button-dark">Sign up</div>
     </div>

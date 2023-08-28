@@ -74,6 +74,64 @@
   left: 0;
   z-index: 10000;
 }
+.adminHolder .mainGalleryHolder {
+  position: fixed;
+  z-index: 10000;
+  width: 90vw;
+  height: 90vh;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: 70px 5vw 2vh 5vw;
+}
+.adminHolder .mainGalleryHolder--hidden {
+  display: none;
+}
+.adminHolder .mainGalleryHolder__topNavigation {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  height: 70px;
+  background-color: #e9e9e9;
+}
+.adminHolder .mainGalleryHolder__bottomNavigation {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: #e9e9e9;
+}
+.adminHolder .mainGalleryHolder__scroller {
+  overflow: hidden;
+  padding: 20px;
+  height: calc(90vh - 93px);
+  position: relative;
+  overflow-y: scroll;
+}
+.adminHolder .mainGalleryHolder__scroller ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+.adminHolder .mainGalleryHolder__scroller ul li {
+  display: block;
+  width: auto;
+  height: 180px;
+  border: solid 5px rgb(218, 218, 218);
+  position: relative;
+  overflow: hidden;
+}
+.adminHolder .mainGalleryHolder__scroller ul li.--sellected, .adminHolder .mainGalleryHolder__scroller ul li:hover {
+  border: solid 5px rgb(125, 113, 213);
+  cursor: pointer;
+}
+.adminHolder .mainGalleryHolder__scroller ul li img {
+  height: 180px;
+  margin: auto;
+}
 
 .editableHeadLine {
   border-bottom: solid 2px rgba(0, 0, 255, 0);

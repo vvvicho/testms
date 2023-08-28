@@ -18,7 +18,7 @@ function makeVissible(headLine, controllButton) {
     controllButton.onclick = null;
     controllButton.classList.add("used");
     headLine.removeAttribute('data-status');
-   
+
 
 }
 
@@ -33,10 +33,10 @@ function editHeadline(headLine, type, contentBlock) {
             headLine.querySelector('editcontent').innerHTML = returnINPUTtype(currentContent, "text");
         }
     } else if (type === 1) {
-        if (currentContentisEdited) {            
+        if (currentContentisEdited) {
             headLine.querySelector('editcontent').innerHTML = currentContentisEdited.value;
         }
-    } else if (type === 3) {     
+    } else if (type === 3) {
         let controllButton = contentBlock.querySelector('[data-button="' + headLine.nodeName.toLowerCase() + 'controller"]');
         headLine.setAttribute('data-status', 'noContent');
         controllButton.classList.remove("used");
@@ -46,6 +46,34 @@ function editHeadline(headLine, type, contentBlock) {
     }
 }
 // 8888888888888888888888888
+
+
+function editImage(headLine, type) {
+
+    if(type === 0){
+        
+        console.log(headLine);
+
+        objectToUpdateSRC = headLine.querySelector("editcontent img");
+        console.log(objectToUpdateSRC);
+
+        showGalleryImages();
+    }
+
+
+   
+
+
+    console.log(headLine);
+    console.log(type);
+
+
+
+
+}
+
+
+
 function editParagraf(headLine, type) {
     let currentContentisEdited = headLine.querySelector('editcontent textarea');
     if (type === 0) {
@@ -56,11 +84,11 @@ function editParagraf(headLine, type) {
             headLine.querySelector('editcontent').innerHTML = returnTextArea(currentContent);
         }
     } else if (type === 1) {
-        if (currentContentisEdited) {          
+        if (currentContentisEdited) {
             headLine.querySelector('editcontent').innerHTML = currentContentisEdited.value;
         }
     } else if (type === 2) {
-        let allParagrafe = headLine.parentElement.querySelectorAll("P");        
+        let allParagrafe = headLine.parentElement.querySelectorAll("P");
 
         if (allParagrafe.length > 1) {
             headLine.remove();
@@ -92,6 +120,24 @@ let paragrafEditPannelHTML =
 </ul>
 </editpannel>
 `;
+
+
+let imageEditPannelHTML =
+    `
+<editpannel>
+<ul>
+    <li class="icon icon--edit" data-type="edit-image-edit"></li>    
+    <li class="icon icon--save" data-type="edit-image-save"></li>
+    <li data-type="edit-image-insert"></li>
+    <li class="icon icon--delete" data-type="edit-image-delete"></li>
+</ul>
+</editpannel>
+`;
+
+
+
+
+
 let headlineEditPanneINPUTfield =
     `
 <input type="text" value="">
@@ -108,9 +154,9 @@ let paragrafEditPannelINPUTfield =
 
 
 
-function duplicateItem(obj) {   
+function duplicateItem(obj) {
 
-    if (obj.parentElement.nodeName == "P") {    
+    if (obj.parentElement.nodeName == "P") {
 
         let newParagraf = document.createElement("P");
         newParagraf.setAttribute("data-type", "edit-paragraf");
@@ -141,7 +187,7 @@ function duplicateItem(obj) {
 
 allEditableItems.forEach(async (item) => {
     //sum = await sumFunction(sum, rating);
-  
+
     item.classList.add("editableHeadLine");
     if (item.getAttribute("data-type") == "edit-headline") {
         item.innerHTML = headlineEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent>";
@@ -172,17 +218,19 @@ allEditableItems.forEach(async (item) => {
 
     } else if (item.getAttribute("data-type") == "edit-imageHolder") {
 
-        item.innerHTML = paragrafEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent>";
+        console.log("an image");
+
+        item.innerHTML = imageEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent>";
 
 
-        item.querySelector('[data-type="edit-paragraf-edit"]').onclick = function () {
-            editParagraf(item, 0);
+        item.querySelector('[data-type="edit-image-edit"]').onclick = function () {
+            editImage(item, 0);
         }
-        item.querySelector('[data-type="edit-paragraf-save"]').onclick = function () {
-            editParagraf(item, 1);
+        item.querySelector('[data-type="edit-image-save"]').onclick = function () {
+            editImage(item, 1);
         }
-        item.querySelector('[data-type="edit-paragraf-delete"]').onclick = function () {
-            editParagraf(item, 2);
+        item.querySelector('[data-type="edit-image-delete"]').onclick = function () {
+            editImage(item, 2);
         }
 
 
@@ -194,6 +242,72 @@ allEditableItems.forEach(async (item) => {
     }
     */
 });
+
+
+/* GALLERY */
+
+let gallerHolder = document.getElementById("mainGalleryHolder");
+let sellectedImage = "";
+let allImagesContainers = gallerHolder.querySelectorAll(".mainGalleryHolder__scroller ul li");
+let gallerySaveResult = document.getElementById("gallerySaveResult");
+let objectToUpdateSRC;
+
+function updateSellectedImage(){
+
+    objectToUpdateSRC.setAttribute("src",sellectedImage);
+    hideGalleryImages();
+
+
+}
+
+
+
+
+gallerySaveResult.onclick = function(){
+    updateSellectedImage();
+}
+
+console.log(allImagesContainers);
+
+
+function clearAllImagesStatus(){
+    allImagesContainers.forEach(async (item) => {
+        item.classList.remove("--sellected");
+    });
+}
+
+
+function showGalleryImages(){
+    sellectedImage = "";
+    clearAllImagesStatus();  
+    console.log("SHOW GALLERY")  ;
+    gallerHolder.classList.remove("mainGalleryHolder--hidden");
+
+
+}
+
+function hideGalleryImages(){
+    gallerHolder.classList.add("mainGalleryHolder--hidden");
+}
+
+
+function sellectAnImage(obj){
+    
+    sellectedImage = obj.querySelector("img").getAttribute("src");
+    clearAllImagesStatus();
+    obj.classList.add("--sellected");
+
+}
+
+allImagesContainers.forEach(async (item) => {
+    item.onclick = () => {
+        sellectAnImage(item);
+    }
+});
+
+
+
+
 
 
 let templates = [];
@@ -507,7 +621,7 @@ templates[5] =
 }
 
 
-function insertTemplate(obj, HTMLcode) {   
+function insertTemplate(obj, HTMLcode) {
     //blockconstructor
     let contentHolder = document.querySelector('main');
     let blockconstructor = document.createElement("blockconstructor");

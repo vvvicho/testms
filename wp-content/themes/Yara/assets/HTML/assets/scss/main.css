@@ -211,7 +211,7 @@ footer {
   border-radius: 8px;
 }
 .button-light {
-  background-color: #ffffff;
+  background-color: #E5F2FF;
   color: #0066CC;
   box-shadow: 0px 2px 2px rgba(15, 15, 15, 0.16), 0px 2px 2px rgba(15, 15, 15, 0.14), 0px 1px 5px rgba(15, 15, 15, 0.12);
   border-radius: 8px;
@@ -242,6 +242,10 @@ footer {
   background-image: url(../../../../assets/HTML/assets/images/icons/flags/fr.webp);
   background-position: left center;
   background-repeat: no-repeat;
+}
+.flafIcons--navigation {
+  display: inline-block;
+  margin-bottom: -23px;
 }
 
 .icons {
@@ -656,6 +660,16 @@ footer {
   .generaldivigation:hover nav ul.desktopNav[data-status="0"] li a:hover {
     color: #0056B8;
   }
+  .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.--subnav::after {
+    content: "";
+    display: inline-block;
+    background: url(../../../../assets/HTML/assets/images/chevron_black.webp) top center no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    margin-bottom: -5px;
+  }
   .generaldivigation:hover .navLeftButtons .desktopSearchButton {
     background-image: url(../../../../assets/HTML/assets/images/icons/searchB.png);
   }
@@ -691,27 +705,27 @@ footer {
     opacity: 0;
     position: absolute;
     top: -400px;
-    padding-top: 58px;
+    padding-top: 110px;
     left: 0;
     width: 100%;
     z-index: -1;
     transition: 0.3s;
+    background-color: rgb(245, 245, 247);
   }
   .generaldivigation nav ul.desktopNav li.--subnav a + ul li {
     display: block;
-    background-color: rgb(245, 245, 247);
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
     margin: 0;
     padding: 0;
-    padding-left: calc(var(--spacer) * 3);
+    padding-left: calc(var(--spacer) * 7);
   }
   .generaldivigation nav ul.desktopNav li.--subnav a + ul li:first-of-type {
-    padding-left: calc(var(--spacer) * 3);
+    padding-left: calc(var(--spacer) * 5) !important;
     display: block;
     font-size: 14px;
     line-height: 20px;
-    padding-bottom: calc(var(--spacer) * 1);
+    padding-bottom: calc(var(--spacer) * 0);
   }
   .generaldivigation nav ul.desktopNav li.--subnav a + ul li:last-of-type {
     padding-bottom: calc(var(--spacer) * 2);
@@ -729,7 +743,7 @@ footer {
   }
   .generaldivigation nav ul.desktopNav li.--subnav:hover a + ul {
     opacity: 1;
-    top: 22px;
+    top: 0px;
     z-index: -1;
   }
   .generaldivigation nav ul.desktopNav li.--subnav::after {
@@ -740,12 +754,13 @@ footer {
     width: 20px;
     height: 20px;
     margin-top: 0;
+    margin-bottom: -5px;
   }
   .generaldivigation nav ul.desktopNav li a {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0px;
     color: white;
     cursor: pointer;
   }
@@ -755,7 +770,7 @@ footer {
   .generaldivigation .navLeftButtons .desktopSearchButton {
     display: inline-block;
     margin-bottom: -18px;
-    margin-right: 16px;
+    margin-right: 6px;
   }
   .generaldivigation .mobileNavHolder {
     display: none;
@@ -801,7 +816,7 @@ footer {
     margin-right: calc(var(--spacer) * 1);
   }
   .generaldivigation nav ul.desktopNav li.--subnav:hover a + ul li {
-    padding-left: calc(var(--spacer) * 5);
+    padding-left: calc(var(--spacer) * 7);
   }
 }
 footer {
