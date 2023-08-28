@@ -22,4 +22,4 @@
             </ul>
         </div>
     </footer>
-<script async="" src="assets/js/app.js?v=<?php echo ($time); ?>"></script>
+<script async="" src="assets/js/app.js?v=<?php echo ($time); ?>"></script> 
