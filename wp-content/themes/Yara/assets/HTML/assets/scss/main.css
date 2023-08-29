@@ -374,6 +374,50 @@ footer {
   left: 0px;
   background-image: url(../../../../assets/HTML/assets/images/icons/clock.png);
 }
+.icons-upDiagram {
+  margin-top: calc(var(--gap) / 2);
+}
+.icons-upDiagram::before {
+  content: "";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: -20px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/upDiagram.png);
+}
+.icons-document {
+  margin-top: calc(var(--gap) / 2);
+}
+.icons-document::before {
+  content: "";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: -20px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/document.png);
+}
+.icons-meter {
+  margin-top: calc(var(--gap) / 2);
+}
+.icons-meter::before {
+  content: "";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: -20px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/meter.png);
+}
+.icons-earth {
+  margin-top: calc(var(--gap) / 2);
+}
+.icons-earth::before {
+  content: "";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: -20px;
+  background-image: url(../../../../assets/HTML/assets/images/icons/earth.png);
+}
 
 .bgColors--sectionLNormal {
   background-color: #FFF;

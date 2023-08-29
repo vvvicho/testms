@@ -20,45 +20,42 @@
     }
 }
 
-.flafIcons{
+.flafIcons {
     display: flex;
     font-size: 14px !important;
     align-items: center;
 
-    &::before{
+    &::before {
         content: " ";
         display: block;
         min-width: 40px;
         min-height: 60px;
     }
-    &--uk{
-        &::before{
-            background-image: url(../../../../assets/HTML/assets/images/icons/flags/uk.webp) ;
-            background-position: left center;
-            background-repeat: no-repeat;
-        }
-
-    }
-    &--it{
-        &::before{
-            background-image: url(../../../../assets/HTML/assets/images/icons/flags/it.webp) ;
-            background-position: left center;
-            background-repeat: no-repeat;
-        }
-
-    }
-    &--fr{
-        &::before{
-            background-image: url(../../../../assets/HTML/assets/images/icons/flags/fr.webp) ;
+    &--uk {
+        &::before {
+            background-image: url(../../../../assets/HTML/assets/images/icons/flags/uk.webp);
             background-position: left center;
             background-repeat: no-repeat;
         }
     }
-    &--navigation{
+    &--it {
+        &::before {
+            background-image: url(../../../../assets/HTML/assets/images/icons/flags/it.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--fr {
+        &::before {
+            background-image: url(../../../../assets/HTML/assets/images/icons/flags/fr.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--navigation {
         display: inline-block;
         margin-bottom: -23px;
     }
-
 }
 
 .icons {
@@ -66,49 +63,49 @@
     width: var(--iconsSquarewh);
     height: var(--iconsSquarewh);
     background: top left no-repeat;
-    background-size:  var(--iconsSquarewh) ;
+    background-size: var(--iconsSquarewh);
     cursor: pointer;
     transition: 0.3s;
 
     &-navLeft {
-        background-image: url(../../../../assets/HTML/assets/images/navBTN.webp) ;
+        background-image: url(../../../../assets/HTML/assets/images/navBTN.webp);
     }
     &-navRight {
-        background-image: url(../../../../assets/HTML/assets/images/navBTN.webp) ;
+        background-image: url(../../../../assets/HTML/assets/images/navBTN.webp);
         transform: rotate(180deg);
     }
 
     &-openW {
-        background-image: url(../../../../assets/HTML/assets/images/icons/openW.png) ;
+        background-image: url(../../../../assets/HTML/assets/images/icons/openW.png);
     }
     &-closeW {
-        background-image: url(../../../../assets/HTML/assets/images/icons/closeW.png) ;
+        background-image: url(../../../../assets/HTML/assets/images/icons/closeW.png);
     }
     &-openB {
-        background-image: url(../../../../assets/HTML/assets/images/icons/openB.png) ;
+        background-image: url(../../../../assets/HTML/assets/images/icons/openB.png);
     }
     &-closeB {
-        background-image: url(../../../../assets/HTML/assets/images/icons/closeB.png) ;
+        background-image: url(../../../../assets/HTML/assets/images/icons/closeB.png);
     }
     &-searchW {
-        background-image: url(../../../../assets/HTML/assets/images/icons/searchW.png) ;
+        background-image: url(../../../../assets/HTML/assets/images/icons/searchW.png);
     }
     &-searchB {
-        background-image: url(../../../../assets/HTML/assets/images/icons/searchB.png) ;
+        background-image: url(../../../../assets/HTML/assets/images/icons/searchB.png);
     }
-    &-ok{
+    &-ok {
         width: 24px;
         height: 24px;
         margin: 16px;
-        background-image: url(../../../../assets/HTML/assets/images/icons/ok.webp) ;
+        background-image: url(../../../../assets/HTML/assets/images/icons/ok.webp);
         background-size: 24px;
-        
+
         background-position: center center;
     }
-    &-searchBlue{
+    &-searchBlue {
         position: relative;
         padding-left: 55px;
-        &::before{
+        &::before {
             content: "";
             display: block;
             width: 48px;
@@ -116,14 +113,13 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../../../../assets/HTML/assets/images/icons/SearchBlue.png) ;
+            background-image: url(../../../../assets/HTML/assets/images/icons/SearchBlue.png);
         }
-        
     }
-    &-crop{
+    &-crop {
         position: relative;
         padding-left: 55px;
-        &::before{
+        &::before {
             content: "";
             display: block;
             width: 48px;
@@ -131,13 +127,13 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../../../../assets/HTML/assets/images/icons/Crop.png) ;
-        }      
+            background-image: url(../../../../assets/HTML/assets/images/icons/Crop.png);
+        }
     }
-    &-plans{
+    &-plans {
         position: relative;
         padding-left: 55px;
-        &::before{
+        &::before {
             content: "";
             display: block;
             width: 48px;
@@ -145,13 +141,13 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../../../../assets/HTML/assets/images/icons/LaptopAlt.png) ;
-        }        
+            background-image: url(../../../../assets/HTML/assets/images/icons/LaptopAlt.png);
+        }
     }
-    &-track{
+    &-track {
         position: relative;
         padding-left: 55px;
-        &::before{
+        &::before {
             content: "";
             display: block;
             width: 48px;
@@ -159,13 +155,13 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../../../../assets/HTML/assets/images/icons/track.png) ;
-        }        
+            background-image: url(../../../../assets/HTML/assets/images/icons/track.png);
+        }
     }
-    &-tester{
+    &-tester {
         position: relative;
         padding-left: 55px;
-        &::before{
+        &::before {
             content: "";
             display: block;
             width: 48px;
@@ -173,13 +169,13 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../../../../assets/HTML/assets/images/icons/tester.png) ;
-        }        
+            background-image: url(../../../../assets/HTML/assets/images/icons/tester.png);
+        }
     }
-    &-clock{
+    &-clock {
         position: relative;
         padding-left: 55px;
-        &::before{
+        &::before {
             content: "";
             display: block;
             width: 48px;
@@ -187,11 +183,53 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../../../../assets/HTML/assets/images/icons/clock.png) ;
-        }        
+            background-image: url(../../../../assets/HTML/assets/images/icons/clock.png);
+        }
     }
-
-    
+    &-upDiagram {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/upDiagram.png);
+        }
+    }
+    &-document {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/document.png);
+        }
+    }
+    &-meter {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/meter.png);
+        }
+    }
+    &-earth {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/earth.png);
+        }
+    }
 }
 
 .bgColors {
@@ -203,60 +241,59 @@
     }
 }
 
-.box{
-    &--bgColor{
-        &--blue{
+.box {
+    &--bgColor {
+        &--blue {
             background-color: $boxBlueBgColor;
         }
     }
 }
 
-.twoColMid{
+.twoColMid {
     display: grid;
     gap: 0 16px;
     grid-template-columns: 1fr 1fr;
-    padding-left: 10%; 
+    padding-left: 10%;
     padding-right: 10%;
     margin-top: 20px;
-    padding-bottom: 16px; 
+    padding-bottom: 16px;
 }
 
-.treeColMid{
+.treeColMid {
     display: grid;
     gap: 0 16px;
     grid-template-columns: 1fr 1fr 1fr;
-    padding-left: 10%; 
+    padding-left: 10%;
     padding-right: 10%;
     margin-top: 20px;
-    padding-bottom: 16px; 
+    padding-bottom: 16px;
 }
 
-.fourColMid{
+.fourColMid {
     display: grid;
     gap: 0 16px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-left: 10%; 
+    padding-left: 10%;
     padding-right: 10%;
     margin-top: 20px;
-    padding-bottom: 16px; 
+    padding-bottom: 16px;
 }
 
-.mhide{
+.mhide {
     display: none;
 }
 
 @media screen and (min-width: $mobile) {
-    .mhide{
+    .mhide {
         display: block;
     }
-    .thide{
+    .thide {
         display: none;
     }
 }
-  
-@media screen and (min-width: $desktop) {
-    .thide{
-        display: block;
-    }   
-} 
 
+@media screen and (min-width: $desktop) {
+    .thide {
+        display: block;
+    }
+}
