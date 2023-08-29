@@ -6,17 +6,16 @@
                     <img src="../HTML/assets/images/qr_xode.webp" width="271" height="271" alt="my image">
                 </figure>
                 <div class="articleDataHolder">
-                    <h4>Get the mobile app</h4>
-                    <p>Atfarm is also available on mobile devices. Turn your smartphone into a precision farming tool. </p>
+                    <h4>Ready to start precision farming 
+from your phone?</h4>
+                    <p>Download the free Atfam mobile app now. Available for iOS and Android devices.</p>
                     <div class="button button-dark">
-                        Sign up to the desktop app here
+                    Download the app
                     </div>
                 </div>
             </div>
             <div class="articleContent--store">
-                <p>Improve crop growth and evenness by utilising the in-field measurements for variable
-                    nitrogen
-                    applications. </p>
+                <p>Download the free mobile app and turn your smartphone into a precision farming tool.</p>
                 <figure>
                     <img src="../HTML/assets/images/storeButtons.webp" width="214" height="150" alt="my image">
                 </figure>
