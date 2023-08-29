@@ -1,14 +1,14 @@
 <section class="bgColors--sectionLight">
     <div class="warper">
         <div class="item_12">
-            <h3>What can Atfarm’s Nutrition Planner do for you?</h3>
+            <h3>Why use the N-Tester BT?</h3>
         </div>
         <figure class="item_7">
             <img src="../HTML/assets/images/ntester.webp" width="677" height="508" alt="my image">
         </figure>
         <div class="articleInfo item_5">
             <div class="articleContent">
-                <p>QFind out how much nitrogen (N) to apply to your crops this season.</p>
+                <p>Find out how much nitrogen (N) to apply to your crops this season.</p>
                 <div class="button button-dark">
                     Get your N-Tester BT
                 </div>
