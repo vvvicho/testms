@@ -113,6 +113,11 @@ main .section .warper .slider ul li {
   padding-right: calc(var(--spacer) * 3);
   min-height: 360px;
   display: block;
+  background-color: #FFF;
+}
+main section .warper .slider ul li.bgColors--sectionLight,
+main .section .warper .slider ul li.bgColors--sectionLight {
+  background-color: #F3F6F9;
 }
 main section .warper .slider ul li i.counter,
 main .section .warper .slider ul li i.counter {

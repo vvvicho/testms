@@ -98,7 +98,14 @@ main {
                         padding-right: calc(var(--spacer) * 3);
                         min-height: 360px;
                         display: block;
-                       // background-color: $sectionNormalBGcolor;
+                        background-color: $sectionNormalBGcolor;
+                        &.bgColors{
+                            &--sectionLight{
+                                background-color: $sectionLightBGcolor;
+                                
+                            }
+
+                        }
                         
                         i {                            
                             &.counter{
