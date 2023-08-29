@@ -2,9 +2,9 @@
         <div class="titleBlock">
             <div>
                 <p>
-                    <strong>Apply N </strong><br>
+                    <strong>Apply nitrogen</strong><br>
                     <strong>where it counts</strong><br>
-                    Improve N use efficiency and secure yield goals.
+                    Improve Nitrogen Use Efficiency (NUE) and secure yield goals. Let the variability of your soil guide your fertiliser strategy.
                 </p>
                 <div class="button button-dark">Learn more</div>
             </div>

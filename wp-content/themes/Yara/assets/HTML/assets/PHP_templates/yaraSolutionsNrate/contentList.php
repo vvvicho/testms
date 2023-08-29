@@ -1,7 +1,7 @@
 <section class="bgColors--sectionLNormal">
             <div class="warper">
                 <div class="item_12">
-                    <h3>What can Atfarm’s Nutrition Planner do for you?</h3>
+                    <h3>Respond to the variability in your fields</h3>
                 </div>
                 <figure class="item_7">
                     <img src="../HTML/assets/images/rt2.webp" width="677" height="508" alt="my image">

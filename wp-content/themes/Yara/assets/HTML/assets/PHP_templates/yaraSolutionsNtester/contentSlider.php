@@ -3,14 +3,14 @@
                 <h3 class="item_12">Optimise N use on your fields in 8 steps </h3>
                 <div class="slider item_12">
                     <ul>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb1.webp" width="314" height="315" alt="my image">                                                 
                             </figure>
                             <i class="counter">1</i>
                             <p>Turn your N-Tester BT on by holding the On/Off button until the LED on top turns blue.</p>
                         </li>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb2.webp" width="314" height="315" alt="my image">                                                  
                             </figure>
@@ -18,7 +18,7 @@
                             <p>Open the Atfarm app and select your farm and field.</p> 
 
                         </li>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb3.webp" width="314" height="315" alt="my image">                                                  
                             </figure>
@@ -26,7 +26,7 @@
                             <p>Scroll down to the N-Tester section and tap Start measurement.</p> 
 
                         </li>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb4.webp" width="314" height="315" alt="my image">                                                  
                             </figure>
@@ -34,7 +34,7 @@
                             <p>Add your crop and growth stage information.</p> 
 
                         </li>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb5.webp" width="314" height="315" alt="my image">                                                  
                             </figure>
@@ -42,7 +42,7 @@
                             <p>Tap Start measuring. The app will now check the connection between your smartphone and N-Tester BT. This may take a few seconds.</p> 
 
                         </li>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb6.webp" width="314" height="315" alt="my image">                                                  
                             </figure>
@@ -50,7 +50,7 @@
                             <p>Calibrate your N-Tester by holding down the head of the device and taking an empty reading.</p> 
 
                         </li>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb7.webp" width="314" height="315" alt="my image">                                                  
                             </figure>
@@ -58,7 +58,7 @@
                             <p>Measure the youngest leaves on at least 30 plants across your field.</p> 
 
                         </li>
-                        <li>
+                        <li class="bgColors--sectionLight">
                             <figure>
                                 <img src="../HTML/assets/images/tester/bb8.webp" width="314" height="315" alt="my image">                                                  
                             </figure>

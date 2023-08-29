@@ -98,7 +98,8 @@ main {
                         padding-right: calc(var(--spacer) * 3);
                         min-height: 360px;
                         display: block;
-                        background-color: $sectionNormalBGcolor;
+                       // background-color: $sectionNormalBGcolor;
+                        
                         i {                            
                             &.counter{
                                 display: block;
@@ -190,6 +191,14 @@ main {
                                 padding-top: calc(var(--spacer) * 1);
                                 padding-bottom: calc(var(--spacer) * 1);
                             }
+                        }
+                        h4{
+                           
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 20px;
+                            padding-bottom: 0;
+                            margin-bottom: 0;
                         }
                         &--bgColor {
                             background-color: #f1f2de !important;
