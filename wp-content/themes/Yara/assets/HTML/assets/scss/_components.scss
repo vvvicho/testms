@@ -162,6 +162,34 @@
             background-image: url(../../../../assets/HTML/assets/images/icons/track.png) ;
         }        
     }
+    &-tester{
+        position: relative;
+        padding-left: 55px;
+        &::before{
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/tester.png) ;
+        }        
+    }
+    &-clock{
+        position: relative;
+        padding-left: 55px;
+        &::before{
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../../../../assets/HTML/assets/images/icons/clock.png) ;
+        }        
+    }
 
     
 }
