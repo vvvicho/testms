@@ -6,7 +6,7 @@
                         <div class="articleDataHolder">
                             <h4>Get N-Rate recommendations based on the N-uptake of your cereals for the 2nd, 3rd and protein dressings. </h4>
                             <p>“Monitoring the crops through the season, with the N-Tester, will give accurate recommendations based on what the nitrogen levels are in the crop. With more accurate rates for each field, the use efficiency will increase, meaning you’re getting the most out of the nitrogen that you are applying.”</p>
-                            <p>--ICON-- Natalie Wood, 
+                            <p class="flafIcons flafIcons--uk ">Natalie Wood, 
                                 Agronomy Operations Manager & Specialist in Crop Nutrition and Digital Tools</p>
                             <div class="button button-dark">
                                 Get your N-Tester BT
