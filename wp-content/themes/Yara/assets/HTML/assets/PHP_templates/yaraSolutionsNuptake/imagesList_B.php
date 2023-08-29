@@ -1,6 +1,6 @@
 <section id="imagesList_B" class="bgColors--sectionLNormal">
             <div class="warper warper--boxGallery warper--boxGallery--lineGrid">
-                <h3 class="item_12">How does the N-Tester BT work? </h3>
+                <h3 class="item_12">See an N-Uptake map of your field on your computer in 3 steps:</h3>
                 <div class="item_4 galleryItem">
                     <figure>
                         <img src="../HTML/assets/images/sst1.webp" width="335" height="250" alt="my image">
