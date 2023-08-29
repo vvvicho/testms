@@ -31,11 +31,11 @@
             </div>
         </div>
         <div class="item_12 box box--bgColor--blue twoColMid">
-            <div>
+            <div class="icons-track">
                 <h4>Track progress and problems</h4>
                 <p>APowerful biomass maps that help you monitor crop health, field variability, and detect problem areas on your fields from anywhere, anytime. </p>
             </div>
-            <div>
+            <div class="icons-crop">
                 <h4>Advanced technology</h4>
                 <p>Atfarm uses Yara’s N-Sensor vegetation index to generate biomass maps to help you understand your fields better. </p>
             </div>
