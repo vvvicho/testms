@@ -1,6 +1,6 @@
 <section id="imagesList_A" class="bgColors--sectionLight">
             <div class="warper warper--boxGallery warper--boxGallery--lineGrid">
-                <h3 class="item_12">How does the N-Tester BT work? </h3>
+                <h3 class="item_12">How does Drive Mode work for Variable N-Rate Application?</h3>
                 <div class="item_4 galleryItem">
                     <figure>
                         <img src="../HTML/assets/images/dm1.webp" width="335" height="250" alt="my image">
