@@ -42,7 +42,7 @@
         </div>
         <div class="item_12 buttonHolder">
             <div class="button button-dark">
-                Check your crops now
+            Try it now
             </div>
         </div>
     </div>
