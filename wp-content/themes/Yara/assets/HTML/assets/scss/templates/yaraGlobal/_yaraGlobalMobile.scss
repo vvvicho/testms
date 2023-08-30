@@ -19,6 +19,9 @@ main {
                 margin-bottom: var(--sectionSpacer);
                 font-weight: 900;
             }
+            p {
+                color: $mainTextColor;
+            }
 
             .articleInfo {
                 margin-bottom: calc(var(--spacer) * 3);

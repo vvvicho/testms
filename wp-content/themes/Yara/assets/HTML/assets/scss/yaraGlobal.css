@@ -26,6 +26,10 @@ main .section .warper h3 {
   margin-bottom: var(--sectionSpacer);
   font-weight: 900;
 }
+main section .warper p,
+main .section .warper p {
+  color: rgba(15, 15, 15, 0.8);
+}
 main section .warper .articleInfo,
 main .section .warper .articleInfo {
   margin-bottom: calc(var(--spacer) * 3);

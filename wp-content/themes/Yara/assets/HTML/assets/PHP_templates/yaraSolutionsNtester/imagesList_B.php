@@ -35,7 +35,7 @@
                     <figure>
                         <img src="../HTML/assets/images/m5.webp" width="208" height="278" alt="my image">                                              
                     </figure>
-                    <h4>WHarvest</h4> 
+                    <h4>Harvest</h4> 
                 </div>
                 <div class="item_5 buttonHolder">
                     <div class="button button-dark">

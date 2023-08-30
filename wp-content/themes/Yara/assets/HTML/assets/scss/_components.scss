@@ -9,13 +9,13 @@
     &-dark {
         background-color: $buttonDarkBGColor;
         color: $buttonDarkFONTColor;
-        box-shadow: $buttonDarkBoxShadow;
+       // box-shadow: $buttonDarkBoxShadow;
         border-radius: $buttonDarkBR;
     }
     &-light {
         background-color: $buttonLightBGColor;
         color: $buttonLightFONTColor;
-        box-shadow: $buttonLightBoxShadow;
+       // box-shadow: $buttonLightBoxShadow;
         border-radius: $buttonLightBR;
     }
 }

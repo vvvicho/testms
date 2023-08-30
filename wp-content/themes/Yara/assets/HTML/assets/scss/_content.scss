@@ -40,6 +40,15 @@
     --buttonFS: #{$buttonFSmobile};
     --buttonPaddingTB: #{$buttonPaddingTBmobile};
     --buttonPaddingLR: #{$buttonPaddingLRmobile};
+    .button {
+        &-dark {
+            box-shadow: $buttonDarkBoxShadow;
+            
+        }
+        &-light {
+            box-shadow: $buttonLightBoxShadow;
+        }
+    }
 
 
 }
@@ -71,6 +80,21 @@
         --thumbW: 140px;
         --thumbH: 196px;
         --maxContentWidth: #{$maxContentWidth_tablet};
+
+        .button {
+            &-dark {
+                box-shadow: unset;  
+                border: 2px red;              
+            }
+            &-light {
+                box-shadow: unset;
+            }
+        }
+
+
+
+
+
     }
 }
 
@@ -97,6 +121,7 @@
         --buttonFS: #{$buttonFSdesktop};
         --buttonPaddingTB: #{$buttonPaddingTBdesktop};
         --buttonPaddingLR: #{$buttonPaddingLRdesktop};
+
     }
 } 
 footer {

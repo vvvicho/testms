@@ -39,8 +39,6 @@
                                     margin-top: 0;
                                     margin-bottom: -5px;
                                 }
-
-
                             }
                         }
                     }
@@ -183,6 +181,18 @@
                                 color: $darkLinkColor;
                                 &:hover {
                                     color: $darkLinkHoverColor;
+                                }
+                            }
+                            &.--subnav {
+                                &::after {
+                                    content: "";
+                                    display: inline-block;
+                                    background: url(../../../../assets/HTML/assets/images/chevron_black.webp) top center no-repeat;
+                                    background-size: 20px 20px;
+                                    width: 20px;
+                                    height: 20px;
+                                    margin-top: 0;
+                                    margin-bottom: -5px;
                                 }
                             }
                         }

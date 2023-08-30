@@ -144,6 +144,12 @@ p:last-child {
   --buttonPaddingTB: 17px;
   --buttonPaddingLR: 16px;
 }
+:root .button-dark {
+  box-shadow: 0px 2px 2px rgba(15, 15, 15, 0.16), 0px 2px 2px rgba(15, 15, 15, 0.14), 0px 1px 5px rgba(15, 15, 15, 0.12);
+}
+:root .button-light {
+  box-shadow: 0px 2px 2px rgba(15, 15, 15, 0.16), 0px 2px 2px rgba(15, 15, 15, 0.14), 0px 1px 5px rgba(15, 15, 15, 0.12);
+}
 
 @media screen and (min-width: 599px) {
   :root {
@@ -163,6 +169,13 @@ p:last-child {
     --thumbW: 140px;
     --thumbH: 196px;
     --maxContentWidth: 1024px;
+  }
+  :root .button-dark {
+    box-shadow: unset;
+    border: 2px red;
+  }
+  :root .button-light {
+    box-shadow: unset;
   }
 }
 @media screen and (min-width: 1366px) {
@@ -207,13 +220,11 @@ footer {
 .button-dark {
   background-color: #0056B8;
   color: #ffffff;
-  box-shadow: 0px 2px 2px rgba(15, 15, 15, 0.16), 0px 2px 2px rgba(15, 15, 15, 0.14), 0px 1px 5px rgba(15, 15, 15, 0.12);
   border-radius: 8px;
 }
 .button-light {
   background-color: #E5F2FF;
   color: #0066CC;
-  box-shadow: 0px 2px 2px rgba(15, 15, 15, 0.16), 0px 2px 2px rgba(15, 15, 15, 0.14), 0px 1px 5px rgba(15, 15, 15, 0.12);
   border-radius: 8px;
 }
 
@@ -913,6 +924,16 @@ footer {
   }
   .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li a:hover {
     color: #0056B8;
+  }
+  .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.--subnav::after {
+    content: "";
+    display: inline-block;
+    background: url(../../../../assets/HTML/assets/images/chevron_black.webp) top center no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    margin-bottom: -5px;
   }
   .generaldivigation--lightTheme .navLeftButtons .desktopSearchButton {
     background-image: url(../../../../assets/HTML/assets/images/icons/searchB.png);
