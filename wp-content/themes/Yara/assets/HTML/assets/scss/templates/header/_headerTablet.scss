@@ -55,6 +55,7 @@
             margin: auto;
             p {
                 padding-bottom: calc(var(--spacer) * 3);
+                font-weight: 700;
                 strong {
                     &:last-of-type {
                         margin-bottom: calc(var(--spacer) * 3);
