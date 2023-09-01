@@ -13,15 +13,11 @@
     --H1fs: #{$H1Mfs};
     --H2fs: #{$H2Mfs};
 
-
     --H3fs: #{$H3Mfs};
     --H3lh: #{$H3Mlh};
 
-
     --H4fs: #{$H4Mfs};
     --H4lh: #{$H4Mlh};
-
-
 
     --H5fs: #{$H5Mfs};
     --H6fs: #{$H6Mfs};
@@ -31,6 +27,14 @@
 
     --HLtitlefs: #{$HLtitlefs}; 
     --HLtitlelh: #{$HLtitlelh}; 
+    --HLtitlelhls: #{$HLtitlelhls};
+
+
+    --HLsubTitlefs: #{$HLsubTitlefs};
+    --HLsubTitlelh: #{$HLsubTitlelh};
+    --HLsubTitlelhls: #{$HLsubTitlelhls};
+
+  
 
     --imgCaptionFs: 16px;
     --thumbW: 140px;
@@ -42,8 +46,7 @@
     --buttonPaddingLR: #{$buttonPaddingLRmobile};
     .button {
         &-dark {
-            box-shadow: $buttonDarkBoxShadow;
-            
+            box-shadow: $buttonDarkBoxShadow;            
         }
         &-light {
             box-shadow: $buttonLightBoxShadow;
@@ -74,7 +77,12 @@
         --H6fs: #{$H6Tfs};
 
         --HLtitlefs: #{$HLTtitlefs}; 
-        --HLtitlelh: #{$HLTtitlelh};       
+        --HLtitlelh: #{$HLTtitlelh};    
+        --HLtitlelhls: #{$HLTtitlelhls};   
+
+        --HLsubTitlefs: #{$HLTsubTitlefs};
+        --HLsubTitlelh: #{$HLTsubTitlelh};
+        --HLsubTitlelhls: #{$HLTsubTitlelhls};
 
 
         --thumbW: 140px;
@@ -83,8 +91,7 @@
 
         .button {
             &-dark {
-                box-shadow: unset;  
-                border: 2px red;              
+                box-shadow: unset;                           
             }
             &-light {
                 box-shadow: unset;
@@ -116,6 +123,14 @@
 
         --H4fs: #{$H4Dfs};        
         --H4lh: #{$H4Dlh};
+
+        --HLtitlefs: #{$HLDtitlefs}; 
+        --HLtitlelh: #{$HLDtitlelh}; 
+        --HLtitlelhls: #{$HLTtitlelhls};   
+
+        --HLsubTitlefs: #{$HLDsubTitlefs};
+        --HLsubTitlelh: #{$HLDsubTitlelh};
+        --HLsubTitlelhls: #{$HLDsubTitlelhls};
 
 
         --buttonFS: #{$buttonFSdesktop};

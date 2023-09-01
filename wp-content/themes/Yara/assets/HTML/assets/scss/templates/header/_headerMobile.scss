@@ -95,6 +95,10 @@
             display: block;
             max-width: 400px; //??
             padding-bottom: calc(var(--spacer) * 2);
+            font-size: var(--HLsubTitlefs);
+            line-height: var(--HLsubTitlelh);
+            letter-spacing: var(--HLsubTitlelhls);
+            font-weight: 700;
             strong {
                 display: inline-block;
                 background-color: $titleColor;
@@ -105,10 +109,10 @@
                 margin-bottom: var(--spacer);
                 padding-left: calc(var(--gap) / 2);
                 padding-right: calc(var(--gap) / 2);
-                letter-spacing: var(--masterTitlels);
+                letter-spacing: var(--HLtitlelhls);
                 white-space: nowrap;
                 &:last-of-type {
-                    margin-bottom: calc(var(--spacer) * 2);
+                    margin-bottom: calc(var(--spacer) * 2); 
                 }
             }
         }

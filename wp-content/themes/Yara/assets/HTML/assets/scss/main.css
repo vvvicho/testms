@@ -134,7 +134,11 @@ p:last-child {
   --pfs:16px;
   --plh:22px;
   --HLtitlefs: 24px;
-  --HLtitlelh: 46px;
+  --HLtitlelh: 35px;
+  --HLtitlelhls: -0.42px;
+  --HLsubTitlefs: 18px;
+  --HLsubTitlelh: 25px;
+  --HLsubTitlelhls: -0.27;
   --imgCaptionFs: 16px;
   --thumbW: 140px;
   --thumbH: 196px;
@@ -164,15 +168,18 @@ p:last-child {
     --H4lh: 25px;
     --H5fs: 18px;
     --H6fs: 14px;
-    --HLtitlefs: 28px;
-    --HLtitlelh: 51px;
+    --HLtitlefs: 36px;
+    --HLtitlelh: 50px;
+    --HLtitlelhls: -0.75px;
+    --HLsubTitlefs: 18px;
+    --HLsubTitlelh: 25px;
+    --HLsubTitlelhls: -0.27;
     --thumbW: 140px;
     --thumbH: 196px;
     --maxContentWidth: 1024px;
   }
   :root .button-dark {
     box-shadow: unset;
-    border: 2px red;
   }
   :root .button-light {
     box-shadow: unset;
@@ -191,6 +198,12 @@ p:last-child {
     --H3lh: 35px;
     --H4fs: 18px;
     --H4lh: 25px;
+    --HLtitlefs: 48px;
+    --HLtitlelh: 65px;
+    --HLtitlelhls: -0.75px;
+    --HLsubTitlefs: 20px;
+    --HLsubTitlelh: 28px;
+    --HLsubTitlelhls: -0.3;
     --buttonFS: 16px;
     --buttonPaddingTB: 20px;
     --buttonPaddingLR: 24px;
@@ -216,6 +229,7 @@ footer {
   letter-spacing: -0.015em;
   width: -moz-max-content;
   width: max-content;
+  cursor: pointer;
 }
 .button-dark {
   background-color: #0056B8;
@@ -558,6 +572,10 @@ footer {
   display: block;
   max-width: 400px;
   padding-bottom: calc(var(--spacer) * 2);
+  font-size: var(--HLsubTitlefs);
+  line-height: var(--HLsubTitlelh);
+  letter-spacing: var(--HLsubTitlelhls);
+  font-weight: 700;
 }
 .yaraHead .titleBlock p strong {
   display: inline-block;
@@ -569,7 +587,7 @@ footer {
   margin-bottom: var(--spacer);
   padding-left: calc(var(--gap) / 2);
   padding-right: calc(var(--gap) / 2);
-  letter-spacing: var(--masterTitlels);
+  letter-spacing: var(--HLtitlelhls);
   white-space: nowrap;
 }
 .yaraHead .titleBlock p strong:last-of-type {

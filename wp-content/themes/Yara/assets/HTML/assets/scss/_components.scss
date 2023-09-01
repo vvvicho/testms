@@ -6,6 +6,7 @@
     font-weight: 700;
     letter-spacing: -0.015em;
     width: max-content;
+    cursor: pointer;
     &-dark {
         background-color: $buttonDarkBGColor;
         color: $buttonDarkFONTColor;
