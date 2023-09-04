@@ -1,4 +1,7 @@
 <section id="contentList_001" class="bgColors--sectionLight">
+<link rel="preload" as="image" href="../HTML/assets/images/slider/fetizerOptimize_1.webp?z=11" />
+<link rel="preload" as="image" href="../HTML/assets/images/slider/fetizerOptimize_2.webp?z=11" />
+<link rel="preload" as="image" href="../HTML/assets/images/slider/fetizerOptimize_3.webp?z=11" />
             <div class="warper">
                 <div class="item_12">
                     <h3>How can Atfarm help optimise your fertiliser strategy?</h3>
