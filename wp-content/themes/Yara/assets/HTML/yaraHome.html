@@ -18,10 +18,12 @@
     <div class="generaldivigation" id="generaldivigation">
         <div class="logoHolder">
             <h1>
-                <a href="yaraHome.html"><img src="../HTML/assets/images/YaraLogo.webp?v=2" width="48" height="48" alt="Yara Digital Products"></a>
+                <a href="yaraHome.html"><img src="../HTML/assets/images/YaraLogo.webp?v=2" width="48" height="48"
+                        alt="Yara Digital Products"></a>
             </h1>
             <h2>
-                <a href="yaraHome.html"><img src="../HTML/assets/images/pixel.png?v=4" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
+                <a href="yaraHome.html"><img src="../HTML/assets/images/pixel.png?v=4" id="atfarmLogo" width="162"
+                        height="48" alt="Atfarm"></a>
             </h2>
         </div>
         <nav>
@@ -55,7 +57,7 @@
             </ul>
         </nav>
         <div class="navLeftButtons">
-            <div id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></div>            
+            <div id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></div>
             <div class="button button-light">Login</div>
             <div class="button button-dark">Sign up</div>
         </div>
@@ -79,12 +81,27 @@
 
 
         <section id="contentList_001" class="bgColors--sectionLight">
+            <style>
+                .fade-out {
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+
+                .fade-in {
+                    opacity: 1;
+                    transition: 0.5s;
+                }
+            </style>
+            <link rel="preload" as="image" href="../HTML/assets/images/slider/fetizerOptimize_1.webp?z=11" />
+            <link rel="preload" as="image" href="../HTML/assets/images/slider/fetizerOptimize_2.webp?z=11" />
+            <link rel="preload" as="image" href="../HTML/assets/images/slider/fetizerOptimize_3.webp?z=11" />
             <div class="warper">
                 <div class="item_12">
                     <h3>How can Atfarm help optimise your fertiliser strategy?</h3>
                 </div>
                 <figure class="item_7">
-                    <img src="../HTML/assets/images/slider/fetizerOptimize.webp?z=11" width="677" height="508" alt="my image">
+                    <img src="../HTML/assets/images/slider/fetizerOptimize.webp?z=11" width="677" height="508"
+                        alt="my image">
                 </figure>
                 <div class="articleInfo item_5">
                     <div class="articleContent">
@@ -110,26 +127,54 @@
                 let sectionDataSubTitle = sectionData.querySelector("h4");
                 let sectionDataImage = sectionData.querySelector("figure img");
                 let sectionDataContent = sectionData.querySelector("p");
+                let sectionButton = sectionData.querySelector(".button");
 
 
                 function slideLeftRight(direction) {
                     let maxObjects = dataArticleContainer.length;
                     console.log(maxObjects);
                     currentitem += direction;
-                    if (currentitem < 0 ){
+                    if (currentitem < 0) {
 
-                        currentitem = maxObjects -1;
+                        currentitem = maxObjects - 1;
 
-                    }else if (currentitem >= maxObjects ) {
+                    } else if (currentitem >= maxObjects) {
                         currentitem = 0;
 
                     }
 
                     console.log(currentitem);
 
-                    sectionDataSubTitle.innerHTML = dataArticleContainer[currentitem].subtitle;
-                    sectionDataContent.innerHTML = dataArticleContainer[currentitem].content;
-                    sectionDataImage.setAttribute("src",dataArticleContainer[currentitem].image);
+
+                    sectionDataSubTitle.classList.add("fade-out");
+                    sectionDataContent.classList.add("fade-out");
+                    sectionDataImage.classList.add("fade-out");
+                    sectionButton.classList.add("fade-out");
+                    sectionDataSubTitle.classList.remove("fade-in");
+                    sectionDataContent.classList.remove("fade-in");
+                    sectionDataImage.classList.remove("fade-in");
+                    sectionButton.classList.remove("fade-in");
+
+
+
+
+                    setTimeout(() => {
+                        sectionDataSubTitle.innerHTML = dataArticleContainer[currentitem].subtitle;
+                        sectionDataContent.innerHTML = dataArticleContainer[currentitem].content;
+                        sectionDataImage.setAttribute("src", dataArticleContainer[currentitem].image);
+                        sectionDataSubTitle.classList.remove("fade-out");
+                        sectionDataContent.classList.remove("fade-out");
+                        sectionDataImage.classList.remove("fade-out");
+                        sectionButton.classList.remove("fade-out");
+                        sectionDataSubTitle.classList.add("fade-in");
+                        sectionDataContent.classList.add("fade-in");
+                        sectionDataImage.classList.add("fade-in");
+                        sectionButton.classList.add("fade-in");
+                    }, "500");
+
+
+
+
 
 
                 }
@@ -137,34 +182,34 @@
                 let slideLeftButton = document.getElementById("contentList_001_left");
                 let slideRightButton = document.getElementById("contentList_001_right");
 
-                slideLeftButton.onclick = function() {
+                slideLeftButton.onclick = function () {
                     slideLeftRight(-1);
                 };
 
-                slideRightButton.onclick = function() {
+                slideRightButton.onclick = function () {
                     slideLeftRight(1);
                 };
 
 
-                dataArticleContainer[0] = 
+                dataArticleContainer[0] =
                 {
                     image: "../HTML/assets/images/slider/fetizerOptimize.webp?z=11",
                     subtitle: "Optimise nitrogen use efficiency ",
                     content: "Improve crop growth and evenness by utilising the in-field measurements for variable nitrogen applications."
                 };
-                dataArticleContainer[1] = 
+                dataArticleContainer[1] =
                 {
                     image: "../HTML/assets/images/slider/fetizerOptimize_1.webp?z=11",
                     subtitle: "Measure N-demand ",
                     content: "Analyse your crop throughout the season with accurate nitrogen uptake values captured by N-Photo analysis and the N-Tester BT device."
                 };
-                dataArticleContainer[2] = 
+                dataArticleContainer[2] =
                 {
                     image: "../HTML/assets/images/slider/fetizerOptimize_2.webp?z=11",
                     subtitle: "Create a holistic Nutrition Plan ",
                     content: "Start every season with Nutrition Planning that gives you more than just calculations. Get the nutrition insights you need to reach your yield goals. "
                 };
-                dataArticleContainer[3] = 
+                dataArticleContainer[3] =
                 {
                     image: "../HTML/assets/images/slider/fetizerOptimize_3.webp?z=11",
                     subtitle: "Track crop growth",
@@ -195,7 +240,8 @@
                         </figure>
                         <div class="articleDataHolder">
                             <h4>Get the mobile app</h4>
-                            <p>Atfarm is also available on mobile devices. Turn your smartphone into a precision farming tool. </p>
+                            <p>Atfarm is also available on mobile devices. Turn your smartphone into a precision farming
+                                tool. </p>
                             <div class="button button-dark">
                                 Sign up to the desktop app here
                             </div>
@@ -230,20 +276,26 @@
                             <p class="flafIcons flafIcons--uk">Jorin Grimsdale, Farmer, UK</p>
                         </li>
                         <li>
-                            <p>“Nitrogen Use Efficiency is one of the most significant challenges mankind faces if we are to reduce carbon and nutrient emissions, yet feed a growing global population.</p>
-                            <p>The Yara N-Tester is a valuable and practical tool for farmers to use, backed by decades of research results, to improve efficiency.”</p>
-                            
-                            <p class="flafIcons flafIcons--uk">Dr Alastair Leake Director of Policy at the Game & Wildlife Conservation Trust, UK</p>
+                            <p>“Nitrogen Use Efficiency is one of the most significant challenges mankind faces if we
+                                are to reduce carbon and nutrient emissions, yet feed a growing global population.</p>
+                            <p>The Yara N-Tester is a valuable and practical tool for farmers to use, backed by decades
+                                of research results, to improve efficiency.”</p>
+
+                            <p class="flafIcons flafIcons--uk">Dr Alastair Leake Director of Policy at the Game &
+                                Wildlife Conservation Trust, UK</p>
                         </li>
                         <li>
-                            <p>“It's much better than the solutions that we saw in the past, and we also can see the field from above and identify problematic areas or that have some deficiencies.”</p>                           
-                            
+                            <p>“It's much better than the solutions that we saw in the past, and we also can see the
+                                field from above and identify problematic areas or that have some deficiencies.”</p>
+
                             <p class="flafIcons flafIcons--it">Fabiano Paganella Agronomist, Italy</p>
                         </li>
                         <li>
-                            
-                            
-                            <p>“If you want to take the first step towards precision agriculture, feel free to test to create simulations on Atfarm. This will allow you to understand the potential of this tool.”</p>
+
+
+                            <p>“If you want to take the first step towards precision agriculture, feel free to test to
+                                create simulations on Atfarm. This will allow you to understand the potential of this
+                                tool.”</p>
                             <p class="flafIcons flafIcons--fr">Remy Dumery, Farmer, France</p>
                         </li>
                         <li>
@@ -255,20 +307,26 @@
                             <p class="flafIcons flafIcons--uk">Jorin Grimsdale, Farmer, UK</p>
                         </li>
                         <li>
-                            <p>“Nitrogen Use Efficiency is one of the most significant challenges mankind faces if we are to reduce carbon and nutrient emissions, yet feed a growing global population.</p>
-                            <p>The Yara N-Tester is a valuable and practical tool for farmers to use, backed by decades of research results, to improve efficiency.”</p>
-                            
-                            <p class="flafIcons flafIcons--uk">Dr Alastair Leake Director of Policy at the Game & Wildlife Conservation Trust, UK</p>
+                            <p>“Nitrogen Use Efficiency is one of the most significant challenges mankind faces if we
+                                are to reduce carbon and nutrient emissions, yet feed a growing global population.</p>
+                            <p>The Yara N-Tester is a valuable and practical tool for farmers to use, backed by decades
+                                of research results, to improve efficiency.”</p>
+
+                            <p class="flafIcons flafIcons--uk">Dr Alastair Leake Director of Policy at the Game &
+                                Wildlife Conservation Trust, UK</p>
                         </li>
                         <li>
-                            <p>“It's much better than the solutions that we saw in the past, and we also can see the field from above and identify problematic areas or that have some deficiencies.”</p>                           
-                            
+                            <p>“It's much better than the solutions that we saw in the past, and we also can see the
+                                field from above and identify problematic areas or that have some deficiencies.”</p>
+
                             <p class="flafIcons flafIcons--it">Fabiano Paganella Agronomist, Italy</p>
                         </li>
                         <li>
-                            
-                            
-                            <p>“If you want to take the first step towards precision agriculture, feel free to test to create simulations on Atfarm. This will allow you to understand the potential of this tool.”</p>
+
+
+                            <p>“If you want to take the first step towards precision agriculture, feel free to test to
+                                create simulations on Atfarm. This will allow you to understand the potential of this
+                                tool.”</p>
                             <p class="flafIcons flafIcons--fr">Remy Dumery, Farmer, France</p>
                         </li>
 
@@ -276,7 +334,7 @@
 
 
 
-                       
+
 
                     </ul>
                 </div>
