@@ -9,11 +9,11 @@
                 <div class="articleInfo item_5">
                     <div class="articleContent">  
                         <h4>Adapt to in-field conditions </h4>                      
-                        <p>Make the most of every kilo of N applied by discovering the heterogeneity of your fields. Easily determine the exact place and N-rate to optimise growth potential.</p>
+                        <p>Make the most of every kg of nitrogen you apply by discovering the variability of your field’s soil.</p>
                         <ul>
-                            <li>Maximise yield for every kilo of N you apply by ensuring it’s placed where it’s needed.  
+                            <li>Optimise your yield potential by perfecting the right place and n-rate for your fertiliser strategy.
                             </li>
-                            <li>Easily adapt to in-field conditions and work with the natural variability of your soil to achieve nutrient balance.
+                            <li>Easily adapt to in-field conditions and achieve a better nutrient balance.
                             </li>
                         </ul>
                         <div class="button button-dark">
