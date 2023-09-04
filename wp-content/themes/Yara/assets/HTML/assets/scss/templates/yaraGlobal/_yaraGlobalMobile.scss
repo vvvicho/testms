@@ -19,7 +19,7 @@ main {
                 margin-bottom: var(--sectionSpacer);
                 font-weight: 900;
             }
-            p {
+            p, ul li {
                 color: $mainTextColor;
             }
 
