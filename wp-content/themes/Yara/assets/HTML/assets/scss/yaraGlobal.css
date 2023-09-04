@@ -91,6 +91,11 @@ main section .warper .articleInfo .articleContent P:last-of-type,
 main .section .warper .articleInfo .articleContent P:last-of-type {
   padding-bottom: calc(var(--spacer) * 2);
 }
+main section .warper .articleInfo .articleContent P + ul,
+main .section .warper .articleInfo .articleContent P + ul {
+  margin-top: calc(var(--spacer) * -2);
+  margin-left: calc(var(--spacer) * 1);
+}
 main section .warper .slider,
 main .section .warper .slider {
   overflow: hidden;

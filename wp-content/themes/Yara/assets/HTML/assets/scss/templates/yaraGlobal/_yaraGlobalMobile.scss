@@ -47,6 +47,8 @@ main {
                                 text-align: center;
                                 font-size: 14px;
                                 margin-bottom: calc(var(--spacer) * 3);
+
+                                
                             }
                             figure {
                                 text-align: center;
@@ -77,6 +79,11 @@ main {
                         font-size: 14px;
                         &:last-of-type {
                             padding-bottom: calc(var(--spacer) * 2);
+                        }
+                        +ul{
+                            margin-top: calc(var(--spacer) * -2);
+                            margin-left: calc(var(--spacer) * 1);
+                            
                         }
                     }
                 }
