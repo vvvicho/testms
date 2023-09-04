@@ -138,7 +138,7 @@ p:last-child {
   --HLtitlelhls: -0.42px;
   --HLsubTitlefs: 18px;
   --HLsubTitlelh: 25px;
-  --HLsubTitlelhls: -0.27;
+  --HLsubTitlelhls: 0.4px;
   --imgCaptionFs: 16px;
   --thumbW: 140px;
   --thumbH: 196px;
@@ -173,7 +173,7 @@ p:last-child {
     --HLtitlelhls: -0.75px;
     --HLsubTitlefs: 18px;
     --HLsubTitlelh: 25px;
-    --HLsubTitlelhls: -0.27;
+    --HLsubTitlelhls: 0.4px;
     --thumbW: 140px;
     --thumbH: 196px;
     --maxContentWidth: 1024px;
@@ -203,7 +203,7 @@ p:last-child {
     --HLtitlelhls: -0.75px;
     --HLsubTitlefs: 18px;
     --HLsubTitlelh: 28px;
-    --HLsubTitlelhls: -0.3;
+    --HLsubTitlelhls: 0.5px;
     --buttonFS: 16px;
     --buttonPaddingTB: 20px;
     --buttonPaddingLR: 24px;
