@@ -228,9 +228,13 @@ main .section .warper--gallery--bordered .galleryItem h4 {
   padding-bottom: 0;
   margin-bottom: 0;
 }
-main section .warper--gallery--bordered .galleryItem--bgColor,
-main .section .warper--gallery--bordered .galleryItem--bgColor {
+main section .warper--gallery--bordered .galleryItem--bgColorYello,
+main .section .warper--gallery--bordered .galleryItem--bgColorYello {
   background-color: #f1f2de !important;
+}
+main section .warper--gallery--bordered .galleryItem--bgColorWhite,
+main .section .warper--gallery--bordered .galleryItem--bgColorWhite {
+  background-color: #ffffff !important;
 }
 main section .warper--boxGallery .galleryItem,
 main .section .warper--boxGallery .galleryItem {

@@ -217,8 +217,11 @@ main {
                             padding-bottom: 0;
                             margin-bottom: 0;
                         }
-                        &--bgColor {
+                        &--bgColorYello {
                             background-color: #f1f2de !important;
+                        }
+                        &--bgColorWhite {
+                            background-color: #ffffff !important;
                         }
                     }
                 }
