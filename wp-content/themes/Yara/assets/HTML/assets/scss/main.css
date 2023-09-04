@@ -201,7 +201,7 @@ p:last-child {
     --HLtitlefs: 48px;
     --HLtitlelh: 65px;
     --HLtitlelhls: -0.75px;
-    --HLsubTitlefs: 20px;
+    --HLsubTitlefs: 18px;
     --HLsubTitlelh: 28px;
     --HLsubTitlelhls: -0.3;
     --buttonFS: 16px;
@@ -630,7 +630,7 @@ footer {
   }
   .yaraHead .titleBlock p {
     padding-bottom: calc(var(--spacer) * 3);
-    font-weight: 700;
+    font-weight: 500;
   }
   .yaraHead .titleBlock p strong:last-of-type {
     margin-bottom: calc(var(--spacer) * 3);
