@@ -446,7 +446,7 @@ main .section.bgColors--sectionLight .warper--gallery .galleryItem {
   }
   main section .warper .slider ul li,
   main .section .warper .slider ul li {
-    width: calc(var(--maxContentWidth) / 5.4);
+    width: calc(var(--maxContentWidth) / 3.8);
   }
   main section .warper .slider ul li p,
   main .section .warper .slider ul li p {
