@@ -386,13 +386,14 @@
                     console.log(direction);
                     let containerWidth = contentSlider.offsetWidth;
                     let containerItemsHolderWidth = contentSliderItemsHolder.offsetWidth;
+                    let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
 
                     console.log(containerWidth + " , " + containerItemsHolderWidth);
 
                     var rect = contentSliderItemsHolder.getBoundingClientRect();
-                    console.log(contentSlider.scrollLeft, rect.y, rect.bottom, rect.left);
+                    console.log(contentSlider.scrollLeft, rect.y, rect.bottom, itemWidth);
 
-                    let step = 250;
+                    let step = itemWidth;
 
                     let newPosition = (contentSlider.scrollLeft + (step * direction));
 

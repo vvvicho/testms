@@ -1,7 +1,14 @@
 <section id="contentSlider" class="bgColors--sectionLight">
+    <style>
+        #sliderContent_0001 {
+            scroll-behavior: smooth;
+            transition: 0.25s;
+            overflow: hidden;
+        }
+    </style>
     <div class="warper">
         <h3 class="item_12">21,000+ Farmers and agronomists already use Atfarm</h3>
-        <div class="slider item_12">
+        <div id="sliderContent_0001" class="slider item_12">
             <ul>
                 <li>
                     <p>“Atfarm is very simple to use, taking just 10 mins to load all my field boundaries over
@@ -63,8 +70,8 @@
             </ul>
         </div>
         <div class="item_12 articleNavigation">
-            <div class="icons icons-navLeft"></div>
-            <div class="icons icons-navRight"></div>
+            <div id="contentSlider_001_left" class="icons icons-navLeft"></div>
+            <div id="contentSlider_001_right" class="icons icons-navRight"></div>
         </div>
         <div class="item_12 buttonHolder">
             <div class="button button-dark">
@@ -72,4 +79,55 @@
             </div>
         </div>
     </div>
+    <script>
+        let contentSlider = document.getElementById("sliderContent_0001");
+        let contentSliderItemsHolder = contentSlider.querySelector("ul");
+
+        let contentSlideLeftButton = document.getElementById("contentSlider_001_left");
+        let contentSlideRightButton = document.getElementById("contentSlider_001_right");
+
+
+
+        function getOffset(el) {
+            var rect = el.getBoundingClientRect();
+            return {
+                left: rect.left + window.pageXOffset,
+                top: rect.top + window.pageYOffset
+            };
+        }
+
+
+
+        function contentSlideLeftRight(direction) {
+            console.log(direction);
+            let containerWidth = contentSlider.offsetWidth;
+            let containerItemsHolderWidth = contentSliderItemsHolder.offsetWidth;
+            let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
+
+            console.log(containerWidth + " , " + containerItemsHolderWidth);
+
+            var rect = contentSliderItemsHolder.getBoundingClientRect();
+            console.log(contentSlider.scrollLeft, rect.y, rect.bottom, itemWidth);
+
+            let step = itemWidth;
+
+            let newPosition = (contentSlider.scrollLeft + (step * direction));
+
+            contentSlider.scrollLeft = newPosition;
+
+
+        }
+
+
+
+
+
+        contentSlideLeftButton.onclick = function() {
+            contentSlideLeftRight(-1);
+        };
+
+        contentSlideRightButton.onclick = function() {
+            contentSlideLeftRight(1);
+        };
+    </script>
 </section>
