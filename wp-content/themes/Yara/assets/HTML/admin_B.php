@@ -251,6 +251,7 @@
                                         <li class="used" data-button="h3controller">&lt;h3&gt;</li>
                                         <li class="used" data-button="h4controller">&lt;h4&gt;</li>
                                         <li class="mandatory">+ &lt;P&gt;</li>
+                                        <li class="mandatory">+ &lt;SP&gt;</li>
                                         <li>+ &lt;LI&gt;</li>
                                         <li class="used">&lt;BUTTON&gt;</li>
                                         <li>&lt;LTR&gt;</li>
@@ -274,7 +275,7 @@
                                 <h3 data-type="edit-headline">H3 Head Line
                                 </h3>
                             </div>
-                            <figure data-type="edit-imageHolder" class="item_7">
+                            <figure data-type="edit-imageHolder" class="item_7 mandatory">
                                 <img src="../HTML/assets/imagesAdmin/placeHolders/img_677_508.png" width="677"
                                     height="508" alt="my image">
                             </figure>
@@ -312,7 +313,9 @@
                                             <li>List Item
                                             </li>
                                         </ul>
-                                        <p data-type="edit-paragraf" class="flafIcons flafIcons--uk">A special paragraph
+                                        <p data-type="edit-paragraf" data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
+                                            <strong>paragraf Title</strong>
+                                        A special paragraph
                                             with an icon</p>
                                         <buttonPH></buttonPH>
                                         <div class="button button-dark">

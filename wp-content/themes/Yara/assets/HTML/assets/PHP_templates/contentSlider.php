@@ -103,19 +103,12 @@
             let containerWidth = contentSlider.offsetWidth;
             let containerItemsHolderWidth = contentSliderItemsHolder.offsetWidth;
             let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
-
             console.log(containerWidth + " , " + containerItemsHolderWidth);
-
             var rect = contentSliderItemsHolder.getBoundingClientRect();
             console.log(contentSlider.scrollLeft, rect.y, rect.bottom, itemWidth);
-
             let step = itemWidth;
-
             let newPosition = (contentSlider.scrollLeft + (step * direction));
-
             contentSlider.scrollLeft = newPosition;
-
-
         }
 
 

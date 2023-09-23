@@ -14,12 +14,9 @@ function returnTextArea(data) {
 
 
 function makeVissible(headLine, controllButton) {
-
     controllButton.onclick = null;
     controllButton.classList.add("used");
     headLine.removeAttribute('data-status');
-
-
 }
 
 
@@ -48,20 +45,35 @@ function editHeadline(headLine, type, contentBlock) {
 // 8888888888888888888888888
 
 
-function editImage(headLine, type) {
+function editImage(headLine, type, contentBlock) {
 
-    if(type === 0){
-        
+    if (type === 0) {
+
         console.log(headLine);
-
         objectToUpdateSRC = headLine.querySelector("editcontent img");
         console.log(objectToUpdateSRC);
-
         showGalleryImages();
+    }else if(type === 1) {  
+
+    } else if(type === 2) {
+        let controllButton = contentBlock.querySelector('.img_1');
+
+        console.log("Hide image");
+        console.log(controllButton);
+
+        
+        headLine.setAttribute('data-status', 'noContent');
+        controllButton.classList.remove("used");
+        controllButton.onclick = function () {
+            makeVissible(headLine, this);
+        }
+
+        console.log("Hide image");
+
     }
 
 
-   
+
 
 
     console.log(headLine);
@@ -75,17 +87,36 @@ function editImage(headLine, type) {
 
 
 function editParagraf(headLine, type) {
+    console.log("EDIT PARAGRAF");
     let currentContentisEdited = headLine.querySelector('editcontent textarea');
     if (type === 0) {
         if (currentContentisEdited) {
             return;
         } else {
-            let currentContent = headLine.querySelector('editcontent').innerHTML;
-            headLine.querySelector('editcontent').innerHTML = returnTextArea(currentContent);
+            let additionalHeadLine = headLine.querySelector('editcontent strong');
+            if (additionalHeadLine) {
+                console.log("sub title exist");
+                let currentContentHeadLine = headLine.querySelector('editcontent strong').innerHTML;
+                let currentContent = headLine.querySelector('editcontent').innerHTML;
+                currentContent = currentContent.replace(/<.*>/, '');
+                headLine.querySelector('editcontent').innerHTML = returnINPUTtype(currentContentHeadLine, "text") + returnTextArea(currentContent);
+            } else {
+                let currentContent = headLine.querySelector('editcontent').innerHTML;
+                headLine.querySelector('editcontent').innerHTML = returnTextArea(currentContent);
+            }
         }
     } else if (type === 1) {
         if (currentContentisEdited) {
-            headLine.querySelector('editcontent').innerHTML = currentContentisEdited.value;
+            let additionalHeadLine = headLine.querySelector('editcontent input');
+            if (additionalHeadLine) {
+                console.log("sub title exist for save");
+                headLine.querySelector('editcontent').innerHTML = "<strong>" + headLine.querySelector('editcontent input').value + "</strong>" + currentContentisEdited.value;
+
+            } else {
+                headLine.querySelector('editcontent').innerHTML = currentContentisEdited.value;
+            }
+
+
         }
     } else if (type === 2) {
         let allParagrafe = headLine.parentElement.querySelectorAll("P");
@@ -115,6 +146,7 @@ let paragrafEditPannelHTML =
 <ul>
     <li class="icon icon--edit" data-type="edit-paragraf-edit"></li>    
     <li class="icon icon--save" data-type="edit-paragraf-save"></li>
+    <li class="icon icon--sp" data-type="edit-paragraf-sp"></li>
     <li data-type="edit-paragraf-insert"></li>
     <li class="icon icon--delete" data-type="edit-paragraf-delete"></li>
 </ul>
@@ -132,6 +164,21 @@ let imageEditPannelHTML =
     <li class="icon icon--delete" data-type="edit-image-delete"></li>
 </ul>
 </editpannel>
+`;
+
+let flagsList =
+    `
+<ul class=flagListHolder>
+    <li data-icon="uk" class="flafIcons flafIcons--uk"></li>
+    <li data-icon="it" class="flafIcons flafIcons--it"></li>
+    <li data-icon="fr" class="flafIcons flafIcons--fr"></li>
+    <li data-icon="uk" class="flafIcons flafIcons--uk"></li>
+    <li data-icon="uk" class="flafIcons flafIcons--uk"></li>
+    <li data-icon="uk" class="flafIcons flafIcons--uk"></li>
+</ul>
+
+
+
 `;
 
 
@@ -185,6 +232,32 @@ function duplicateItem(obj) {
 }
 
 
+function spParagrafIconSet(paragraf, iconHolder) {
+
+
+    console.log("HERE");
+    console.log(paragraf);
+    console.log(iconHolder);
+
+
+    let currentIcon = paragraf.getAttribute('data-icon');
+    let newIcon = iconHolder.getAttribute('data-icon');
+
+    paragraf.classList.remove("flafIcons--" + currentIcon);
+    paragraf.classList.add("flafIcons--" + newIcon);
+
+    paragraf.setAttribute('data-icon', newIcon);
+
+
+
+
+
+}
+
+
+
+
+
 allEditableItems.forEach(async (item) => {
     //sum = await sumFunction(sum, rating);
 
@@ -202,7 +275,40 @@ allEditableItems.forEach(async (item) => {
         }
     } else if (item.getAttribute("data-type") == "edit-paragraf") {
 
+
+
         item.innerHTML = paragrafEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent><addButton onClick='duplicateItem(this)'> + Insert </addButton>";
+
+        console.log("tetstet");
+        console.log(item);
+
+        if (item.classList.contains("spParagraf")) {
+            console.log("sp P");
+            item.querySelector('[data-type="edit-paragraf-sp"]').style.display = "block";
+
+            item.querySelector('[data-type="edit-paragraf-sp"]').innerHTML = flagsList;
+
+
+            let allFlagsList = item.querySelector('[data-type="edit-paragraf-sp"]').querySelectorAll('ul li');
+
+            allFlagsList.forEach(async (listItem) => {
+                console.log(listItem);
+
+                listItem.onclick = () => {
+                    spParagrafIconSet(item, listItem);
+
+                }
+
+
+            });
+
+
+
+
+
+
+
+        }
 
 
         item.querySelector('[data-type="edit-paragraf-edit"]').onclick = function () {
@@ -220,7 +326,14 @@ allEditableItems.forEach(async (item) => {
 
         console.log("an image");
 
+
+
         item.innerHTML = imageEditPannelHTML + "<editcontent>" + item.innerHTML + "</editcontent>";
+
+        if (item.classList.contains("mandatory")){
+            item.querySelector('[data-type="edit-image-delete"]').style.display = "none";
+
+        }
 
 
         item.querySelector('[data-type="edit-image-edit"]').onclick = function () {
@@ -230,7 +343,7 @@ allEditableItems.forEach(async (item) => {
             editImage(item, 1);
         }
         item.querySelector('[data-type="edit-image-delete"]').onclick = function () {
-            editImage(item, 2);
+            editImage(item, 2, contentBlock001);
         }
 
 
@@ -252,9 +365,9 @@ let allImagesContainers = gallerHolder.querySelectorAll(".mainGalleryHolder__scr
 let gallerySaveResult = document.getElementById("gallerySaveResult");
 let objectToUpdateSRC;
 
-function updateSellectedImage(){
+function updateSellectedImage() {
 
-    objectToUpdateSRC.setAttribute("src",sellectedImage);
+    objectToUpdateSRC.setAttribute("src", sellectedImage);
     hideGalleryImages();
 
 
@@ -263,36 +376,33 @@ function updateSellectedImage(){
 
 
 
-gallerySaveResult.onclick = function(){
+gallerySaveResult.onclick = function () {
     updateSellectedImage();
 }
 
-console.log(allImagesContainers);
-
-
-function clearAllImagesStatus(){
+function clearAllImagesStatus() {
     allImagesContainers.forEach(async (item) => {
         item.classList.remove("--sellected");
     });
 }
 
 
-function showGalleryImages(){
+function showGalleryImages() {
     sellectedImage = "";
-    clearAllImagesStatus();  
-    console.log("SHOW GALLERY")  ;
+    clearAllImagesStatus();
+    console.log("SHOW GALLERY");
     gallerHolder.classList.remove("mainGalleryHolder--hidden");
 
 
 }
 
-function hideGalleryImages(){
+function hideGalleryImages() {
     gallerHolder.classList.add("mainGalleryHolder--hidden");
 }
 
 
-function sellectAnImage(obj){
-    
+function sellectAnImage(obj) {
+
     sellectedImage = obj.querySelector("img").getAttribute("src");
     clearAllImagesStatus();
     obj.classList.add("--sellected");
@@ -437,7 +547,7 @@ templates[2] =
                     <li>List Item
                     </li>
                 </ul>
-                <p data-type="edit-paragraf" class="flafIcons flafIcons--uk">A special paragraph
+                <p data-type="edit-paragraf" data-icon="uk" class="flafIcons flafIcons--uk">A special paragraph
                     with an icon</p>
                 <div class="button button-dark">
                     <div data-type="edit-button" class="">

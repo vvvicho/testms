@@ -18,15 +18,34 @@
  * @package WordPress
  */
 
-// ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'testms' );
 
-/** Database username */
-define( 'DB_USER', 'testms' );
 
-/** Database password */
-define( 'DB_PASSWORD', 'AMYU2mWWEbv400H' );
+$multiSiteDomain = 'yaraat.farm';
+
+if (file_exists(dirname(__FILE__) . '/wp-config-local.php')) {
+	// IMPORTANT: ensure your local config does not include wp-settings.php
+	$multiSiteDomain = 'evonsm.test';
+	require_once dirname(__FILE__) . '/wp-config-local.php';
+} else {
+
+	// ** Database settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define( 'DB_NAME', 'testms' );
+
+	/** Database username */
+	define( 'DB_USER', 'testms' );
+
+	/** Database password */
+	define( 'DB_PASSWORD', 'AMYU2mWWEbv400H' );
+
+
+}
+
+
+
+
+
+
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -86,7 +105,7 @@ define( 'WP_DEBUG', false );
 define( 'WP_ALLOW_MULTISITE', true );
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', true );
-define( 'DOMAIN_CURRENT_SITE', 'yaraat.farm' );
+define( 'DOMAIN_CURRENT_SITE', $multiSiteDomain  );
 define( 'PATH_CURRENT_SITE', '/' );
 define( 'SITE_ID_CURRENT_SITE', 1 );
 define( 'BLOG_ID_CURRENT_SITE', 1 );

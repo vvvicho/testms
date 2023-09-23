@@ -19,6 +19,29 @@
 .adminHolder .icon--delete {
   background-image: url(../imagesAdmin/icons/delete.png);
 }
+.adminHolder .icon--sp {
+  background-image: url(../images/icons/flags/world.png);
+  position: relative;
+  display: none;
+}
+.adminHolder .icon--sp .flagListHolder {
+  position: absolute;
+  width: 150px;
+  height: auto !important;
+  background-color: white;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 15px !important;
+  flex-wrap: wrap !important;
+  display: none;
+}
+.adminHolder .icon--sp .flagListHolder li {
+  display: block !important;
+  width: 50px !important;
+}
+.adminHolder .icon--sp:hover .flagListHolder {
+  display: flex !important;
+}
 .adminHolder--leftNav {
   position: fixed;
   top: 0;
@@ -327,7 +350,7 @@ blockconstructor addbutton {
   color: #ccc;
 }
 blockconstructor [data-status=noContent] {
-  display: none;
+  display: none !important;
 }
 blockconstructor blockFooter {
   display: block;

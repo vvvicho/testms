@@ -32,7 +32,33 @@ $spacer: 20px;
         }
         &--delete {
             background-image: url(../imagesAdmin/icons/delete.png);
-        }
+        } 
+        &--sp {
+            background-image: url(../images/icons/flags/world.png);
+            position: relative;
+            display: none;
+            .flagListHolder{
+                position: absolute;
+                width: 150px;
+                height: auto !important;
+                background-color: white;
+                flex-direction: row;
+                justify-content: space-around;
+                padding-left: 15px !important;                
+                flex-wrap: wrap !important;
+                display: none;
+                li{
+                    display: block !important;
+                    width: 50px !important;
+                   
+                }
+            }
+            &:hover{
+                .flagListHolder{
+                    display: flex !important;
+                }
+            }
+        }       
     }
 
     position: relative;
@@ -387,7 +413,7 @@ blockconstructor {
     }
 
     [data-status="noContent"]{
-        display: none;
+        display: none !important;
 
     }
 
