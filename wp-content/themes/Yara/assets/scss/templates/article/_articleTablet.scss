@@ -1,0 +1,36 @@
+.article {
+    @media screen and (min-width: $mobile) {
+        main {
+            display: grid;
+            gap: 0px calc(var(--gap) / 2);
+            grid-template-columns: #{repeats("1fr", 12)};
+            grid-template-rows: auto;
+
+            grid-template-areas:
+                "#{repeats("#{$_2article}", 12)}"
+                "#{repeats("#{$_5related}", 12)}";                
+
+            .#{$_2article} {
+                grid-area: #{$_2article};
+                .articleHolder {
+                    display: grid;
+                    gap: 0px calc(var(--gap) / 2);
+                    grid-template-columns: #{repeats("1fr", 2)};
+                    grid-template-rows: auto;
+                    article {
+                        &:first-child {
+                            grid-row-end: span 2;
+                            grid-column-end: span 2;
+                        }
+                        border-bottom: unset;
+                        margin-bottom: unset;
+                        padding-bottom: unset;
+                    }
+                }
+            }
+            .#{$_5related} {
+                grid-area: #{$_5related};
+            }
+        }
+    }
+}

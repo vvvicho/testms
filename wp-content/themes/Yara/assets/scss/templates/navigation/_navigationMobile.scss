@@ -1,0 +1,177 @@
+.generaldivigation {
+    position: fixed;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0);
+    width: calc(100% - var(--spacer) * 6);
+    padding-top: calc(var(--spacer) * 2);
+    padding-bottom: calc(var(--spacer) * 2);
+    padding-left: calc(var(--spacer) * 3);
+    padding-right: calc(var(--spacer) * 3);
+
+    .logoHolder {
+        max-height: 48px;
+        h1,
+        h2 {
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            img {
+                width: 81px;
+                height: 24px;
+                display: block;
+                background: url(assets/images/atfarmLogoBW.png) top center no-repeat;
+                background-size: 81px auto;
+            }
+        }
+        h1 {
+            margin-right: 12px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: rgba(245, 245, 247, 1);
+        backdrop-filter: blur(20px);
+
+        h2 {
+            img {
+                background-image: url(assets/images/atfarmLogoBW.png);
+                background-position: bottom center;
+            }
+        }
+
+        nav {
+            li {
+                a {
+                    color: $darkLinkColor;
+                }
+            }
+            li.icons-searchW {
+                background-image: url(assets/images/icons/searchB.png);
+            }
+            li.icons-openW {
+                background-image: url(assets/images/icons/openB.png);
+                &[data-status="1"] {
+                    background-image: url(assets/images/icons/closeB.png);
+                }
+            }
+        }
+        & + .yaraHead {
+            .titleBlock {
+                filter: blur(5px);
+            }
+            & + main {
+                filter: blur(5px);
+                & + footer {
+                    filter: blur(5px);
+                }
+            }
+        }
+    }
+
+    nav {
+        ul.desktopNav {
+            &[data-status="0"] {
+                padding-left: calc(var(--spacer) * 3);
+                padding-right: calc(var(--spacer) * 3);
+                display: block;
+                background-color: rgba(245, 245, 247, 1);
+                opacity: 0;
+                position: absolute;
+                top: -400px;
+                padding-top: 58px;
+                left: 0px;
+                width: 100%;
+                z-index: -10;
+                transition: 0.3s;
+            }
+            &[data-status="1"] {
+                padding-left: calc(var(--spacer) * 3);
+                padding-right: calc(var(--spacer) * 3);
+
+                padding-top: calc(var(--spacer) * 10);
+                padding-bottom: calc(var(--spacer) * 5);
+
+                background-color: rgba(245, 245, 247, 1);
+                opacity: 100;
+                position: absolute;
+                top: 0;
+                left: 0px;
+                width: 100%;
+                z-index: -10;
+                transition: 0.3s;
+
+                li {
+                    padding-top: calc(var(--spacer) / 2);
+                    padding-bottom: calc(var(--spacer) / 2);
+
+                    &.subListTitle {
+                        display: none;
+                    }
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        li {
+                            padding-left: calc(var(--spacer) * 3);
+                            &:last-of-type {
+                                padding-bottom: 0;
+                            }
+                        }
+                    }
+                    a {
+                        color: $darkLinkColor;
+                        font-size: 20px;
+                        line-height: 20px;
+                        font-weight: 500;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $darkLinkHoverColor;
+                        }
+                    }
+                }
+            }
+        }
+        ul.mobileNavHolder {
+            .mobileNav {
+                display: inline-block;
+                /* padding: 0;
+                margin: 0;
+                width: var(--iconsSquarewh);
+                height: var(--iconsSquarewh);*/
+            }
+        }
+    }
+    .navLeftButtons {
+        display: none;
+    }
+    &--lightTheme {
+        background: rgba(245, 245, 247, 0.6);
+        backdrop-filter: blur(20px);
+        h2 {
+            img {
+                background-image: url(assets/images/atfarmLogoBW.png) !important;
+                background-position: bottom center !important;
+            }
+        }
+        nav {
+            .icons-searchW {
+                background-image: url(assets/images/icons/searchB.png);
+            }
+            li.icons-openW {
+                background-image: url(assets/images/icons/openB.png);
+            }
+        }
+    }
+}

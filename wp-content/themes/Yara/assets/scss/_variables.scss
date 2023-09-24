@@ -1,0 +1,167 @@
+$mobile: 599px;
+$tablet: 739px;
+$desktop: 1366px;
+$gap: 16px;
+$spacer: 8px;
+
+$sectionSpacerDesktop: 80px;
+$sectionSpacerMobile: 40px;
+$sectionLightBGcolor: #F3F6F9;
+$sectionNormalBGcolor: #FFF;
+
+$boxBlueBgColor: #B7CBE0;
+
+$maxContentWidth_desktop: 1024px; 
+$maxContentWidth_tablet: 1024px;
+$maxContentWidth_mobile: 100%;
+
+$darkLinkColor: rgba(15, 15, 15, 0.97);
+$mainTextColor: rgba(15, 15, 15, 0.80);
+$darkLinkHoverColor: #0056B8;
+
+
+$imageLargeWidth: 512px;
+$imageLargeHeight: 288px;
+$imageLargeAspectRatio: unset; 
+
+$bodyDFs: 22px;
+$bodyTFs: 18px;
+$bodyMFs: 14px;
+
+$masterTitlels: -0.015em;
+
+$iconsSquareMwh: 48px;
+$iconsSquareTwh: 48px;
+$iconsSquareDwh: 48px;
+
+
+$H1Mfs: 24px;
+$H2Mfs: 20px;
+
+$H3Mfs: 24px;
+$H3Mlh: 30px;
+
+$H4Mfs: 16px;
+$H4Mlh: 22px;
+
+
+
+$H5Mfs: 14px;
+$H6Mfs: 12px;
+
+$pfs: 16px;
+$plh: 22px;
+ 
+$HLtitlefs: 24px;
+$HLtitlelh: 35px; 
+$HLtitlelhls: -0.42px;
+
+$HLTtitlefs: 36px;
+$HLTtitlelh: 50px; 
+$HLTtitlelhls: -0.75px;
+
+$HLDtitlefs: 48px;
+$HLDtitlelh: 65px; 
+$HLDtitlelhls: -0.96px;
+
+$HLsubTitlefs: 18px;
+$HLsubTitlelh: 25px;
+$HLsubTitlelhls: 0.4px;
+
+$HLTsubTitlefs: 18px;
+$HLTsubTitlelh: 25px;
+$HLTsubTitlelhls: 0.4px;
+
+$HLDsubTitlefs: 18px;
+$HLDsubTitlelh: 28px;
+$HLDsubTitlelhls: 0.5px;
+
+
+
+
+//2 + 2
+
+$H1Tfs: 38px;
+$H2Tfs: 30px;
+
+$H3Tfs: 24px;
+$H3Tlh: 30px;
+
+
+
+$H4Tfs: 18px;
+$H4Tlh: 25px;
+
+
+$H5Tfs: 18px;
+$H6Tfs: 14px;
+
+
+
+//2 + 4
+
+$H3Dfs: 28px;
+$H3Dlh: 35px;
+
+
+$H4Dfs: 18px;
+$H4Dlh: 25px;
+
+/*
+$H1Dfs: 56px;
+$H2Dfs: 44px;
+$H3Dfs: 38px;
+$H4Dfs: 32px;
+$H5Dfs: 26px;
+$H6Dfs: 20px;
+$H7Dfs: 14px;
+$H8Dfs: 8px;
+*/
+//2 + 6
+
+$navButtonHeight: 48px;
+
+
+$bodyMainColor: #FFFFFF;
+$headerBgColor: #e1e1e6;
+$searchLineBgColor: #f5f5f7;
+$defaultBorderColor: #dcdcdc;
+
+
+$titleColor: #DE6D21;
+$fontBrightColor: #ffffff;
+
+
+$buttonDarkBGColor: #0056B8;
+$buttonDarkFONTColor: #ffffff;
+$buttonDarkBoxShadow: 0px 2px 2px rgba(15, 15, 15, 0.16), 0px 2px 2px rgba(15, 15, 15, 0.14), 0px 1px 5px rgba(15, 15, 15, 0.12);
+$buttonDarkBR: 8px; 
+
+
+
+$buttonLightBGColor: #E5F2FF;
+$buttonLightFONTColor: #0066CC;
+$buttonLightBoxShadow: 0px 2px 2px rgba(15, 15, 15, 0.16), 0px 2px 2px rgba(15, 15, 15, 0.14), 0px 1px 5px rgba(15, 15, 15, 0.12);
+$buttonLightBR: 8px; 
+
+
+
+
+
+$buttonFSmobile: 14px;
+$buttonPaddingTBmobile: 17px;
+$buttonPaddingLRmobile: 16px;
+$buttonFSdesktop: 16px;
+$buttonPaddingTBdesktop: 20px;
+$buttonPaddingLRdesktop: 24px;
+
+
+// Sections list
+
+$_1lead: "s10";
+$_2article: "s20";
+$_3news: "s30";
+$_4team: "s40";
+$_5related: "s50";
+$_6connections: "s60";
+$_7feedback: "s70";

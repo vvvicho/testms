@@ -1,0 +1,209 @@
+@media screen and (min-width: $tablet) {
+    .generaldivigation {
+        position: fixed;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background-color: rgba(255, 255, 255, 0);
+        width: calc(100% - var(--spacer) * 6);
+        padding-top: calc(var(--spacer) * 2);
+        padding-bottom: calc(var(--spacer) * 2);
+        padding-left: calc(var(--spacer) * 3);
+        padding-right: calc(var(--spacer) * 3);
+
+        &:hover {
+            background-color: rgba(245, 245, 247, 1);
+            backdrop-filter: blur(20px);
+
+            nav {
+                ul.desktopNav {
+                    &[data-status="0"] {
+                        li {
+                            a {
+                                color: $darkLinkColor;
+                                &:hover {
+                                    color: $darkLinkHoverColor;
+                                }                                 
+                            }
+                            &.--subnav {
+                                &::after {
+                                    content: "";
+                                    display: inline-block;
+                                    background: url(assets/images/chevron_black.webp) top center no-repeat;
+                                    background-size: 20px 20px;
+                                    width: 20px;
+                                    height: 20px;
+                                    margin-top: 0;
+                                    margin-bottom: -5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .navLeftButtons {
+                .desktopSearchButton {
+                    background-image: url(assets/images/icons/searchB.png);
+                }
+            }
+            & + .yaraHead {
+                .titleBlock {
+                    filter: blur(5px);
+                }
+                & + main {
+                    filter: blur(5px);
+                    & + footer {
+                        filter: blur(5px);
+                    }
+                }
+            }
+        }
+
+        nav {
+            ul.desktopNav {
+                &[data-status="0"] {
+                    padding-left: calc(var(--spacer) * 3);
+                    padding-right: calc(var(--spacer) * 3);
+                    padding-top: 0;
+                    display: block;
+                    background-color: unset;
+                    opacity: 100;
+                    position: unset;
+                    // top: -400px;
+                    // padding-top: 58px;
+                    // left: 0px;
+                    width: 100%;
+                    // z-index: -10;
+                    transition: 0.3s;
+                }
+                li {
+                    display: inline-block;
+                    padding-left: calc(var(--spacer) * 1);
+                    padding-right: calc(var(--spacer) * 1);
+                    margin-left: calc(var(--spacer) * 0);
+                    margin-right: calc(var(--spacer) * 0);
+                    //cursor: pointer;
+                    &.--subnav {
+                        a + ul {
+                            display: block;
+                            opacity: 0;
+                            position: absolute;
+                            top: -400px;
+                            padding-top: 110px;
+                            left: 0;
+                            //height: 300px;
+                            width: 100%;
+                            z-index: -1;
+                            transition: 0.3s;
+                            background-color: rgba(245, 245, 247, 1);
+
+                            li {
+                                display: block;                                
+                                backdrop-filter: blur(20px);
+                                margin: 0;
+                                padding: 0;
+                                padding-left: calc(var(--spacer) * 7);
+                                &:first-of-type {
+                                    padding-left: calc(var(--spacer) * 5) !important;
+                                    // background-color: white;
+                                    display: block;
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    padding-bottom: calc(var(--spacer) * 0);
+                                }
+                                &:last-of-type {
+                                    padding-bottom: calc(var(--spacer) * 2);
+                                }
+                                a {
+                                    font-size: 20px;
+                                    display: block;
+                                    font-weight: 500;
+                                    line-height: 20px;
+                                    padding-top: var(--spacer);
+                                    padding-bottom: var(--spacer);
+                                    &:hover {
+                                        color: $darkLinkHoverColor;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            a + ul {
+                                opacity: 1;
+                                top: 0px;
+                                z-index: -1;
+                            }
+                        }
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            background: url(assets/images/chevron.webp) top center no-repeat;
+                            background-size: 20px 20px;
+                            width: 20px;
+                            height: 20px;
+                            margin-top: 0;
+                            margin-bottom: -5px;
+                        }
+                    }
+                    a {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 20px;
+                        letter-spacing: 0px;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .navLeftButtons {
+            display: block;
+            .desktopSearchButton {
+                display: inline-block;
+                margin-bottom: -18px;
+                margin-right: 6px;
+            }
+        }
+        .mobileNavHolder {
+            display: none;
+        }
+        &--lightTheme {
+            background: rgba(245, 245, 247, 0.6);
+            backdrop-filter: blur(20px);
+            nav {
+                ul.desktopNav {
+                    &[data-status="0"] {
+                        li {
+                            a {
+                                color: $darkLinkColor;
+                                &:hover {
+                                    color: $darkLinkHoverColor;
+                                }
+                            }
+                            &.--subnav {
+                                &::after {
+                                    content: "";
+                                    display: inline-block;
+                                    background: url(assets/images/chevron_black.webp) top center no-repeat;
+                                    background-size: 20px 20px;
+                                    width: 20px;
+                                    height: 20px;
+                                    margin-top: 0;
+                                    margin-bottom: -5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .navLeftButtons {
+                .desktopSearchButton {
+                    background-image: url(assets/images/icons/searchB.png);
+                }
+            }
+        }
+    }
+}
