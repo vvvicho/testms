@@ -32,6 +32,13 @@ $buttonLightBoxShadow:
 $buttonLightBR: 8px;
 
 .adminHolder {
+    .ltr{
+        figure{
+            order: 2;
+        }
+    }
+
+
     headeritem,
     sectionitem {
         &.normal {

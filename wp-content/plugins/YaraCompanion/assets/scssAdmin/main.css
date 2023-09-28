@@ -2,6 +2,9 @@
   position: relative;
   margin-bottom: 100px;
 }
+.adminHolder .ltr figure {
+  order: 2;
+}
 .adminHolder headeritem.normal:hover,
 .adminHolder sectionitem.normal:hover {
   opacity: 0.33;
