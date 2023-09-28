@@ -37,11 +37,11 @@
                             <li data-edit="text duplicate delete">List Item
                             </li>
                         </ul>
-                        <!--p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
+                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
                             <strong data-edit="text delete">paragraf Title</strong>
                             <i data-edit="text delete">A special paragraph
                             with an icon</i>
-                        </p-->
+                        </p>
                         <div class="button button-dark fade-in" data-edit="button delete">
                             Button
                         </div>

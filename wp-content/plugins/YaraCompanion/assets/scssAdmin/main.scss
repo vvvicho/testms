@@ -38,13 +38,17 @@ $buttonLightBR: 8px;
         }
     }
 
+    iconPannel{
+        display: block;
+    }
+
 
     headeritem,
     sectionitem {
         &.normal {
             &:hover {
-                opacity: 0.33;
-                cursor: pointer;
+               // opacity: 0.33;
+                cursor: pointer; 
             }
         }
     }
@@ -75,8 +79,8 @@ $buttonLightBR: 8px;
     input,
     select,
     textarea {
-        width: auto;
-        min-width: 250px;
+        width: 100%;
+        min-width: 150px;
     }
 
     ADMINFOOTER {

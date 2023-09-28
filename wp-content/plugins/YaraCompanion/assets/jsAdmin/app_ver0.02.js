@@ -7,6 +7,8 @@ function returnINPUTtype(data, type) {
     }
 }
 
+/* GALLERY */
+
 let gallerHolder = document.getElementById("mainGalleryHolder");
 let sellectedImage = "";
 let isBgImage = 0;
@@ -33,6 +35,7 @@ function clearAllImagesStatus() {
     });
 }
 
+
 function showGalleryImages() {
     sellectedImage = "";
     clearAllImagesStatus();
@@ -54,6 +57,8 @@ allImagesContainers.forEach(async (item) => {
         sellectAnImage(item);
     }
 });
+
+/***************************************************** */
 
 let headerItems = [];
 let sectionItems = [];
@@ -81,34 +86,66 @@ function saveTextBox(obj) {
         }
     }, 200);
 }
-function iconbuilder(icon) {
+function iconbuilder(icon){
     return `<div class='adminTools icon icon--${icon}'></div>`;
 }
 
 function editTextBox(obj) {
     let saveIconHTTML = iconbuilder("save");
-    let deleteIiconHTML = cloneIconHTML = "";
-    let objATT = obj.getAttribute("data-edit");
+    let deleteIiconHTML = "";
+    let cloneIconHTML = "";
+
+    if (obj.getAttribute("data-edit").includes("duplicate")) {
+        cloneIconHTML = "<div class='icon icon--clone'></div>";
+    }
+
+    if (obj.getAttribute("data-edit").includes("delete")) {
+        deleteIiconHTML = "<div class='icon icon--delete'></div>";
+    }
 
     obj.onclick = null;
-    objATT.includes("duplicate") ? cloneIconHTML = iconbuilder("clone") : 0;
-    objATT.includes("delete") ? deleteIiconHTML = iconbuilder("delete") : 0;
-    obj.innerHTML = returnINPUTtype(obj.innerHTML, "textarea") + "<iconPannel class='adminTools'>" + saveIconHTTML + cloneIconHTML + deleteIiconHTML + "</iconPannel>";
+    obj.innerHTML = returnINPUTtype(obj.innerHTML, "textarea") + saveIconHTTML + cloneIconHTML + deleteIiconHTML;
 
-    obj.querySelector(".icon--save").onclick = () => { saveTextBox(obj) };
-    objATT.includes("delete") ? obj.querySelector(".icon--delete").onclick = () => { obj.remove() } : 0;
+    let objSaveButton = obj.querySelector(".icon--save");
+    objSaveButton.onclick = function () {
+        saveTextBox(obj);
+    }
 
-    if (objATT.includes("duplicate")) {
-        obj.querySelector(".icon--clone").onclick = function () {
+    if (obj.getAttribute("data-edit").includes("delete")) {
+        let objDeleteButton = obj.querySelector(".icon--delete");
+        objDeleteButton.onclick = function () {
+            obj.remove();
+        }
+    }
+
+    if (obj.getAttribute("data-edit").includes("duplicate")) {
+        let objCloneButton = obj.querySelector(".icon--clone");
+        objCloneButton.onclick = function () {
             let newElement = obj.cloneNode(true);
             obj.parentNode.insertBefore(newElement, obj.nextSibling);
             saveTextBox(newElement);
-            newElement.onclick = () => { editTextBox(newElement) }
+            newElement.onclick = function () {
+                editTextBox(newElement);
+            }
+
         }
     }
 }
 
+function changeNgImage(obj) {
+    isBgImage = 1;
+    objectToUpdateSRC = obj;
+    showGalleryImages();
+}
+
+function changeIMGImage(obj) {
+    isBgImage = 0;
+    objectToUpdateSRC = obj.querySelector("img");
+    showGalleryImages();
+}
+
 function saveButtonSettings(obj) {
+
     obj.onclick = null;
     let buttonTitle = obj.querySelector("input").value;
     buttonTitle = buttonTitle.replace(/\s+/g, ' ');
@@ -116,7 +153,11 @@ function saveButtonSettings(obj) {
     buttonTarget = buttonTarget.replace(/\s+/g, ' ');
     let buttonLink = obj.querySelector("textarea").value;
     buttonLink = buttonLink.replace(/\s+/g, ' ');
-    obj.innerHTML = `<datalink data-href="${buttonLink}" target="${buttonTarget}">${buttonTitle}</datalink>`;
+
+    obj.innerHTML = `
+    <datalink data-href="${buttonLink}" target="${buttonTarget}">${buttonTitle}</datalink>
+    `;
+
     setTimeout(() => {
         obj.onclick = function () {
             buttonSetUp(this);
@@ -133,6 +174,7 @@ function buttonSetUp(obj) {
     if (obj.getAttribute("data-edit").includes("delete")) {
         deleteIiconHTML = "<div class='icon icon--delete'></div>";
     }
+
     if (haveAlink) {
 
     } else {
@@ -178,7 +220,6 @@ function saveSectionSettings(obj, sectionToEdit) {
     document.querySelector(".adminHolder--mainContent").classList.remove("removeMargin");
 
     let allElements = document.querySelectorAll(".adminHolder .hidden");
-
     allElements.forEach(async (element) => {
         element.classList.remove("hidden");
     });
@@ -236,10 +277,8 @@ function prapareForEditing(obj, sectionToEdit) {
         image.classList.add("adminRelative");
         let imageEditIcon = document.createElement("div");
         imageEditIcon.classList.add("icon", "icon--edit", "adminBgEdit");
-        imageEditIcon.onclick = function () {           
-            isBgImage = 1;
-            objectToUpdateSRC = image;
-            showGalleryImages();
+        imageEditIcon.onclick = function () {
+            changeNgImage(image);
         }
         image.appendChild(imageEditIcon);
     });
@@ -250,10 +289,8 @@ function prapareForEditing(obj, sectionToEdit) {
         image.classList.add("adminRelative");
         let imageEditIcon = document.createElement("div");
         imageEditIcon.classList.add("icon", "icon--edit", "adminBgEdit");
-        imageEditIcon.onclick = function () {            
-            isBgImage = 0;
-            objectToUpdateSRC = image.querySelector("img");
-            showGalleryImages();
+        imageEditIcon.onclick = function () {
+            changeIMGImage(image);
         }
         image.appendChild(imageEditIcon);
 
@@ -287,14 +324,6 @@ function prapareForEditing(obj, sectionToEdit) {
         saveSectionSettings(obj, sectionToEdit);
     }
 }
-
- function getOffset(el) {
-     var rect = el.getBoundingClientRect();
-     return {
-         left: rect.left + window.scrollX ,
-         top: rect.top + window.scrollY
-     };
- }
 
 function insertMySection(obj) {
     let template = obj.querySelector('templateHidden');//.innerHTML;
@@ -341,7 +370,7 @@ function insertMySection(obj) {
         }
 
         setTimeout(() => {
-            scrollToTop(getOffset(sectionItem).top);
+            scrollToTop(mainSectionsHolder.getBoundingClientRect().top - 150);
         }, 200);
     }
 }
