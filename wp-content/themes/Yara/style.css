@@ -9,9 +9,19 @@ Requires PHP: 7.0
 Version: 1.0
 Text Domain: Yara Global
 Tags: Yara Global, Yara At Farm
+
 Yara Global Theme, (C) 2023 Yara.com
 */
-
+/*
+$H1Dfs: 56px;
+$H2Dfs: 44px;
+$H3Dfs: 38px;
+$H4Dfs: 32px;
+$H5Dfs: 26px;
+$H6Dfs: 20px;
+$H7Dfs: 14px;
+$H8Dfs: 8px;
+*/
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
@@ -258,17 +268,17 @@ footer {
   min-height: 60px;
 }
 .flafIcons--uk::before {
-  background-image: url(assets/images/icons/flags/uk.webp);
+  background-image: url(../images/icons/flags/uk.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--it::before {
-  background-image: url(assets/images/icons/flags/it.webp);
+  background-image: url(../images/icons/flags/it.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--fr::before {
-  background-image: url(assets/images/icons/flags/fr.webp);
+  background-image: url(../images/icons/flags/fr.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
@@ -287,35 +297,35 @@ footer {
   transition: 0.3s;
 }
 .icons-navLeft {
-  background-image: url(assets/images/navBTN.webp);
+  background-image: url(../images/navBTN.webp);
 }
 .icons-navRight {
-  background-image: url(assets/images/navBTN.webp);
+  background-image: url(../images/navBTN.webp);
   transform: rotate(180deg);
 }
 .icons-openW {
-  background-image: url(assets/images/icons/openW.png);
+  background-image: url(../images/icons/openW.png);
 }
 .icons-closeW {
-  background-image: url(assets/images/icons/closeW.png);
+  background-image: url(../images/icons/closeW.png);
 }
 .icons-openB {
-  background-image: url(assets/images/icons/openB.png);
+  background-image: url(../images/icons/openB.png);
 }
 .icons-closeB {
-  background-image: url(assets/images/icons/closeB.png);
+  background-image: url(../images/icons/closeB.png);
 }
 .icons-searchW {
-  background-image: url(assets/images/icons/searchW.png);
+  background-image: url(../images/icons/searchW.png);
 }
 .icons-searchB {
-  background-image: url(assets/images/icons/searchB.png);
+  background-image: url(../images/icons/searchB.png);
 }
 .icons-ok {
   width: 24px;
   height: 24px;
   margin: 16px;
-  background-image: url(assets/images/icons/ok.webp);
+  background-image: url(../images/icons/ok.webp);
   background-size: 24px;
   background-position: center center;
 }
@@ -331,7 +341,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(assets/images/icons/SearchBlue.png);
+  background-image: url(../images/icons/SearchBlue.png);
 }
 .icons-crop {
   position: relative;
@@ -345,7 +355,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(assets/images/icons/Crop.png);
+  background-image: url(../images/icons/Crop.png);
 }
 .icons-plans {
   position: relative;
@@ -359,7 +369,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(assets/images/icons/LaptopAlt.png);
+  background-image: url(../images/icons/LaptopAlt.png);
 }
 .icons-track {
   position: relative;
@@ -373,7 +383,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(assets/images/icons/track.png);
+  background-image: url(../images/icons/track.png);
 }
 .icons-tester {
   position: relative;
@@ -387,7 +397,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(assets/images/icons/tester.png);
+  background-image: url(../images/icons/tester.png);
 }
 .icons-clock {
   position: relative;
@@ -401,7 +411,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(assets/images/icons/clock.png);
+  background-image: url(../images/icons/clock.png);
 }
 .icons-upDiagram {
   margin-top: calc(var(--gap) / 2);
@@ -412,7 +422,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(assets/images/icons/upDiagram.png);
+  background-image: url(../images/icons/upDiagram.png);
 }
 .icons-document {
   margin-top: calc(var(--gap) / 2);
@@ -423,7 +433,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(assets/images/icons/document.png);
+  background-image: url(../images/icons/document.png);
 }
 .icons-meter {
   margin-top: calc(var(--gap) / 2);
@@ -434,7 +444,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(assets/images/icons/meter.png);
+  background-image: url(../images/icons/meter.png);
 }
 .icons-earth {
   margin-top: calc(var(--gap) / 2);
@@ -445,7 +455,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(assets/images/icons/earth.png);
+  background-image: url(../images/icons/earth.png);
 }
 
 .bgColors--sectionLNormal {
@@ -596,6 +606,9 @@ footer {
 }
 .yaraHead .titleBlock p strong:last-of-type {
   margin-bottom: calc(var(--spacer) * 2);
+}
+.yaraHead .titleBlock p i {
+  font-style: normal;
 }
 
 @media screen and (min-width: 599px) {
