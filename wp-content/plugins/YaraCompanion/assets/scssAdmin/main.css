@@ -28,8 +28,7 @@
 }
 .adminHolder label {
   width: 130px;
-  display: inline-block;
-  vertical-align: top;
+  display: block;
   padding: 8px;
 }
 .adminHolder input,

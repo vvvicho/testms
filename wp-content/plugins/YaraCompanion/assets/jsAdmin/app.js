@@ -127,12 +127,11 @@ function saveButtonSettings(obj) {
 function buttonSetUp(obj) {
     obj.onclick = null;
     let haveAlink = obj.querySelector("a");
-    let saveIconHTTML = "<div class='icon icon--save'></div>";
+    let saveIconHTTML = iconbuilder("save");
     let deleteIiconHTML = "";
+    let objATT = obj.getAttribute("data-edit");
+    objATT.includes("delete") ? deleteIiconHTML = iconbuilder("delete") : 0;
 
-    if (obj.getAttribute("data-edit").includes("delete")) {
-        deleteIiconHTML = "<div class='icon icon--delete'></div>";
-    }
     if (haveAlink) {
 
     } else {
@@ -145,98 +144,78 @@ function buttonSetUp(obj) {
         </select></br>
         <label>Button Link:</label>
         <textarea rows="2" cols="30"></textarea>
-        ${saveIconHTTML} ${deleteIiconHTML}`;
+        <iconPannel class='adminTools'>${saveIconHTTML} ${deleteIiconHTML}</iconPannel>`;
     }
-    let objSaveButton = obj.querySelector(".icon--save");
-    objSaveButton.onclick = function () {
-        saveButtonSettings(obj);
-    }
-    if (obj.getAttribute("data-edit").includes("delete")) {
-        let objDeleteButton = obj.querySelector(".icon--delete");
-        objDeleteButton.onclick = function () {
-            obj.remove();
-        }
-    }
+    obj.querySelector(".icon--save").onclick = () => { saveButtonSettings(obj) };
+    objATT.includes("delete") ? obj.querySelector(".icon--delete").onclick = () => { obj.remove() } : 0;
 }
 
 function saveSectionSettings(obj, sectionToEdit) {
     obj.querySelector("adminfooter").remove();
-    let allEditableItems = obj.querySelectorAll('[data-edit="background"],[data-edit*="text"],[data-edit*="button"],[data-edit*="image"],[data-edit*="ltr"]');
-    allEditableItems.forEach(async (item) => {
-        item.onclick = null;
-        if (item.getAttribute("data-edit") == "background" || item.getAttribute("data-edit").includes("image") || item.getAttribute("data-edit").includes("ltr")) {
-            let allIcons = item.querySelectorAll(".adminBgEdit");
-            allIcons.forEach(async (icon) => {
-                icon.remove();
-            });
-        }
-    });
-
     obj.classList.add("normal");
-    document.querySelector(".adminHolder--leftNav").classList.remove("hidden");
-    document.querySelector(".adminHolder--footer").classList.remove("hidden");
-    document.querySelector(".adminHolder--mainContent").classList.remove("removeMargin");
-
-    let allElements = document.querySelectorAll(".adminHolder .hidden");
-
-    allElements.forEach(async (element) => {
-        element.classList.remove("hidden");
-    });
-
+    showHideElements(1);
     setTimeout(() => {
         obj.onclick = function () {
             prapareForEditing(this, sectionToEdit);
         }
     }, 200);
-
     sectionToEdit.HTML = obj.innerHTML;
+}
+
+function showHideElements(state){
+    if(!state){
+        let allElements = document.querySelectorAll(".adminHolder .normal");
+        allElements.forEach(async (element) => {
+            element.classList.add("hidden");    
+        });
+        document.querySelector(".adminHolder--leftNav").classList.add("hidden");
+        document.querySelector(".adminHolder--footer").classList.add("hidden");
+        document.querySelector(".adminHolder--mainContent").classList.add("removeMargin");
+    }else {
+        let allEditableItems = document.querySelector(".adminHolder--mainContent").querySelectorAll('[data-edit="background"],[data-edit*="text"],[data-edit*="button"],[data-edit*="image"],[data-edit*="ltr"]');
+        allEditableItems.forEach(async (item) => {
+            item.onclick = null;
+            if (item.getAttribute("data-edit") == "background" || item.getAttribute("data-edit").includes("image") || item.getAttribute("data-edit").includes("ltr")) {
+                let allIcons = item.querySelectorAll(".adminBgEdit");
+                allIcons.forEach(async (icon) => {
+                    icon.remove();
+                });
+            }
+        });
+        document.querySelector(".adminHolder--leftNav").classList.remove("hidden");
+        document.querySelector(".adminHolder--footer").classList.remove("hidden");
+        document.querySelector(".adminHolder--mainContent").classList.remove("removeMargin");
+
+        let allElements = document.querySelectorAll(".adminHolder .hidden");
+        allElements.forEach(async (element) => {
+            element.classList.remove("hidden");
+        });
+    }
 }
 
 function prapareForEditing(obj, sectionToEdit) {
     obj.classList.remove("normal");
     obj.onclick = null;
-    let allElements = document.querySelectorAll(".adminHolder .normal");
-
-    allElements.forEach(async (element) => {
-        element.classList.add("hidden");
-
-    });
-
-    document.querySelector(".adminHolder--leftNav").classList.add("hidden");
-    document.querySelector(".adminHolder--footer").classList.add("hidden");
-    document.querySelector(".adminHolder--mainContent").classList.add("removeMargin");
+    showHideElements(0);
 
     let swapPositions = obj.querySelector('[data-edit*="ltr"]');
-
     if (swapPositions) {
         swapPositions.classList.add("adminRelative");
         let swapIcon = document.createElement("div");
         swapIcon.classList.add("icon", "icon--ltr", "adminBgEdit");
-        swapIcon.onclick = function () {
-            if (swapPositions.classList.contains('ltr')) {
-                swapPositions.classList.remove('ltr');
-            } else {
-                swapPositions.classList.add('ltr');
-            }
-        }
+        swapIcon.onclick = () => { swapPositions.classList.contains('ltr') ? swapPositions.classList.remove('ltr') : swapPositions.classList.add('ltr') }
         swapPositions.appendChild(swapIcon);
     }
 
     let alltexts = obj.querySelectorAll('[data-edit*="text"]');
-
-    alltexts.forEach(async (text) => {
-        text.onclick = function () {
-            editTextBox(text);
-        }
-    });
-
+    alltexts.forEach(async (text) => { text.onclick = () => { editTextBox(text) } });
     let allbgImages = obj.querySelectorAll('[data-edit="background"]');
 
     allbgImages.forEach(async (image) => {
         image.classList.add("adminRelative");
         let imageEditIcon = document.createElement("div");
         imageEditIcon.classList.add("icon", "icon--edit", "adminBgEdit");
-        imageEditIcon.onclick = function () {           
+        imageEditIcon.onclick = () => {
             isBgImage = 1;
             objectToUpdateSRC = image;
             showGalleryImages();
@@ -250,7 +229,7 @@ function prapareForEditing(obj, sectionToEdit) {
         image.classList.add("adminRelative");
         let imageEditIcon = document.createElement("div");
         imageEditIcon.classList.add("icon", "icon--edit", "adminBgEdit");
-        imageEditIcon.onclick = function () {            
+        imageEditIcon.onclick = function () {
             isBgImage = 0;
             objectToUpdateSRC = image.querySelector("img");
             showGalleryImages();
@@ -271,7 +250,6 @@ function prapareForEditing(obj, sectionToEdit) {
     let allButtons = obj.querySelectorAll('[data-edit*="button"]');
 
     allButtons.forEach(async (button) => {
-
         button.onclick = function () {
             buttonSetUp(button);
         }
@@ -288,16 +266,16 @@ function prapareForEditing(obj, sectionToEdit) {
     }
 }
 
- function getOffset(el) {
-     var rect = el.getBoundingClientRect();
-     return {
-         left: rect.left + window.scrollX ,
-         top: rect.top + window.scrollY
-     };
- }
+function getOffset(el) {
+    var rect = el.getBoundingClientRect();
+    return {
+        left: rect.left + window.scrollX,
+        top: rect.top + window.scrollY
+    };
+}
 
 function insertMySection(obj) {
-    let template = obj.querySelector('templateHidden');//.innerHTML;
+    let template = obj.querySelector('templateHidden');
     let mainSectionsHolder = document.querySelector('main');
     let templateType = template.getAttribute('data-head');
     let templateRepeat = template.getAttribute('data-repeat');
