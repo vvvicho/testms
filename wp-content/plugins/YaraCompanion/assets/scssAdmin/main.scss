@@ -32,23 +32,23 @@ $buttonLightBoxShadow:
 $buttonLightBR: 8px;
 
 .adminHolder {
-    .ltr{
-        figure{
+    .ltr {
+        figure {
             order: 2;
         }
     }
 
-    iconPannel{
+    iconPannel {
         display: block;
+        text-align: left !important;
     }
-
 
     headeritem,
     sectionitem {
         &.normal {
             &:hover {
-               // opacity: 0.33;
-                cursor: pointer; 
+                // opacity: 0.33;
+                cursor: pointer;
             }
         }
     }
@@ -72,7 +72,7 @@ $buttonLightBR: 8px;
 
     label {
         width: 130px;
-        display: block;        
+        display: block;
         padding: 8px;
     }
     input,
@@ -113,6 +113,22 @@ $buttonLightBR: 8px;
             border-radius: $buttonLightBR;
         }
     }
+    .flagListHolder {
+        display: flex !important;
+        flex-wrap: wrap!important;
+        overflow: auto!important;
+        max-height: 100px!important;
+        background-color: white;
+        gap: 2px !important;
+        li {
+            display: block !important;
+            width: 50px !important;
+            height: 50px !important;
+            min-height: 50px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
     .icon {
         display: inline-block;
         width: 48px;
@@ -130,6 +146,7 @@ $buttonLightBR: 8px;
         }
         &--delete {
             background-image: url(../imagesAdmin/icons/delete.png);
+            float: right;
         }
         &--clone {
             background-image: url(../imagesAdmin/icons/clone.png);
@@ -141,26 +158,6 @@ $buttonLightBR: 8px;
             background-image: url(../imagesAdmin/icons/world.png);
             position: relative;
             display: none;
-            .flagListHolder {
-                position: absolute;
-                width: 150px;
-                height: auto !important;
-                background-color: white;
-                flex-direction: row;
-                justify-content: space-around;
-                padding-left: 15px !important;
-                flex-wrap: wrap !important;
-                display: none;
-                li {
-                    display: block !important;
-                    width: 50px !important;
-                }
-            }
-            &:hover {
-                .flagListHolder {
-                    display: flex !important;
-                }
-            }
         }
     }
 

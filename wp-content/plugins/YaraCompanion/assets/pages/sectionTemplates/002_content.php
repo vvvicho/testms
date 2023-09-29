@@ -37,13 +37,12 @@
                             <li data-edit="text duplicate delete">List Item
                             </li>
                         </ul>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <strong data-edit="text">paragraf Title</strong>
-                            <i data-edit="text">A special paragraph
-                            with an icon</i>
+                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf" data-edit="pSpetial delete">
+                            <span><strong>paragraf Title</strong></br>
+                            <i>A special paragraph with an icon</i></span>
                         </p>
                         <div class="button button-dark fade-in" data-edit="button delete">
-                            Button
+                        <datalink data-href="https://google.com" target="">Button</datalink>
                         </div>
                     </div>
                 </div>

@@ -7,6 +7,7 @@
 }
 .adminHolder iconPannel {
   display: block;
+  text-align: left !important;
 }
 .adminHolder headeritem.normal:hover,
 .adminHolder sectionitem.normal:hover {
@@ -66,6 +67,22 @@
   color: #0066cc;
   border-radius: 8px;
 }
+.adminHolder .flagListHolder {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  overflow: auto !important;
+  max-height: 100px !important;
+  background-color: white;
+  gap: 2px !important;
+}
+.adminHolder .flagListHolder li {
+  display: block !important;
+  width: 50px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .adminHolder .icon {
   display: inline-block;
   width: 48px;
@@ -83,6 +100,7 @@
 }
 .adminHolder .icon--delete {
   background-image: url(../imagesAdmin/icons/delete.png);
+  float: right;
 }
 .adminHolder .icon--clone {
   background-image: url(../imagesAdmin/icons/clone.png);
@@ -94,24 +112,6 @@
   background-image: url(../imagesAdmin/icons/world.png);
   position: relative;
   display: none;
-}
-.adminHolder .icon--sp .flagListHolder {
-  position: absolute;
-  width: 150px;
-  height: auto !important;
-  background-color: white;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-left: 15px !important;
-  flex-wrap: wrap !important;
-  display: none;
-}
-.adminHolder .icon--sp .flagListHolder li {
-  display: block !important;
-  width: 50px !important;
-}
-.adminHolder .icon--sp:hover .flagListHolder {
-  display: flex !important;
 }
 .adminHolder--leftNav {
   position: fixed;

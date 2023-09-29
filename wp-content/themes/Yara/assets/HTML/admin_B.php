@@ -16,7 +16,7 @@
 
 
 <body data-page="yaraSolutions" class="yaraSolutions">
-    <div class="adminHolder" data-type="adminHolder">
+    <div class="adminHolder" data-type="adminHolder"> 
 
         <div class="adminHolder--leftNav" data-type="adminHolder--leftNav">
             <div class="adminHolder--leftNav--templatesList" data-type="adminHolder--leftNav--templatesList">
@@ -28,7 +28,6 @@
                             <span>content</span>
                         </figure>
                     </li>
-
                     <li class="adminHolder--leftNav--templatesList--button" data-type="templateHolder"
                         data-template="content">
                         <figure>
