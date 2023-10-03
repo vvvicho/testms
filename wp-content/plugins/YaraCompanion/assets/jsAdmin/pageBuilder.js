@@ -32,8 +32,8 @@ function showGalleryImages() {
     console.log("IMAGES EDITOR HERE");
     sellectedImage = "";
     document.querySelector("#upload-button").click();
-   // clearAllImagesStatus();
-   // gallerHolder.classList.remove("mainGalleryHolder--hidden");
+    // clearAllImagesStatus();
+    // gallerHolder.classList.remove("mainGalleryHolder--hidden");
 }
 
 function hideGalleryImages() {
@@ -50,7 +50,12 @@ function sellectAnImage(obj) {
 let headerItems = [], sectionItems = [], footerItems = [];
 
 function scrollToTop(xLocation) {
-    document.querySelector(".adminHolder--mainContent").scrollTo({ top: xLocation, behavior: 'smooth' })
+    console.log("scrollToTop");
+    console.log(xLocation);
+    console.log(document.querySelector(".adminHolder--mainContent"));
+    console.log(document.querySelector(".adminHolder--mainContent").scrollTop);
+
+    document.querySelector(".adminHolder--mainContent").scrollTop = xLocation;
 }
 
 function saveTextBox(obj) {
@@ -144,9 +149,12 @@ function buttonSetUp(obj) {
 function saveSectionSettings(obj, sectionToEdit) {
     obj.querySelector("adminfooter").remove();
     obj.classList.add("normal");
+    obj.querySelectorAll(".icon--save").forEach(async (element) => {
+        element.click();
+    })
     showHideElements(1);
     setTimeout(() => {
-        obj.onclick = function () {
+        obj.querySelectorAll(".swapPositionPannel .icon--edit").onclick = function () {
             prapareForEditing(this, sectionToEdit);
         }
     }, 200);
@@ -159,9 +167,15 @@ function showHideElements(state) {
         allElements.forEach(async (element) => {
             element.classList.add("hidden");
         });
+        document.querySelector(".swapPositionPannel").classList.add("hidden");
         document.querySelector(".adminHolder--leftNav").classList.add("hidden");
         document.querySelector(".adminHolder--footer").classList.add("hidden");
         document.querySelector(".adminHolder--mainContent").classList.add("removeMargin");
+
+        //icons and pannels 
+        // adminBgEdit ,sectionBGcolor
+
+
     } else {
         let allEditableItems = document.querySelector(".adminHolder--mainContent").querySelectorAll('[data-edit="background"],[data-edit*="text"],[data-edit*="button"],[data-edit*="image"],[data-edit*="ltr"],[data-edit*="duplicateItem"]');
         allEditableItems.forEach(async (item) => {
@@ -173,6 +187,11 @@ function showHideElements(state) {
                 });
             }
         });
+        let alladminPannels = document.querySelectorAll(".adminBgEdit, .sectionBGcolor");
+        alladminPannels.forEach(async (element) => {
+            element.remove();
+        });
+        document.querySelector(".swapPositionPannel").classList.remove("hidden");
         document.querySelector(".adminHolder--leftNav").classList.remove("hidden");
         document.querySelector(".adminHolder--footer").classList.remove("hidden");
         document.querySelector(".adminHolder--mainContent").classList.remove("removeMargin");
@@ -226,9 +245,57 @@ function editpSpetial(obj) {
     objATT.includes("delete") ? obj.querySelector(".icon--delete").onclick = () => { obj.remove() } : 0;
 }
 
+let allBGcolors =
+    [
+        { style: "bgColors--sectionLNormal", color: "#FFFFFF" },
+        { style: "bgColors--sectionLight", color: "#F3F6F9" },
+    ]
+    ;
+
+function swapNodes(node1, node2) {
+    const afterNode2 = node2.nextElementSibling;
+    const parent = node2.parentNode;
+    node1.replaceWith(node2);
+    parent.insertBefore(node1, afterNode2);
+}
+
+function swapNodePositions(obj, direction) {
+    let objectIndex = Array.prototype.slice.call(obj.parentElement.children).indexOf(obj);
+    if (objectIndex > 0 && !direction) {
+        swapNodes(obj.parentElement.children[objectIndex - 1], obj.parentElement.children[objectIndex]);
+    } else if ((objectIndex + 1) < obj.parentElement.children.length && direction) {
+        swapNodes(obj.parentElement.children[objectIndex],obj.parentElement.children[objectIndex + 1]);
+    }
+}
+
 function prapareForEditing(obj, sectionToEdit) {
     obj.classList.remove("normal");
     obj.onclick = null;
+
+    console.log(obj);
+
+    if (obj.querySelector(".section")) {
+        let collorsPannel = document.createElement("div");
+        collorsPannel.classList.add("collorsPannel");
+        let allColorsIcons = "";
+        allBGcolors.forEach(async (color) => {
+            allColorsIcons += `<li class="sectionBGcolor" data-color="${color.color}" data-style="${color.style}"><div style="background-color: ${color.color};"></div></li>`
+        });
+        collorsPannel.innerHTML = `<ul>${allColorsIcons}</uk>`;
+        obj.appendChild(collorsPannel);
+        collorsPannel.querySelectorAll(".sectionBGcolor").forEach(async (color) => {
+            color.onclick = () => {
+                allBGcolors.forEach(async (color) => {
+                    obj.querySelector(".section").classList.remove(color.style)
+                });
+                obj.querySelector(".section").classList.add(color.getAttribute("data-style"));
+            }
+        });
+    }
+
+
+
+
     showHideElements(0);
     let swapPositions = obj.querySelector('[data-edit*="ltr"]');
     if (swapPositions) {
@@ -312,11 +379,17 @@ function prapareForEditing(obj, sectionToEdit) {
 
     if (sectionToEdit) {
         let letSectionAdminFooter = document.createElement("ADMINFOOTER");
-        letSectionAdminFooter.innerHTML = '<div class="button button-dark" data-edit="button">Save Section</div>';
+        letSectionAdminFooter.innerHTML = '<div class="button button-save button-dark" data-edit="button">Save Section</div><div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>';
         obj.appendChild(letSectionAdminFooter);
-        let sectionSaveButton = obj.querySelector("adminfooter .button");
+        let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {
             saveSectionSettings(obj, sectionToEdit);
+        }
+        let sectionDeleteButton = obj.querySelector("adminfooter .button-delete");
+        sectionDeleteButton.onclick = function () {
+            console.log("delete")
+            saveSectionSettings(obj, sectionToEdit);
+            obj.remove();
         }
     }
 }
@@ -366,9 +439,32 @@ function insertMySection(obj) {
         sectionItems.push(dataObject);
         let thisObject = sectionItems[sectionItems.length - 1].item;
         let sectionToEdit = sectionItems[sectionItems.length - 1];
-        thisObject.onclick = function () {
+        // thisObject.onclick = function () {
+        // prapareForEditing(thisObject, sectionToEdit);
+        // }
+
+
+        let swapPositionPannel = document.createElement("div");
+        swapPositionPannel.classList.add("swapPositionPannel");
+        swapPositionPannel.innerHTML = iconbuilder("up") + iconbuilder("down") + iconbuilder("edit");
+        thisObject.appendChild(swapPositionPannel);
+
+
+        swapPositionPannel.querySelector(".icon--edit").onclick = () => {
             prapareForEditing(thisObject, sectionToEdit);
         }
+
+        swapPositionPannel.querySelector(".icon--up").onclick = () => {
+            console.log("SWAP POSITIONS");
+            swapNodePositions(thisObject, 0);
+        }
+        swapPositionPannel.querySelector(".icon--down").onclick = () => {
+            console.log("SWAP POSITIONS");
+            swapNodePositions(thisObject, 1);
+        }
+
+
+
         setTimeout(() => {
             scrollToTop(getOffset(sectionItem).top);
         }, 200);

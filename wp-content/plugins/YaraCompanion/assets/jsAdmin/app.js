@@ -38,7 +38,7 @@ let adminHolder = document.createElement("div");
 adminHolder.setAttribute("data-type", "adminHolder");
 adminHolder.classList.add("adminHolder");
 adminHolder.innerHTML = `
-<form method="post" class="hidden" style="display:'none'">
+<form method="post" class="hidden" style="display:none">
     <input id="image-url" type="text" name="image" />
     <input id="upload-button" type="button" class="button" value="Upload Image" />
     <input type="submit" value="Submit" />
@@ -123,6 +123,13 @@ function moveHTMLtoCustomFields(){
     let prepareNewHTML = "";
 
     let mainItems = document.querySelectorAll(".adminHolder--mainContent main sectionitem");
+
+
+
+    let alladminPannels = document.querySelectorAll(".swapPositionPannel");
+    alladminPannels.forEach(async (element) => {
+        element.remove();
+    });
 
 
     headerItems.forEach(async (item) => {
@@ -223,9 +230,40 @@ function yaraLoadPageBuilderScripts(){
                 let clone = item.cloneNode(true);  
                 newYaraSectionHTML.appendChild(clone);
 
-                newYaraSectionHTML.onclick = function () {
+
+                //
+
+
+
+
+                let swapPositionPannel = document.createElement("div");
+                swapPositionPannel.classList.add("swapPositionPannel");
+                swapPositionPannel.innerHTML = iconbuilder("up") + iconbuilder("down") + iconbuilder("edit");
+                newYaraSectionHTML.appendChild(swapPositionPannel);
+        
+        
+                swapPositionPannel.querySelector(".icon--edit").onclick = () => {            
                     prapareForEditing(newYaraSectionHTML, newYaraSectionHTML);
                 }
+        
+                swapPositionPannel.querySelector(".icon--up").onclick = () => {
+                    console.log("SWAP POSITIONS");
+                    swapNodePositions(newYaraSectionHTML, 0);
+                }
+                swapPositionPannel.querySelector(".icon--down").onclick = () => {
+                    console.log("SWAP POSITIONS");
+                    swapNodePositions(newYaraSectionHTML, 1);
+                }
+
+
+
+
+
+                //
+
+               // newYaraSectionHTML.onclick = function () {
+                    //prapareForEditing(newYaraSectionHTML, newYaraSectionHTML);
+              //  }
 
                 item.remove();
 

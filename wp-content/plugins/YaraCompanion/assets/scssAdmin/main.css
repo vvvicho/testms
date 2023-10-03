@@ -23,13 +23,45 @@
 .adminHolder .ltr figure {
   order: 2;
 }
+.adminHolder .collorsPannel {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: white;
+}
+.adminHolder .collorsPannel ul {
+  display: flex !important;
+  gap: 5px;
+}
+.adminHolder .collorsPannel ul li {
+  width: 48px;
+  height: 48px;
+  border: solid 1px #ccc;
+  display: block !important;
+}
+.adminHolder .collorsPannel ul li div {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+}
 .adminHolder iconPannel {
   display: block;
   text-align: left !important;
+  min-width: 150px !important;
+}
+.adminHolder headeritem,
+.adminHolder sectionitem {
+  position: relative;
 }
 .adminHolder headeritem.normal:hover,
 .adminHolder sectionitem.normal:hover {
   cursor: pointer;
+}
+.adminHolder headeritem .swapPositionPannel,
+.adminHolder sectionitem .swapPositionPannel {
+  position: absolute;
+  bottom: 90px;
+  right: 30px;
 }
 .adminHolder .hidden {
   display: none !important;
@@ -130,6 +162,26 @@
   background-image: url(../imagesAdmin/icons/world.png);
   position: relative;
   display: none;
+}
+.adminHolder .icon--up {
+  background-image: url(../imagesAdmin/icons/arr.png);
+  position: relative;
+  transform: rotate(0deg);
+}
+.adminHolder .icon--right {
+  background-image: url(../imagesAdmin/icons/arr.png);
+  position: relative;
+  transform: rotate(90deg);
+}
+.adminHolder .icon--down {
+  background-image: url(../imagesAdmin/icons/arr.png);
+  position: relative;
+  transform: rotate(180deg);
+}
+.adminHolder .icon--left {
+  background-image: url(../imagesAdmin/icons/arr.png);
+  position: relative;
+  transform: rotate(270deg);
 }
 .adminHolder--leftNav {
   position: fixed;
