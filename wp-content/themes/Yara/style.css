@@ -27,28 +27,28 @@ $H8Dfs: 8px;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_400.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_400.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_500.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_500.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_700.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_700.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_900.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_900.woff2) format("woff2");
 }
 h1 {
   font-size: var(--H1fs);
@@ -234,6 +234,10 @@ footer {
   margin-right: auto;
 }
 
+.ltr figure {
+  order: 2;
+}
+
 .button {
   display: inline-block;
   padding: var(--buttonPaddingTB) var(--buttonPaddingLR) var(--buttonPaddingTB) var(--buttonPaddingLR);
@@ -268,17 +272,17 @@ footer {
   min-height: 60px;
 }
 .flafIcons--uk::before {
-  background-image: url(../images/icons/flags/uk.webp);
+  background-image: url(../Yara/assets/images/icons/flags/uk.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--it::before {
-  background-image: url(../images/icons/flags/it.webp);
+  background-image: url(../Yara/assets/images/icons/flags/it.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--fr::before {
-  background-image: url(../images/icons/flags/fr.webp);
+  background-image: url(../Yara/assets/images/icons/flags/fr.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
@@ -297,35 +301,35 @@ footer {
   transition: 0.3s;
 }
 .icons-navLeft {
-  background-image: url(../images/navBTN.webp);
+  background-image: url(../Yara/assets/images/navBTN.webp);
 }
 .icons-navRight {
-  background-image: url(../images/navBTN.webp);
+  background-image: url(../Yara/assets/images/navBTN.webp);
   transform: rotate(180deg);
 }
 .icons-openW {
-  background-image: url(../images/icons/openW.png);
+  background-image: url(../Yara/assets/images/icons/openW.png);
 }
 .icons-closeW {
-  background-image: url(../images/icons/closeW.png);
+  background-image: url(../Yara/assets/images/icons/closeW.png);
 }
 .icons-openB {
-  background-image: url(../images/icons/openB.png);
+  background-image: url(../Yara/assets/images/icons/openB.png);
 }
 .icons-closeB {
-  background-image: url(../images/icons/closeB.png);
+  background-image: url(../Yara/assets/images/icons/closeB.png);
 }
 .icons-searchW {
-  background-image: url(../images/icons/searchW.png);
+  background-image: url(../Yara/assets/images/icons/searchW.png);
 }
 .icons-searchB {
-  background-image: url(../images/icons/searchB.png);
+  background-image: url(../Yara/assets/images/icons/searchB.png);
 }
 .icons-ok {
   width: 24px;
   height: 24px;
   margin: 16px;
-  background-image: url(../images/icons/ok.webp);
+  background-image: url(../Yara/assets/images/icons/ok.webp);
   background-size: 24px;
   background-position: center center;
 }
@@ -341,7 +345,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/SearchBlue.png);
+  background-image: url(../Yara/assets/images/icons/SearchBlue.png);
 }
 .icons-crop {
   position: relative;
@@ -355,7 +359,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/Crop.png);
+  background-image: url(../Yara/assets/images/icons/Crop.png);
 }
 .icons-plans {
   position: relative;
@@ -369,7 +373,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/LaptopAlt.png);
+  background-image: url(../Yara/assets/images/icons/LaptopAlt.png);
 }
 .icons-track {
   position: relative;
@@ -383,7 +387,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/track.png);
+  background-image: url(../Yara/assets/images/icons/track.png);
 }
 .icons-tester {
   position: relative;
@@ -397,7 +401,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/tester.png);
+  background-image: url(../Yara/assets/images/icons/tester.png);
 }
 .icons-clock {
   position: relative;
@@ -411,7 +415,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/clock.png);
+  background-image: url(../Yara/assets/images/icons/clock.png);
 }
 .icons-upDiagram {
   margin-top: calc(var(--gap) / 2);
@@ -422,7 +426,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/upDiagram.png);
+  background-image: url(../Yara/assets/images/icons/upDiagram.png);
 }
 .icons-document {
   margin-top: calc(var(--gap) / 2);
@@ -433,7 +437,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/document.png);
+  background-image: url(../Yara/assets/images/icons/document.png);
 }
 .icons-meter {
   margin-top: calc(var(--gap) / 2);
@@ -444,7 +448,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/meter.png);
+  background-image: url(../Yara/assets/images/icons/meter.png);
 }
 .icons-earth {
   margin-top: calc(var(--gap) / 2);
@@ -455,7 +459,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/earth.png);
+  background-image: url(../Yara/assets/images/icons/earth.png);
 }
 
 .bgColors--sectionLNormal {
@@ -517,39 +521,39 @@ footer {
   }
 }
 .yaraHome .yaraHead {
-  background-image: url(assets/images/m_hero.webp);
+  background-image: url(../Yara/assets/images/m_hero.webp);
 }
 
 .yaraSolutions .yaraHead {
-  background-image: url(assets/images/m_heroCropMonitoring.webp);
+  background-image: url(../Yara/assets/images/m_heroCropMonitoring.webp);
 }
 
 .yaraSolutionsNutrition .yaraHead {
-  background-image: url(assets/images/m_heroSolutionsNutrition.webp);
+  background-image: url(../Yara/assets/images/m_heroSolutionsNutrition.webp);
 }
 
 .yaraSolutionsNtester .yaraHead {
-  background-image: url(assets/images/m_heroNtester.webp);
+  background-image: url(../Yara/assets/images/m_heroNtester.webp);
 }
 
 .yaraSolutionsNrate .yaraHead {
-  background-image: url(assets/images/m_heroNrate.webp);
+  background-image: url(../Yara/assets/images/m_heroNrate.webp);
 }
 
 .yaraSolutionsMobileApp .yaraHead {
-  background-image: url(assets/images/m_heroMobileApp.webp);
+  background-image: url(../Yara/assets/images/m_heroMobileApp.webp);
 }
 
 .yaraSolutionsNPhoto .yaraHead {
-  background-image: url(assets/images/m_heroPhoto.webp);
+  background-image: url(../Yara/assets/images/m_heroPhoto.webp);
 }
 
 .yaraSolutionsNuptake .yaraHead {
-  background-image: url(assets/images/m_heroNrateApp.webp);
+  background-image: url(../Yara/assets/images/m_heroNrateApp.webp);
 }
 
 .yaraSolutionsAbout .yaraHead {
-  background-image: url(assets/images/m_heroAbout.webp);
+  background-image: url(../Yara/assets/images/m_heroAbout.webp);
 }
 
 .yaraHead {
@@ -577,7 +581,7 @@ footer {
   text-align: center;
   width: calc(100% - var(--spacer) * 6);
   min-height: 48px;
-  background: url(assets/images/chevron.webp) top center no-repeat;
+  background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
   background-size: 48px 48px;
   align-self: center;
 }
@@ -613,31 +617,31 @@ footer {
 
 @media screen and (min-width: 599px) {
   .yaraHome .yaraHead {
-    background-image: url(assets/images/hero.webp);
+    background-image: url(../Yara/assets/images/hero.webp);
   }
   .yaraSolutions .yaraHead {
-    background-image: url(assets/images/heroCropMonitoring.webp);
+    background-image: url(../Yara/assets/images/heroCropMonitoring.webp);
   }
   .yaraSolutionsNutrition .yaraHead {
-    background-image: url(assets/images/heroSolutionsNutrition.webp);
+    background-image: url(../Yara/assets/images/heroSolutionsNutrition.webp);
   }
   .yaraSolutionsNtester .yaraHead {
-    background-image: url(assets/images/heroNtester.webp);
+    background-image: url(../Yara/assets/images/heroNtester.webp);
   }
   .yaraSolutionsNrate .yaraHead {
-    background-image: url(assets/images/heroNrate.webp);
+    background-image: url(../Yara/assets/images/heroNrate.webp);
   }
   .yaraSolutionsMobileApp .yaraHead {
-    background-image: url(assets/images/heroMobileApp.webp);
+    background-image: url(../Yara/assets/images/heroMobileApp.webp);
   }
   .yaraSolutionsNPhoto .yaraHead {
-    background-image: url(assets/images/heroPhoto.webp);
+    background-image: url(../Yara/assets/images/heroPhoto.webp);
   }
   .yaraSolutionsNuptake .yaraHead {
-    background-image: url(assets/images/heroNrateApp.webp);
+    background-image: url(../Yara/assets/images/heroNrateApp.webp);
   }
   .yaraSolutionsAbout .yaraHead {
-    background-image: url(assets/images/heroAbout.webp);
+    background-image: url(../Yara/assets/images/heroAbout.webp);
   }
   .yaraHead .titleBlock {
     max-width: var(--maxContentWidth);
@@ -687,7 +691,7 @@ footer {
   width: 81px;
   height: 24px;
   display: block;
-  background: url(assets/images/atfarmLogoBW.png) top center no-repeat;
+  background: url(../Yara/assets/images/atfarmLogoBW.png) top center no-repeat;
   background-size: 81px auto;
 }
 .generaldivigation .logoHolder h1 {
@@ -703,20 +707,20 @@ footer {
           backdrop-filter: blur(20px);
 }
 .generaldivigation:hover h2 img {
-  background-image: url(assets/images/atfarmLogoBW.png);
+  background-image: url(../Yara/assets/images/atfarmLogoBW.png);
   background-position: bottom center;
 }
 .generaldivigation:hover nav li a {
   color: rgba(15, 15, 15, 0.97);
 }
 .generaldivigation:hover nav li.icons-searchW {
-  background-image: url(assets/images/icons/searchB.png);
+  background-image: url(../Yara/assets/images/icons/searchB.png);
 }
 .generaldivigation:hover nav li.icons-openW {
-  background-image: url(assets/images/icons/openB.png);
+  background-image: url(../Yara/assets/images/icons/openB.png);
 }
 .generaldivigation:hover nav li.icons-openW[data-status="1"] {
-  background-image: url(assets/images/icons/closeB.png);
+  background-image: url(../Yara/assets/images/icons/closeB.png);
 }
 .generaldivigation:hover + .yaraHead .titleBlock {
   filter: blur(5px);
@@ -798,14 +802,14 @@ footer {
           backdrop-filter: blur(20px);
 }
 .generaldivigation--lightTheme h2 img {
-  background-image: url(assets/images/atfarmLogoBW.png) !important;
+  background-image: url(../Yara/assets/images/atfarmLogoBW.png) !important;
   background-position: bottom center !important;
 }
 .generaldivigation--lightTheme nav .icons-searchW {
-  background-image: url(assets/images/icons/searchB.png);
+  background-image: url(../Yara/assets/images/icons/searchB.png);
 }
 .generaldivigation--lightTheme nav li.icons-openW {
-  background-image: url(assets/images/icons/openB.png);
+  background-image: url(../Yara/assets/images/icons/openB.png);
 }
 
 @media screen and (min-width: 739px) {
@@ -838,7 +842,7 @@ footer {
   .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.--subnav::after {
     content: "";
     display: inline-block;
-    background: url(assets/images/chevron_black.webp) top center no-repeat;
+    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -846,7 +850,7 @@ footer {
     margin-bottom: -5px;
   }
   .generaldivigation:hover .navLeftButtons .desktopSearchButton {
-    background-image: url(assets/images/icons/searchB.png);
+    background-image: url(../Yara/assets/images/icons/searchB.png);
   }
   .generaldivigation:hover + .yaraHead .titleBlock {
     filter: blur(5px);
@@ -924,7 +928,7 @@ footer {
   .generaldivigation nav ul.desktopNav li.--subnav::after {
     content: "";
     display: inline-block;
-    background: url(assets/images/chevron.webp) top center no-repeat;
+    background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -964,7 +968,7 @@ footer {
   .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.--subnav::after {
     content: "";
     display: inline-block;
-    background: url(assets/images/chevron_black.webp) top center no-repeat;
+    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -972,7 +976,7 @@ footer {
     margin-bottom: -5px;
   }
   .generaldivigation--lightTheme .navLeftButtons .desktopSearchButton {
-    background-image: url(assets/images/icons/searchB.png);
+    background-image: url(../Yara/assets/images/icons/searchB.png);
   }
 }
 @media screen and (min-width: 1366px) {
@@ -1002,6 +1006,521 @@ footer {
   }
   .generaldivigation nav ul.desktopNav li.--subnav:hover a + ul li {
     padding-left: calc(var(--spacer) * 7);
+  }
+}
+main {
+  margin-bottom: calc(var(--gap) / 2);
+}
+main section .warper,
+main .section .warper {
+  transition: 0.5s;
+  display: block;
+  padding-bottom: var(--sectionSpacer);
+  padding-top: var(--sectionSpacer);
+  margin-left: calc(var(--spacer) * 3);
+  margin-right: calc(var(--spacer) * 3);
+}
+main section .warper h3,
+main .section .warper h3 {
+  margin-top: 0;
+  margin-bottom: var(--sectionSpacer);
+  font-weight: 900;
+}
+main section .warper p, main section .warper ul li,
+main .section .warper p,
+main .section .warper ul li {
+  color: rgba(15, 15, 15, 0.8);
+}
+main section .warper .articleInfo,
+main .section .warper .articleInfo {
+  margin-bottom: calc(var(--spacer) * 3);
+}
+main section .warper figure,
+main .section .warper figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+main section .warper figure img,
+main .section .warper figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto 677/508;
+}
+main section .warper .articleInfo--qrCode .articleContent,
+main .section .warper .articleInfo--qrCode .articleContent {
+  display: none;
+}
+main section .warper .articleInfo--qrCode .articleContent--store p,
+main .section .warper .articleInfo--qrCode .articleContent--store p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+main section .warper .articleInfo--qrCode .articleContent--store figure,
+main .section .warper .articleInfo--qrCode .articleContent--store figure {
+  text-align: center;
+}
+main section .warper .articleInfo--qrCode .articleContent--store figure img,
+main .section .warper .articleInfo--qrCode .articleContent--store figure img {
+  max-width: 214px;
+  margin: auto;
+}
+main section .warper .articleInfo .articleContent h4,
+main .section .warper .articleInfo .articleContent h4 {
+  margin-top: 0;
+  margin-bottom: var(--spacer);
+  font-weight: 700;
+  line-height: 140%;
+}
+main section .warper .articleInfo .articleContent ul,
+main .section .warper .articleInfo .articleContent ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+main section .warper .articleInfo .articleContent ul li,
+main .section .warper .articleInfo .articleContent ul li {
+  font-size: 14px;
+  list-style: disc;
+}
+main section .warper .articleInfo .articleContent P,
+main .section .warper .articleInfo .articleContent P {
+  font-size: 14px;
+}
+main section .warper .articleInfo .articleContent P:last-of-type,
+main .section .warper .articleInfo .articleContent P:last-of-type {
+  padding-bottom: calc(var(--spacer) * 2);
+}
+main section .warper .articleInfo .articleContent P + ul,
+main .section .warper .articleInfo .articleContent P + ul {
+  margin-top: calc(var(--spacer) * -2);
+  margin-left: calc(var(--spacer) * 1);
+}
+main section .warper .slider,
+main .section .warper .slider {
+  overflow: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  transition: 0.5s;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+main section .warper .slider ul,
+main .section .warper .slider ul {
+  display: flex;
+  flex-wrap: nowrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: calc(var(--spacer) * 3);
+}
+main section .warper .slider ul li,
+main .section .warper .slider ul li {
+  scroll-snap-align: start;
+  width: calc(100vw - var(--spacer) * 12);
+  padding-top: calc(var(--spacer) * 5);
+  padding-left: calc(var(--spacer) * 3);
+  padding-right: calc(var(--spacer) * 3);
+  min-height: 360px;
+  display: block;
+  background-color: #FFF;
+}
+main section .warper .slider ul li.bgColors--sectionLight,
+main .section .warper .slider ul li.bgColors--sectionLight {
+  background-color: #F3F6F9;
+}
+main section .warper .slider ul li i.counter,
+main .section .warper .slider ul li i.counter {
+  display: block;
+  width: 24px;
+  height: 24px;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  line-height: 24px;
+  font-size: 12px;
+  padding: 0;
+  margin: 0 0 8px 0;
+  border-radius: 12px;
+  background-color: rgba(15, 15, 15, 0.1);
+}
+main section .warper .slider ul li p,
+main .section .warper .slider ul li p {
+  padding-bottom: calc(var(--spacer) * 3);
+  font-size: 14px;
+  line-height: 20px;
+}
+main section .warper--gallery .galleryItem,
+main .section .warper--gallery .galleryItem {
+  background-color: #f3f6f9;
+  display: none;
+}
+main section .warper--gallery .galleryItem:first-of-type,
+main .section .warper--gallery .galleryItem:first-of-type {
+  display: block;
+}
+main section .warper--gallery .galleryItem figure,
+main .section .warper--gallery .galleryItem figure {
+  margin-bottom: calc(var(--spacer) * 1);
+}
+main section .warper--gallery .galleryItem figure figcaption,
+main .section .warper--gallery .galleryItem figure figcaption {
+  display: none;
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 25px;
+  padding: var(--spacer);
+}
+main section .warper--gallery--five,
+main .section .warper--gallery--five {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr !important;
+}
+main section .warper--gallery--five .galleryItem,
+main .section .warper--gallery--five .galleryItem {
+  display: block;
+}
+main section .warper--gallery--five .galleryItem figure img,
+main .section .warper--gallery--five .galleryItem figure img {
+  display: none;
+}
+main section .warper--gallery--five .galleryItem figure figcaption,
+main .section .warper--gallery--five .galleryItem figure figcaption {
+  display: block;
+}
+main section .warper--gallery--six,
+main .section .warper--gallery--six {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
+}
+main section .warper--gallery--six .galleryItem,
+main .section .warper--gallery--six .galleryItem {
+  display: block;
+}
+main section .warper--gallery--six .galleryItem figure img,
+main .section .warper--gallery--six .galleryItem figure img {
+  display: none;
+}
+main section .warper--gallery--six .galleryItem figure figcaption,
+main .section .warper--gallery--six .galleryItem figure figcaption {
+  display: block;
+}
+main section .warper--gallery--bordered .galleryItem,
+main .section .warper--gallery--bordered .galleryItem {
+  padding: calc(var(--spacer) * 1);
+  border-radius: 5px;
+  border: solid 1px #3d3d3d;
+}
+main section .warper--gallery--bordered .galleryItem figure,
+main .section .warper--gallery--bordered .galleryItem figure {
+  padding-top: 0;
+}
+main section .warper--gallery--bordered .galleryItem figure figcaption,
+main .section .warper--gallery--bordered .galleryItem figure figcaption {
+  padding: 0;
+  padding-top: calc(var(--spacer) * 1);
+  padding-bottom: calc(var(--spacer) * 1);
+}
+main section .warper--gallery--bordered .galleryItem h4,
+main .section .warper--gallery--bordered .galleryItem h4 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+main section .warper--gallery--bordered .galleryItem--bgColorYello,
+main .section .warper--gallery--bordered .galleryItem--bgColorYello {
+  background-color: #f1f2de !important;
+}
+main section .warper--gallery--bordered .galleryItem--bgColorWhite,
+main .section .warper--gallery--bordered .galleryItem--bgColorWhite {
+  background-color: #ffffff !important;
+}
+main section .warper--boxGallery .galleryItem,
+main .section .warper--boxGallery .galleryItem {
+  border: solid 1px #c5c8ca;
+  padding: var(--spacer);
+  border-radius: 5px;
+  margin-bottom: calc(var(--spacer) * 2);
+  /*
+  span{
+      display: inline-block;
+      padding-bottom: var(--spacer);
+      margin-bottom: 0;
+      p.leadLine{
+      font-weight: 500;
+      font-size: 14px;
+      }
+  }*/
+}
+main section .warper--boxGallery .galleryItem figure,
+main .section .warper--boxGallery .galleryItem figure {
+  margin-bottom: 0;
+}
+main section .warper--boxGallery .galleryItem figure img,
+main .section .warper--boxGallery .galleryItem figure img {
+  margin-bottom: 20px;
+}
+main section .warper--boxGallery .galleryItem h4,
+main .section .warper--boxGallery .galleryItem h4 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: -0.16px;
+  padding-left: var(--spacer);
+  padding-right: var(--spacer);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+main section .warper--boxGallery .galleryItem p,
+main .section .warper--boxGallery .galleryItem p {
+  padding-left: var(--spacer);
+  padding-right: var(--spacer);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+}
+main section .warper--boxGallery .galleryItem p.leadLine,
+main .section .warper--boxGallery .galleryItem p.leadLine {
+  font-weight: 500;
+  font-size: 14px;
+}
+main section .warper--boxGallery .box,
+main .section .warper--boxGallery .box {
+  display: none;
+}
+main section .warper .buttonHolder,
+main .section .warper .buttonHolder {
+  text-align: center;
+  margin-top: 30px;
+}
+main section .warper .articleNavigation,
+main .section .warper .articleNavigation {
+  display: flex;
+  justify-content: space-between;
+}
+main section.bgColors--sectionLNormal .warper--boxGallery .galleryItem, main section.bgColors--sectionLNormal .warper--gallery .galleryItem,
+main .section.bgColors--sectionLNormal .warper--boxGallery .galleryItem,
+main .section.bgColors--sectionLNormal .warper--gallery .galleryItem {
+  background-color: #f3f6f9;
+}
+main section.bgColors--sectionLight .warper--boxGallery .galleryItem, main section.bgColors--sectionLight .warper--gallery .galleryItem,
+main .section.bgColors--sectionLight .warper--boxGallery .galleryItem,
+main .section.bgColors--sectionLight .warper--gallery .galleryItem {
+  background-color: #fff;
+}
+
+@media screen and (min-width: 599px) {
+  main section .warper,
+  main .section .warper {
+    max-width: var(--maxContentWidth);
+    margin: auto;
+    padding-left: calc(var(--spacer) * 3);
+    padding-right: calc(var(--spacer) * 3);
+  }
+  main section .warper .item_4,
+  main .section .warper .item_4 {
+    grid-column: span 4;
+  }
+  main section .warper .item_5,
+  main .section .warper .item_5 {
+    grid-column: span 5;
+  }
+  main section .warper .item_6,
+  main .section .warper .item_6 {
+    grid-column: span 6;
+  }
+  main section .warper .item_7,
+  main .section .warper .item_7 {
+    grid-column: span 7;
+  }
+  main section .warper .item_8,
+  main .section .warper .item_8 {
+    grid-column: span 8;
+  }
+  main section .warper .item_12,
+  main .section .warper .item_12 {
+    grid-column: span 12;
+  }
+  main section .warper .articleInfo,
+  main .section .warper .articleInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  main section .warper .articleInfo .articleContent h4,
+  main .section .warper .articleInfo .articleContent h4 {
+    margin-bottom: calc(var(--spacer) * 2);
+  }
+  main section .warper .articleInfo .articleContent ul li,
+  main .section .warper .articleInfo .articleContent ul li {
+    font-size: 16px;
+  }
+  main section .warper .articleInfo .articleContent p,
+  main .section .warper .articleInfo .articleContent p {
+    font-size: 16px;
+  }
+  main section .warper .articleInfo .articleContent p:last-of-type,
+  main .section .warper .articleInfo .articleContent p:last-of-type {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+  main section .warper .articleInfo--qrCode .articleContent,
+  main .section .warper .articleInfo--qrCode .articleContent {
+    display: flex;
+    justify-content: space-between;
+  }
+  main section .warper .articleInfo--qrCode .articleContent--store,
+  main .section .warper .articleInfo--qrCode .articleContent--store {
+    display: none;
+  }
+  main section .warper .articleInfo--qrCode .articleContent figure,
+  main .section .warper .articleInfo--qrCode .articleContent figure {
+    margin-bottom: calc(var(--spacer) * 5);
+  }
+  main section .warper .articleInfo--qrCode .articleContent figure img,
+  main .section .warper .articleInfo--qrCode .articleContent figure img {
+    width: 80%;
+  }
+  main section .warper .slider ul li,
+  main .section .warper .slider ul li {
+    width: 28.5714285714vw;
+  }
+  main section .warper .slider ul li p,
+  main .section .warper .slider ul li p {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+  main section .warper--boxGallery--lineGrid,
+  main .section .warper--boxGallery--lineGrid {
+    padding-left: calc(var(--spacer) * 7);
+    padding-right: calc(var(--spacer) * 7);
+    gap: 0 16px;
+  }
+  main section .warper--boxGallery--lineGrid .galleryItem,
+  main .section .warper--boxGallery--lineGrid .galleryItem {
+    display: grid;
+    gap: 0 16px;
+    grid-template-columns: 60% 1fr;
+    margin-bottom: 16px;
+  }
+}
+@media screen and (min-width: 739px) {
+  main section .warper,
+  main .section .warper {
+    display: grid;
+    gap: 0px var(--sectionSpacer);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  }
+  main section .warper .item_3,
+  main .section .warper .item_3 {
+    grid-column: span 3;
+  }
+  main section .warper figure,
+  main .section .warper figure {
+    margin-bottom: calc(var(--spacer) * 2);
+  }
+  main section .warper .articleInfo,
+  main .section .warper .articleInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  main section .warper .articleInfo .articleContent h4,
+  main .section .warper .articleInfo .articleContent h4 {
+    margin-bottom: calc(var(--spacer) * 2);
+  }
+  main section .warper .articleInfo .articleContent P:last-of-type,
+  main .section .warper .articleInfo .articleContent P:last-of-type {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+  main section .warper .articleInfo--qrCode .articleContent,
+  main .section .warper .articleInfo--qrCode .articleContent {
+    display: block;
+  }
+  main section .warper .articleInfo--qrCode .articleContent figure,
+  main .section .warper .articleInfo--qrCode .articleContent figure {
+    margin-bottom: calc(var(--spacer) * 5);
+  }
+  main section .warper .articleInfo--qrCode .articleContent figure img,
+  main .section .warper .articleInfo--qrCode .articleContent figure img {
+    width: 80%;
+  }
+  main section .warper .slider ul li,
+  main .section .warper .slider ul li {
+    width: calc(var(--maxContentWidth) / 3.7);
+  }
+  main section .warper .slider ul li p,
+  main .section .warper .slider ul li p {
+    padding-bottom: calc(var(--spacer) * 3);
+  }
+  main section .warper--gallery,
+  main .section .warper--gallery {
+    gap: 0px 20px;
+  }
+  main section .warper--gallery .galleryItem,
+  main .section .warper--gallery .galleryItem {
+    display: block;
+  }
+  main section .warper--gallery .galleryItem figure,
+  main .section .warper--gallery .galleryItem figure {
+    width: 100%;
+    height: auto;
+  }
+  main section .warper--gallery .galleryItem figure figcaption,
+  main .section .warper--gallery .galleryItem figure figcaption {
+    display: block;
+  }
+  main section .warper--gallery .buttonHolder,
+  main .section .warper--gallery .buttonHolder {
+    margin-top: 40px;
+  }
+  main section .warper--gallery--five .galleryItem figure img, main section .warper--gallery--six .galleryItem figure img,
+  main .section .warper--gallery--five .galleryItem figure img,
+  main .section .warper--gallery--six .galleryItem figure img {
+    display: block;
+  }
+  main section .warper--boxGallery,
+  main .section .warper--boxGallery {
+    padding-left: calc(var(--spacer) * 3);
+    padding-right: calc(var(--spacer) * 3);
+    gap: 0 16px;
+  }
+  main section .warper--boxGallery .galleryItem,
+  main .section .warper--boxGallery .galleryItem {
+    display: block;
+    /*
+                            span{
+                                p{
+                                font-weight: 500;
+                                font-size: 14px;
+                                }    
+                            }*/
+  }
+  main section .warper--boxGallery .galleryItem h4,
+  main .section .warper--boxGallery .galleryItem h4 {
+    font-size: 18px;
+  }
+  main section .warper--boxGallery .galleryItem p,
+  main .section .warper--boxGallery .galleryItem p {
+    font-size: 14px;
+  }
+  main section .warper--boxGallery .galleryItem p.leadLine,
+  main .section .warper--boxGallery .galleryItem p.leadLine {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  main section .warper--boxGallery .box,
+  main .section .warper--boxGallery .box {
+    display: grid;
+  }
+}
+@media screen and (min-width: 1366px) {
+  main section .warper--gallery div figure figcaption,
+  main .section .warper--gallery div figure figcaption {
+    font-size: 18px;
+    line-height: 25px;
+    padding-left: calc(var(--spacer) * 2);
+    padding-right: calc(var(--spacer) * 2);
+    padding-bottom: calc(var(--spacer) * 2);
   }
 }
 footer {

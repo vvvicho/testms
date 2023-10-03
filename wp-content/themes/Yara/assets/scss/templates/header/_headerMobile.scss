@@ -1,53 +1,53 @@
 .yaraHome {
     .yaraHead{
-        background-image: url(assets/images/m_hero.webp) ;
+        background-image: url(../Yara/assets/images/m_hero.webp) ;
     }
 }
 
 .yaraSolutions{
     .yaraHead{
-        background-image: url(assets/images/m_heroCropMonitoring.webp) ;
+        background-image: url(../Yara/assets/images/m_heroCropMonitoring.webp) ;
     }
 }
 
 .yaraSolutionsNutrition{
     .yaraHead{
-        background-image: url(assets/images/m_heroSolutionsNutrition.webp) ;
+        background-image: url(../Yara/assets/images/m_heroSolutionsNutrition.webp) ;
     }
 }
 
 .yaraSolutionsNtester{
     .yaraHead{
-        background-image: url(assets/images/m_heroNtester.webp) ;
+        background-image: url(../Yara/assets/images/m_heroNtester.webp) ;
     }
 }
 
 .yaraSolutionsNrate{
     .yaraHead{
-        background-image: url(assets/images/m_heroNrate.webp) ;
+        background-image: url(../Yara/assets/images/m_heroNrate.webp) ;
     }
 }
 .yaraSolutionsMobileApp{
     .yaraHead{
-        background-image: url(assets/images/m_heroMobileApp.webp) ;
+        background-image: url(../Yara/assets/images/m_heroMobileApp.webp) ;
     }
 }
 
 .yaraSolutionsNPhoto{
     .yaraHead{
-        background-image: url(assets/images/m_heroPhoto.webp) ;
+        background-image: url(../Yara/assets/images/m_heroPhoto.webp) ;
     }
 }
 
 .yaraSolutionsNuptake{
     .yaraHead{
-        background-image: url(assets/images/m_heroNrateApp.webp) ;
+        background-image: url(../Yara/assets/images/m_heroNrateApp.webp) ;
     }
 }
 
 .yaraSolutionsAbout{   
         .yaraHead{
-            background-image: url(assets/images/m_heroAbout.webp) ;
+            background-image: url(../Yara/assets/images/m_heroAbout.webp) ;
         } 
 
 }
@@ -85,7 +85,7 @@
                 text-align: center;
                 width: calc(100% - (var(--spacer) * 6));
                 min-height: 48px;
-                background: url(assets/images/chevron.webp) top center no-repeat;
+                background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
                 background-size: 48px 48px;
                 align-self: center;
             }

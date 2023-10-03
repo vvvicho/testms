@@ -1,3 +1,10 @@
+
+.ltr {
+    figure {
+        order: 2;
+    }
+}
+
 .button {
     display: inline-block;
     padding: var(--buttonPaddingTB) var(--buttonPaddingLR) var(--buttonPaddingTB) var(--buttonPaddingLR);
@@ -34,21 +41,21 @@
     }
     &--uk {
         &::before {
-            background-image: url(../images/icons/flags/uk.webp);
+            background-image: url(../Yara/assets/images/icons/flags/uk.webp);
             background-position: left center;
             background-repeat: no-repeat;
         }
     }
     &--it {
         &::before {
-            background-image: url(../images/icons/flags/it.webp);
+            background-image: url(../Yara/assets/images/icons/flags/it.webp);
             background-position: left center;
             background-repeat: no-repeat;
         }
     }
     &--fr {
         &::before {
-            background-image: url(../images/icons/flags/fr.webp);
+            background-image: url(../Yara/assets/images/icons/flags/fr.webp);
             background-position: left center;
             background-repeat: no-repeat;
         }
@@ -69,36 +76,36 @@
     transition: 0.3s;
 
     &-navLeft {
-        background-image: url(../images/navBTN.webp);
+        background-image: url(../Yara/assets/images/navBTN.webp);
     }
     &-navRight {
-        background-image: url(../images/navBTN.webp);
+        background-image: url(../Yara/assets/images/navBTN.webp);
         transform: rotate(180deg);
     }
 
     &-openW {
-        background-image: url(../images/icons/openW.png);
+        background-image: url(../Yara/assets/images/icons/openW.png);
     }
     &-closeW {
-        background-image: url(../images/icons/closeW.png);
+        background-image: url(../Yara/assets/images/icons/closeW.png);
     }
     &-openB {
-        background-image: url(../images/icons/openB.png);
+        background-image: url(../Yara/assets/images/icons/openB.png);
     }
     &-closeB {
-        background-image: url(../images/icons/closeB.png);
+        background-image: url(../Yara/assets/images/icons/closeB.png);
     }
     &-searchW {
-        background-image: url(../images/icons/searchW.png);
+        background-image: url(../Yara/assets/images/icons/searchW.png);
     }
     &-searchB {
-        background-image: url(../images/icons/searchB.png);
+        background-image: url(../Yara/assets/images/icons/searchB.png);
     }
     &-ok {
         width: 24px;
         height: 24px;
         margin: 16px;
-        background-image: url(../images/icons/ok.webp);
+        background-image: url(../Yara/assets/images/icons/ok.webp);
         background-size: 24px;
 
         background-position: center center;
@@ -114,7 +121,7 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../images/icons/SearchBlue.png);
+            background-image: url(../Yara/assets/images/icons/SearchBlue.png);
         }
     }
     &-crop {
@@ -128,7 +135,7 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../images/icons/Crop.png);
+            background-image: url(../Yara/assets/images/icons/Crop.png);
         }
     }
     &-plans {
@@ -142,7 +149,7 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../images/icons/LaptopAlt.png);
+            background-image: url(../Yara/assets/images/icons/LaptopAlt.png);
         }
     }
     &-track {
@@ -156,7 +163,7 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../images/icons/track.png);
+            background-image: url(../Yara/assets/images/icons/track.png);
         }
     }
     &-tester {
@@ -170,7 +177,7 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../images/icons/tester.png);
+            background-image: url(../Yara/assets/images/icons/tester.png);
         }
     }
     &-clock {
@@ -184,7 +191,7 @@
             position: absolute;
             top: 20px;
             left: 0px;
-            background-image: url(../images/icons/clock.png);
+            background-image: url(../Yara/assets/images/icons/clock.png);
         }
     }
     &-upDiagram {
@@ -195,7 +202,7 @@
             width: 48px;
             height: 48px;
             margin-bottom: -20px;
-            background-image: url(../images/icons/upDiagram.png);
+            background-image: url(../Yara/assets/images/icons/upDiagram.png);
         }
     }
     &-document {
@@ -206,7 +213,7 @@
             width: 48px;
             height: 48px;
             margin-bottom: -20px;
-            background-image: url(../images/icons/document.png);
+            background-image: url(../Yara/assets/images/icons/document.png);
         }
     }
     &-meter {
@@ -217,7 +224,7 @@
             width: 48px;
             height: 48px;
             margin-bottom: -20px;
-            background-image: url(../images/icons/meter.png);
+            background-image: url(../Yara/assets/images/icons/meter.png);
         }
     }
     &-earth {
@@ -228,7 +235,7 @@
             width: 48px;
             height: 48px;
             margin-bottom: -20px;
-            background-image: url(../images/icons/earth.png);
+            background-image: url(../Yara/assets/images/icons/earth.png);
         }
     }
 }

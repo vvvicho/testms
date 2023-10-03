@@ -13,28 +13,28 @@ $H8Dfs: 8px;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_400.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_400.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_500.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_500.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_700.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_700.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(assets/fonts/NatoSansCyr_900.woff2) format("woff2");
+  src: url(../Yara/assets/fonts/NatoSansCyr_900.woff2) format("woff2");
 }
 h1 {
   font-size: var(--H1fs);
@@ -220,6 +220,10 @@ footer {
   margin-right: auto;
 }
 
+.ltr figure {
+  order: 2;
+}
+
 .button {
   display: inline-block;
   padding: var(--buttonPaddingTB) var(--buttonPaddingLR) var(--buttonPaddingTB) var(--buttonPaddingLR);
@@ -254,17 +258,17 @@ footer {
   min-height: 60px;
 }
 .flafIcons--uk::before {
-  background-image: url(../images/icons/flags/uk.webp);
+  background-image: url(../Yara/assets/images/icons/flags/uk.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--it::before {
-  background-image: url(../images/icons/flags/it.webp);
+  background-image: url(../Yara/assets/images/icons/flags/it.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--fr::before {
-  background-image: url(../images/icons/flags/fr.webp);
+  background-image: url(../Yara/assets/images/icons/flags/fr.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
@@ -283,35 +287,35 @@ footer {
   transition: 0.3s;
 }
 .icons-navLeft {
-  background-image: url(../images/navBTN.webp);
+  background-image: url(../Yara/assets/images/navBTN.webp);
 }
 .icons-navRight {
-  background-image: url(../images/navBTN.webp);
+  background-image: url(../Yara/assets/images/navBTN.webp);
   transform: rotate(180deg);
 }
 .icons-openW {
-  background-image: url(../images/icons/openW.png);
+  background-image: url(../Yara/assets/images/icons/openW.png);
 }
 .icons-closeW {
-  background-image: url(../images/icons/closeW.png);
+  background-image: url(../Yara/assets/images/icons/closeW.png);
 }
 .icons-openB {
-  background-image: url(../images/icons/openB.png);
+  background-image: url(../Yara/assets/images/icons/openB.png);
 }
 .icons-closeB {
-  background-image: url(../images/icons/closeB.png);
+  background-image: url(../Yara/assets/images/icons/closeB.png);
 }
 .icons-searchW {
-  background-image: url(../images/icons/searchW.png);
+  background-image: url(../Yara/assets/images/icons/searchW.png);
 }
 .icons-searchB {
-  background-image: url(../images/icons/searchB.png);
+  background-image: url(../Yara/assets/images/icons/searchB.png);
 }
 .icons-ok {
   width: 24px;
   height: 24px;
   margin: 16px;
-  background-image: url(../images/icons/ok.webp);
+  background-image: url(../Yara/assets/images/icons/ok.webp);
   background-size: 24px;
   background-position: center center;
 }
@@ -327,7 +331,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/SearchBlue.png);
+  background-image: url(../Yara/assets/images/icons/SearchBlue.png);
 }
 .icons-crop {
   position: relative;
@@ -341,7 +345,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/Crop.png);
+  background-image: url(../Yara/assets/images/icons/Crop.png);
 }
 .icons-plans {
   position: relative;
@@ -355,7 +359,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/LaptopAlt.png);
+  background-image: url(../Yara/assets/images/icons/LaptopAlt.png);
 }
 .icons-track {
   position: relative;
@@ -369,7 +373,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/track.png);
+  background-image: url(../Yara/assets/images/icons/track.png);
 }
 .icons-tester {
   position: relative;
@@ -383,7 +387,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/tester.png);
+  background-image: url(../Yara/assets/images/icons/tester.png);
 }
 .icons-clock {
   position: relative;
@@ -397,7 +401,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../images/icons/clock.png);
+  background-image: url(../Yara/assets/images/icons/clock.png);
 }
 .icons-upDiagram {
   margin-top: calc(var(--gap) / 2);
@@ -408,7 +412,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/upDiagram.png);
+  background-image: url(../Yara/assets/images/icons/upDiagram.png);
 }
 .icons-document {
   margin-top: calc(var(--gap) / 2);
@@ -419,7 +423,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/document.png);
+  background-image: url(../Yara/assets/images/icons/document.png);
 }
 .icons-meter {
   margin-top: calc(var(--gap) / 2);
@@ -430,7 +434,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/meter.png);
+  background-image: url(../Yara/assets/images/icons/meter.png);
 }
 .icons-earth {
   margin-top: calc(var(--gap) / 2);
@@ -441,7 +445,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../images/icons/earth.png);
+  background-image: url(../Yara/assets/images/icons/earth.png);
 }
 
 .bgColors--sectionLNormal {
@@ -503,39 +507,39 @@ footer {
   }
 }
 .yaraHome .yaraHead {
-  background-image: url(assets/images/m_hero.webp);
+  background-image: url(../Yara/assets/images/m_hero.webp);
 }
 
 .yaraSolutions .yaraHead {
-  background-image: url(assets/images/m_heroCropMonitoring.webp);
+  background-image: url(../Yara/assets/images/m_heroCropMonitoring.webp);
 }
 
 .yaraSolutionsNutrition .yaraHead {
-  background-image: url(assets/images/m_heroSolutionsNutrition.webp);
+  background-image: url(../Yara/assets/images/m_heroSolutionsNutrition.webp);
 }
 
 .yaraSolutionsNtester .yaraHead {
-  background-image: url(assets/images/m_heroNtester.webp);
+  background-image: url(../Yara/assets/images/m_heroNtester.webp);
 }
 
 .yaraSolutionsNrate .yaraHead {
-  background-image: url(assets/images/m_heroNrate.webp);
+  background-image: url(../Yara/assets/images/m_heroNrate.webp);
 }
 
 .yaraSolutionsMobileApp .yaraHead {
-  background-image: url(assets/images/m_heroMobileApp.webp);
+  background-image: url(../Yara/assets/images/m_heroMobileApp.webp);
 }
 
 .yaraSolutionsNPhoto .yaraHead {
-  background-image: url(assets/images/m_heroPhoto.webp);
+  background-image: url(../Yara/assets/images/m_heroPhoto.webp);
 }
 
 .yaraSolutionsNuptake .yaraHead {
-  background-image: url(assets/images/m_heroNrateApp.webp);
+  background-image: url(../Yara/assets/images/m_heroNrateApp.webp);
 }
 
 .yaraSolutionsAbout .yaraHead {
-  background-image: url(assets/images/m_heroAbout.webp);
+  background-image: url(../Yara/assets/images/m_heroAbout.webp);
 }
 
 .yaraHead {
@@ -563,7 +567,7 @@ footer {
   text-align: center;
   width: calc(100% - var(--spacer) * 6);
   min-height: 48px;
-  background: url(assets/images/chevron.webp) top center no-repeat;
+  background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
   background-size: 48px 48px;
   align-self: center;
 }
@@ -599,31 +603,31 @@ footer {
 
 @media screen and (min-width: 599px) {
   .yaraHome .yaraHead {
-    background-image: url(assets/images/hero.webp);
+    background-image: url(../Yara/assets/images/hero.webp);
   }
   .yaraSolutions .yaraHead {
-    background-image: url(assets/images/heroCropMonitoring.webp);
+    background-image: url(../Yara/assets/images/heroCropMonitoring.webp);
   }
   .yaraSolutionsNutrition .yaraHead {
-    background-image: url(assets/images/heroSolutionsNutrition.webp);
+    background-image: url(../Yara/assets/images/heroSolutionsNutrition.webp);
   }
   .yaraSolutionsNtester .yaraHead {
-    background-image: url(assets/images/heroNtester.webp);
+    background-image: url(../Yara/assets/images/heroNtester.webp);
   }
   .yaraSolutionsNrate .yaraHead {
-    background-image: url(assets/images/heroNrate.webp);
+    background-image: url(../Yara/assets/images/heroNrate.webp);
   }
   .yaraSolutionsMobileApp .yaraHead {
-    background-image: url(assets/images/heroMobileApp.webp);
+    background-image: url(../Yara/assets/images/heroMobileApp.webp);
   }
   .yaraSolutionsNPhoto .yaraHead {
-    background-image: url(assets/images/heroPhoto.webp);
+    background-image: url(../Yara/assets/images/heroPhoto.webp);
   }
   .yaraSolutionsNuptake .yaraHead {
-    background-image: url(assets/images/heroNrateApp.webp);
+    background-image: url(../Yara/assets/images/heroNrateApp.webp);
   }
   .yaraSolutionsAbout .yaraHead {
-    background-image: url(assets/images/heroAbout.webp);
+    background-image: url(../Yara/assets/images/heroAbout.webp);
   }
   .yaraHead .titleBlock {
     max-width: var(--maxContentWidth);
@@ -673,7 +677,7 @@ footer {
   width: 81px;
   height: 24px;
   display: block;
-  background: url(assets/images/atfarmLogoBW.png) top center no-repeat;
+  background: url(../Yara/assets/images/atfarmLogoBW.png) top center no-repeat;
   background-size: 81px auto;
 }
 .generaldivigation .logoHolder h1 {
@@ -689,20 +693,20 @@ footer {
           backdrop-filter: blur(20px);
 }
 .generaldivigation:hover h2 img {
-  background-image: url(assets/images/atfarmLogoBW.png);
+  background-image: url(../Yara/assets/images/atfarmLogoBW.png);
   background-position: bottom center;
 }
 .generaldivigation:hover nav li a {
   color: rgba(15, 15, 15, 0.97);
 }
 .generaldivigation:hover nav li.icons-searchW {
-  background-image: url(assets/images/icons/searchB.png);
+  background-image: url(../Yara/assets/images/icons/searchB.png);
 }
 .generaldivigation:hover nav li.icons-openW {
-  background-image: url(assets/images/icons/openB.png);
+  background-image: url(../Yara/assets/images/icons/openB.png);
 }
 .generaldivigation:hover nav li.icons-openW[data-status="1"] {
-  background-image: url(assets/images/icons/closeB.png);
+  background-image: url(../Yara/assets/images/icons/closeB.png);
 }
 .generaldivigation:hover + .yaraHead .titleBlock {
   filter: blur(5px);
@@ -784,14 +788,14 @@ footer {
           backdrop-filter: blur(20px);
 }
 .generaldivigation--lightTheme h2 img {
-  background-image: url(assets/images/atfarmLogoBW.png) !important;
+  background-image: url(../Yara/assets/images/atfarmLogoBW.png) !important;
   background-position: bottom center !important;
 }
 .generaldivigation--lightTheme nav .icons-searchW {
-  background-image: url(assets/images/icons/searchB.png);
+  background-image: url(../Yara/assets/images/icons/searchB.png);
 }
 .generaldivigation--lightTheme nav li.icons-openW {
-  background-image: url(assets/images/icons/openB.png);
+  background-image: url(../Yara/assets/images/icons/openB.png);
 }
 
 @media screen and (min-width: 739px) {
@@ -824,7 +828,7 @@ footer {
   .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.--subnav::after {
     content: "";
     display: inline-block;
-    background: url(assets/images/chevron_black.webp) top center no-repeat;
+    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -832,7 +836,7 @@ footer {
     margin-bottom: -5px;
   }
   .generaldivigation:hover .navLeftButtons .desktopSearchButton {
-    background-image: url(assets/images/icons/searchB.png);
+    background-image: url(../Yara/assets/images/icons/searchB.png);
   }
   .generaldivigation:hover + .yaraHead .titleBlock {
     filter: blur(5px);
@@ -910,7 +914,7 @@ footer {
   .generaldivigation nav ul.desktopNav li.--subnav::after {
     content: "";
     display: inline-block;
-    background: url(assets/images/chevron.webp) top center no-repeat;
+    background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -950,7 +954,7 @@ footer {
   .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.--subnav::after {
     content: "";
     display: inline-block;
-    background: url(assets/images/chevron_black.webp) top center no-repeat;
+    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -958,7 +962,7 @@ footer {
     margin-bottom: -5px;
   }
   .generaldivigation--lightTheme .navLeftButtons .desktopSearchButton {
-    background-image: url(assets/images/icons/searchB.png);
+    background-image: url(../Yara/assets/images/icons/searchB.png);
   }
 }
 @media screen and (min-width: 1366px) {

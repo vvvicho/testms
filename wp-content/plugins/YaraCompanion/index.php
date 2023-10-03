@@ -18,6 +18,7 @@ defined('ABSPATH') || die;
 define('YARA_CC_VERSION', '1.0.0');
 define('YARA_CC_PATH', plugin_dir_url(__FILE__));
 define('YARA_PP_PATH', plugin_dir_path(__DIR__));
+//define('YARA_URI_PATH',get_site_url())
 
 
 
@@ -41,9 +42,9 @@ function yara_companion_functions()
     $yaraData['pluginDirUrl'] = YARA_CC_PATH;
     $yaraData['itemsData'] =  "123 dy data";
     wp_enqueue_style('yara-admin-style',  YARA_CC_PATH . 'assets/scssAdmin/main.css', false, '1.0', 'all');
-    wp_enqueue_style('yara-pagesMain-style',  YARA_CC_PATH . '../../themes/Yara/assets/scss/main.css', false, '1.0', 'all');
-    wp_enqueue_style('yara-pagesComponents-style',  YARA_CC_PATH . '../../themes/Yara/assets/scss/yaraGlobal.css', false, '1.0', 'all');
-    wp_enqueue_script('advanced-page-script', YARA_CC_PATH . '../../themes/Yara/assets/js/app.js', NULL, NULL, true);
+    wp_enqueue_style('yara-pagesMain-style',  get_site_url() . '/wp-content/themes/Yara/style.css', false, '1.0', 'all');
+   // wp_enqueue_style('yara-pagesComponents-style',  YARA_CC_PATH . '../../themes/Yara/assets/scss/yaraGlobal.css', false, '1.0', 'all');
+   // wp_enqueue_script('advanced-page-script', YARA_CC_PATH . '../../themes/Yara/assets/js/app.js', NULL, NULL, true);
     wp_enqueue_script('advanced-script', YARA_CC_PATH . 'assets/jsAdmin/app.js', NULL, NULL, true);
     wp_localize_script(
         'advanced-script',

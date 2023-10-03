@@ -1,3 +1,21 @@
+.yaraPageEditorHolder {
+  position: fixed !important;
+  background-color: white !important;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.yaraPageEditorHead {
+  background-color: #ccc;
+}
+.yaraPageEditorHead .generaldivigation {
+  position: relative !important;
+}
+
 .adminHolder {
   position: relative;
   margin-bottom: 100px;
@@ -115,6 +133,7 @@
 }
 .adminHolder--leftNav {
   position: fixed;
+  top: 0;
   width: 320px;
   height: calc(100vh - 100px);
   overflow-x: hidden;
@@ -160,11 +179,16 @@
 .adminHolder--footer {
   height: 100px;
   width: 100%;
-  background-color: gray;
+  background-color: #ccc;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 10000;
+  text-align: center;
+}
+.adminHolder--footer .button {
+  margin: auto;
+  margin-top: 10px;
 }
 .adminHolder .mainGalleryHolder {
   position: fixed;

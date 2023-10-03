@@ -27,7 +27,7 @@
                 width: 81px;
                 height: 24px;
                 display: block;
-                background: url(assets/images/atfarmLogoBW.png) top center no-repeat;
+                background: url(../Yara/assets/images/atfarmLogoBW.png) top center no-repeat;
                 background-size: 81px auto;
             }
         }
@@ -46,7 +46,7 @@
 
         h2 {
             img {
-                background-image: url(assets/images/atfarmLogoBW.png);
+                background-image: url(../Yara/assets/images/atfarmLogoBW.png);
                 background-position: bottom center;
             }
         }
@@ -58,12 +58,12 @@
                 }
             }
             li.icons-searchW {
-                background-image: url(assets/images/icons/searchB.png);
+                background-image: url(../Yara/assets/images/icons/searchB.png);
             }
             li.icons-openW {
-                background-image: url(assets/images/icons/openB.png);
+                background-image: url(../Yara/assets/images/icons/openB.png);
                 &[data-status="1"] {
-                    background-image: url(assets/images/icons/closeB.png);
+                    background-image: url(../Yara/assets/images/icons/closeB.png);
                 }
             }
         }
@@ -161,16 +161,16 @@
         backdrop-filter: blur(20px);
         h2 {
             img {
-                background-image: url(assets/images/atfarmLogoBW.png) !important;
+                background-image: url(../Yara/assets/images/atfarmLogoBW.png) !important;
                 background-position: bottom center !important;
             }
         }
         nav {
             .icons-searchW {
-                background-image: url(assets/images/icons/searchB.png);
+                background-image: url(../Yara/assets/images/icons/searchB.png);
             }
             li.icons-openW {
-                background-image: url(assets/images/icons/openB.png);
+                background-image: url(../Yara/assets/images/icons/openB.png);
             }
         }
     }

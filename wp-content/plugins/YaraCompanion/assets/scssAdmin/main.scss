@@ -31,6 +31,28 @@ $buttonLightBoxShadow:
     0px 1px 5px rgba(15, 15, 15, 0.12);
 $buttonLightBR: 8px;
 
+
+.yaraPageEditorHolder{
+    position: fixed !important;
+    background-color: white !important;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.yaraPageEditorHead{
+    background-color: #ccc;
+    .generaldivigation{
+        position: relative !important;
+
+    }
+
+}
+
 .adminHolder {
     .ltr {
         figure {
@@ -165,7 +187,7 @@ $buttonLightBR: 8px;
     margin-bottom: 100px;
     &--leftNav {
         position: fixed;
-        // top: 0;
+        top: 0;
         //  left: 0;
         width: $navWidth;
         height: calc(100vh - 100px);
@@ -218,11 +240,16 @@ $buttonLightBR: 8px;
     &--footer {
         height: 100px;
         width: 100%;
-        background-color: gray;
+        background-color: #ccc;
         position: fixed;
         bottom: 0;
         left: 0;
         z-index: 10000;
+        text-align: center;
+        .button{
+            margin: auto;
+            margin-top: 10px;
+        }
     }
     .mainGalleryHolder {
         // border: solid 4px rgba(69, 58, 148, 0.8);

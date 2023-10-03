@@ -32,7 +32,7 @@
                                 &::after {
                                     content: "";
                                     display: inline-block;
-                                    background: url(assets/images/chevron_black.webp) top center no-repeat;
+                                    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
                                     background-size: 20px 20px;
                                     width: 20px;
                                     height: 20px;
@@ -46,7 +46,7 @@
             }
             .navLeftButtons {
                 .desktopSearchButton {
-                    background-image: url(assets/images/icons/searchB.png);
+                    background-image: url(../Yara/assets/images/icons/searchB.png);
                 }
             }
             & + .yaraHead {
@@ -140,7 +140,7 @@
                         &::after {
                             content: "";
                             display: inline-block;
-                            background: url(assets/images/chevron.webp) top center no-repeat;
+                            background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
                             background-size: 20px 20px;
                             width: 20px;
                             height: 20px;
@@ -187,7 +187,7 @@
                                 &::after {
                                     content: "";
                                     display: inline-block;
-                                    background: url(assets/images/chevron_black.webp) top center no-repeat;
+                                    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
                                     background-size: 20px 20px;
                                     width: 20px;
                                     height: 20px;
@@ -201,7 +201,7 @@
             }
             .navLeftButtons {
                 .desktopSearchButton {
-                    background-image: url(assets/images/icons/searchB.png);
+                    background-image: url(../Yara/assets/images/icons/searchB.png);
                 }
             }
         }
