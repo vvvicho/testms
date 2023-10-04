@@ -272,6 +272,101 @@ footer {
   background-position: left center;
   background-repeat: no-repeat;
 }
+.flafIcons--bg::before {
+  background-image: url(../Yara/assets/images/icons/flags/bg.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--dk::before {
+  background-image: url(../Yara/assets/images/icons/flags/dk.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--es::before {
+  background-image: url(../Yara/assets/images/icons/flags/es.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--lv::before {
+  background-image: url(../Yara/assets/images/icons/flags/lv.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--lt::before {
+  background-image: url(../Yara/assets/images/icons/flags/lt.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--no::before {
+  background-image: url(../Yara/assets/images/icons/flags/no.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--pl::before {
+  background-image: url(../Yara/assets/images/icons/flags/pl.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--pt::before {
+  background-image: url(../Yara/assets/images/icons/flags/pt.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--ro::before {
+  background-image: url(../Yara/assets/images/icons/flags/ro.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--fi::before {
+  background-image: url(../Yara/assets/images/icons/flags/fi.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--se::before {
+  background-image: url(../Yara/assets/images/icons/flags/se.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--ua::before {
+  background-image: url(../Yara/assets/images/icons/flags/ua.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--ar::before {
+  background-image: url(../Yara/assets/images/icons/flags/ar.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--mx::before {
+  background-image: url(../Yara/assets/images/icons/flags/mx.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--br::before {
+  background-image: url(../Yara/assets/images/icons/flags/br.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--cf::before {
+  background-image: url(../Yara/assets/images/icons/flags/cf.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--za::before {
+  background-image: url(../Yara/assets/images/icons/flags/za.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--de::before {
+  background-image: url(../Yara/assets/images/icons/flags/de.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.flafIcons--ee::before {
+  background-image: url(../Yara/assets/images/icons/flags/ee.webp);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
 .flafIcons--navigation {
   display: inline-block;
   margin-bottom: -23px;

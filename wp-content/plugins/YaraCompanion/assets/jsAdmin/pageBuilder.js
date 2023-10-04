@@ -187,7 +187,7 @@ function showHideElements(state) {
                 });
             }
         });
-        let alladminPannels = document.querySelectorAll(".adminBgEdit, .sectionBGcolor");
+        let alladminPannels = document.querySelectorAll(".adminBgEdit, .sectionBGcolor, .collorsPannel");
         alladminPannels.forEach(async (element) => {
             element.remove();
         });
@@ -214,7 +214,8 @@ function savepSpetial(obj) {
     setTimeout(() => { obj.onclick = function () { editpSpetial(this) } }, 200);
 }
 
-icosFlagsList = ["uk", "it", "fr", "uk", "it", "fr"];
+icosFlagsList = ["bg", "dk", "de", "ee", "uk", "es", "fr", "lv", "lt", "no", "pl", "pt", "ro", "fi", "se", "ua", "ar", "mx", "br", "cf", "za" ];
+//icosFlagsList = ["bg", "dk", "de" ,      "uk", "it", "fr", "uk", "it", "fr"];
 
 function returnFlagsList() {
     let flagsList = "";
