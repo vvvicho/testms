@@ -176,6 +176,11 @@ function replaceStr(str) {
   }
 
 
+  function anIconbuilder(icon) {
+    return `<div class='adminTools icon icon--${icon}'></div>`;
+}
+
+
 function yaraLoadPageBuilderScripts(){
     console.log("OPEN PAGE BUILDER SCRIPT");
     getBuilderScripts();
@@ -194,6 +199,22 @@ function yaraLoadPageBuilderScripts(){
             //find yaraHead
 
             let yaraHeadHTML = document.querySelector(".adminHolder--mainContent .yaraHead");
+
+
+            let swapPositionPannel = document.createElement("div");
+            swapPositionPannel.classList.add("swapPositionPannel");
+            swapPositionPannel.innerHTML = anIconbuilder("edit");
+            yaraHeadHTML.appendChild(swapPositionPannel);
+    
+            swapPositionPannel.querySelector(".icon--edit").onclick = () => {
+                prapareForEditing(yaraHeadHTML, yaraHeadHTML);
+            }
+
+
+
+
+
+
 
             if(yaraHeadHTML){
                 let newYaraHeadHTML = document.createElement("headeritem");
@@ -220,8 +241,45 @@ function yaraLoadPageBuilderScripts(){
 
             let yaraContentSections = document.querySelectorAll(".adminHolder--mainContent .section");
 
+
+
+
+
+
+
+
+
+
+
+
+
             yaraContentSections.forEach(async (item) => {
                 console.log(item);
+
+
+
+                let contentSwapPositionPannel = document.createElement("div");
+                contentSwapPositionPannel.classList.add("swapPositionPannel");
+                contentSwapPositionPannel.innerHTML = anIconbuilder("up") + anIconbuilder("down") + anIconbuilder("edit");
+               // yaraContentSections.appendChild(contentSwapPositionPannel);
+        
+               item.appendChild(contentSwapPositionPannel);
+        
+                item.querySelector(".icon--edit").onclick = () => {
+                    prapareForEditing(item, item);
+                }
+        
+                item.querySelector(".icon--up").onclick = () => {
+                    console.log("SWAP POSITIONS");
+                    swapNodePositions(item, 0);
+                }
+                item.querySelector(".icon--down").onclick = () => {
+                    console.log("SWAP POSITIONS");
+                    swapNodePositions(item, 1);
+                }
+
+
+
                 //<sectionitem class="normal">
                 let newYaraSectionHTML = document.createElement("sectionitem");
                 newYaraSectionHTML.classList.add("normal");   

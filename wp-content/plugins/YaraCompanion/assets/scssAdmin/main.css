@@ -60,7 +60,7 @@
 .adminHolder headeritem .swapPositionPannel,
 .adminHolder sectionitem .swapPositionPannel {
   position: absolute;
-  bottom: -30px;
+  bottom: 30px;
   right: 30px;
 }
 .adminHolder .hidden {
