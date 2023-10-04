@@ -201,14 +201,7 @@ function yaraLoadPageBuilderScripts(){
             let yaraHeadHTML = document.querySelector(".adminHolder--mainContent .yaraHead");
 
 
-            let swapPositionPannel = document.createElement("div");
-            swapPositionPannel.classList.add("swapPositionPannel");
-            swapPositionPannel.innerHTML = anIconbuilder("edit");
-            yaraHeadHTML.appendChild(swapPositionPannel);
-    
-            swapPositionPannel.querySelector(".icon--edit").onclick = () => {
-                prapareForEditing(yaraHeadHTML, yaraHeadHTML);
-            }
+
 
 
 
@@ -227,9 +220,19 @@ function yaraLoadPageBuilderScripts(){
                 //sectionToEdit = clone;
                 //insertMySection(newYaraHeadHTML);
 
-                newYaraHeadHTML.onclick = function () {
+
+                let swapPositionPannel = document.createElement("div");
+                swapPositionPannel.classList.add("swapPositionPannel");
+                swapPositionPannel.innerHTML = anIconbuilder("edit");
+                newYaraHeadHTML.appendChild(swapPositionPannel);
+        
+                swapPositionPannel.querySelector(".icon--edit").onclick = () => {
                     prapareForEditing(newYaraHeadHTML, newYaraHeadHTML);
                 }
+
+                //newYaraHeadHTML.onclick = function () {
+                    //prapareForEditing(newYaraHeadHTML, newYaraHeadHTML);
+               // }
 
                 document.querySelector("#yaraHeroSingle").setAttribute("data-used","1");
 
