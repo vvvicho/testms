@@ -257,7 +257,7 @@ function yaraLoadPageBuilderScripts(){
                 console.log(item);
 
 
-
+/*
                 let contentSwapPositionPannel = document.createElement("div");
                 contentSwapPositionPannel.classList.add("swapPositionPannel");
                 contentSwapPositionPannel.innerHTML = anIconbuilder("up") + anIconbuilder("down") + anIconbuilder("edit");
@@ -277,7 +277,7 @@ function yaraLoadPageBuilderScripts(){
                     console.log("SWAP POSITIONS");
                     swapNodePositions(item, 1);
                 }
-
+*/
 
 
                 //<sectionitem class="normal">
@@ -296,7 +296,7 @@ function yaraLoadPageBuilderScripts(){
 
                 let swapPositionPannel = document.createElement("div");
                 swapPositionPannel.classList.add("swapPositionPannel");
-                swapPositionPannel.innerHTML = iconbuilder("up") + iconbuilder("down") + iconbuilder("edit");
+                swapPositionPannel.innerHTML = anIconbuilder("up") + anIconbuilder("down") + anIconbuilder("edit");
                 newYaraSectionHTML.appendChild(swapPositionPannel);
         
         
