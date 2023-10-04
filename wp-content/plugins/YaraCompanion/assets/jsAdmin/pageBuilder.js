@@ -424,9 +424,21 @@ function insertMySection(obj) {
         headerItems.push(dataObject);
         let thisObject = headerItems[headerItems.length - 1].item;
         let sectionToEdit = headerItems[headerItems.length - 1];
-        thisObject.onclick = function () {
+        //thisObject.onclick = function () {
+        //    prapareForEditing(thisObject, sectionToEdit);
+        //}
+
+        let swapPositionPannel = document.createElement("div");
+        swapPositionPannel.classList.add("swapPositionPannel");
+        swapPositionPannel.innerHTML = iconbuilder("edit");
+        thisObject.appendChild(swapPositionPannel);
+
+        swapPositionPannel.querySelector(".icon--edit").onclick = () => {
             prapareForEditing(thisObject, sectionToEdit);
         }
+
+
+
         template.setAttribute('data-used', '1');
     } else if (templateType == "0") {
         dataObject = {};
