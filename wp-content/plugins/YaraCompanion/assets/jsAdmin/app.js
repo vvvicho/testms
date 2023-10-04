@@ -13,10 +13,10 @@ yaraPageEditorHead.innerHTML =
 <div class="generaldivigation" id="generaldivigation">
 <div class="logoHolder">
             <h1>
-                <a href="javascript:;"><img src="https://evonsm.test/wp-content/themes/Yara/assets/images/YaraLogo.webp?v=25" width="48" height="48" alt="Yara Digital Products"></a>
+                <a href="javascript:;"><img src="../wp-content/themes/Yara/assets/images/YaraLogo.webp?v=25" width="48" height="48" alt="Yara Digital Products"></a>
             </h1>
             <h2>
-                <a href="javascript:;"><img src="https://evonsm.test/wp-content/themes/Yara/assets/images/pixel.png?v=45" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
+                <a href="javascript:;"><img src=../wp-content/themes/Yara/assets/images/pixel.png?v=45" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
             </h2>
         </div>      
         <div class="navLeftButtons">            
