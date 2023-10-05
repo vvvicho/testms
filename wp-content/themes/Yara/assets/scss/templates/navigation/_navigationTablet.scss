@@ -28,7 +28,7 @@
                                     color: $darkLinkHoverColor;
                                 }                                 
                             }
-                            &.--subnav {
+                            &.--subnav, &.menu-item-has-children {
                                 &::after {
                                     content: "";
                                     display: inline-block;
@@ -86,7 +86,7 @@
                     margin-left: calc(var(--spacer) * 0);
                     margin-right: calc(var(--spacer) * 0);
                     //cursor: pointer;
-                    &.--subnav {
+                    &.--subnav, &.menu-item-has-children {
                         a + ul {
                             display: block;
                             opacity: 0;
@@ -172,6 +172,7 @@
         }
         &--lightTheme {
             background: rgba(245, 245, 247, 0.6);
+            //background: rgba(255, 0, 0, 0.6);
             backdrop-filter: blur(20px);
             nav {
                 ul.desktopNav {
@@ -183,7 +184,7 @@
                                     color: $darkLinkHoverColor;
                                 }
                             }
-                            &.--subnav {
+                            &.--subnav, &.menu-item-has-children {
                                 &::after {
                                     content: "";
                                     display: inline-block;

@@ -43,7 +43,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 function yara_enqueue_scripts() {
 
-    wp_enqueue_script( 'app-functions', get_stylesheet_directory_uri() . '/assets/js/app.js', [], '6.8.3', false );
+    wp_enqueue_script( 'app-functions', get_stylesheet_directory_uri() . '/assets/js/app.js', [], '6.8.3', true );
     // Enqueue slider css file
     wp_enqueue_style( 'main-css', get_template_directory_uri() . '/style.css', [], '1.0.0' );
 	//wp_enqueue_style( 'yaraGlobal-css', get_template_directory_uri() . '/assets/scss/yaraGlobal.css', [], '1.0.0' );	

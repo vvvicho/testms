@@ -1,6 +1,7 @@
 let resizeProgress = 0, scrollProgress = 0;
 let mobileOpenCloseButton = document.getElementById("mobileOpenCloseButton");
 let desktopNav = document.getElementById("desktopNav");
+desktopNav.setAttribute("data-status", "0");
 
 if(desktopNav){
     desktopNav.onmouseleave = function(){

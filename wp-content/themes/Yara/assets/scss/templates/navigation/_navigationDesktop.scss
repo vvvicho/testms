@@ -28,7 +28,7 @@
                     padding-right: calc(var(--spacer) * 2);
                     margin-left: calc(var(--spacer) * 1);
                     margin-right: calc(var(--spacer) * 1);
-                    &.--subnav {
+                    &.--subnav, &.menu-item-has-children {
                         &:hover {
                             a + ul {
                                 li {

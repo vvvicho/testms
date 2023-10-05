@@ -934,7 +934,7 @@ footer {
   .generaldivigation:hover nav ul.desktopNav[data-status="0"] li a:hover {
     color: #0056B8;
   }
-  .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.--subnav::after {
+  .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.--subnav::after, .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.menu-item-has-children::after {
     content: "";
     display: inline-block;
     background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
@@ -974,7 +974,7 @@ footer {
     margin-left: calc(var(--spacer) * 0);
     margin-right: calc(var(--spacer) * 0);
   }
-  .generaldivigation nav ul.desktopNav li.--subnav a + ul {
+  .generaldivigation nav ul.desktopNav li.--subnav a + ul, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul {
     display: block;
     opacity: 0;
     position: absolute;
@@ -986,7 +986,7 @@ footer {
     transition: 0.3s;
     background-color: rgb(245, 245, 247);
   }
-  .generaldivigation nav ul.desktopNav li.--subnav a + ul li {
+  .generaldivigation nav ul.desktopNav li.--subnav a + ul li, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul li {
     display: block;
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
@@ -994,17 +994,17 @@ footer {
     padding: 0;
     padding-left: calc(var(--spacer) * 7);
   }
-  .generaldivigation nav ul.desktopNav li.--subnav a + ul li:first-of-type {
+  .generaldivigation nav ul.desktopNav li.--subnav a + ul li:first-of-type, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul li:first-of-type {
     padding-left: calc(var(--spacer) * 5) !important;
     display: block;
     font-size: 14px;
     line-height: 20px;
     padding-bottom: calc(var(--spacer) * 0);
   }
-  .generaldivigation nav ul.desktopNav li.--subnav a + ul li:last-of-type {
+  .generaldivigation nav ul.desktopNav li.--subnav a + ul li:last-of-type, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul li:last-of-type {
     padding-bottom: calc(var(--spacer) * 2);
   }
-  .generaldivigation nav ul.desktopNav li.--subnav a + ul li a {
+  .generaldivigation nav ul.desktopNav li.--subnav a + ul li a, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul li a {
     font-size: 20px;
     display: block;
     font-weight: 500;
@@ -1012,15 +1012,15 @@ footer {
     padding-top: var(--spacer);
     padding-bottom: var(--spacer);
   }
-  .generaldivigation nav ul.desktopNav li.--subnav a + ul li a:hover {
+  .generaldivigation nav ul.desktopNav li.--subnav a + ul li a:hover, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul li a:hover {
     color: #0056B8;
   }
-  .generaldivigation nav ul.desktopNav li.--subnav:hover a + ul {
+  .generaldivigation nav ul.desktopNav li.--subnav:hover a + ul, .generaldivigation nav ul.desktopNav li.menu-item-has-children:hover a + ul {
     opacity: 1;
     top: 0px;
     z-index: -1;
   }
-  .generaldivigation nav ul.desktopNav li.--subnav::after {
+  .generaldivigation nav ul.desktopNav li.--subnav::after, .generaldivigation nav ul.desktopNav li.menu-item-has-children::after {
     content: "";
     display: inline-block;
     background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
@@ -1060,7 +1060,7 @@ footer {
   .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li a:hover {
     color: #0056B8;
   }
-  .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.--subnav::after {
+  .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.--subnav::after, .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.menu-item-has-children::after {
     content: "";
     display: inline-block;
     background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
@@ -1099,7 +1099,7 @@ footer {
     margin-left: calc(var(--spacer) * 1);
     margin-right: calc(var(--spacer) * 1);
   }
-  .generaldivigation nav ul.desktopNav li.--subnav:hover a + ul li {
+  .generaldivigation nav ul.desktopNav li.--subnav:hover a + ul li, .generaldivigation nav ul.desktopNav li.menu-item-has-children:hover a + ul li {
     padding-left: calc(var(--spacer) * 7);
   }
 }

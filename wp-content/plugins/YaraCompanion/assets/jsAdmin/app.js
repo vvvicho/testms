@@ -264,14 +264,14 @@ function checkCustomFields() {
             let htmlContainer = document.querySelector("#" + htmlContainerID);
 
             console.log("htmlContainer.value");
-            //console.log(htmlContainer.innerHTML);
+            console.log(htmlContainer.innerHTML);
 
             if (htmlContainer.innerHTML) {
                 console.log("HAVE HTML INSIDE");
 
             } else {
                 console.log("NO!!!! HTML INSIDE");
-                // htmlContainer.innerHTML = `<main></main>`;
+                htmlContainer.innerHTML = `<main></main>`;
             }
             myPageInnerHTML = htmlContainer.innerHTML;
             let taraPageBuilderLoadBTTN = document.querySelector("#yaraLoadPageBuilder");
