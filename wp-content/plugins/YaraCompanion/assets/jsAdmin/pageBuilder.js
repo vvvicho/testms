@@ -163,13 +163,13 @@ function saveSectionSettings(obj, sectionToEdit) {
 
 function showHideElements(state) {
     if (!state) {
-        let allElements = document.querySelectorAll(".adminHolder .normal");
+        let allElements = document.querySelectorAll(".adminHolder .normal, .swapPositionPannel, .adminHolder--leftNav, .adminHolder--footer");
         allElements.forEach(async (element) => {
             element.classList.add("hidden");
         });
-        document.querySelector(".swapPositionPannel").classList.add("hidden");
-        document.querySelector(".adminHolder--leftNav").classList.add("hidden");
-        document.querySelector(".adminHolder--footer").classList.add("hidden");
+     
+       // document.querySelector(".adminHolder--leftNav").classList.add("hidden");
+       // document.querySelector(".adminHolder--footer").classList.add("hidden");
         document.querySelector(".adminHolder--mainContent").classList.add("removeMargin");
 
         //icons and pannels 
@@ -214,7 +214,7 @@ function savepSpetial(obj) {
     setTimeout(() => { obj.onclick = function () { editpSpetial(this) } }, 200);
 }
 
-icosFlagsList = ["bg", "dk", "de", "ee", "uk", "es", "fr", "lv", "lt", "no", "pl", "pt", "ro", "fi", "se", "ua", "ar", "mx", "br", "cf", "za" ];
+icosFlagsList = ["bg", "dk", "de", "ee", "uk", "es", "fr", "lv", "lt", "no", "pl", "pt", "ro", "fi", "se", "ua", "ar", "mx", "br", "cf", "za"];
 //icosFlagsList = ["bg", "dk", "de" ,      "uk", "it", "fr", "uk", "it", "fr"];
 
 function returnFlagsList() {
@@ -265,7 +265,7 @@ function swapNodePositions(obj, direction) {
     if (objectIndex > 0 && !direction) {
         swapNodes(obj.parentElement.children[objectIndex - 1], obj.parentElement.children[objectIndex]);
     } else if ((objectIndex + 1) < obj.parentElement.children.length && direction) {
-        swapNodes(obj.parentElement.children[objectIndex],obj.parentElement.children[objectIndex + 1]);
+        swapNodes(obj.parentElement.children[objectIndex], obj.parentElement.children[objectIndex + 1]);
     }
 }
 
@@ -274,7 +274,7 @@ function prapareForEditing(obj, sectionToEdit) {
     obj.onclick = null;
 
     console.log(obj);
-
+    showHideElements(0);
     if (obj.querySelector(".section")) {
         let collorsPannel = document.createElement("div");
         collorsPannel.classList.add("collorsPannel");
@@ -297,7 +297,7 @@ function prapareForEditing(obj, sectionToEdit) {
 
 
 
-    showHideElements(0);
+
     let swapPositions = obj.querySelector('[data-edit*="ltr"]');
     if (swapPositions) {
         swapPositions.classList.add("adminRelative");

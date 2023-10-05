@@ -8,8 +8,8 @@ let findContentHolder;
 let yaraPageEditorHead = document.createElement("div");
 yaraPageEditorHead.id = "yaraPageEditorHead";
 yaraPageEditorHead.classList.add("yaraPageEditorHead");
-yaraPageEditorHead.innerHTML = 
-`
+yaraPageEditorHead.innerHTML =
+    `
 <div class="generaldivigation" id="generaldivigation">
 <div class="logoHolder">
             <h1>
@@ -25,14 +25,16 @@ yaraPageEditorHead.innerHTML =
     </div>
 `;
 
-//"YARA HEAD <div id='yaraLoadPageBuilder'> LOAD THE BUILDER </div>";
-
 let yaraPageEditorHolder = document.createElement("div");
 yaraPageEditorHolder.id = "yaraPageEditorHolder";
 yaraPageEditorHolder.classList.add("yaraPageEditorHolder", "hidden");
 yaraPageEditorHolder.onclick = null;
 yaraPageEditorHolder.style.zIndex = getMaxZIndex() + 100;
-document.querySelector("body").appendChild(yaraPageEditorHolder);
+
+
+//document.querySelector("body").appendChild(yaraPageEditorHolder);
+
+
 
 let adminHolder = document.createElement("div");
 adminHolder.setAttribute("data-type", "adminHolder");
@@ -52,47 +54,52 @@ adminHolder.innerHTML = `
 </div>`;
 
 
-yaraPageEditorHolder.appendChild(adminHolder);
+// yaraPageEditorHolder.appendChild(adminHolder);
 
-let adminFooterHTML = 
-`
+
+
+let adminFooterHTML =
+    `
 <div class="adminHolder--footer" data-type="adminHolder--footer">
 <div class="adminHolder--footer--saveButton button button-dark">SAVE TEMPLATE</div>
 </div>
 `;
 
-jQuery(document).ready(function($){
 
-    var mediaUploader;
-  
-    $('#upload-button').click(function(e) {
-      e.preventDefault();
-      yaraPageEditorHolder.classList.add("hidden");
-      // If the uploader object has already been created, reopen the dialog
-        if (mediaUploader) {
+//jQuery(document).ready(function ($) {
+
+/*
+var mediaUploader;
+$('#upload-button').click(function (e) {
+    e.preventDefault();
+    yaraPageEditorHolder.classList.add("hidden");
+    // If the uploader object has already been created, reopen the dialog
+    if (mediaUploader) {
         mediaUploader.open();
         return;
-      }
-      // Extend the wp.media object
-      mediaUploader = wp.media.frames.file_frame = wp.media({
+    }
+    // Extend the wp.media object
+    mediaUploader = wp.media.frames.file_frame = wp.media({
         title: 'Choose Image',
         button: {
-        text: 'Choose Image'
-      }, multiple: false });
-  
-      // When a file is selected, grab the URL and set it as the text field's value
-      mediaUploader.on('select', function() {
+            text: 'Choose Image'
+        }, multiple: false
+    });
+
+    // When a file is selected, grab the URL and set it as the text field's value
+    mediaUploader.on('select', function () {
         attachment = mediaUploader.state().get('selection').first().toJSON();
         $('#image-url').val(attachment.url);
         isBgImage ? objectToUpdateSRC.setAttribute("style", "background-image:url('" + attachment.url + "')") :
-        objectToUpdateSRC.setAttribute("src", attachment.url);
+            objectToUpdateSRC.setAttribute("src", attachment.url);
         yaraPageEditorHolder.classList.remove("hidden");
-      });
-      // Open the uploader dialog
-      mediaUploader.open();
     });
-  
-  });
+    // Open the uploader dialog
+    mediaUploader.open();
+});
+*/
+
+//});
 
 function getMaxZIndex() {
     return Math.max(
@@ -111,56 +118,32 @@ function getBuilderScripts() {
         let imported = document.createElement("script");
         imported.src = advanced_script_vars.pluginDirUrl + "assets/jsAdmin/pageBuilder.js";
         imported.id = "YaraPageBuilderScripts";
-        imported.onload = function () {console.log("EXTERNAL IS LOADED")};
+        imported.onload = function () { console.log("EXTERNAL IS LOADED") };
         document.head.appendChild(imported);
     }
 }
 
-function moveHTMLtoCustomFields(){
+function moveHTMLtoCustomFields() {
     console.log("SAVE TO THE CUSTOM FIELDS FROM");
     let editedHTML = document.querySelector(".adminHolder--mainContent").innerHTML;
     let headerItems = document.querySelectorAll(".adminHolder--mainContent headeritem");
     let prepareNewHTML = "";
-
     let mainItems = document.querySelectorAll(".adminHolder--mainContent main sectionitem");
-
-
-
     let alladminPannels = document.querySelectorAll(".swapPositionPannel");
+
     alladminPannels.forEach(async (element) => {
         element.remove();
     });
-
-
     headerItems.forEach(async (item) => {
-        console.log(item);
         prepareNewHTML += item.innerHTML;
     });
 
     prepareNewHTML += "<main>";
 
     mainItems.forEach(async (item) => {
-        console.log(item);
         prepareNewHTML += item.innerHTML;
     });
-
     prepareNewHTML += "</main>";
-
-    console.log(prepareNewHTML);
-
-
-
-    // get all head items
-
-
-
-
-
-
-    // get all main items
-
-
-
 
     myPageInnerHTMLholderID.innerHTML = prepareNewHTML;
     myPageInnerHTML = prepareNewHTML;
@@ -170,18 +153,18 @@ function moveHTMLtoCustomFields(){
 }
 
 function replaceStr(str) {
-    return str        
+    return str
         .replace(/&lt;/g, "<")
         .replace(/&gt;/g, ">");
-  }
+}
 
 
-  function anIconbuilder(icon) {
+function anIconbuilder(icon) {
     return `<div class='adminTools icon icon--${icon}'></div>`;
 }
 
 
-function yaraLoadPageBuilderScripts(){
+function yaraLoadPageBuilderScripts() {
     console.log("OPEN PAGE BUILDER SCRIPT");
     getBuilderScripts();
 
@@ -192,121 +175,56 @@ function yaraLoadPageBuilderScripts(){
         document.querySelector(".adminHolder--leftNav").innerHTML = this.response;
         //load pafr builder;        
         document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields() };
-        if(myPageInnerHTML){
+        if (myPageInnerHTML) {
             document.querySelector(".adminHolder--mainContent").innerHTML = replaceStr(myPageInnerHTML) + adminFooterHTML;
-
-
-            //find yaraHead
 
             let yaraHeadHTML = document.querySelector(".adminHolder--mainContent .yaraHead");
 
-
-
-
-
-
-
-
-
-
-            if(yaraHeadHTML){
+            if (yaraHeadHTML) {
                 let newYaraHeadHTML = document.createElement("headeritem");
-                newYaraHeadHTML.classList.add("normal");               
+                newYaraHeadHTML.classList.add("normal");
                 yaraHeadHTML.parentNode.insertBefore(newYaraHeadHTML, yaraHeadHTML.nextSibling);
 
                 let clone = yaraHeadHTML.cloneNode(true);
                 newYaraHeadHTML.appendChild(clone);
 
-                //sectionToEdit = clone;
-                //insertMySection(newYaraHeadHTML);
-
-
                 let swapPositionPannel = document.createElement("div");
                 swapPositionPannel.classList.add("swapPositionPannel");
                 swapPositionPannel.innerHTML = anIconbuilder("edit");
                 newYaraHeadHTML.appendChild(swapPositionPannel);
-        
+
                 swapPositionPannel.querySelector(".icon--edit").onclick = () => {
                     prapareForEditing(newYaraHeadHTML, newYaraHeadHTML);
                 }
 
-                //newYaraHeadHTML.onclick = function () {
-                    //prapareForEditing(newYaraHeadHTML, newYaraHeadHTML);
-               // }
-
-                document.querySelector("#yaraHeroSingle").setAttribute("data-used","1");
-
+                document.querySelector("#yaraHeroSingle").setAttribute("data-used", "1");
                 yaraHeadHTML.remove();
-
-                //setForEditing
 
             }
 
             let yaraContentSections = document.querySelectorAll(".adminHolder--mainContent .section");
 
 
-
-
-
-
-
-
-
-
-
-
-
             yaraContentSections.forEach(async (item) => {
-                console.log(item);
 
-
-/*
-                let contentSwapPositionPannel = document.createElement("div");
-                contentSwapPositionPannel.classList.add("swapPositionPannel");
-                contentSwapPositionPannel.innerHTML = anIconbuilder("up") + anIconbuilder("down") + anIconbuilder("edit");
-               // yaraContentSections.appendChild(contentSwapPositionPannel);
-        
-               item.appendChild(contentSwapPositionPannel);
-        
-                item.querySelector(".icon--edit").onclick = () => {
-                    prapareForEditing(item, item);
-                }
-        
-                item.querySelector(".icon--up").onclick = () => {
-                    console.log("SWAP POSITIONS");
-                    swapNodePositions(item, 0);
-                }
-                item.querySelector(".icon--down").onclick = () => {
-                    console.log("SWAP POSITIONS");
-                    swapNodePositions(item, 1);
-                }
-*/
-
-
-                //<sectionitem class="normal">
                 let newYaraSectionHTML = document.createElement("sectionitem");
-                newYaraSectionHTML.classList.add("normal");   
+                newYaraSectionHTML.classList.add("normal");
                 item.parentNode.insertBefore(newYaraSectionHTML, item.nextSibling);
 
-                let clone = item.cloneNode(true);  
+                let clone = item.cloneNode(true);
                 newYaraSectionHTML.appendChild(clone);
-
-
-                //
-
-
 
 
                 let swapPositionPannel = document.createElement("div");
                 swapPositionPannel.classList.add("swapPositionPannel");
                 swapPositionPannel.innerHTML = anIconbuilder("up") + anIconbuilder("down") + anIconbuilder("edit");
                 newYaraSectionHTML.appendChild(swapPositionPannel);
-        
-        
-                swapPositionPannel.querySelector(".icon--edit").onclick = () => {            
+
+
+                swapPositionPannel.querySelector(".icon--edit").onclick = () => {
                     prapareForEditing(newYaraSectionHTML, newYaraSectionHTML);
                 }
-        
+
                 swapPositionPannel.querySelector(".icon--up").onclick = () => {
                     console.log("SWAP POSITIONS");
                     swapNodePositions(newYaraSectionHTML, 0);
@@ -315,27 +233,8 @@ function yaraLoadPageBuilderScripts(){
                     console.log("SWAP POSITIONS");
                     swapNodePositions(newYaraSectionHTML, 1);
                 }
-
-
-
-
-
-                //
-
-               // newYaraSectionHTML.onclick = function () {
-                    //prapareForEditing(newYaraSectionHTML, newYaraSectionHTML);
-              //  }
-
                 item.remove();
-
             });
-
-
-
-
-
-
-
 
             // edit later            
             document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields() };
@@ -354,6 +253,30 @@ function checkCustomFields() {
     if (htmlExist) {
 
         console.log("HTML EXIST");
+        setTimeout(() => {
+            //get custom html ID
+            let dropdownID = document.querySelector("#list-table #the-list input[value='customContent']").getAttribute("id");
+            console.log("dropdown id");
+            console.log(dropdownID);
+
+            let htmlContainerID = dropdownID.replace("-key", "-value");
+            let htmlContainer = document.querySelector("#" + htmlContainerID);
+
+            console.log("htmlContainer.value");
+            //console.log(htmlContainer.innerHTML);
+
+            if (htmlContainer.innerHTML) {
+                console.log("HAVE HTML INSIDE");
+
+            } else {
+                console.log("NO!!!! HTML INSIDE");
+                // htmlContainer.innerHTML = `<main></main>`;
+            }
+            myPageInnerHTML = htmlContainer.innerHTML;
+            let taraPageBuilderLoadBTTN = document.querySelector("#yaraLoadPageBuilder");
+            taraPageBuilderLoadBTTN.onclick = () => { yaraLoadPageBuilderScripts() };
+            myPageInnerHTMLholderID = htmlContainer;
+        }, 300);
 
     } else {
         console.log("HTML NOT EXIST");
@@ -371,198 +294,58 @@ function checkCustomFields() {
         }
 
     }
-
-    setTimeout(() => {
-        //get custom html ID
-        let dropdownID = document.querySelector("#list-table #the-list input[value='customContent']").getAttribute("id");
-        console.log("dropdown id");
-        console.log(dropdownID);
-
-        let htmlContainerID = dropdownID.replace("-key", "-value");
-        let htmlContainer = document.querySelector("#" + htmlContainerID);
-
-        console.log("htmlContainer.value");
-        //console.log(htmlContainer.innerHTML);
-
-        if(htmlContainer.innerHTML){
-            console.log("HAVE HTML INSIDE"); 
-
-        }else {
-            console.log("NO!!!! HTML INSIDE");
-           // htmlContainer.innerHTML = `<main></main>`;
-        }
-        myPageInnerHTML = htmlContainer.innerHTML;
-        let taraPageBuilderLoadBTTN = document.querySelector("#yaraLoadPageBuilder");
-        taraPageBuilderLoadBTTN.onclick = () => { yaraLoadPageBuilderScripts() };
-        myPageInnerHTMLholderID = htmlContainer;
-    }, 500);
-
-
-
-
-
 }
 
 
 if (isPageEditor) {
-    
     window.onload = function () {
+        document.querySelector("body").appendChild(yaraPageEditorHolder);
+        yaraPageEditorHolder.appendChild(adminHolder);
+
+
+
+        (function ($) {
+            var mediaUploader;
+            $('#upload-button').click(function (e) {
+                e.preventDefault();
+                yaraPageEditorHolder.classList.add("hidden");
+                // If the uploader object has already been created, reopen the dialog
+                if (mediaUploader) {
+                    mediaUploader.open();
+                    return;
+                }
+                // Extend the wp.media object
+                mediaUploader = wp.media.frames.file_frame = wp.media({
+                    title: 'Choose Image',
+                    button: {
+                        text: 'Choose Image'
+                    }, multiple: false
+                });
+
+                // When a file is selected, grab the URL and set it as the text field's value
+                mediaUploader.on('select', function () {
+                    attachment = mediaUploader.state().get('selection').first().toJSON();
+                    $('#image-url').val(attachment.url);
+                    isBgImage ? objectToUpdateSRC.setAttribute("style", "background-image:url('" + attachment.url + "')") :
+                        objectToUpdateSRC.setAttribute("src", attachment.url);
+                    yaraPageEditorHolder.classList.remove("hidden");
+                });
+                // Open the uploader dialog
+                mediaUploader.open();
+            });
+        })(jQuery);
+
+
+
+
+
         findContentHolder = document.querySelector(".editor-styles-wrapper");
         if (findContentHolder) {
             findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
-            checkCustomFields();
-            // insertPageBuilder();
-            //check for HTML;            
+
+            setTimeout(() => {
+                checkCustomFields();
+            }, 300);
         }
     }
 }
-
-
-
-
-/*
-
-
-function checkIfCustomHTMLexist(){
-    let holder = document.querySelector("#postcustomstuff #list-table");
-    let htmlExist = holder.querySelector("[value='customContent']");
-
-
-    if(htmlExist){
-        console.log("HAVE HTML");
-        console.log(htmlExist.getAttribute("id"));
-        
-    }else {
-        console.log("NOPE! HAVE HTML");
-        let dropdown = document.querySelector("#list-table #the-list");
-
-        if(dropdown.querySelector("option[value='customContent']")){
-            console.log("EXIST CREATED");
-            dropdown.querySelector("option[value='customContent']").selected = 'selected';
-
-
-
-            //metavalue  meta-119-key  meta-119-value
-
-            let dropdownContent = document.querySelector("#newmeta #metavalue");
-            let htmlContainerID = dropdownContent.replace("-key", "-value");
-
-
-            console.log("dropdownContent");
-            console.log(dropdownContent);
-            console.log(htmlContainerID);
-            let previousHTMLcontent = document.querySelector("#" + htmlContainerID ).innerHTML;
-            console.log(previousHTMLcontent);
-           // let addNewButton = document.querySelector("#newmetaleft #metavalue");  
-
-            let newHTMLcontent = document.querySelector(".adminHolder .adminHolder--mainContent");
-            console.log(newHTMLcontent);
-            dropdownContent.innerHTML = newHTMLcontent.innerHTML;
-            addNewButton.click();
-            //enternew
-
-
-
-
-
-
-        }else {
-            console.log("NOT!!!! EXIST");
-        }
-        console.log(dropdown);
-
-        // button id = enternew
-    }
-}
-
-
-
-function moveHTMLtoCustomFields() {
-    console.log("move HTML");
-    yaraPageEditorHolder.classList.add("hidden");
-
-
-    checkIfCustomHTMLexist();
-
-
-
-
-
-
-}
-
-
-
-function getMaxZIndex() {
-    return Math.max(
-        ...Array.from(document.querySelectorAll('body *'), el =>
-            parseFloat(window.getComputedStyle(el).zIndex),
-        ).filter(zIndex => !Number.isNaN(zIndex)),
-        0,
-    );
-}
-
-function getBuilderScripts() {
-    if (!document.querySelector("#YaraPageBuilderScripts")) {
-        let imported = document.createElement("script");
-        imported.src = advanced_script_vars.pluginDirUrl + "assets/jsAdmin/pageBuilder.js";
-        imported.id = "YaraPageBuilderScripts";
-        document.head.appendChild(imported);
-    }
-}
-
-let holder = document.querySelector("#postcustomstuff #list-table");
-let htmlExist = holder.querySelector("[value='customContent']");
-let dropDownID, htmlContainerID, existingHTML;
-
-
-function yaraLoadPageBuilderScripts() {
-    console.log("Load the scripts...");
-
-    holder = document.querySelector("#postcustomstuff #list-table");
-    htmlExist = holder.querySelector("[value='customContent']");
-    
-
-
-    if(htmlExist){
-        console.log("HAVE on load HTML");
-        console.log(htmlExist.getAttribute("id"));
-        dropDownID = htmlExist.getAttribute("id");
-        htmlContainerID = dropDownID.replace("-key", "-value");
-        console.log(htmlContainerID);
-        existingHTML = document.querySelector("#" + htmlContainerID).innerHTML;
-        console.log(existingHTML);
-       // let currentContent = 
-        document.querySelector(".adminHolder--mainContent").innerHTML = existingHTML;
-    }
-
-
-    yaraPageEditorHolder.classList.remove("hidden");
-
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function () {
-        document.querySelector(".adminHolder--leftNav").innerHTML = this.response;
-        //load pafr builder;
-        getBuilderScripts();
-    }
-    xhttp.open("POST", advanced_script_vars.pluginDirUrl + "assets/pages/templatesLoader.php");
-    xhttp.send();
-}
-
-function insertPageBuilder() {
-    document.querySelector("body").appendChild(yaraPageEditorHolder);
-    let taraPageBuilderLoadBTTN = document.querySelector("#yaraLoadPageBuilder");
-    taraPageBuilderLoadBTTN.onclick = () => { yaraLoadPageBuilderScripts() };
-    yaraPageEditorHolder.appendChild(adminHolder);
-    document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields() };
-}
-
-if (isPageEditor) {
-    window.onload = function () {
-        findContentHolder = document.querySelector(".editor-styles-wrapper");
-        if (findContentHolder) {
-            findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
-            insertPageBuilder();
-        }
-    }
-}*/
