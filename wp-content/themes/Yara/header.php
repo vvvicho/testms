@@ -29,10 +29,10 @@
     <div class="generaldivigation" id="generaldivigation">
         <div class="logoHolder">
             <h1>
-                <a href="<?php get_home_url(); ?>"><img src="<?php echo (get_template_directory_uri()) ?>/assets/images/YaraLogo.webp?v=25" width="48" height="48" alt="Yara Digital Products"></a>
+                <a href="<?php echo (get_home_url()); ?>"><img src="<?php echo (get_template_directory_uri()) ?>/assets/images/YaraLogo.webp?v=25" width="48" height="48" alt="Yara Digital Products"></a>
             </h1>
             <h2>
-                <a href="<?php get_home_url(); ?>"><img src="<?php echo (get_template_directory_uri()) ?>/assets/images/pixel.png?v=45" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
+                <a href="<?php echo (get_home_url()); ?>"><img src="<?php echo (get_template_directory_uri()) ?>/assets/images/pixel.png?v=45" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
             </h2>
         </div>
         <nav>
