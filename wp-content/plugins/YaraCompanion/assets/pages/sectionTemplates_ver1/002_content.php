@@ -37,10 +37,12 @@
                             <li data-edit="text duplicate delete">List Item
                             </li>
                         </ul>
+                        <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                         <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf" data-edit="pSpetial delete">
                             <span><strong>paragraf Title</strong></br>
                             <i>A special paragraph with an icon</i></span>
                         </p>
+                        <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                         <div class="button button-dark fade-in" data-edit="button delete">
                         <datalink data-href="https://google.com" target="">Button</datalink>
                         </div>
