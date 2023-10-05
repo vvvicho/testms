@@ -23,7 +23,7 @@
                 <figure class="item_7" data-edit="image">
                     <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_677_508.png" width="677" height="508" alt="my image" class="fade-in">
                 </figure>
-                <div class="articleInfo articleInfo--qrCode item_5">
+                <div class="articleInfo articleInfo item_5">
                     <div class="articleContent">
                         <figure  data-edit="image delete">
                             <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_271_271.png" width="271" height="271" alt="my image">
