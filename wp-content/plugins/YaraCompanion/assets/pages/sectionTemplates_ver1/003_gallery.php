@@ -57,6 +57,16 @@
                             quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                     </div>
                 </div>
+                <div class="item_12 box box--bgColor--blue twoColMid" data-edit="image delete">
+                    <div class="icons-track">
+                        <h4 data-edit="text">Track progress and problems</h4>
+                        <p data-edit="text">APowerful biomass maps that help you monitor crop health, field variability, and detect problem areas on your fields from anywhere, anytime. </p>
+                    </div>
+                    <div class="icons-crop">
+                        <h4 data-edit="text">Advanced technology</h4>
+                        <p data-edit="text">Atfarm uses Yara’s N-Sensor vegetation index to generate biomass maps to help you understand your fields better. </p>
+                    </div>
+                </div>
                 <div class="item_12 buttonHolder">
                     <div class="button button-dark" data-edit="button delete">
                         Section Button
