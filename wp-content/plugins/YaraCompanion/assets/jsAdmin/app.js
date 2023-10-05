@@ -1,4 +1,5 @@
 console.log(advanced_script_vars.pluginDirUrl);
+console.log(advanced_script_vars.yaraPreventCache);
 
 let isPageEditor = document.querySelector("body").classList.contains("post-type-page");
 isPageEditor ? console.log("isPageEditor") : console.log("iit is not sPageEditor");
@@ -116,7 +117,7 @@ let myPageInnerHTMLholderID = "";
 function getBuilderScripts() {
     if (!document.querySelector("#YaraPageBuilderScripts")) {
         let imported = document.createElement("script");
-        imported.src = advanced_script_vars.pluginDirUrl + "assets/jsAdmin/pageBuilder.js";
+        imported.src = advanced_script_vars.pluginDirUrl + "assets/jsAdmin/pageBuilder.js?ver=" + advanced_script_vars.yaraPreventCache;
         imported.id = "YaraPageBuilderScripts";
         imported.onload = function () { console.log("EXTERNAL IS LOADED") };
         document.head.appendChild(imported);
