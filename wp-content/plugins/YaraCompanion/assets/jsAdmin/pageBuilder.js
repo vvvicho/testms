@@ -214,7 +214,7 @@ function savepSpetial(obj) {
     setTimeout(() => { obj.onclick = function () { editpSpetial(this) } }, 200);
 }
 
-icosFlagsList = ["bg", "dk", "de", "ee", "uk", "es", "fr", "lv", "lt", "no", "pl", "pt", "ro", "fi", "se", "ua", "ar", "mx", "br", "cf", "za"];
+icosFlagsList = ["bg", "dk", "de", "ee", "uk", "es", "fr", "lv", "lt", "no", "pl", "pt", "ro", "fi", "se", "ua", "ar", "mx", "br", "cf", "za", "it"];
 //icosFlagsList = ["bg", "dk", "de" ,      "uk", "it", "fr", "uk", "it", "fr"];
 
 function returnFlagsList() {
