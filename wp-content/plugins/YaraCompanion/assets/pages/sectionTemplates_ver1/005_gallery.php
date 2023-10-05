@@ -11,7 +11,7 @@
 
 <li class="adminHolder--leftNav--templatesList--button" onClick="insertMySection(this)" data-type="template gallery">
     <figure>
-        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/gallery3.png" alt="section content">
+        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/gallery4.png" alt="section content">
         <span>Gallery Section</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
