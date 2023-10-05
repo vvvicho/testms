@@ -11,13 +11,13 @@
 
 <li class="adminHolder--leftNav--templatesList--button" onClick="insertMySection(this)" data-type="template gallery">
     <figure>
-        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/gallery3.png" alt="section content">
+        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/gallery.png" alt="section content">
         <span>Gallery Section</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
         <div class="bgColors--sectionLNormal section">
             <div class="warper warper--gallery">
-                <h3 class="item_12" data-edit="text">Your digital fertilisation toolbox</h3>
+                <h3 class="item_12" data-edit="text">H3 Head Line</h3>
                 <div class="item_3 galleryItem">
                     <figure data-edit="image">
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
