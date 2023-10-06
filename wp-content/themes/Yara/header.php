@@ -19,7 +19,18 @@
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />    
+    
+ 
+    <meta name="description" content="Atfarm is easy-to-use precision agriculture software. Get instant insights for your fields and crops to improve nitrogen use efficiency. Sign up now for FREE!">
+    <meta name="keywords" content="Yara, Farming, Harvest, Crops, Fetizer">
+    <meta name="author" content="Yara">
+    <title>Precision farming made simple – Atfarm app by Yara</title>
+
+
+
+
     <?php wp_head(); ?>
 </head>
 
