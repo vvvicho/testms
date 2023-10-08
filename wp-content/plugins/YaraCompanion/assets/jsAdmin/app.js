@@ -301,13 +301,12 @@ function checkCustomFields() {
 }
 
 
-if (isPageEditor) {
-    console.log("before on load");
-    window.onload = function () {
+window.onload = function () {
+    if (isPageEditor) {
+        console.log("before on load");
         console.log("window was loaded");
         document.querySelector("body").appendChild(yaraPageEditorHolder);
         yaraPageEditorHolder.appendChild(adminHolder);
-
 
 
         (function ($) {
@@ -348,6 +347,7 @@ if (isPageEditor) {
         findContentHolder = document.querySelector(".editor-styles-wrapper");
 
         console.log("BEFORE IF CONTENT HOLDER");
+        console.log(findContentHolder);
         if (findContentHolder) {
             console.log("!!AFTER IF CONTENT HOLDER");
             findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
