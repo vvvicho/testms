@@ -59,6 +59,23 @@ $buttonLightBR: 8px;
             order: 2;
         }
     }
+    .icons-ok{
+        height: unset !important;
+        min-height: 24px !important;
+        textarea {
+            display: none !important;
+        }
+
+    }
+    .twoColMid {
+        .icon--edit{
+            display: none !important;
+        }
+        .icon--delete{
+            left: 5px !important;
+        }
+
+    }
 
     .collorsPannel{
         position: absolute;

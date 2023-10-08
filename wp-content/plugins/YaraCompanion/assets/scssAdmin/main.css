@@ -23,6 +23,19 @@
 .adminHolder .ltr figure {
   order: 2;
 }
+.adminHolder .icons-ok {
+  height: unset !important;
+  min-height: 24px !important;
+}
+.adminHolder .icons-ok textarea {
+  display: none !important;
+}
+.adminHolder .twoColMid .icon--edit {
+  display: none !important;
+}
+.adminHolder .twoColMid .icon--delete {
+  left: 5px !important;
+}
 .adminHolder .collorsPannel {
   position: absolute;
   top: 30px;

@@ -52,3 +52,6 @@ function yara_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'yara_enqueue_scripts' );
+
+add_post_meta(460, "custom_field_name", "value",true);
+

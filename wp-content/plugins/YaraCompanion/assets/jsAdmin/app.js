@@ -251,6 +251,7 @@ function checkCustomFields() {
     let holder = document.querySelector("#postcustomstuff #list-table");
     let htmlExist = holder.querySelector("[value='customContent']");
 
+
     if (htmlExist) {
 
         console.log("HTML EXIST");
@@ -293,13 +294,17 @@ function checkCustomFields() {
             document.querySelector("#newmeta-submit").click();
             // checkCustomFields();                  
         }
-
+        setTimeout(() => {
+            checkCustomFields();
+        }, 300);
     }
 }
 
 
 if (isPageEditor) {
+    console.log("before on load");
     window.onload = function () {
+        console.log("window was loaded");
         document.querySelector("body").appendChild(yaraPageEditorHolder);
         yaraPageEditorHolder.appendChild(adminHolder);
 
@@ -341,7 +346,10 @@ if (isPageEditor) {
 
 
         findContentHolder = document.querySelector(".editor-styles-wrapper");
+
+        console.log("BEFORE IF CONTENT HOLDER");
         if (findContentHolder) {
+            console.log("!!AFTER IF CONTENT HOLDER");
             findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
 
             setTimeout(() => {

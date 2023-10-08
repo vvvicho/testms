@@ -19,6 +19,7 @@
             <div class="warper warper--boxGallery">
                 <h3 class="item_12" data-edit="text delete">H3 Headline</h3>
                 <div class="item_4 galleryItem">
+                    <div class="icons icons-ok" data-edit="text delete"></div>
                     <figure data-edit="image delete">
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_335_250.png" width="335" height="250" alt="my image">
                     </figure>
@@ -32,6 +33,7 @@
                     </div>
                 </div>
                 <div class="item_4 galleryItem">
+                    <div class="icons icons-ok" data-edit="text delete"></div>
                     <figure data-edit="image delete">
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_335_250.png" width="335" height="250" alt="my image">
                     </figure>
@@ -47,6 +49,7 @@
 
                 </div>
                 <div class="item_4 galleryItem">
+                    <div class="icons icons-ok" data-edit="text delete"></div>
                     <figure data-edit="image delete">
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_335_250.png" width="335" height="250" alt="my image">
                     </figure>
