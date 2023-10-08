@@ -113,6 +113,10 @@
                                     font-size: 14px;
                                     line-height: 20px;
                                     padding-bottom: calc(var(--spacer) * 0);
+                                    a{
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                    }
                                 }
                                 &:last-of-type {
                                     padding-bottom: calc(var(--spacer) * 2);

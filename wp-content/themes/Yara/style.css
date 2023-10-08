@@ -1001,6 +1001,10 @@ footer {
     line-height: 20px;
     padding-bottom: calc(var(--spacer) * 0);
   }
+  .generaldivigation nav ul.desktopNav li.--subnav a + ul li:first-of-type a, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul li:first-of-type a {
+    font-size: 14px;
+    line-height: 20px;
+  }
   .generaldivigation nav ul.desktopNav li.--subnav a + ul li:last-of-type, .generaldivigation nav ul.desktopNav li.menu-item-has-children a + ul li:last-of-type {
     padding-bottom: calc(var(--spacer) * 2);
   }
