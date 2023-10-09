@@ -15,7 +15,7 @@
         <span>Blue Box x2</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
-    <section class="bgColors--sectionLight">
+    <div class="bgColors--sectionLight section">
     <div class="warper warper--boxGallery">
             <div class="item_12 box box--bgColor--blue twoColMid">
                 <div class="icons-tester">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-</section>
+</div>
 
     </templateHidden>
 </li>
