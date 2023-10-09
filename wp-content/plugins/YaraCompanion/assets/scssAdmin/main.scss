@@ -76,6 +76,52 @@ $buttonLightBR: 8px;
         }
 
     }
+    .warper--gallery--bordered{
+        .clonePannel{
+            .icon--clone, .icon--delete{
+            display: none !important;
+            }
+        }
+        .objectBGcolors{
+            ul{
+                li[data-style='bgColors--sectionLNormal']{
+                    display: none !important;
+                }
+            }
+        }
+    }
+    .itemsSlider {
+        .objectBGcolors{
+            ul{
+                li[data-style='galleryItem--bgColorYello'],li[data-style='galleryItem--bgColorWhite']{
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    .objectBGcolors{
+       // border: solid 1px red;
+        ul{
+            display: flex !important;
+            gap: 5px !important;
+            li{
+                width: 48px !important;
+                height: 48px !important;
+                max-height: 48px !important;
+                min-height: 48px !important;
+                padding: 0px !important;
+                margin: 0px !important;
+                border: solid 1px #ccc;
+                display: block !important;
+                div{
+                    width: 40px;
+                    height: 40px;
+                    margin: 4px;
+                }
+            }
+        }
+    }
 
     .collorsPannel{
         position: absolute;
@@ -90,12 +136,16 @@ $buttonLightBR: 8px;
                 height: 48px;
                 border: solid 1px #ccc;
                 display: block !important;
+                &[data-style='galleryItem--bgColorYello'], &[data-style='galleryItem--bgColorWhite']{
+                    display: none !important;
+                }
                 div{
                     width: 40px;
                     height: 40px;
                     margin: 4px;
                 }
             }
+
         }
     }
 

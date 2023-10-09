@@ -98,9 +98,17 @@ function duplicateItem(obj) {
     });
     prapareForEditing(newElement, 0);
 
+    let allColorsIcons = "";
+    allBGcolors.forEach(async (color) => {
+        allColorsIcons += `<li class="sectionBGcolor" data-color="${color.color}" data-style="${color.style}"><div style="background-color: ${color.color};"></div></li>`
+    });
+
+
+
     let iconsPannel = document.createElement("iconPannel");
     iconsPannel.classList.add("adminTools");
-    iconsPannel.innerHTML = `${iconbuilder("clone")}${iconbuilder("delete")}`;
+    iconsPannel.innerHTML = `${iconbuilder("clone")}${iconbuilder("delete")}<div class="objectBGcolors"><ul>${allColorsIcons}</ul></div>`;
+
     newElement.appendChild(iconsPannel);
 
     iconsPannel.querySelector(".icon--delete").onclick = () => {
@@ -109,6 +117,18 @@ function duplicateItem(obj) {
     iconsPannel.querySelector(".icon--clone").onclick = () => {
         duplicateItem(newElement);
     }
+
+    console.log("BWEGIN ITEM COLORS2");
+    iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
+        console.log(colorIcon);
+        colorIcon.onclick = () => {
+            setBgItemColor(newElement,colorIcon);
+        }           
+    });
+
+
+
+    
 }
 
 function saveButtonSettings(obj) {
@@ -250,6 +270,8 @@ let allBGcolors =
     [
         { style: "bgColors--sectionLNormal", color: "#FFFFFF" },
         { style: "bgColors--sectionLight", color: "#F3F6F9" },
+        { style: "galleryItem--bgColorYello", color: "#f1f2de" },
+        { style: "galleryItem--bgColorWhite", color: "#FFFFFF" }
     ]
     ;
 
@@ -267,6 +289,18 @@ function swapNodePositions(obj, direction) {
     } else if ((objectIndex + 1) < obj.parentElement.children.length && direction) {
         swapNodes(obj.parentElement.children[objectIndex], obj.parentElement.children[objectIndex + 1]);
     }
+}
+
+
+
+function setBgItemColor(obj,colorHolder){
+    console.log("DEBUG --------------------------------");
+    console.log(obj);
+    console.log(colorHolder);
+    allBGcolors.forEach(async (color) => {
+        obj.classList.remove(color.style)
+    });
+    obj.classList.add(colorHolder.getAttribute("data-style"));
 }
 
 function prapareForEditing(obj, sectionToEdit) {
@@ -315,11 +349,19 @@ function prapareForEditing(obj, sectionToEdit) {
     //duplicateItem
 
     let allduplicateItem = obj.querySelectorAll('[data-edit*="duplicateItem"]');
+    let allColorsIcons = "";
+    allBGcolors.forEach(async (color) => {
+        allColorsIcons += `<li class="sectionBGcolor" data-color="${color.color}" data-style="${color.style}"><div style="background-color: ${color.color};"></div></li>`
+    });
+
+
+
+
     allduplicateItem.forEach(async (item) => {
         item.classList.add("adminRelative");
         let iconsPannel = document.createElement("iconPannel");
-        iconsPannel.classList.add("adminTools");
-        iconsPannel.innerHTML = `${iconbuilder("clone")}${iconbuilder("delete")}`;
+        iconsPannel.classList.add("adminTools", "clonePannel");
+        iconsPannel.innerHTML = `${iconbuilder("clone")}${iconbuilder("delete")}<div class="objectBGcolors"><ul>${allColorsIcons}</ul></div>`;
         item.appendChild(iconsPannel);
         iconsPannel.querySelector(".icon--delete").onclick = () => {
             item.remove();
@@ -327,6 +369,14 @@ function prapareForEditing(obj, sectionToEdit) {
         iconsPannel.querySelector(".icon--clone").onclick = () => {
             duplicateItem(item);
         }
+        console.log("BWEGIN ITEM COLORS");
+        iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
+            console.log(colorIcon);
+            colorIcon.onclick = () => {
+                setBgItemColor(item,colorIcon);
+            }
+           
+        });
     });
 
     let allbgImages = obj.querySelectorAll('[data-edit="background"]');

@@ -15,7 +15,7 @@
         <span>Gallery Section</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
-        <div id="contentSlider" class="bgColors--sectionLNormal section">
+        <div class="bgColors--sectionLNormal itemsSlider section">
             <div class="warper">
                 <h3 class="item_12" data-edit="text delete">H3 Head Line</h3>
                 <div class="slider item_12">

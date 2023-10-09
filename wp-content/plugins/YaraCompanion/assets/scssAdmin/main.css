@@ -36,6 +36,34 @@
 .adminHolder .twoColMid .icon--delete {
   left: 5px !important;
 }
+.adminHolder .warper--gallery--bordered .clonePannel .icon--clone, .adminHolder .warper--gallery--bordered .clonePannel .icon--delete {
+  display: none !important;
+}
+.adminHolder .warper--gallery--bordered .objectBGcolors ul li[data-style=bgColors--sectionLNormal] {
+  display: none !important;
+}
+.adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorYello], .adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorWhite] {
+  display: none !important;
+}
+.adminHolder .objectBGcolors ul {
+  display: flex !important;
+  gap: 5px !important;
+}
+.adminHolder .objectBGcolors ul li {
+  width: 48px !important;
+  height: 48px !important;
+  max-height: 48px !important;
+  min-height: 48px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: solid 1px #ccc;
+  display: block !important;
+}
+.adminHolder .objectBGcolors ul li div {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+}
 .adminHolder .collorsPannel {
   position: absolute;
   top: 30px;
@@ -51,6 +79,9 @@
   height: 48px;
   border: solid 1px #ccc;
   display: block !important;
+}
+.adminHolder .collorsPannel ul li[data-style=galleryItem--bgColorYello], .adminHolder .collorsPannel ul li[data-style=galleryItem--bgColorWhite] {
+  display: none !important;
 }
 .adminHolder .collorsPannel ul li div {
   width: 40px;
