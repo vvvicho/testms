@@ -12,7 +12,7 @@
 <li class="adminHolder--leftNav--templatesList--button" onClick="insertMySection(this)" data-type="template gallery">
     <figure>
         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/gallery4.png" alt="section content">
-        <span>Gallery Section</span>
+        <span>Border Gallery Section</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
         <div class="bgColors--sectionLNormal section">
