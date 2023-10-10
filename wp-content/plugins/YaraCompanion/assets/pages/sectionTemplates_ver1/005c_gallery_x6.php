@@ -54,10 +54,11 @@
                         <figcaption data-edit="text">Image Details</figcaption>
                     </figure>
                 </div>
-            </div>
-            <div class="item_6 buttonHolder">
+                <div class="item_6 buttonHolder">
                 <div class="button button-dark" data-edit="button delete">Section Button</div>
             </div>
+            </div>
+
         </div>
         </div>
 
