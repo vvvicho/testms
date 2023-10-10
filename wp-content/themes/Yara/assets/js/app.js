@@ -67,49 +67,44 @@ window.onscroll = function () {
 }
 
 function contentSlide(direction, objID){
-    console.log(direction, objID);
-
     let allDataHolder = document.querySelector('[data-related-id="' + objID + '"]');
     let currentSliderSection = document.getElementById(objID);
     let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
-    console.log(allDataHolder);
-
     let newPosition = currentSidePosition + direction;
-    console.log()
     let allData = allDataHolder.querySelectorAll('i');
-
 
     if(newPosition < 0){
         console.log("FIRST ITEM");
         return;
-
-
-    }else if(newPosition < allData.length){
-        console.log("SLIDE NEXT ITEM");
+    }else if(newPosition < allData.length){       
         allDataHolder.setAttribute("data-slider-position", newPosition);
-
-
         let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
-
         decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
         baseTemplateToData = JSON.parse(decodeBaseTemplate);
-        console.log("DATA DECODE EXISTING OBJECT");
-        console.log(baseTemplateToData);
 
-        currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
-        currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
-        currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-        currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
-        currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
+        currentSliderSection.querySelectorAll(".fade-in").forEach(async (item) => {
+            item.classList.remove("fade-in");
+            item.classList.add("fade-out");
+        });
 
+        setTimeout(() => {
+            currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
+            currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+            currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
+            currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+            currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
+            currentSliderSection.querySelectorAll(".fade-out").forEach(async (item) => {                
+                item.classList.remove("fade-out");
+                item.classList.add("fade-in");                
+            });
+
+        }, 520);
 
     }else {
         console.log("LAST ITEM");
         return;
-
     }
-
 }
 
 

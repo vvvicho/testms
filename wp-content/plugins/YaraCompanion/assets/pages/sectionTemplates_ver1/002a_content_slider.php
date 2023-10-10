@@ -25,8 +25,7 @@
                 </figure>
                 <div class="articleInfo articleInfo item_5">
                     <div class="articleContent">
-                        <h4 class="fade-in" data-edit="text delete">H4 Head Line</h4>
-                        
+                        <h4 class="fade-in" data-edit="text delete">H4 Head Line</h4>                        
                             <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                         
 

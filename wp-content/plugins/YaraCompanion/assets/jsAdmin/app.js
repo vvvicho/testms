@@ -385,33 +385,4 @@ window.onload = function () {
 }
 
 
-let sliderData = [];
-sliderData[0] = 
-{
-    h3:'new H3 Head Line',
-    h4:'new H4 Head Line', 
-    img: '/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_677_508.png',     
-    p: 'Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.', 
-    button: '<datalink data-href="https://google.com" target="">Button</datalink>'
-};
-
-//sliderData[0] = {h4:'H4444 Head Line',img: '/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_677_508.png',};
-
-console.log(sliderData);
-//let bbb = JSON.stringify(sliderData[0]);
-let bbb = JSON.stringify(sliderData[0]);
-
-bbb = bbb.replace(/["']/g, "_@@");
-console.log(bbb);
-
-//JSON.stringify(s).replace(/\\"/g, '"')
-
-bbb = bbb.replace(/_@@/g, '"');
-console.log(bbb);
-let zzz = JSON.parse(bbb);
-
-console.log(bbb);
-console.log(zzz);
-
-
 

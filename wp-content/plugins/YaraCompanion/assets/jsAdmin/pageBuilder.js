@@ -312,7 +312,7 @@ function sliderContentBuilder(direction, objID, saveState) {
 
     let newPosition = currentSidePosition + direction;    
     let allData = allDataHolder.querySelectorAll('i');
-    
+
     let baseTemplate = allDataHolder.querySelector("strong").getAttribute("data-slidedata-template");
 
     //baseTemplate = baseTemplate.replace(/_@@/g, '"');
@@ -608,7 +608,7 @@ function prapareForEditing(obj, sectionToEdit) {
 
     if (sectionToEdit) {
         let letSectionAdminFooter = document.createElement("ADMINFOOTER");
-        letSectionAdminFooter.innerHTML = '<div class="button button-save button-dark" data-edit="button">Save Section</div><div class="slideCounter">0</div><div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>';
+        letSectionAdminFooter.innerHTML = '<div class="button button-save button-dark" data-edit="button">Save Section</div><div style="float:left" class="slideCounter">1</div><div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>';
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {

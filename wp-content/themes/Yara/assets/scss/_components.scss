@@ -5,6 +5,16 @@
     }
 }
 
+.fade-out {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: 0.5s;
+}
+
 .button {
     display: inline-block;
     padding: var(--buttonPaddingTB) var(--buttonPaddingLR) var(--buttonPaddingTB) var(--buttonPaddingLR);
