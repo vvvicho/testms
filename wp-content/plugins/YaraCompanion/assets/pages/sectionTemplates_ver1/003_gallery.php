@@ -24,7 +24,7 @@
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_335_250.png" width="335" height="250" alt="my image">
                     </figure>
                     <div>
-                        <h4 data-edit="text">H4 Title</h4>
+                        <h4 data-edit="text delete">H4 Title</h4>
                         <p data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis
                             praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea,
                             quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
@@ -38,7 +38,7 @@
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_335_250.png" width="335" height="250" alt="my image">
                     </figure>
                     <div>
-                        <h4 data-edit="text">H4 Title</h4>
+                        <h4 data-edit="text delete">H4 Title</h4>
                         <p data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis
                             praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea,
                             quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
@@ -54,7 +54,7 @@
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_335_250.png" width="335" height="250" alt="my image">
                     </figure>
                     <div>
-                        <h4 data-edit="text">H4 Title</h4>
+                        <h4 data-edit="text delete">H4 Title</h4>
                         <p data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis
                             praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea,
                             quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
