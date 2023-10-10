@@ -50,10 +50,7 @@ function sellectAnImage(obj) {
 let headerItems = [], sectionItems = [], footerItems = [];
 
 function scrollToTop(xLocation) {
-    console.log("scrollToTop");
-    console.log(xLocation);
-    console.log(document.querySelector(".adminHolder--mainContent"));
-    console.log(document.querySelector(".adminHolder--mainContent").scrollTop);
+
 
     document.querySelector(".adminHolder--mainContent").scrollTop = xLocation;
 }
@@ -90,7 +87,7 @@ function editTextBox(obj) {
 }
 
 function duplicateItem(obj) {
-    console.log("dupe item");
+
     let newElement = obj.cloneNode(true);
     obj.parentNode.insertBefore(newElement, obj.nextSibling);
     newElement.querySelectorAll(".adminTools, .adminBgEdit").forEach(async (item) => {
@@ -111,7 +108,7 @@ function duplicateItem(obj) {
 
     newElement.appendChild(iconsPannel);
 
-    iconsPannel.querySelector(".icon--delete").onclick = () => {
+    iconsPannel.querySelector(".icon--delete").onclick = () => { 
         newElement.remove();
     }
     iconsPannel.querySelector(".icon--clone").onclick = () => {
@@ -120,7 +117,7 @@ function duplicateItem(obj) {
 
     console.log("BWEGIN ITEM COLORS2");
     iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
-        console.log(colorIcon);
+      
         colorIcon.onclick = () => {
             setBgItemColor(newElement,colorIcon);
         }           
@@ -294,9 +291,7 @@ function swapNodePositions(obj, direction) {
 
 
 function setBgItemColor(obj,colorHolder){
-    console.log("DEBUG --------------------------------");
-    console.log(obj);
-    console.log(colorHolder);
+
     allBGcolors.forEach(async (color) => {
         obj.classList.remove(color.style)
     });
@@ -307,7 +302,7 @@ function prapareForEditing(obj, sectionToEdit) {
     obj.classList.remove("normal");
     obj.onclick = null;
 
-    console.log(obj);
+
     showHideElements(0);
     if (obj.querySelector(".section")) {
         let collorsPannel = document.createElement("div");
@@ -327,6 +322,9 @@ function prapareForEditing(obj, sectionToEdit) {
             }
         });
     }
+
+
+    let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]'); 
 
 
 
@@ -371,7 +369,7 @@ function prapareForEditing(obj, sectionToEdit) {
         }
         console.log("BWEGIN ITEM COLORS");
         iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
-            console.log(colorIcon);
+           
             colorIcon.onclick = () => {
                 setBgItemColor(item,colorIcon);
             }
@@ -438,7 +436,7 @@ function prapareForEditing(obj, sectionToEdit) {
         }
         let sectionDeleteButton = obj.querySelector("adminfooter .button-delete");
         sectionDeleteButton.onclick = function () {
-            console.log("delete")
+            
             saveSectionSettings(obj, sectionToEdit);
             obj.remove();
         }

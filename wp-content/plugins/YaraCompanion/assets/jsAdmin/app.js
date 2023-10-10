@@ -380,10 +380,20 @@ let maxTryCount = 15;
 let currentTryCount = 0;
 let objectsObserver;
 window.onload = function () {
-    objectsObserver = setInterval(confirmObjectsLoaded, 300);
-
+   objectsObserver = setInterval(confirmObjectsLoaded, 300);
 
 }
+
+
+let sliderData = [];
+sliderData[0] = {h4:"H3 Head Line",img: "/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_677_508.png", h4: "H4 Head Line", p: "<p class=\"fade-in\" data-edit=\"text duplicate delete\">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>", button: "<div class=\"item_12 articleNavigation\"><div class=\"icons icons-navLeft\"></div><div class=\"icons icons-navRight\"></div></div>"};
+
+console.log(sliderData);
+let bbb = JSON.stringify(sliderData[0]);
+let zzz = JSON.parse(bbb);
+
+console.log(bbb);
+console.log(zzz);
 
 
 
