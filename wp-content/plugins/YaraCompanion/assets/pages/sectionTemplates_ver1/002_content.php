@@ -30,12 +30,9 @@
                         </figure>
                         <h4 class="fade-in" data-edit="text delete">H4 Head Line</h4>
                         <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
-                        <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                         <ul>
                             <li data-edit="text duplicate delete">List Item
-                            </li>
-                            <li data-edit="text duplicate delete">List Item
-                            </li>
+                            </li>                            
                         </ul>
                         <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                         <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf" data-edit="pSpetial delete">
