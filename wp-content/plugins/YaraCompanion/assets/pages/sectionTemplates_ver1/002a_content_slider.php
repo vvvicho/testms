@@ -25,11 +25,11 @@
                 </figure>
                 <div class="articleInfo articleInfo item_5">
                     <div class="articleContent">
-                        <h4 class="fade-in" data-edit="text delete">H4 Head Line</h4>                        
-                            <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
+                        <h4 class="fade-in" data-edit="text">H4 Head Line</h4>                        
+                            <p class="fade-in" data-edit="text ">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                         
 
-                        <div class="button button-dark fade-in" data-edit="button delete">
+                        <div class="button button-dark fade-in" data-edit="button">
                             <datalink data-href="https://google.com" target="">Button</datalink>
                         </div>
                     </div>
