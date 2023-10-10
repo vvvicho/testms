@@ -52,16 +52,13 @@
                 <li id="mobileOpenCloseButton" data-status="0" class="mobileNav icons icons-openW"></li>
             </ul>
             <?php
-            wp_nav_menu(array(               
+            wp_nav_menu(array(
                 'menu'               => "Header Navigation",
                 'depth'              => 2,
                 'container'          => '',
                 'menu_class'    => 'desktopNav',
                 'menu_id'       => 'desktopNav'
-
             ));
-
-
             ?>
         </nav>
         <!--nav>
@@ -95,9 +92,18 @@
             </ul>
         </nav -->
         <div class="navLeftButtons">
-            <div id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></div>
+            <!--div id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></div>
+            <div class="flafIcons  flafIcons--navigation flafIcons--uk"></div>
             <div class="button button-light">Login</div>
-            <div class="button button-dark">Sign up</div>
+            <div class="button button-dark">Sign up</div-->
+            <?php
+            wp_nav_menu(array(
+                'menu'          => "Header Right Side",
+                'depth'         => 1,
+                'container' => false,   
+                //'items_wrap' => printf("div"),       
+            ));
+            ?>
         </div>
     </div>
     <?php

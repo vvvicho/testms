@@ -30,7 +30,6 @@
                 'container' => false,   
                 'items_wrap' => '%3$s'       
             ));
-
             ?>
 
             <!--li>Privacy Policy</li>

@@ -254,10 +254,16 @@ footer {
   color: #ffffff;
   border-radius: 8px;
 }
+.button-dark a {
+  color: #ffffff;
+}
 .button-light {
   background-color: #E5F2FF;
   color: #0066CC;
   border-radius: 8px;
+}
+.button-light a {
+  color: #0066CC;
 }
 
 .flafIcons {

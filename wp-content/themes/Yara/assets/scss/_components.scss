@@ -19,12 +19,19 @@
         color: $buttonDarkFONTColor;
        // box-shadow: $buttonDarkBoxShadow;
         border-radius: $buttonDarkBR;
+        a {
+            color: $buttonDarkFONTColor; 
+        }
     }
     &-light {
         background-color: $buttonLightBGColor;
         color: $buttonLightFONTColor;
        // box-shadow: $buttonLightBoxShadow;
         border-radius: $buttonLightBR;
+        a{
+            color: $buttonLightFONTColor;
+
+        }
     }
 }
 
