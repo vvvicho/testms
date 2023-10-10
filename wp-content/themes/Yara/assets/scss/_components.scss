@@ -442,6 +442,10 @@
     display: none;
 }
 
+div[data-slider-dataHolder]{ 
+    display: none !important
+}
+
 @media screen and (min-width: $mobile) {
     .mhide {
         display: block;

@@ -608,6 +608,10 @@ footer {
   display: none;
 }
 
+div[data-slider-dataHolder] {
+  display: none !important;
+}
+
 @media screen and (min-width: 599px) {
   .mhide {
     display: block;

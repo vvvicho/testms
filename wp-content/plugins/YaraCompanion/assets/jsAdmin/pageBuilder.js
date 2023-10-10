@@ -108,7 +108,7 @@ function duplicateItem(obj) {
 
     newElement.appendChild(iconsPannel);
 
-    iconsPannel.querySelector(".icon--delete").onclick = () => { 
+    iconsPannel.querySelector(".icon--delete").onclick = () => {
         newElement.remove();
     }
     iconsPannel.querySelector(".icon--clone").onclick = () => {
@@ -117,15 +117,15 @@ function duplicateItem(obj) {
 
     console.log("BWEGIN ITEM COLORS2");
     iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
-      
+
         colorIcon.onclick = () => {
-            setBgItemColor(newElement,colorIcon);
-        }           
+            setBgItemColor(newElement, colorIcon);
+        }
     });
 
 
 
-    
+
 }
 
 function saveButtonSettings(obj) {
@@ -184,9 +184,9 @@ function showHideElements(state) {
         allElements.forEach(async (element) => {
             element.classList.add("hidden");
         });
-     
-       // document.querySelector(".adminHolder--leftNav").classList.add("hidden");
-       // document.querySelector(".adminHolder--footer").classList.add("hidden");
+
+        // document.querySelector(".adminHolder--leftNav").classList.add("hidden");
+        // document.querySelector(".adminHolder--footer").classList.add("hidden");
         document.querySelector(".adminHolder--mainContent").classList.add("removeMargin");
 
         //icons and pannels 
@@ -288,15 +288,161 @@ function swapNodePositions(obj, direction) {
     }
 }
 
+function returnRandom(int) {
+    let x = Math.floor((Math.random() * int) + 1);
+    return x;
+}
 
 
-function setBgItemColor(obj,colorHolder){
+
+function setBgItemColor(obj, colorHolder) {
 
     allBGcolors.forEach(async (color) => {
         obj.classList.remove(color.style)
     });
     obj.classList.add(colorHolder.getAttribute("data-style"));
 }
+
+
+function sliderContentBuilder(direction, objID, saveState) {
+
+    let allDataHolder = document.querySelector('[data-related-id="' + objID + '"]');
+    let currentSliderSection = document.getElementById(objID);
+    let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
+
+    let newPosition = currentSidePosition + direction;    
+    let allData = allDataHolder.querySelectorAll('i');
+    
+    let baseTemplate = allDataHolder.querySelector("strong").getAttribute("data-slidedata-template");
+
+    //baseTemplate = baseTemplate.replace(/_@@/g, '"');
+    //let baseTemplateToData = JSON.parse(baseTemplate);
+
+    console.log("BASE TEMPLATE: " + baseTemplate);
+    console.log("BASE TEMPLATE: TO DATA ");
+    // console.log(baseTemplateToData);
+
+    console.log("CURRENT SECTION");
+    console.log(currentSliderSection);
+    console.log(currentSliderSection.querySelector("h3").innerHTML);
+    console.log(currentSliderSection.querySelector("h4").innerHTML);
+    console.log(currentSliderSection.querySelector("img").getAttribute("src"));
+
+    let currentObjData = {
+        h3: currentSliderSection.querySelector("h3").innerHTML,
+        h4: currentSliderSection.querySelector("h4").innerHTML,
+        img: currentSliderSection.querySelector("img").getAttribute("src"),
+        p: currentSliderSection.querySelector("p").innerHTML,
+        button: currentSliderSection.querySelector(".articleContent .button").innerHTML,
+    };
+
+
+    console.log("PREPARE CURRENT OBJECT FOR SAVE");
+    console.log(currentObjData);
+
+    currentObjData = JSON.stringify(currentObjData);
+    currentObjData = currentObjData.replace(/["']/g, "_@@");
+
+    console.log("CURRENT OBJECT AFTER ESKAPE");
+    console.log(currentObjData);
+
+
+   // if (updatecontent) {
+        allData.item(currentSidePosition).setAttribute("data-slidedata", currentObjData);
+   // }
+
+
+
+
+
+
+
+
+
+    console.log(allData);
+
+
+    console.log(currentSidePosition);
+    console.log("PRINT 1st child");
+    console.log(allData.item(0));
+
+
+    if (saveState) {
+        newPosition = 0;
+        currentSliderSection.querySelector(".articleNavigation .icons-navLeft").setAttribute("onclick","contentSlide(-1," + objID +")");
+        currentSliderSection.querySelector(".articleNavigation .icons-navRight").setAttribute("onclick","contentSlide(1," + objID +")")
+    }
+
+
+    if (newPosition < 0) {
+        console.log("do nothing it is 1st item");
+        newPosition = 0;
+        document.querySelector(".slideCounter").innerHTML = newPosition + 1;
+        return;
+    }
+
+    console.log("CREATE NEW ITEM");
+    console.log(allData.length);
+    console.log(newPosition);
+
+    let decodeBaseTemplate, baseTemplateToData;
+
+    if (newPosition > (allData.length - 1)) {
+
+
+        let newDataItemHolder = document.createElement("i");
+        newDataItemHolder.classList.add("sliderDataHolder");
+        newDataItemHolder.setAttribute("data-slidedata", baseTemplate);
+        allDataHolder.appendChild(newDataItemHolder);
+
+        decodeBaseTemplate = baseTemplate.replace(/_@@/g, '"');
+        baseTemplateToData = JSON.parse(decodeBaseTemplate);
+        console.log("DATA DECODE BASE");
+        console.log(baseTemplateToData);
+
+        currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
+        currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+        currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
+            currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
+
+
+        allDataHolder.setAttribute("data-slider-position", newPosition);
+        document.querySelector(".slideCounter").innerHTML = newPosition + 1;
+    } else {
+        console.log("show curent existing item");
+        allDataHolder.setAttribute("data-slider-position", newPosition);
+        document.querySelector(".slideCounter").innerHTML = newPosition + 1;
+
+        let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
+
+        decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
+        baseTemplateToData = JSON.parse(decodeBaseTemplate);
+        console.log("DATA DECODE EXISTING OBJECT");
+        console.log(baseTemplateToData);
+
+        currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
+        currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+        currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
+            currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
+
+
+    }
+    console.log("NEW POSITION: " + newPosition);
+
+
+
+    console.log(direction, objID);
+
+    allData.forEach(async (item, index) => {
+        console.log(item);
+    });
+
+}
+
+
+
 
 function prapareForEditing(obj, sectionToEdit) {
     obj.classList.remove("normal");
@@ -324,7 +470,41 @@ function prapareForEditing(obj, sectionToEdit) {
     }
 
 
-    let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]'); 
+    let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]'); //
+    let objSectionID;
+    console.log("CALL TO ACTION", checkCallToAction);
+
+    if (checkCallToAction) {
+        let idBuilder = returnRandom(100) + Date.now();
+        console.log("The NEW ID is: " + idBuilder);
+
+        objSectionID = checkCallToAction.getAttribute("id");
+
+        if (objSectionID) {
+            console.log("has an id: " + objSectionID);
+
+        } else {
+            objSectionID = idBuilder;
+            console.log("set NEW id: " + objSectionID);
+            checkCallToAction.setAttribute("id", objSectionID);
+
+            //data-slider-dataholder="1"
+        }
+        let objDataHolder = checkCallToAction.querySelector('[data-slider-dataholder="1"]');
+        objDataHolder.setAttribute("data-Related-id", objSectionID);
+
+        let leftContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navLeft');
+        let righttContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navRight');
+
+
+        leftContentSliderButton.onclick = () => {
+            sliderContentBuilder(-1, objSectionID);
+        }
+        righttContentSliderButton.onclick = () => {
+            sliderContentBuilder(1, objSectionID);
+        }
+
+    }
 
 
 
@@ -369,11 +549,11 @@ function prapareForEditing(obj, sectionToEdit) {
         }
         console.log("BWEGIN ITEM COLORS");
         iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
-           
+
             colorIcon.onclick = () => {
-                setBgItemColor(item,colorIcon);
+                setBgItemColor(item, colorIcon);
             }
-           
+
         });
     });
 
@@ -428,15 +608,19 @@ function prapareForEditing(obj, sectionToEdit) {
 
     if (sectionToEdit) {
         let letSectionAdminFooter = document.createElement("ADMINFOOTER");
-        letSectionAdminFooter.innerHTML = '<div class="button button-save button-dark" data-edit="button">Save Section</div><div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>';
+        letSectionAdminFooter.innerHTML = '<div class="button button-save button-dark" data-edit="button">Save Section</div><div class="slideCounter">0</div><div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>';
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {
+            if (checkCallToAction) {
+                console.log("SAVE THE THINKY SECTION");
+                sliderContentBuilder(-10, objSectionID, 1);
+            }
             saveSectionSettings(obj, sectionToEdit);
         }
         let sectionDeleteButton = obj.querySelector("adminfooter .button-delete");
         sectionDeleteButton.onclick = function () {
-            
+
             saveSectionSettings(obj, sectionToEdit);
             obj.remove();
         }
