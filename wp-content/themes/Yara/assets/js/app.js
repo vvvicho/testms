@@ -94,10 +94,15 @@ function contentSlide(direction, objID){
             currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
             currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
-            currentSliderSection.querySelectorAll(".fade-out").forEach(async (item) => {                
-                item.classList.remove("fade-out");
-                item.classList.add("fade-in");                
-            });
+            currentSliderSection.querySelector("img").onload = function (){
+                currentSliderSection.querySelectorAll(".fade-out").forEach(async (item) => {                
+                    item.classList.remove("fade-out");
+                    item.classList.add("fade-in"); 
+                });
+
+            }
+
+  
 
         }, 520);
 
