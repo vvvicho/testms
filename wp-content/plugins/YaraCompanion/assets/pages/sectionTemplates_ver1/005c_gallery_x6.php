@@ -23,38 +23,43 @@
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
                         <figcaption data-edit="text">Image Details</figcaption>
                     </figure>
-                </div>                <div class="galleryItem">
-                    <figure data-edit="image">
-                        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
-                        <figcaption data-edit="text">Image Details</figcaption>
-                    </figure>
-                </div>                <div class="galleryItem">
-                    <figure data-edit="image">
-                        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
-                        <figcaption data-edit="text">Image Details</figcaption>
-                    </figure>
-                </div>                <div class="galleryItem">
-                    <figure data-edit="image">
-                        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
-                        <figcaption data-edit="text">Image Details</figcaption>
-                    </figure>
-                </div>                <div class="galleryItem">
+                </div>
+                <div class="galleryItem">
                     <figure data-edit="image">
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
                         <figcaption data-edit="text">Image Details</figcaption>
                     </figure>
                 </div>
-                </div>                <div class="galleryItem">
+                <div class="galleryItem">
                     <figure data-edit="image">
                         <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
                         <figcaption data-edit="text">Image Details</figcaption>
                     </figure>
                 </div>
-                <div class="item_6 buttonHolder">
-                    <div class="button button-dark" data-edit="button delete">Section Button</div>
+                <div class="galleryItem">
+                    <figure data-edit="image">
+                        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
+                        <figcaption data-edit="text">Image Details</figcaption>
+                    </figure>
+                </div>
+                <div class="galleryItem">
+                    <figure data-edit="image">
+                        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
+                        <figcaption data-edit="text">Image Details</figcaption>
+                    </figure>
+                </div>
+                <div class="galleryItem">
+                    <figure data-edit="image">
+                        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_208_278.png" width="208" height="278" alt="my image">
+                        <figcaption data-edit="text">Image Details</figcaption>
+                    </figure>
                 </div>
             </div>
-</div>
+            <div class="item_6 buttonHolder">
+                <div class="button button-dark" data-edit="button delete">Section Button</div>
+            </div>
+        </div>
+        </div>
 
     </templateHidden>
 </li>
