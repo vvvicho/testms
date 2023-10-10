@@ -1110,6 +1110,9 @@ footer .footer--items ul li {
   font-weight: 400;
   line-height: 160%;
 }
+footer .footer--items ul li a {
+  color: rgba(15, 15, 15, 0.8);
+}
 footer .footer--items ul li.list--title {
   font-size: 16px;
   font-style: normal;

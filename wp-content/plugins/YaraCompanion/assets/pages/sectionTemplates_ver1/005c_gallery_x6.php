@@ -55,8 +55,8 @@
                     </figure>
                 </div>
                 <div class="item_6 buttonHolder">
-                <div class="button button-dark" data-edit="button delete">Section Button</div>
-            </div>
+                    <div class="button button-dark" data-edit="button delete">Section Button</div>
+                </div>
             </div>
 
         </div>

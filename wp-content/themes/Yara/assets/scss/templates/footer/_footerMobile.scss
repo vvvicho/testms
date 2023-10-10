@@ -15,6 +15,9 @@ footer {
                     font-style: normal;
                     font-weight: 400;
                     line-height: 160%;
+                    a {
+                        color: $mainTextColor;
+                    }
                     &.list {
                         &--title {
                             font-size: 16px;

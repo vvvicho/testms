@@ -15,20 +15,20 @@
         <span>Blue Box x2</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
-    <div class="bgColors--sectionLight section">
-    <div class="warper warper--boxGallery">
-            <div class="item_12 box box--bgColor--blue twoColMid">
-                <div class="icons-tester">
-                    <h4 data-edit="text  delete">Easy and affordable</h4>
-                    <p data-edit="text duplicate delete">Maximise return on N applied and improve yield quality with field specific N-rate recommendations based on the real N-uptake of your cereals.</p>
-                </div>
-                <div class="icons-clock">
-                    <h4 data-edit="text  delete">Agronomically robust</h4>
-                    <p data-edit="text duplicate delete">The N-Tester BT has been field tested across hundreds of trials and developed by Yara Research &amp; Development for over 25 years. </p>
+        <div class="bgColors--sectionLight section">
+            <div class="warper warper--boxGallery">
+                <div class="item_12 box box--bgColor--blue twoColMid">
+                    <div class="icons-tester">
+                        <h4 data-edit="text  delete">Easy and affordable</h4>
+                        <p data-edit="text duplicate delete">Maximise return on N applied and improve yield quality with field specific N-rate recommendations based on the real N-uptake of your cereals.</p>
+                    </div>
+                    <div class="icons-clock">
+                        <h4 data-edit="text  delete">Agronomically robust</h4>
+                        <p data-edit="text duplicate delete">The N-Tester BT has been field tested across hundreds of trials and developed by Yara Research &amp; Development for over 25 years. </p>
+                    </div>
                 </div>
             </div>
         </div>
-</div>
 
     </templateHidden>
 </li>

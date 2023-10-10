@@ -20,9 +20,9 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />    
-    
- 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
     <meta name="description" content="Atfarm is easy-to-use precision agriculture software. Get instant insights for your fields and crops to improve nitrogen use efficiency. Sign up now for FREE!">
     <meta name="keywords" content="Yara, Farming, Harvest, Crops, Fetizer">
     <meta name="author" content="Yara">
@@ -47,24 +47,22 @@
             </h2>
         </div>
         <nav>
-        <ul class="mobileNavHolder">
-            <li id="mobileSearchButton" class="mobileNav icons icons-searchW"></li>
-            <li id="mobileOpenCloseButton" data-status="0" class="mobileNav icons icons-openW"></li>
-        </ul>
-        <?php
-        wp_nav_menu(array(
-            '
+            <ul class="mobileNavHolder">
+                <li id="mobileSearchButton" class="mobileNav icons icons-searchW"></li>
+                <li id="mobileOpenCloseButton" data-status="0" class="mobileNav icons icons-openW"></li>
+            </ul>
+            <?php
+            wp_nav_menu(array(               
+                'menu'               => "Header Navigation",
+                'depth'              => 2,
+                'container'          => '',
+                'menu_class'    => 'desktopNav',
+                'menu_id'       => 'desktopNav'
 
-        theme_location'     => "header_navigation",
-            'depth'         => 2,
-            'container'     => '',
-            'menu_class'    => 'desktopNav',
-            'menu_id'       => 'desktopNav'
-
-        ));
+            ));
 
 
-        ?>
+            ?>
         </nav>
         <!--nav>
             <ul class="mobileNavHolder">
