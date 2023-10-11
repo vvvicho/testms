@@ -377,18 +377,10 @@ function listSlide(direction, objID){
     console.log("direction: ", direction," id: ", objID);
     let contentSlider = document.getElementById(objID).querySelector(".slider");
     let contentSliderItemsHolder = contentSlider.querySelector("ul");
-
-    console.log(direction);
-    let containerWidth = contentSlider.offsetWidth;
-    let containerItemsHolderWidth = contentSliderItemsHolder.offsetWidth;
     let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
-    console.log(containerWidth + " , " + containerItemsHolderWidth);
-    var rect = contentSliderItemsHolder.getBoundingClientRect();
-    console.log(contentSlider.scrollLeft, rect.y, rect.bottom, itemWidth);
     let step = itemWidth;
     let newPosition = (contentSlider.scrollLeft + (step * direction));
     contentSlider.scrollLeft = newPosition;  
-    console.log("newPosition: ", newPosition)
 }
 
 
