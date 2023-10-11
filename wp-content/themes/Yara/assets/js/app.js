@@ -92,6 +92,7 @@ function contentSlide(direction, objID){
             currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
             currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
             currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+            currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
             currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
             currentSliderSection.querySelector("img").onload = function (){

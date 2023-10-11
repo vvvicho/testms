@@ -315,9 +315,14 @@ function sliderContentBuilder(direction, objID, saveState) {
         h3: currentSliderSection.querySelector("h3").innerHTML,
         h4: currentSliderSection.querySelector("h4").innerHTML,
         img: currentSliderSection.querySelector("img").getAttribute("src"),
-        p: currentSliderSection.querySelector("p").innerHTML,
+        p: currentSliderSection.querySelector("p").innerHTML,        
         button: currentSliderSection.querySelector(".articleContent .button").innerHTML,
     };
+
+    if(currentSliderSection.querySelector("ul")){        
+        currentObjData.ul =  currentSliderSection.querySelector("ul").innerHTML;        
+    }
+
 
     currentObjData = JSON.stringify(currentObjData);
     currentObjData = currentObjData.replace(/["']/g, "_@@");
@@ -353,6 +358,7 @@ function sliderContentBuilder(direction, objID, saveState) {
         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
         currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
 
@@ -368,8 +374,15 @@ function sliderContentBuilder(direction, objID, saveState) {
         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
         currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
     }  
+
+
+    if(currentSliderSection.querySelector("ul")){             
+        let alltexts = currentSliderSection.querySelectorAll('ul li[data-edit*="text"]');       
+        alltexts.forEach(async (text) => { text.onclick = () => { editTextBox(text) } });
+    }
 
 }
 
@@ -611,6 +624,7 @@ function prapareForEditing(obj, sectionToEdit) {
                         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
                         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
                         currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+                        currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
                         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
                         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
                         allDataHolder.setAttribute("data-slider-position", "0");
