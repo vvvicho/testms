@@ -1,8 +1,9 @@
 <?php
+/*
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
-@ini_set('display_errors', E_ALL);
+@ini_set('display_errors', E_ALL);*/
 
 
 
