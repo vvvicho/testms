@@ -54,6 +54,12 @@ $buttonLightBR: 8px;
 }
 
 .adminHolder {
+    .itemsSlider {
+        .slider {
+            overflow-x: scroll !important;
+        }
+
+    }
     .ltr {
         figure {
             order: 2;

@@ -20,6 +20,9 @@
   position: relative;
   margin-bottom: 100px;
 }
+.adminHolder .itemsSlider .slider {
+  overflow-x: scroll !important;
+}
 .adminHolder .ltr figure {
   order: 2;
 }
