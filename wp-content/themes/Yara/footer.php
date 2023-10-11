@@ -20,9 +20,9 @@
 
 
         <ul>
-            <li class="list--title">
+            <!--li class="list--title">
                 About us
-            </li>
+            </li-->
             <?php
             wp_nav_menu(array(
                 'menu'          => "Footer About Us",
