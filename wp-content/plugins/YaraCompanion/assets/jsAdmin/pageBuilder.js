@@ -325,7 +325,7 @@ function sliderContentBuilder(direction, objID, saveState) {
     allData.item(currentSidePosition).setAttribute("data-slidedata", currentObjData);
 
 
-    if (saveState == 1) {
+    if (saveState == "1") {
         newPosition = 0;
         currentSliderSection.querySelector(".articleNavigation .icons-navLeft").setAttribute("onclick", "contentSlide(-1," + objID + ")");
         currentSliderSection.querySelector(".articleNavigation .icons-navRight").setAttribute("onclick", "contentSlide(1," + objID + ")")
@@ -374,7 +374,6 @@ function sliderContentBuilder(direction, objID, saveState) {
 }
 
 function listSlide(direction, objID){
-    console.log("direction: ", direction," id: ", objID);
     let contentSlider = document.getElementById(objID).querySelector(".slider");
     let contentSliderItemsHolder = contentSlider.querySelector("ul");
     let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
@@ -415,17 +414,15 @@ function prapareForEditing(obj, sectionToEdit) {
     let isListSlider = obj.querySelector('.itemsSlider');
     
     if (isListSlider) {
-        console.log(isListSlider);
+      
         let objSectionID = isListSlider.getAttribute("id");
         let idBuilder = returnRandom(100) + Date.now(); 
         objSectionID = isListSlider.getAttribute("id");
 
         if (!objSectionID) {   
-            console.log("ADD ID");                  
+                             
             isListSlider.setAttribute("id", idBuilder);  
             objSectionID =   idBuilder   ;    
-        }else {
-            console.log("ID EXIST");   
         }
 
         //isListSlider.setAttribute("id", idBuilder);            
@@ -445,14 +442,14 @@ function prapareForEditing(obj, sectionToEdit) {
         objSectionID = checkCallToAction.getAttribute("id");
 
         if (!objSectionID) {           
-            checkCallToAction.setAttribute("id", idBuilder);            
+            checkCallToAction.setAttribute("id", idBuilder);   
+            objSectionID = idBuilder ;
         }
         let objDataHolder = checkCallToAction.querySelector('[data-slider-dataholder="1"]');
         objDataHolder.setAttribute("data-Related-id", objSectionID);
 
         let leftContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navLeft');
-        let righttContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navRight');
-
+        let righttContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navRight');    
 
         leftContentSliderButton.onclick = () => {
             sliderContentBuilder(-1, objSectionID);
