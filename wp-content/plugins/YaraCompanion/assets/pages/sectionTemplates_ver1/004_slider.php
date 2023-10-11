@@ -63,6 +63,6 @@
                     <div class="button button-dark" data-edit="button delete">Section button</div>
                 </div>
             </div>
-</div>
+        </div>
     </templateHidden>
 </li>

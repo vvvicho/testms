@@ -1225,7 +1225,7 @@ main .section .warper .articleInfo .articleContent P + ul {
 main section .warper .slider,
 main .section .warper .slider {
   overflow: hidden;
-  overflow-x: scroll;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   transition: 0.5s;

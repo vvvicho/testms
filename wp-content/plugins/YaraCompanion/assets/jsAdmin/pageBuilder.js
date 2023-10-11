@@ -373,6 +373,24 @@ function sliderContentBuilder(direction, objID, saveState) {
 
 }
 
+function listSlide(direction, objID){
+    console.log("direction: ", direction," id: ", objID);
+    let contentSlider = document.getElementById(objID).querySelector(".slider");
+    let contentSliderItemsHolder = contentSlider.querySelector("ul");
+
+    console.log(direction);
+    let containerWidth = contentSlider.offsetWidth;
+    let containerItemsHolderWidth = contentSliderItemsHolder.offsetWidth;
+    let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
+    console.log(containerWidth + " , " + containerItemsHolderWidth);
+    var rect = contentSliderItemsHolder.getBoundingClientRect();
+    console.log(contentSlider.scrollLeft, rect.y, rect.bottom, itemWidth);
+    let step = itemWidth;
+    let newPosition = (contentSlider.scrollLeft + (step * direction));
+    contentSlider.scrollLeft = newPosition;  
+    console.log("newPosition: ", newPosition)
+}
+
 
 
 
@@ -401,20 +419,41 @@ function prapareForEditing(obj, sectionToEdit) {
     }
 
 
-    let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]'); //
-    let objSectionID;
+    let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]') ; // 
+    let isListSlider = obj.querySelector('.itemsSlider');
+    
+    if (isListSlider) {
+        console.log(isListSlider);
+        let objSectionID = isListSlider.getAttribute("id");
+        let idBuilder = returnRandom(100) + Date.now(); 
+        objSectionID = isListSlider.getAttribute("id");
+
+        if (!objSectionID) {   
+            console.log("ADD ID");                  
+            isListSlider.setAttribute("id", idBuilder);  
+            objSectionID =   idBuilder   ;    
+        }else {
+            console.log("ID EXIST");   
+        }
+
+        //isListSlider.setAttribute("id", idBuilder);            
+        let leftContentSliderButton = isListSlider.querySelector('.articleNavigation .icons-navLeft');
+        let righttContentSliderButton = isListSlider.querySelector('.articleNavigation .icons-navRight');
+        leftContentSliderButton.setAttribute("onclick", "listSlide(-1," + objSectionID + ")");
+        righttContentSliderButton.setAttribute("onclick", "listSlide(1," + objSectionID + ")");
+
+
+    }
+
+
 
     if (checkCallToAction) {
         let idBuilder = returnRandom(100) + Date.now(); 
 
         objSectionID = checkCallToAction.getAttribute("id");
 
-        if (objSectionID) {            
-
-        } else {
-            objSectionID = idBuilder;           
-            checkCallToAction.setAttribute("id", objSectionID);
-            
+        if (!objSectionID) {           
+            checkCallToAction.setAttribute("id", idBuilder);            
         }
         let objDataHolder = checkCallToAction.querySelector('[data-slider-dataholder="1"]');
         objDataHolder.setAttribute("data-Related-id", objSectionID);
