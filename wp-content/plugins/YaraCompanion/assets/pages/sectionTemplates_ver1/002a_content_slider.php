@@ -26,7 +26,14 @@
                 <div class="articleInfo articleInfo item_5">
                     <div class="articleContent">
                         <h4 class="fade-in" data-edit="text">H4 Head Line</h4>
-                        <p class="fade-in" data-edit="text ">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
+                        <div class="fade-in pHolder">
+                            <p data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.
+                            </p>
+                            <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf" data-edit="pSpetial delete">
+                                <span><strong>paragraf Title</strong></br>
+                                    <i>A special paragraph with an icon</i></span>
+                            </p>
+                        </div>
                         <ul class="fade-in">
                             <li data-edit="text duplicate delete">List Item</li>
                         </ul>
@@ -41,7 +48,7 @@
                 </div>
             </div>
             <div data-slider-dataHolder="1" data-slider-position="0">
-                <strong data-slideData-template="{_@@h3_@@:_@@new H3 Head Line_@@,_@@h4_@@:_@@new H4 Head Line_@@,_@@img_@@:_@@/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_677_508.png_@@,_@@p_@@:_@@Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt._@@, _@@ul_@@: _@@<li data-edit=\_@@text duplicate delete\_@@>List Item</li>_@@,   _@@button_@@:_@@<datalink data-href=\_@@https://google.com\_@@ target=\_@@\_@@>Button</datalink>_@@}"></strong>
+                <strong data-slideData-template="{_@@h3_@@:_@@new H3 Head Line_@@,_@@h4_@@:_@@new H4 Head Line_@@,_@@img_@@:_@@/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_677_508.png_@@,_@@p_@@:_@@<p data-edit=\_@@text duplicate delete\_@@>Paragraf Lorem, ipsum dolor sit amet consectetur</p><p data-icon=\_@@uk\_@@ class=\_@@flafIcons flafIcons--uk spParagraf\_@@ data-edit=\_@@pSpetial delete\_@@><span><strong>paragraf Title</strong></br><i>A special paragraph with an icon</i></span></p>_@@, _@@ul_@@: _@@<li data-edit=\_@@text duplicate delete\_@@>List Item</li>_@@,   _@@button_@@:_@@<datalink data-href=\_@@https://google.com\_@@ target=\_@@\_@@>Button</datalink>_@@}"></strong>
                 <i data-slideData=''> 123 5 </i>
             </div>
         </div>

@@ -306,6 +306,10 @@ function sliderContentBuilder(direction, objID, saveState) {
     let currentSliderSection = document.getElementById(objID);
     let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
 
+    currentSliderSection.querySelectorAll(".icon--save").forEach(async (element) => {
+        element.click();
+    })
+
     let newPosition = currentSidePosition + direction;
     let allData = allDataHolder.querySelectorAll('i');
 
@@ -315,7 +319,7 @@ function sliderContentBuilder(direction, objID, saveState) {
         h3: currentSliderSection.querySelector("h3").innerHTML,
         h4: currentSliderSection.querySelector("h4").innerHTML,
         img: currentSliderSection.querySelector("img").getAttribute("src"),
-        p: currentSliderSection.querySelector("p").innerHTML,        
+        p: currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML : currentSliderSection.querySelector("p").innerHTML,        
         button: currentSliderSection.querySelector(".articleContent .button").innerHTML,
     };
 
@@ -357,7 +361,8 @@ function sliderContentBuilder(direction, objID, saveState) {
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-        currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+       // currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p;
         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
@@ -373,15 +378,18 @@ function sliderContentBuilder(direction, objID, saveState) {
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-        currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
     }  
 
 
     if(currentSliderSection.querySelector("ul")){             
-        let alltexts = currentSliderSection.querySelectorAll('ul li[data-edit*="text"]');       
+        let alltexts = currentSliderSection.querySelectorAll('ul li[data-edit*="text"], .pHolder [data-edit*="text"]');       
         alltexts.forEach(async (text) => { text.onclick = () => { editTextBox(text) } });
+
+        let allpSpetial = currentSliderSection.querySelectorAll('.pHolder [data-edit*="pSpetial"]');
+        allpSpetial.forEach(async (text) => { text.onclick = () => { editpSpetial(text) } });
     }
 
 }
@@ -623,7 +631,7 @@ function prapareForEditing(obj, sectionToEdit) {
                         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
                         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
                         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-                        currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+                        currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
                         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
                         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
                         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
