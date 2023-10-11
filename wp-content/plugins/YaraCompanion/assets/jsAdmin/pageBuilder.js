@@ -310,7 +310,7 @@ function sliderContentBuilder(direction, objID, saveState) {
     let currentSliderSection = document.getElementById(objID);
     let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
 
-    let newPosition = currentSidePosition + direction;    
+    let newPosition = currentSidePosition + direction;
     let allData = allDataHolder.querySelectorAll('i');
 
     let baseTemplate = allDataHolder.querySelector("strong").getAttribute("data-slidedata-template");
@@ -347,9 +347,9 @@ function sliderContentBuilder(direction, objID, saveState) {
     console.log(currentObjData);
 
 
-   // if (updatecontent) {
-        allData.item(currentSidePosition).setAttribute("data-slidedata", currentObjData);
-   // }
+    // if (updatecontent) {
+    allData.item(currentSidePosition).setAttribute("data-slidedata", currentObjData);
+    // }
 
 
 
@@ -367,10 +367,10 @@ function sliderContentBuilder(direction, objID, saveState) {
     console.log(allData.item(0));
 
 
-    if (saveState) {
+    if (saveState == 1) {
         newPosition = 0;
-        currentSliderSection.querySelector(".articleNavigation .icons-navLeft").setAttribute("onclick","contentSlide(-1," + objID +")");
-        currentSliderSection.querySelector(".articleNavigation .icons-navRight").setAttribute("onclick","contentSlide(1," + objID +")")
+        currentSliderSection.querySelector(".articleNavigation .icons-navLeft").setAttribute("onclick", "contentSlide(-1," + objID + ")");
+        currentSliderSection.querySelector(".articleNavigation .icons-navRight").setAttribute("onclick", "contentSlide(1," + objID + ")")
     }
 
 
@@ -608,7 +608,22 @@ function prapareForEditing(obj, sectionToEdit) {
 
     if (sectionToEdit) {
         let letSectionAdminFooter = document.createElement("ADMINFOOTER");
-        letSectionAdminFooter.innerHTML = '<div class="button button-save button-dark" data-edit="button">Save Section</div><div style="float:left" class="slideCounter">1</div><div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>';
+        let callToActionButtonsSet = "";
+
+        if (checkCallToAction) {
+            callToActionButtonsSet =`
+                <div class="button slideCounter button-light" data-edit="button" style="float:left; margin-right:10px">1</div>
+                <div class="button button-delete-slide button-light" data-edit="button" style="float:left">Delete Slider Item</div>            
+            `
+
+
+        }
+
+
+        letSectionAdminFooter.innerHTML = `
+        <div class="button button-save button-dark" data-edit="button">Save Section</div>       
+        ${callToActionButtonsSet}
+        <div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>`;
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {
@@ -618,9 +633,78 @@ function prapareForEditing(obj, sectionToEdit) {
             }
             saveSectionSettings(obj, sectionToEdit);
         }
+
+        let sliderDeleteButton = obj.querySelector("adminfooter .button-delete-slide");
+
+        sliderDeleteButton.onclick = function () {
+            if (checkCallToAction) {
+
+
+                console.log("DELETE SLIDE ITEM");
+
+                let currentSliderID = obj.querySelector(".section").getAttribute("id");
+
+                let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
+                let currentSliderSection = document.getElementById(currentSliderID);
+                let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
+                let allData = allDataHolder.querySelectorAll('i');
+
+
+                let curentSlideItem = allData.item(currentSidePosition);
+                if (curentSlideItem) {
+                    console.log(currentSidePosition, " object exists", curentSlideItem);
+                    if (currentSidePosition > 0) {
+                        allData.item(currentSidePosition).remove();
+
+
+                        newPosition = 0;
+
+                        let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
+
+                        decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
+                        baseTemplateToData = JSON.parse(decodeBaseTemplate);
+                        console.log("DATA DECODE EXISTING OBJECT");
+                        console.log(baseTemplateToData);
+
+                        currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
+                        currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+                        currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
+                            currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+                        currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
+
+                        document.querySelector(".slideCounter").innerHTML = newPosition + 1;
+                        allDataHolder.setAttribute("data-slider-position", "0");
+                        currentSidePosition = 0;
+
+
+
+
+
+                    }
+                } else {
+                    console.log(currentSidePosition, " object NOT! exists", curentSlideItem);
+                }
+
+
+
+
+
+                console.log(currentSliderID);
+
+
+
+
+                // sliderContentBuilder(-10, objSectionID, 1);
+
+            }
+
+
+        }
+
+
+
         let sectionDeleteButton = obj.querySelector("adminfooter .button-delete");
         sectionDeleteButton.onclick = function () {
-
             saveSectionSettings(obj, sectionToEdit);
             obj.remove();
         }

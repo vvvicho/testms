@@ -223,6 +223,12 @@ footer {
 .ltr figure {
   order: 2;
 }
+.ltr .articleInfo {
+  order: 1;
+}
+.ltr .articleNavigation {
+  order: 3;
+}
 
 .fade-out {
   opacity: 0;
