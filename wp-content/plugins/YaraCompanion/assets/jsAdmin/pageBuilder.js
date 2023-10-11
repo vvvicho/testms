@@ -28,8 +28,7 @@ function clearAllImagesStatus() {
     });
 }
 
-function showGalleryImages() {
-    console.log("IMAGES EDITOR HERE");
+function showGalleryImages() {    
     sellectedImage = "";
     document.querySelector("#upload-button").click();
     // clearAllImagesStatus();
@@ -114,8 +113,7 @@ function duplicateItem(obj) {
     iconsPannel.querySelector(".icon--clone").onclick = () => {
         duplicateItem(newElement);
     }
-
-    console.log("BWEGIN ITEM COLORS2");
+  
     iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
 
         colorIcon.onclick = () => {
@@ -219,8 +217,7 @@ function showHideElements(state) {
     }
 }
 
-function savepSpetial(obj) {
-    console.log("SAVE SPETIAL");
+function savepSpetial(obj) {   
     obj.onclick = null;
     obj.removeAttribute("style");
     let title = obj.querySelector("input").value;
@@ -242,8 +239,7 @@ function returnFlagsList() {
     return `<ul class="flagListHolder">${flagsList}</ul>`;
 }
 
-function editpSpetial(obj) {
-    console.log("EDIT SPETIAL");
+function editpSpetial(obj) {   
     obj.onclick = null;
     let saveIconHTTML = iconbuilder("save");
     let deleteIiconHTML = "";
@@ -315,19 +311,6 @@ function sliderContentBuilder(direction, objID, saveState) {
 
     let baseTemplate = allDataHolder.querySelector("strong").getAttribute("data-slidedata-template");
 
-    //baseTemplate = baseTemplate.replace(/_@@/g, '"');
-    //let baseTemplateToData = JSON.parse(baseTemplate);
-
-    console.log("BASE TEMPLATE: " + baseTemplate);
-    console.log("BASE TEMPLATE: TO DATA ");
-    // console.log(baseTemplateToData);
-
-    console.log("CURRENT SECTION");
-    console.log(currentSliderSection);
-    console.log(currentSliderSection.querySelector("h3").innerHTML);
-    console.log(currentSliderSection.querySelector("h4").innerHTML);
-    console.log(currentSliderSection.querySelector("img").getAttribute("src"));
-
     let currentObjData = {
         h3: currentSliderSection.querySelector("h3").innerHTML,
         h4: currentSliderSection.querySelector("h4").innerHTML,
@@ -336,35 +319,10 @@ function sliderContentBuilder(direction, objID, saveState) {
         button: currentSliderSection.querySelector(".articleContent .button").innerHTML,
     };
 
-
-    console.log("PREPARE CURRENT OBJECT FOR SAVE");
-    console.log(currentObjData);
-
     currentObjData = JSON.stringify(currentObjData);
     currentObjData = currentObjData.replace(/["']/g, "_@@");
 
-    console.log("CURRENT OBJECT AFTER ESKAPE");
-    console.log(currentObjData);
-
-
-    // if (updatecontent) {
     allData.item(currentSidePosition).setAttribute("data-slidedata", currentObjData);
-    // }
-
-
-
-
-
-
-
-
-
-    console.log(allData);
-
-
-    console.log(currentSidePosition);
-    console.log("PRINT 1st child");
-    console.log(allData.item(0));
 
 
     if (saveState == 1) {
@@ -374,70 +332,44 @@ function sliderContentBuilder(direction, objID, saveState) {
     }
 
 
-    if (newPosition < 0) {
-        console.log("do nothing it is 1st item");
+    if (newPosition < 0) {  
         newPosition = 0;
         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
         return;
     }
 
-    console.log("CREATE NEW ITEM");
-    console.log(allData.length);
-    console.log(newPosition);
-
     let decodeBaseTemplate, baseTemplateToData;
 
     if (newPosition > (allData.length - 1)) {
-
 
         let newDataItemHolder = document.createElement("i");
         newDataItemHolder.classList.add("sliderDataHolder");
         newDataItemHolder.setAttribute("data-slidedata", baseTemplate);
         allDataHolder.appendChild(newDataItemHolder);
-
         decodeBaseTemplate = baseTemplate.replace(/_@@/g, '"');
         baseTemplateToData = JSON.parse(decodeBaseTemplate);
-        console.log("DATA DECODE BASE");
-        console.log(baseTemplateToData);
 
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-            currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
 
         allDataHolder.setAttribute("data-slider-position", newPosition);
         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
-    } else {
-        console.log("show curent existing item");
+    } else {   
         allDataHolder.setAttribute("data-slider-position", newPosition);
         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
-
         let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
-
         decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
         baseTemplateToData = JSON.parse(decodeBaseTemplate);
-        console.log("DATA DECODE EXISTING OBJECT");
-        console.log(baseTemplateToData);
-
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-            currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
-
-
-    }
-    console.log("NEW POSITION: " + newPosition);
-
-
-
-    console.log(direction, objID);
-
-    allData.forEach(async (item, index) => {
-        console.log(item);
-    });
+    }  
 
 }
 
@@ -447,7 +379,6 @@ function sliderContentBuilder(direction, objID, saveState) {
 function prapareForEditing(obj, sectionToEdit) {
     obj.classList.remove("normal");
     obj.onclick = null;
-
 
     showHideElements(0);
     if (obj.querySelector(".section")) {
@@ -472,23 +403,18 @@ function prapareForEditing(obj, sectionToEdit) {
 
     let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]'); //
     let objSectionID;
-    console.log("CALL TO ACTION", checkCallToAction);
 
     if (checkCallToAction) {
-        let idBuilder = returnRandom(100) + Date.now();
-        console.log("The NEW ID is: " + idBuilder);
+        let idBuilder = returnRandom(100) + Date.now(); 
 
         objSectionID = checkCallToAction.getAttribute("id");
 
-        if (objSectionID) {
-            console.log("has an id: " + objSectionID);
+        if (objSectionID) {            
 
         } else {
-            objSectionID = idBuilder;
-            console.log("set NEW id: " + objSectionID);
+            objSectionID = idBuilder;           
             checkCallToAction.setAttribute("id", objSectionID);
-
-            //data-slider-dataholder="1"
+            
         }
         let objDataHolder = checkCallToAction.querySelector('[data-slider-dataholder="1"]');
         objDataHolder.setAttribute("data-Related-id", objSectionID);
@@ -546,10 +472,8 @@ function prapareForEditing(obj, sectionToEdit) {
         }
         iconsPannel.querySelector(".icon--clone").onclick = () => {
             duplicateItem(item);
-        }
-        console.log("BWEGIN ITEM COLORS");
+        }   
         iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
-
             colorIcon.onclick = () => {
                 setBgItemColor(item, colorIcon);
             }
@@ -613,7 +537,7 @@ function prapareForEditing(obj, sectionToEdit) {
         if (checkCallToAction) {
             callToActionButtonsSet = `
                 <div class="button slideCounter button-light" data-edit="button" style="float:left; margin-right:10px">1</div>
-                <div class="button button-delete-slide button-light" data-edit="button" style="float:left">Delete Slider Item</div>            
+                <div class="button button-delete-slide button-light" data-edit="button" style="float:left">Delete Slider Item</div>         
             `
 
 
@@ -627,8 +551,7 @@ function prapareForEditing(obj, sectionToEdit) {
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {
-            if (checkCallToAction) {
-                console.log("SAVE THE THINKY SECTION");
+            if (checkCallToAction) {                
                 sliderContentBuilder(-10, objSectionID, 1);
             }
             saveSectionSettings(obj, sectionToEdit);
@@ -638,11 +561,7 @@ function prapareForEditing(obj, sectionToEdit) {
 
         if (checkCallToAction) {
             sliderDeleteButton.onclick = function () {
-
-                console.log("DELETE SLIDE ITEM");
-
                 let currentSliderID = obj.querySelector(".section").getAttribute("id");
-
                 let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
                 let currentSliderSection = document.getElementById(currentSliderID);
                 let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
@@ -650,8 +569,7 @@ function prapareForEditing(obj, sectionToEdit) {
 
 
                 let curentSlideItem = allData.item(currentSidePosition);
-                if (curentSlideItem) {
-                    console.log(currentSidePosition, " object exists", curentSlideItem);
+                if (curentSlideItem) {                    
                     if (currentSidePosition > 0) {
                         allData.item(currentSidePosition).remove();
 
@@ -661,29 +579,19 @@ function prapareForEditing(obj, sectionToEdit) {
 
                         decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
                         baseTemplateToData = JSON.parse(decodeBaseTemplate);
-                        console.log("DATA DECODE EXISTING OBJECT");
-                        console.log(baseTemplateToData);
-
                         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
                         currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
                         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-                            currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+                        currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
                         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
-
                         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
                         allDataHolder.setAttribute("data-slider-position", "0");
                         currentSidePosition = 0;
 
                     }
-                } else {
-                    console.log(currentSidePosition, " object NOT! exists", curentSlideItem);
-                }
-                console.log(currentSliderID);
-                // sliderContentBuilder(-10, objSectionID, 1);
+                } 
             }
         }
-
-
 
         let sectionDeleteButton = obj.querySelector("adminfooter .button-delete");
         sectionDeleteButton.onclick = function () {
@@ -722,10 +630,6 @@ function insertMySection(obj) {
         headerItems.push(dataObject);
         let thisObject = headerItems[headerItems.length - 1].item;
         let sectionToEdit = headerItems[headerItems.length - 1];
-        //thisObject.onclick = function () {
-        //    prapareForEditing(thisObject, sectionToEdit);
-        //}
-
         let swapPositionPannel = document.createElement("div");
         swapPositionPannel.classList.add("swapPositionPannel");
         swapPositionPannel.innerHTML = iconbuilder("edit");
@@ -734,8 +638,6 @@ function insertMySection(obj) {
         swapPositionPannel.querySelector(".icon--edit").onclick = () => {
             prapareForEditing(thisObject, sectionToEdit);
         }
-
-
 
         template.setAttribute('data-used', '1');
     } else if (templateType == "0") {
@@ -750,31 +652,21 @@ function insertMySection(obj) {
         sectionItems.push(dataObject);
         let thisObject = sectionItems[sectionItems.length - 1].item;
         let sectionToEdit = sectionItems[sectionItems.length - 1];
-        // thisObject.onclick = function () {
-        // prapareForEditing(thisObject, sectionToEdit);
-        // }
-
-
         let swapPositionPannel = document.createElement("div");
         swapPositionPannel.classList.add("swapPositionPannel");
         swapPositionPannel.innerHTML = iconbuilder("up") + iconbuilder("down") + iconbuilder("edit");
         thisObject.appendChild(swapPositionPannel);
 
-
         swapPositionPannel.querySelector(".icon--edit").onclick = () => {
             prapareForEditing(thisObject, sectionToEdit);
         }
 
-        swapPositionPannel.querySelector(".icon--up").onclick = () => {
-            console.log("SWAP POSITIONS");
+        swapPositionPannel.querySelector(".icon--up").onclick = () => {          
             swapNodePositions(thisObject, 0);
         }
-        swapPositionPannel.querySelector(".icon--down").onclick = () => {
-            console.log("SWAP POSITIONS");
+        swapPositionPannel.querySelector(".icon--down").onclick = () => {          
             swapNodePositions(thisObject, 1);
         }
-
-
 
         setTimeout(() => {
             scrollToTop(getOffset(sectionItem).top);
