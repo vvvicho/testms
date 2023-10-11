@@ -25,6 +25,7 @@
                                 <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_315_315.png" width="315" height="315" alt="my image">
                             </figure>
                             <i class="counter" data-edit="text delete">x</i>
+                            <h4 data-edit="text  delete">h4 Head Line</h4>
                             <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                             <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf" data-edit="pSpetial delete">
                                 <span><strong>paragraf Title</strong></br>
@@ -36,6 +37,7 @@
                                 <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_315_315.png" width="315" height="315" alt="my image">
                             </figure>
                             <i class="counter" data-edit="text delete">x</i>
+                            <h4 data-edit="text  delete">h4 Head Line</h4>
                             <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                             <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf" data-edit="pSpetial delete">
                                 <span><strong>paragraf Title</strong></br>
@@ -47,6 +49,7 @@
                                 <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_315_315.png" width="315" height="315" alt="my image">
                             </figure>
                             <i class="counter" data-edit="text delete">x</i>
+                            <h4 data-edit="text  delete">h4 Head Line</h4>
                             <p class="fade-in" data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.</p>
                             <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf" data-edit="pSpetial delete">
                                 <span><strong>paragraf Title</strong></br>
