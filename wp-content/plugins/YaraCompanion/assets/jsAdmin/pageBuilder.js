@@ -611,7 +611,7 @@ function prapareForEditing(obj, sectionToEdit) {
         let callToActionButtonsSet = "";
 
         if (checkCallToAction) {
-            callToActionButtonsSet =`
+            callToActionButtonsSet = `
                 <div class="button slideCounter button-light" data-edit="button" style="float:left; margin-right:10px">1</div>
                 <div class="button button-delete-slide button-light" data-edit="button" style="float:left">Delete Slider Item</div>            
             `
@@ -636,9 +636,8 @@ function prapareForEditing(obj, sectionToEdit) {
 
         let sliderDeleteButton = obj.querySelector("adminfooter .button-delete-slide");
 
-        sliderDeleteButton.onclick = function () {
-            if (checkCallToAction) {
-
+        if (checkCallToAction) {
+            sliderDeleteButton.onclick = function () {
 
                 console.log("DELETE SLIDE ITEM");
 
@@ -655,7 +654,6 @@ function prapareForEditing(obj, sectionToEdit) {
                     console.log(currentSidePosition, " object exists", curentSlideItem);
                     if (currentSidePosition > 0) {
                         allData.item(currentSidePosition).remove();
-
 
                         newPosition = 0;
 
@@ -676,29 +674,13 @@ function prapareForEditing(obj, sectionToEdit) {
                         allDataHolder.setAttribute("data-slider-position", "0");
                         currentSidePosition = 0;
 
-
-
-
-
                     }
                 } else {
                     console.log(currentSidePosition, " object NOT! exists", curentSlideItem);
                 }
-
-
-
-
-
                 console.log(currentSliderID);
-
-
-
-
                 // sliderContentBuilder(-10, objSectionID, 1);
-
             }
-
-
         }
 
 

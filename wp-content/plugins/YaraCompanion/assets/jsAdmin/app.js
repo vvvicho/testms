@@ -302,62 +302,51 @@ function checkCustomFields() {
 
 
 //window.onload = function () {
-function loadYaraBuilderSettings() { 
-if (isPageEditor) {
-    console.log("before on load");
-    console.log("window was loaded");
-    document.querySelector("body").appendChild(yaraPageEditorHolder);
-    yaraPageEditorHolder.appendChild(adminHolder);
+function loadYaraBuilderSettings() {
+    if (isPageEditor) {
+        document.querySelector("body").appendChild(yaraPageEditorHolder);
+        yaraPageEditorHolder.appendChild(adminHolder);
 
+        (function ($) {
+            var mediaUploader;
+            $('#upload-button').click(function (e) {
+                e.preventDefault();
+                yaraPageEditorHolder.classList.add("hidden");
+                // If the uploader object has already been created, reopen the dialog
+                if (mediaUploader) {
+                    mediaUploader.open();
+                    return;
+                }
+                // Extend the wp.media object
+                mediaUploader = wp.media.frames.file_frame = wp.media({
+                    title: 'Choose Image',
+                    button: {
+                        text: 'Choose Image'
+                    }, multiple: false
+                });
 
-    (function ($) {
-        var mediaUploader;
-        $('#upload-button').click(function (e) {
-            e.preventDefault();
-            yaraPageEditorHolder.classList.add("hidden");
-            // If the uploader object has already been created, reopen the dialog
-            if (mediaUploader) {
+                // When a file is selected, grab the URL and set it as the text field's value
+                mediaUploader.on('select', function () {
+                    attachment = mediaUploader.state().get('selection').first().toJSON();
+                    $('#image-url').val(attachment.url);
+                    isBgImage ? objectToUpdateSRC.setAttribute("style", "background-image:url('" + attachment.url + "')") :
+                        objectToUpdateSRC.setAttribute("src", attachment.url);
+                    yaraPageEditorHolder.classList.remove("hidden");
+                });
+                // Open the uploader dialog
                 mediaUploader.open();
-                return;
-            }
-            // Extend the wp.media object
-            mediaUploader = wp.media.frames.file_frame = wp.media({
-                title: 'Choose Image',
-                button: {
-                    text: 'Choose Image'
-                }, multiple: false
             });
+        })(jQuery);
 
-            // When a file is selected, grab the URL and set it as the text field's value
-            mediaUploader.on('select', function () {
-                attachment = mediaUploader.state().get('selection').first().toJSON();
-                $('#image-url').val(attachment.url);
-                isBgImage ? objectToUpdateSRC.setAttribute("style", "background-image:url('" + attachment.url + "')") :
-                    objectToUpdateSRC.setAttribute("src", attachment.url);
-                yaraPageEditorHolder.classList.remove("hidden");
-            });
-            // Open the uploader dialog
-            mediaUploader.open();
-        });
-    })(jQuery);
+        findContentHolder = document.querySelector(".editor-styles-wrapper");
 
-
-
-
-
-    findContentHolder = document.querySelector(".editor-styles-wrapper");
-
-    console.log("BEFORE IF CONTENT HOLDER");
-    console.log(findContentHolder);
-    if (findContentHolder) {
-        console.log("!!AFTER IF CONTENT HOLDER");
-        findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
-
-        setTimeout(() => {
-            checkCustomFields();
-        }, 300);
+        if (findContentHolder) {
+            findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
+            setTimeout(() => {
+                checkCustomFields();
+            }, 300);
+        }
     }
-}
 }
 
 
@@ -365,14 +354,13 @@ function confirmObjectsLoaded() {
     findContentHolder = document.querySelector(".editor-styles-wrapper");
     if (findContentHolder) {
         clearInterval(objectsObserver);
-        console.log("OBJ TRUE!!!")
         loadYaraBuilderSettings();
-    }else {
-        console.log("OBJ FALSE");
+    } else {
         currentTryCount++;
-        if(currentTryCount > maxTryCount) {
+        if (currentTryCount > maxTryCount) {
             clearInterval(objectsObserver);
-            console.log("OBJ FALSE!!! TO MANY ATTEMPTS")        }
+            console.log("OBJ FALSE!!! TO MANY ATTEMPTS")
+        }
     }
 
 }
@@ -380,7 +368,7 @@ let maxTryCount = 15;
 let currentTryCount = 0;
 let objectsObserver;
 window.onload = function () {
-   objectsObserver = setInterval(confirmObjectsLoaded, 300);
+    objectsObserver = setInterval(confirmObjectsLoaded, 300);
 
 }
 
