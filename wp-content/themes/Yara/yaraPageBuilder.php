@@ -15,7 +15,7 @@ get_header();
 	<h2><?php the_title(); ?></h2>
 	<?php*/
 //the_content();
-$mykey_values = get_post_custom_values('customContent');
+$mykey_values = get_post_custom_values('customContent'); 
 
 foreach ($mykey_values as $key => $value) {
 	echo " $value ";

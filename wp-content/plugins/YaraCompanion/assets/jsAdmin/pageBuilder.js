@@ -28,7 +28,7 @@ function clearAllImagesStatus() {
     });
 }
 
-function showGalleryImages() {    
+function showGalleryImages() {
     sellectedImage = "";
     document.querySelector("#upload-button").click();
     // clearAllImagesStatus();
@@ -116,7 +116,7 @@ function duplicateItem(obj) {
     iconsPannel.querySelector(".icon--clone").onclick = () => {
         duplicateItem(newElement);
     }
-  
+
     iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
 
         colorIcon.onclick = () => {
@@ -220,7 +220,7 @@ function showHideElements(state) {
     }
 }
 
-function savepSpetial(obj) {   
+function savepSpetial(obj) {
     obj.onclick = null;
     obj.removeAttribute("style");
     let title = obj.querySelector("input").value;
@@ -242,7 +242,7 @@ function returnFlagsList() {
     return `<ul class="flagListHolder">${flagsList}</ul>`;
 }
 
-function editpSpetial(obj) {   
+function editpSpetial(obj) {
     obj.onclick = null;
     let saveIconHTTML = iconbuilder("save");
     let deleteIiconHTML = "";
@@ -322,12 +322,12 @@ function sliderContentBuilder(direction, objID, saveState) {
         h3: currentSliderSection.querySelector("h3").innerHTML,
         h4: currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML : 0,
         img: currentSliderSection.querySelector("img").getAttribute("src"),
-        p: currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML : currentSliderSection.querySelector("p").innerHTML,        
+        p: currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML : currentSliderSection.querySelector("p").innerHTML,
         button: currentSliderSection.querySelector(".articleContent .button").innerHTML,
     };
 
-    if(currentSliderSection.querySelector("ul")){        
-        currentObjData.ul =  currentSliderSection.querySelector("ul").innerHTML;        
+    if (currentSliderSection.querySelector("ul")) {
+        currentObjData.ul = currentSliderSection.querySelector("ul").innerHTML;
     }
 
 
@@ -344,7 +344,7 @@ function sliderContentBuilder(direction, objID, saveState) {
     }
 
 
-    if (newPosition < 0) {  
+    if (newPosition < 0) {
         newPosition = 0;
         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
         return;
@@ -364,15 +364,15 @@ function sliderContentBuilder(direction, objID, saveState) {
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
         currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-        currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
-       // currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p;
+            currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+        // currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p;
         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
 
         allDataHolder.setAttribute("data-slider-position", newPosition);
         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
-    } else {   
+    } else {
         allDataHolder.setAttribute("data-slider-position", newPosition);
         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
         let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
@@ -381,14 +381,14 @@ function sliderContentBuilder(direction, objID, saveState) {
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
         currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-        currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+            currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
-    }  
+    }
 
 
-    if(currentSliderSection.querySelector("ul")){             
-        let alltexts = currentSliderSection.querySelectorAll('ul li[data-edit*="text"], .pHolder [data-edit*="text"]');       
+    if (currentSliderSection.querySelector("ul")) {
+        let alltexts = currentSliderSection.querySelectorAll('ul li[data-edit*="text"], .pHolder [data-edit*="text"]');
         alltexts.forEach(async (text) => { text.onclick = () => { editTextBox(text) } });
 
         let allpSpetial = currentSliderSection.querySelectorAll('.pHolder [data-edit*="pSpetial"]');
@@ -397,25 +397,25 @@ function sliderContentBuilder(direction, objID, saveState) {
 
 }
 
-function listSlide(direction, objID){
+function listSlide(direction, objID) {
     let contentSlider = document.getElementById(objID).querySelector(".slider");
     let contentSliderItemsHolder = contentSlider.querySelector("ul");
     let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
     let step = itemWidth;
     let newPosition = (contentSlider.scrollLeft + (step * direction));
-    contentSlider.scrollLeft = newPosition;  
+    contentSlider.scrollLeft = newPosition;
 }
-function contentSlide(direction, objID){
+function contentSlide(direction, objID) {
     let allDataHolder = document.querySelector('[data-related-id="' + objID + '"]');
     let currentSliderSection = document.getElementById(objID);
     let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
     let newPosition = currentSidePosition + direction;
     let allData = allDataHolder.querySelectorAll('i');
 
-    if(newPosition < 0){
-        console.log("FIRST ITEM"); 
+    if (newPosition < 0) {
+        console.log("FIRST ITEM");
         return;
-    }else if(newPosition < allData.length){       
+    } else if (newPosition < allData.length) {
         allDataHolder.setAttribute("data-slider-position", newPosition);
         let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
         decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
@@ -430,21 +430,21 @@ function contentSlide(direction, objID){
             currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
             currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
             currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-            currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+                currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
             currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
             currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
 
-            currentSliderSection.querySelector("img").onload = function (){
-                currentSliderSection.querySelectorAll(".fade-out").forEach(async (item) => {                
+            currentSliderSection.querySelector("img").onload = function () {
+                currentSliderSection.querySelectorAll(".fade-out").forEach(async (item) => {
                     item.classList.remove("fade-out");
-                    item.classList.add("fade-in"); 
+                    item.classList.add("fade-in");
                 });
 
-            } 
+            }
 
         }, 520);
 
-    }else {
+    } else {
         console.log("LAST ITEM");
         return;
     }
@@ -478,19 +478,19 @@ function prapareForEditing(obj, sectionToEdit) {
     }
 
 
-    let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]') ; // 
+    let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]'); // 
     let isListSlider = obj.querySelector('.itemsSlider');
-    
+
     if (isListSlider) {
-      
+
         let objSectionID = isListSlider.getAttribute("id");
-        let idBuilder = returnRandom(100) + Date.now(); 
+        let idBuilder = returnRandom(100) + Date.now();
         objSectionID = isListSlider.getAttribute("id");
 
-        if (!objSectionID) {   
-                             
-            isListSlider.setAttribute("id", idBuilder);  
-            objSectionID =   idBuilder   ;    
+        if (!objSectionID) {
+
+            isListSlider.setAttribute("id", idBuilder);
+            objSectionID = idBuilder;
         }
 
         //isListSlider.setAttribute("id", idBuilder);            
@@ -505,19 +505,19 @@ function prapareForEditing(obj, sectionToEdit) {
 
 
     if (checkCallToAction) {
-        let idBuilder = returnRandom(100) + Date.now(); 
+        let idBuilder = returnRandom(100) + Date.now();
 
         objSectionID = checkCallToAction.getAttribute("id");
 
-        if (!objSectionID) {           
-            checkCallToAction.setAttribute("id", idBuilder);   
-            objSectionID = idBuilder ;
+        if (!objSectionID) {
+            checkCallToAction.setAttribute("id", idBuilder);
+            objSectionID = idBuilder;
         }
         let objDataHolder = checkCallToAction.querySelector('[data-slider-dataholder="1"]');
         objDataHolder.setAttribute("data-Related-id", objSectionID);
 
         let leftContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navLeft');
-        let righttContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navRight');    
+        let righttContentSliderButton = checkCallToAction.querySelector('.articleNavigation .icons-navRight');
 
         leftContentSliderButton.onclick = () => {
             sliderContentBuilder(-1, objSectionID);
@@ -568,7 +568,7 @@ function prapareForEditing(obj, sectionToEdit) {
         }
         iconsPannel.querySelector(".icon--clone").onclick = () => {
             duplicateItem(item);
-        }   
+        }
         iconsPannel.querySelectorAll(".objectBGcolors ul li").forEach(async (colorIcon) => {
             colorIcon.onclick = () => {
                 setBgItemColor(item, colorIcon);
@@ -647,7 +647,7 @@ function prapareForEditing(obj, sectionToEdit) {
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {
-            if (checkCallToAction) {                
+            if (checkCallToAction) {
                 sliderContentBuilder(-10, objSectionID, 1);
             }
             saveSectionSettings(obj, sectionToEdit);
@@ -665,7 +665,7 @@ function prapareForEditing(obj, sectionToEdit) {
 
 
                 let curentSlideItem = allData.item(currentSidePosition);
-                if (curentSlideItem) {                    
+                if (curentSlideItem) {
                     if (currentSidePosition > 0) {
                         allData.item(currentSidePosition).remove();
 
@@ -678,7 +678,7 @@ function prapareForEditing(obj, sectionToEdit) {
                         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
                         currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
                         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
-                        currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+                            currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
                         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
                         currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
                         document.querySelector(".slideCounter").innerHTML = newPosition + 1;
@@ -686,7 +686,7 @@ function prapareForEditing(obj, sectionToEdit) {
                         currentSidePosition = 0;
 
                     }
-                } 
+                }
             }
         }
 
@@ -708,8 +708,9 @@ function getOffset(el) {
 }
 
 function insertMySection(obj) {
+    console.log("INSERT NEW SECTION!!!");
     let template = obj.querySelector('templateHidden');
-    let mainSectionsHolder = document.querySelector('main');
+    let mainSectionsHolder = document.querySelector('.adminHolder--mainContent main');
     let templateType = template.getAttribute('data-head');
     let templateRepeat = template.getAttribute('data-repeat');
     let templateUsed = template.getAttribute('data-used');
@@ -758,10 +759,10 @@ function insertMySection(obj) {
             prapareForEditing(thisObject, sectionToEdit);
         }
 
-        swapPositionPannel.querySelector(".icon--up").onclick = () => {          
+        swapPositionPannel.querySelector(".icon--up").onclick = () => {
             swapNodePositions(thisObject, 0);
         }
-        swapPositionPannel.querySelector(".icon--down").onclick = () => {          
+        swapPositionPannel.querySelector(".icon--down").onclick = () => {
             swapNodePositions(thisObject, 1);
         }
 
@@ -769,4 +770,81 @@ function insertMySection(obj) {
             scrollToTop(getOffset(sectionItem).top);
         }, 200);
     }
+}
+
+function insertMyPage(obj) {
+    console.log("INSERT NEW PAGE");
+    console.log(obj);
+    let pageContentHolder = document.querySelector(".adminHolder--mainContent");
+    let newContent = obj.querySelector("templatehidden").innerHTML;
+    //pageContentHolder.innerHTML = newContent;
+    let dropdownID = document.querySelector("#list-table #the-list input[value='customContent']").getAttribute("id");
+    let htmlContainerID = dropdownID.replace("-key", "-value");
+    let htmlContainer = document.querySelector("#" + htmlContainerID);
+
+    console.log("htmlContainer.value");
+    console.log(htmlContainer.innerHTML);
+
+    myPageInnerHTML = newContent;
+
+    document.querySelector(".adminHolder--mainContent").innerHTML = replaceStr(myPageInnerHTML) + adminFooterHTML;
+
+    let yaraHeadHTML = document.querySelector(".adminHolder--mainContent .yaraHead");
+
+    if (yaraHeadHTML) {
+        let newYaraHeadHTML = document.createElement("headeritem");
+        newYaraHeadHTML.classList.add("normal");
+        yaraHeadHTML.parentNode.insertBefore(newYaraHeadHTML, yaraHeadHTML.nextSibling);
+
+        let clone = yaraHeadHTML.cloneNode(true);
+        newYaraHeadHTML.appendChild(clone);
+
+        let swapPositionPannel = document.createElement("div");
+        swapPositionPannel.classList.add("swapPositionPannel");
+        swapPositionPannel.innerHTML = anIconbuilder("edit");
+        newYaraHeadHTML.appendChild(swapPositionPannel);
+
+        swapPositionPannel.querySelector(".icon--edit").onclick = () => {
+            prapareForEditing(newYaraHeadHTML, newYaraHeadHTML);
+        }
+
+        document.querySelector("#yaraHeroSingle").setAttribute("data-used", "1");
+        yaraHeadHTML.remove();
+
+    }
+
+    let yaraContentSections = document.querySelectorAll(".adminHolder--mainContent .section");
+
+
+    yaraContentSections.forEach(async (item) => {
+
+        let newYaraSectionHTML = document.createElement("sectionitem");
+        newYaraSectionHTML.classList.add("normal");
+        item.parentNode.insertBefore(newYaraSectionHTML, item.nextSibling);
+
+        let clone = item.cloneNode(true);
+        newYaraSectionHTML.appendChild(clone);
+
+
+        let swapPositionPannel = document.createElement("div");
+        swapPositionPannel.classList.add("swapPositionPannel");
+        swapPositionPannel.innerHTML = anIconbuilder("up") + anIconbuilder("down") + anIconbuilder("edit");
+        newYaraSectionHTML.appendChild(swapPositionPannel);
+
+
+        swapPositionPannel.querySelector(".icon--edit").onclick = () => {
+            prapareForEditing(newYaraSectionHTML, newYaraSectionHTML);
+        }
+
+        swapPositionPannel.querySelector(".icon--up").onclick = () => {
+            console.log("SWAP POSITIONS");
+            swapNodePositions(newYaraSectionHTML, 0);
+        }
+        swapPositionPannel.querySelector(".icon--down").onclick = () => {
+            console.log("SWAP POSITIONS");
+            swapNodePositions(newYaraSectionHTML, 1);
+        }
+        item.remove();
+    });
+    document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields() };
 }
