@@ -18,14 +18,14 @@
         <div class="bgColors--sectionLight section" data-edit="ltr" data-callToAction="contentSlider">
             <div class="warper">
                 <div class="item_12">
-                    <h3 class="fade-in" data-edit="text">H3 Head Line</h3>
+                    <h3 class="fade-in" data-edit="text delete">H3 Head Line</h3>
                 </div>
                 <figure class="item_7" data-edit="image">
                     <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/placeHolders/img_677_508.png" width="677" height="508" alt="my image" class="fade-in">
                 </figure>
                 <div class="articleInfo articleInfo item_5">
                     <div class="articleContent">
-                        <h4 class="fade-in" data-edit="text">H4 Head Line</h4>
+                        <h4 class="fade-in" data-edit="text delete">H4 Head Line</h4>
                         <div class="fade-in pHolder">
                             <p data-edit="text duplicate delete">Paragraf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi eius quis praesentium et magni autem delectus voluptatibus explicabo accusantium veniam ea, quia quam velit temporibus nisi rem. Perferendis, accusantium incidunt.
                             </p>
