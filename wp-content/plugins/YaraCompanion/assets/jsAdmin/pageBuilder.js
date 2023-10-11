@@ -320,7 +320,7 @@ function sliderContentBuilder(direction, objID, saveState) {
 
     let currentObjData = {
         h3: currentSliderSection.querySelector("h3").innerHTML,
-        h4: currentSliderSection.querySelector("h4").innerHTML,
+        h4: currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML : 0,
         img: currentSliderSection.querySelector("img").getAttribute("src"),
         p: currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML : currentSliderSection.querySelector("p").innerHTML,        
         button: currentSliderSection.querySelector(".articleContent .button").innerHTML,
@@ -362,7 +362,7 @@ function sliderContentBuilder(direction, objID, saveState) {
         baseTemplateToData = JSON.parse(decodeBaseTemplate);
 
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
-        currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+        currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
         currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
        // currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p;
@@ -379,7 +379,7 @@ function sliderContentBuilder(direction, objID, saveState) {
         decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
         baseTemplateToData = JSON.parse(decodeBaseTemplate);
         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
-        currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+        currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
         currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
@@ -632,7 +632,7 @@ function prapareForEditing(obj, sectionToEdit) {
                         decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
                         baseTemplateToData = JSON.parse(decodeBaseTemplate);
                         currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
-                        currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+                        currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
                         currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
                         currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
                         currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;

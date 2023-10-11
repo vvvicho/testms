@@ -89,7 +89,7 @@ function contentSlide(direction, objID){
 
         setTimeout(() => {
             currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
-            currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4;
+            currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
             currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
             currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
             currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
