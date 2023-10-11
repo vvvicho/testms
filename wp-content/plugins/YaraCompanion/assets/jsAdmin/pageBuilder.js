@@ -405,6 +405,50 @@ function listSlide(direction, objID){
     let newPosition = (contentSlider.scrollLeft + (step * direction));
     contentSlider.scrollLeft = newPosition;  
 }
+function contentSlide(direction, objID){
+    let allDataHolder = document.querySelector('[data-related-id="' + objID + '"]');
+    let currentSliderSection = document.getElementById(objID);
+    let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
+    let newPosition = currentSidePosition + direction;
+    let allData = allDataHolder.querySelectorAll('i');
+
+    if(newPosition < 0){
+        console.log("FIRST ITEM"); 
+        return;
+    }else if(newPosition < allData.length){       
+        allDataHolder.setAttribute("data-slider-position", newPosition);
+        let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
+        decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
+        baseTemplateToData = JSON.parse(decodeBaseTemplate);
+
+        currentSliderSection.querySelectorAll(".fade-in").forEach(async (item) => {
+            item.classList.remove("fade-in");
+            item.classList.add("fade-out");
+        });
+
+        setTimeout(() => {
+            currentSliderSection.querySelector("h3").innerHTML = baseTemplateToData.h3;
+            currentSliderSection.querySelector("h4") ? currentSliderSection.querySelector("h4").innerHTML = baseTemplateToData.h4 : null;
+            currentSliderSection.querySelector("img").setAttribute("src", baseTemplateToData.img),
+            currentSliderSection.querySelector(".pHolder") ? currentSliderSection.querySelector(".pHolder").innerHTML = baseTemplateToData.p : currentSliderSection.querySelector("p").innerHTML = baseTemplateToData.p;
+            currentSliderSection.querySelector("ul") ? currentSliderSection.querySelector("ul").innerHTML = baseTemplateToData.ul : 0;
+            currentSliderSection.querySelector(".articleContent .button").innerHTML = baseTemplateToData.button;
+
+            currentSliderSection.querySelector("img").onload = function (){
+                currentSliderSection.querySelectorAll(".fade-out").forEach(async (item) => {                
+                    item.classList.remove("fade-out");
+                    item.classList.add("fade-in"); 
+                });
+
+            } 
+
+        }, 520);
+
+    }else {
+        console.log("LAST ITEM");
+        return;
+    }
+}
 
 
 
