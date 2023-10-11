@@ -54,11 +54,14 @@ function scrollToTop(xLocation) {
     document.querySelector(".adminHolder--mainContent").scrollTop = xLocation;
 }
 
+//saveTextBox
+//currentObjData = currentObjData.replace(/["']/g, "_@@");
+
 function saveTextBox(obj) {
     obj.onclick = null;
     obj.querySelector('input') ?
-        obj.innerHTML = obj.querySelector('input').value :
-        obj.innerHTML = obj.querySelector('textarea').value;
+        obj.innerHTML = obj.querySelector('input').replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;") :
+        obj.innerHTML = obj.querySelector('textarea').value.replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;");
     setTimeout(() => { obj.onclick = function () { editTextBox(this) } }, 200);
 }
 function iconbuilder(icon) {
