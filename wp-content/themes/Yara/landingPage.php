@@ -31,7 +31,7 @@ foreach ($dbQuery as $key => $blog) {
     $blogData = explode(" ", get_option('blogname'));
     //  print_r( $blogData);
 
-    if(count($cars) < 3) {
+    if(count($blogData) < 3) {
         $newString = get_option('blogname') . " Null Null";
         $blogData = explode(" ", $newString);
 
