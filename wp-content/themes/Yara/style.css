@@ -811,6 +811,8 @@ div[data-slider-dataHolder] {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
+    align-items: start;
+    align-content: start;
   }
   .landingPageContainer .warper ul.--col1 h4 {
     grid-column-end: span 1;

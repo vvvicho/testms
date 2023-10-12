@@ -21,6 +21,8 @@
                     display: grid;
                     justify-items: center;
                     grid-template-columns: 1fr;
+                    align-items: start;
+                    align-content: start;
                     h4 {
                         grid-column-end: span 1 ;
                     }
