@@ -38,7 +38,7 @@ foreach ($dbQuery as $key => $blog) {
     }
 
 
-   // if ($blogData[1] == 'Europe') {
+    if ($blogData[1] == 'Europe') {
 
         $europeHTML .=
             '
@@ -53,7 +53,7 @@ foreach ($dbQuery as $key => $blog) {
             </a>
         </li>
         ';
-   // }
+    }
 
 
 
@@ -75,9 +75,7 @@ foreach ($dbQuery as $key => $blog) {
                     <h4>Europe</h4>
                     <?php
                     echo $europeHTML;
-
                     ?>
-
                     <li>
                         <a href="#">
                             <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
