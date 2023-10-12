@@ -28,11 +28,11 @@ foreach ($dbQuery as $key => $blog) {
     // echo get_option( 'blogdescription') . ' ';
     // echo get_option( 'siteurl') . '<br />';
 
-    $blogData = explode(" ", get_option('blogname'));
+    $blogData = explode(" ", get_option('blogdescription'));
     //  print_r( $blogData);
 
     if(count($blogData) < 3) {
-        $newString = get_option('blogname') . " Null Null";
+        $newString = get_option('blogdescription') . " Null Null";
         $blogData = explode(" ", $newString);
 
     }
@@ -47,7 +47,7 @@ foreach ($dbQuery as $key => $blog) {
                 <p class="flafIcons flafIcons--' . strtolower($blogData[2])  . '">
                     <span>
                         <strong>' . $blogData[0] . '</strong>
-                        <i>' . get_option('blogdescription') . '</i>
+                        <i>' . get_option('blogname') . '</i>
                     </span>
                 </p>
             </a>
