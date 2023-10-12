@@ -37,7 +37,7 @@
                     justify-items: center;
                     align-content: start;
                     grid-template-columns: 1fr 1fr;
-                    h4 {
+                    .title {
                         grid-column-end: span 2;
                     }
                 }
@@ -45,7 +45,7 @@
                     display: grid;
                     justify-items: center;
                     grid-template-columns: 1fr 1fr;
-                    h4 {
+                    .title {
                         grid-column-end: span 2;
                     }
                 }
