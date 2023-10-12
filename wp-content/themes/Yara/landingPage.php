@@ -130,7 +130,7 @@ foreach ($dbQuery as $key => $blog) {
                     echo $americasHTML;
                     ?>
                     <li class="title">Africa</li>
-                    <?php echo $africaHTML ?>                   
+                    <?php echo $africaHTML ?>                    
                 </ul>
             </div>
         </div>
