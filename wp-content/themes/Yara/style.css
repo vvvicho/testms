@@ -675,7 +675,8 @@ div[data-slider-dataHolder] {
   display: block;
 }
 .landingPageContainer--holder .warper h3 {
-  margin: 15px 0 40px 0px;
+  margin: 0 0 40px 0px;
+  margin-top: 15px !important;
   margin-bottom: calc(var(--sectionSpacer) / 2) !important;
   font-size: 24px;
   font-style: normal;
