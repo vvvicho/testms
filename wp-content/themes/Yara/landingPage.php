@@ -17,7 +17,7 @@ global $wpdb;
 $dbQuery = $wpdb->get_results("SELECT blog_id, domain, path FROM $wpdb->blogs WHERE archived = '0' AND deleted = '0' AND spam = '0' ORDER BY blog_id");
 
 
-$europeHTML = '';
+$europeHTML = $AmericasHTML = '';
 
 
 
@@ -36,21 +36,21 @@ foreach ($dbQuery as $key => $blog) {
     //echo count($blogData) . " : " . get_option('blogdescription') . "</br>";
 
 
-    if(count($blogData) > 3){
-        $replaceNspaces = count($blogData) -3;
+    if (count($blogData) > 3) {
+        $replaceNspaces = count($blogData) - 3;
         $newString = preg_replace('/ /', '___',  get_option('blogdescription'), $replaceNspaces);
         reset($blogData);
-        $blogData = explode(" ", $newString );
+        $blogData = explode(" ", $newString);
         $blogData[0] = preg_replace('/___/', ' ',  $blogData[0]);
     }
 
-    
 
-    
+
+
 
     //preg_replace('/,/', '',  $str, 1);
 
-    if(count($blogData) < 3) {
+    if (count($blogData) < 3) {
         $newString = get_option('blogdescription') . " Null Null";
         $blogData = explode(" ", $newString);
     }
@@ -59,6 +59,20 @@ foreach ($dbQuery as $key => $blog) {
     if ($blogData[1] == 'Europe') {
 
         $europeHTML .=
+            '
+        <li>
+            <a href="' . get_option('siteurl') . '">
+                <p class="flafIcons flafIcons--' . strtolower($blogData[2])  . '">
+                    <span>
+                        <strong>' . $blogData[0] . '</strong>
+                        <i>' . get_option('blogname') . '</i>
+                    </span>
+                </p>
+            </a>
+        </li>
+        ';
+    } else if ($blogData[1] == 'Americas') {
+        $AmericasHTML .=
             '
         <li>
             <a href="' . get_option('siteurl') . '">
@@ -94,131 +108,12 @@ foreach ($dbQuery as $key => $blog) {
                     <?php
                     echo $europeHTML;
                     ?>
-                    <li>
-                        <a href="#">
-                            <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                                <span>
-                                    <strong>Dr Alastair Leake</strong>
-                                    <i>Director of Policy at </i>
-                                </span>
-                            </p>
-                        </a>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
-                            <span>
-                                <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>
-                            </span>
-                        </p>
-                    </li>
-                </ul>
+                    
                 <ul class="item_4 --col1">
-                    <h4>Europe</h4>
+                    <h4>Americas</h4>
+                    <?php
+                    echo $$AmericasHTML;
+                    ?>
 
                     <li>
                         <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
