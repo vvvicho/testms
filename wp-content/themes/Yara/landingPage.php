@@ -31,21 +31,14 @@ foreach ($dbQuery as $key => $blog) {
     $blogData = explode(" ", get_option('blogname'));
     //  print_r( $blogData);
 
+    if(count($cars) < 3) {
+        $newString = get_option('blogname') . " Null Null";
+        $blogData = explode(" ", $newString);
 
-    if (!$blogData[0]) {
-        $blogData = [];
-        array_push($blogData, "Null");
-    }
-    if (!$blogData[1]) {
-        array_push($blogData, "Null");
-    }
-    if (!$blogData[2]) {
-        array_push($blogData, "Null");
     }
 
 
-
-    if ($blogData[1] == 'Europe') {
+   // if ($blogData[1] == 'Europe') {
 
         $europeHTML .=
             '
@@ -60,7 +53,7 @@ foreach ($dbQuery as $key => $blog) {
             </a>
         </li>
         ';
-    }
+   // }
 
 
 
