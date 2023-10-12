@@ -678,7 +678,7 @@ div[data-slider-dataHolder] {
   margin: 0 0 40px 10px;
   margin-bottom: calc(var(--sectionSpacer) / 2) !important;
 }
-.landingPageContainer--holder .warper h4 {
+.landingPageContainer--holder .warper .title {
   align-self: end;
   height: 30px;
   justify-self: start;
@@ -742,7 +742,7 @@ div[data-slider-dataHolder] {
   align-content: start;
   grid-template-columns: 1fr 1fr;
 }
-.landingPageContainer--holder .warper ul.--col2 h4 {
+.landingPageContainer--holder .warper ul.--col2 .title {
   grid-column-end: span 2;
 }
 .landingPageContainer--holder .warper ul.--col1 {
@@ -750,7 +750,7 @@ div[data-slider-dataHolder] {
   justify-items: center;
   grid-template-columns: 1fr;
 }
-.landingPageContainer--holder .warper ul.--col1 h4 {
+.landingPageContainer--holder .warper ul.--col1 .title {
   grid-column-end: span 1;
 }
 
@@ -760,7 +760,7 @@ div[data-slider-dataHolder] {
     padding-left: 18px !important;
     padding-right: 0 !important;
   }
-  .landingPageContainer .warper h3 {
+  .landingPageContainer .warper .title {
     margin-top: 60px !important;
     margin-bottom: calc(var(--sectionSpacer) / 2) !important;
   }
@@ -793,7 +793,7 @@ div[data-slider-dataHolder] {
   .landingPageContainer .warper {
     display: grid !important;
   }
-  .landingPageContainer .warper h3 {
+  .landingPageContainer .warper .title {
     margin-top: 20px !important;
     margin-bottom: calc(var(--sectionSpacer) / 2) !important;
   }

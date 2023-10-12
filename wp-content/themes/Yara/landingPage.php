@@ -119,17 +119,17 @@ foreach ($dbQuery as $key => $blog) {
             <div class="warper">
                 <h3 class="item_12">Select country</h3>
                 <ul class="item_8 --col2">
-                    <h4>Europe</h4>
+                    <li class="title">Europe</li>
                     <?php
                     echo $europeHTML;
                     ?>
                 </ul>
                 <ul class="item_4 --col1">
-                    <h4>Americas</h4>
+                    <li class="title">Americas</li>
                     <?php
                     echo $americasHTML;
                     ?>
-                    <h4>Africa</h4>
+                    <li class="title">Africa</li>
                     <?php echo $africaHTML ?>                   
                 </ul>
             </div>

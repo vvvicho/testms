@@ -23,7 +23,7 @@
                 margin: 0 0 40px 10px;
                 margin-bottom: calc(var(--sectionSpacer) / 2) !important;
             }
-            h4{
+            .title{
                 align-self: end ;
                 height: 30px;
                 justify-self: start;
@@ -101,7 +101,7 @@
                     justify-items: center;    
                     align-content: start;          
                     grid-template-columns: 1fr 1fr;       
-                    h4{
+                    .title{
                         grid-column-end: span 2;
                     }                
                   
@@ -110,7 +110,7 @@
                     display: block;  
                     justify-items: center;               
                     grid-template-columns: 1fr;   
-                    h4{
+                    .title{
                         grid-column-end: span 1;
                     }
                  
