@@ -1,4 +1,3 @@
-
 .ltr {
     figure {
         order: 2;
@@ -6,7 +5,7 @@
     .articleInfo {
         order: 1;
     }
-    .articleNavigation{
+    .articleNavigation {
         order: 3;
     }
 }
@@ -33,20 +32,19 @@
     &-dark {
         background-color: $buttonDarkBGColor;
         color: $buttonDarkFONTColor;
-       // box-shadow: $buttonDarkBoxShadow;
+        // box-shadow: $buttonDarkBoxShadow;
         border-radius: $buttonDarkBR;
         a {
-            color: $buttonDarkFONTColor; 
+            color: $buttonDarkFONTColor;
         }
     }
     &-light {
         background-color: $buttonLightBGColor;
         color: $buttonLightFONTColor;
-       // box-shadow: $buttonLightBoxShadow;
+        // box-shadow: $buttonLightBoxShadow;
         border-radius: $buttonLightBR;
-        a{
+        a {
             color: $buttonLightFONTColor;
-
         }
     }
 }
@@ -55,6 +53,15 @@
     display: flex;
     font-size: 14px !important;
     align-items: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    i {
+        font-style: normal;
+        font-size: 12px;
+        font-weight: 400;
+    }
 
     &::before {
         content: " ";
@@ -83,7 +90,6 @@
             background-repeat: no-repeat;
         }
     }
-
 
     &--bg {
         &::before {
@@ -205,9 +211,6 @@
         }
     }
 
-
-
-
     &--de {
         &::before {
             background-image: url(../Yara/assets/images/icons/flags/de.webp);
@@ -222,10 +225,6 @@
             background-repeat: no-repeat;
         }
     }
-
-
-
-
 
     &--navigation {
         display: inline-block;
@@ -458,8 +457,8 @@
     display: none;
 }
 
-div[data-slider-dataHolder]{ 
-    display: none !important
+div[data-slider-dataHolder] {
+    display: none !important;
 }
 
 @media screen and (min-width: $mobile) {

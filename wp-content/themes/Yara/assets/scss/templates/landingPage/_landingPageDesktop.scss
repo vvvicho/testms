@@ -1,0 +1,28 @@
+@media screen and (min-width: $desktop) {
+    .landingPageContainer {
+        .warper {
+            display: grid !important;
+            ul {
+                &.--col2 {
+                    display: grid;
+                    gap: 0px;
+                    justify-items: center;
+                    align-content: start;
+                    grid-template-columns: 1fr 1fr;
+                    h4 {
+                        grid-column-end: span 2;
+                    }
+                }
+                &.--col1 {
+                    display: grid;
+                    justify-items: center;
+                    grid-template-columns: 1fr;
+                    h4 {
+                        grid-column-end: span 1 ;
+                    }
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,52 @@
+@media screen and (min-width: $mobile) {
+
+    .landingPageContainer {
+        .warper {
+            display: block !important;
+            padding-left: 18px !important;
+            padding-right: 0 !important;
+
+            h3{
+                
+                margin-top: 60px !important;
+                margin-bottom: calc(var(--sectionSpacer) / 2) !important;
+            }
+            ul {
+               
+                    li, strong {
+                        width: calc(100% - 18px);
+                                  
+                    }
+                    p{
+   
+                        width: calc(100% - 18px);
+                    }
+                       
+
+
+
+
+
+                &.--col2 {
+                    display: grid;
+                    gap: 0px;
+                    justify-items: center;
+                    align-content: start;
+                    grid-template-columns: 1fr 1fr;
+                    h4 {
+                        grid-column-end: span 2;
+                    }
+                }
+                &.--col1 {
+                    display: grid;
+                    justify-items: center;
+                    grid-template-columns: 1fr 1fr;
+                    h4 {
+                        grid-column-end: span 2;
+                    }
+                }
+            }
+        }
+    }   
+
+}

@@ -272,6 +272,15 @@ footer {
   display: flex;
   font-size: 14px !important;
   align-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+.flafIcons i {
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 400;
 }
 .flafIcons::before {
   content: " ";

@@ -1,7 +1,12 @@
 let resizeProgress = 0, scrollProgress = 0;
 let mobileOpenCloseButton = document.getElementById("mobileOpenCloseButton");
 let desktopNav = document.getElementById("desktopNav");
+let findIsLandingPage = document.querySelector("body").classList.contains("page-template-landingPage");
+let generaldivigation = document.getElementById("generaldivigation");
+console.log("Landingpage: " + findIsLandingPage);
 desktopNav.setAttribute("data-status", "0");
+
+findIsLandingPage ? generaldivigation.classList.add("generaldivigation--lightTheme") : 0;
 
 if(desktopNav){
     desktopNav.onmouseleave = function(){
@@ -27,19 +32,15 @@ const assetsPATH = "../HTML/assets";
 
 
 function navigationWatcher(){
-    let generaldivigation = document.getElementById("generaldivigation");
+    generaldivigation = document.getElementById("generaldivigation");
 
-    if(generaldivigation){
-        let atfarmLogo = document.getElementById("atfarmLogo"); 
-
-
-        if(window.scrollY < 21){          
+    if(generaldivigation && !findIsLandingPage){
+        //let atfarmLogo = document.getElementById("atfarmLogo"); 
+        if(window.scrollY < 21 ){          
             generaldivigation.classList.remove("generaldivigation--lightTheme");          
-        }else {         
-
+        }else { 
             generaldivigation.classList.add("generaldivigation--lightTheme");
         }
-
     }else {
         console.log("Navigation Missing")
     }
@@ -54,7 +55,6 @@ window.onresize = function () {
         }, 20);
     }
 }
-
 
 window.onscroll = function () {
     if (!scrollProgress) {
@@ -81,7 +81,6 @@ function contentSlide(direction, objID){
         let getExistingOnjData = allData.item(newPosition).getAttribute("data-slidedata");
         decodeBaseTemplate = getExistingOnjData.replace(/_@@/g, '"');
         baseTemplateToData = JSON.parse(decodeBaseTemplate);
-
         currentSliderSection.querySelectorAll(".fade-in").forEach(async (item) => {
             item.classList.remove("fade-in");
             item.classList.add("fade-out");
@@ -100,13 +99,8 @@ function contentSlide(direction, objID){
                     item.classList.remove("fade-out");
                     item.classList.add("fade-in"); 
                 });
-
-            }
-
-  
-
+            } 
         }, 520);
-
     }else {
         console.log("LAST ITEM");
         return;
