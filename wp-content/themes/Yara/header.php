@@ -89,7 +89,14 @@
                 </li>
             </ul>
         </nav -->
+        <?php        
+        $geticon = explode('.', $_SERVER['HTTP_HOST'])[0];
+        strlen($geticon) >2 ? $geticon = 'uk' : 0; 
+        ?>
         <div class="navLeftButtons">
+            <ul>
+            <li id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></li>
+            <li class="flafIcons  flafIcons--navigation flafIcons--<?php  echo $geticon; ?>"></li>
             <!--div id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></div>
             <div class="flafIcons  flafIcons--navigation flafIcons--uk"></div>
             <div class="button button-light">Login</div>
@@ -97,11 +104,12 @@
             <?php
             wp_nav_menu(array(
                 'menu'          => "Header Right Side",
-                'depth'         => 1,
+                'depth'         => 2,
                 'container' => false,   
-                //'items_wrap' => printf("div"),       
+                'items_wrap' => '%3$s'                  
             ));
             ?>
+            </ul>
         </div>
     </div>
     <?php
