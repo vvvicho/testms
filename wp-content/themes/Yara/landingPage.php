@@ -17,7 +17,8 @@ global $wpdb;
 $dbQuery = $wpdb->get_results("SELECT blog_id, domain, path FROM $wpdb->blogs WHERE archived = '0' AND deleted = '0' AND spam = '0' ORDER BY blog_id");
 
 
-$europeHTML = $AmericasHTML = '';
+$europeHTML = '';
+$americasHTML = '';
 
 
 
@@ -72,7 +73,7 @@ foreach ($dbQuery as $key => $blog) {
         </li>
         ';
     } else if ($blogData[1] == 'Americas') {
-        $AmericasHTML .=
+        $americasHTML .=
             '
         <li>
             <a href="' . get_option('siteurl') . '">
@@ -86,11 +87,6 @@ foreach ($dbQuery as $key => $blog) {
         </li>
         ';
     }
-
-
-
-
-
 
     restore_current_blog();
 }
@@ -108,11 +104,11 @@ foreach ($dbQuery as $key => $blog) {
                     <?php
                     echo $europeHTML;
                     ?>
-                    
+                </ul>
                 <ul class="item_4 --col1">
                     <h4>Americas</h4>
                     <?php
-                    echo $$AmericasHTML;
+                    echo $americasHTML;
                     ?>
 
                     <li>
