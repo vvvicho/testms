@@ -21,51 +21,50 @@ $europeHTML = '';
 
 
 foreach ($dbQuery as $key => $blog) {
-    switch_to_blog( $blog->blog_id );
+    switch_to_blog($blog->blog_id);
     $option = 'blogname'; //moderation_keys
-   
-   // echo get_option( 'blogname') . ' ';
-   // echo get_option( 'blogdescription') . ' ';
-   // echo get_option( 'siteurl') . '<br />';
 
-    $blogData = explode(" ",get_option( 'blogname'));
-  //  print_r( $blogData);
-//
+    // echo get_option( 'blogname') . ' ';
+    // echo get_option( 'blogdescription') . ' ';
+    // echo get_option( 'siteurl') . '<br />';
 
-if(!$blogData[0]){
-    $blogData[0] = "";
-}
-if(!$blogData[1]){
-    $blogData[1] = "";
-}
-if(!$blogData[2]){
-    $blogData[2] = "";
-}
+    $blogData = explode(" ", get_option('blogname'));
+    //  print_r( $blogData);
 
 
+    if (!$blogData[0]) {
+        $blogData = [];
+        array_push($blogData, "Null");
+    }
+    if (!$blogData[1]) {
+        array_push($blogData, "Null");
+    }
+    if (!$blogData[2]) {
+        array_push($blogData, "Null");
+    }
 
 
-    if($blogData[1] == 'Europe'){
+
+    if ($blogData[1] == 'Europe') {
 
         $europeHTML .=
-        '
+            '
         <li>
-            <a href="' . get_option( 'siteurl') . '">
+            <a href="' . get_option('siteurl') . '">
                 <p class="flafIcons flafIcons--' . strtolower($blogData[2])  . '">
                     <span>
                         <strong>' . $blogData[0] . '</strong>
-                        <i>' . get_option( 'blogdescription') . '</i>
+                        <i>' . get_option('blogdescription') . '</i>
                     </span>
                 </p>
             </a>
         </li>
         ';
-
     }
 
- 
 
-    
+
+
 
 
     restore_current_blog();
@@ -81,8 +80,8 @@ if(!$blogData[2]){
                 <h3 class="item_12">Select country</h3>
                 <ul class="item_8 --col2">
                     <h4>Europe</h4>
-                    <?php 
-                       echo $europeHTML;
+                    <?php
+                    echo $europeHTML;
 
                     ?>
 
@@ -100,7 +99,7 @@ if(!$blogData[2]){
                         <p data-icon="uk" class="flafIcons flafIcons--uk spParagraf">
                             <span>
                                 <strong>Dr Alastair Leake</strong>
-                                <i>Director of Policy at </i>                                
+                                <i>Director of Policy at </i>
                             </span>
                         </p>
                     </li>
