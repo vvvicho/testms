@@ -486,6 +486,8 @@ function prapareForEditing(obj, sectionToEdit) {
         let objSectionID = isListSlider.getAttribute("id");
         let idBuilder = returnRandom(100) + Date.now();
         objSectionID = isListSlider.getAttribute("id");
+        let CheckDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
+        CheckDuplicates.length > 1 ? objSectionID = "" : 0;
 
         if (!objSectionID) {
 
@@ -508,6 +510,8 @@ function prapareForEditing(obj, sectionToEdit) {
         let idBuilder = returnRandom(100) + Date.now();
 
         objSectionID = checkCallToAction.getAttribute("id");
+        let CheckDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
+        CheckDuplicates.length > 1 ? objSectionID ="" : 0;
 
         if (!objSectionID) {
             checkCallToAction.setAttribute("id", idBuilder);
@@ -774,19 +778,13 @@ function insertMySection(obj) {
 
 function insertMyPage(obj) {
     console.log("INSERT NEW PAGE");
-    console.log(obj);
     let pageContentHolder = document.querySelector(".adminHolder--mainContent");
     let newContent = obj.querySelector("templatehidden").innerHTML;
     //pageContentHolder.innerHTML = newContent;
     let dropdownID = document.querySelector("#list-table #the-list input[value='customContent']").getAttribute("id");
     let htmlContainerID = dropdownID.replace("-key", "-value");
     let htmlContainer = document.querySelector("#" + htmlContainerID);
-
-    console.log("htmlContainer.value");
-    console.log(htmlContainer.innerHTML);
-
     myPageInnerHTML = newContent;
-
     document.querySelector(".adminHolder--mainContent").innerHTML = replaceStr(myPageInnerHTML) + adminFooterHTML;
 
     let yaraHeadHTML = document.querySelector(".adminHolder--mainContent .yaraHead");

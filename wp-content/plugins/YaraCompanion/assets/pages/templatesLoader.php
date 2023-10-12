@@ -1,9 +1,9 @@
 <?php
-/*
+
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
-@ini_set('display_errors', E_ALL);*/
+@ini_set('display_errors', E_ALL);
 
 
 
@@ -29,7 +29,7 @@ foreach (glob($tamplatesDIR . '*.php') as $filename) {
         //local
         $mainBlog = 3;
         // live uk id = 6
-        $mainBlog = 6;
+        //$mainBlog = 6;
 
         switch_to_blog($mainBlog);
         
