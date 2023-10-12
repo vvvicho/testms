@@ -258,14 +258,8 @@ function checkCustomFields() {
         setTimeout(() => {
             //get custom html ID
             let dropdownID = document.querySelector("#list-table #the-list input[value='customContent']").getAttribute("id");
-            console.log("dropdown id");
-            console.log(dropdownID);
-
             let htmlContainerID = dropdownID.replace("-key", "-value");
             let htmlContainer = document.querySelector("#" + htmlContainerID);
-
-            console.log("htmlContainer.value");
-            console.log(htmlContainer.innerHTML);
 
             if (htmlContainer.innerHTML) {
                 console.log("HAVE HTML INSIDE");

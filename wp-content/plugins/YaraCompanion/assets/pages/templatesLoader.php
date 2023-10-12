@@ -27,9 +27,9 @@ foreach (glob($tamplatesDIR . '*.php') as $filename) {
         global $blog_id;
         $curentBlog = $blog_id;
         //local
-        $mainBlog = 3;
+        //$mainBlog = 3;
         // live uk id = 6
-        //$mainBlog = 6;
+        $mainBlog = 6;
 
         switch_to_blog($mainBlog);
         
