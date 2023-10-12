@@ -4,6 +4,7 @@
  * Template Name: Yara Landing Page
  */
 
+
 get_header();
 
 ?>
@@ -27,14 +28,31 @@ foreach ($dbQuery as $key => $blog) {
     // echo get_option( 'blogname') . ' ';
     // echo get_option( 'blogdescription') . ' ';
     // echo get_option( 'siteurl') . '<br />';
+    //echo (string)(count(explode(" ",get_option('blogdescription')))-1);
 
     $blogData = explode(" ", get_option('blogdescription'));
     //  print_r( $blogData);
 
+    //echo count($blogData) . " : " . get_option('blogdescription') . "</br>";
+
+
+    if(count($blogData) > 3){
+        $replaceNspaces = count($blogData) -3;
+        $newString = preg_replace('/ /', '___',  get_option('blogdescription'), $replaceNspaces);
+        reset($blogData);
+        $blogData = explode(" ", $newString );
+        $blogData[0] = preg_replace('/___/', ' ',  $blogData[0]);
+    }
+
+    
+
+    
+
+    //preg_replace('/,/', '',  $str, 1);
+
     if(count($blogData) < 3) {
         $newString = get_option('blogdescription') . " Null Null";
         $blogData = explode(" ", $newString);
-
     }
 
 
