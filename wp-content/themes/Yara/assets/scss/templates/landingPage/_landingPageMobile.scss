@@ -20,14 +20,24 @@
                 display: block;
             }
             h3{
-                margin: 0 0 40px 10px;
+                margin: 0 0 40px 0px;
                 margin-bottom: calc(var(--sectionSpacer) / 2) !important;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 900;
+                line-height: 125%; /* 30px */
+                letter-spacing: -0.36px;
             }
             .title{
                 align-self: end ;
                 height: 30px;
-                justify-self: start;
-                margin-left: 11px;
+                justify-self: start; 
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%; /* 25.2px */
+                letter-spacing: -0.27px;
+               
             }
             
             ul {
