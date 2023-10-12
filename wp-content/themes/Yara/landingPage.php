@@ -31,6 +31,20 @@ foreach ($dbQuery as $key => $blog) {
     $blogData = explode(" ",get_option( 'blogname'));
   //  print_r( $blogData);
 //
+
+if(!$blogData[0]){
+    $blogData[0] = "";
+}
+if(!$blogData[1]){
+    $blogData[1] = "";
+}
+if(!$blogData[2]){
+    $blogData[2] = "";
+}
+
+
+
+
     if($blogData[1] == 'Europe'){
 
         $europeHTML .=

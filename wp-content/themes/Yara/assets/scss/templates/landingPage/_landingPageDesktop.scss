@@ -2,6 +2,10 @@
     .landingPageContainer {
         .warper {
             display: grid !important;
+            h3{                
+                margin-top: 20px !important;
+                margin-bottom: calc(var(--sectionSpacer) / 2) !important;
+            }
             ul {
                 &.--col2 {
                     display: grid;

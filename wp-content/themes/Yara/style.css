@@ -793,6 +793,10 @@ div[data-slider-dataHolder] {
   .landingPageContainer .warper {
     display: grid !important;
   }
+  .landingPageContainer .warper h3 {
+    margin-top: 20px !important;
+    margin-bottom: calc(var(--sectionSpacer) / 2) !important;
+  }
   .landingPageContainer .warper ul.--col2 {
     display: grid;
     gap: 0px;
