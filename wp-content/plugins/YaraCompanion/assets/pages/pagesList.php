@@ -47,7 +47,7 @@ require($parse_uri[0] . 'wp-load.php');
 
 global $blog_id;
 $curentBlog = $blog_id;
-$mainBlog = 3;
+$mainBlog = 6;
 switch_to_blog($mainBlog);
 
 $pages = get_pages(array(
