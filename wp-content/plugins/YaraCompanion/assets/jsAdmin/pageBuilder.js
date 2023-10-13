@@ -303,7 +303,10 @@ function setBgItemColor(obj, colorHolder) {
 }
 
 
+
+
 function sliderContentBuilder(direction, objID, saveState) {
+
 
     let allDataHolder = document.querySelector('[data-related-id="' + objID + '"]');
     let currentSliderSection = document.getElementById(objID);
@@ -451,9 +454,18 @@ function contentSlide(direction, objID) {
 }
 
 
+let previousHTMLversion = "";
 
 
-function prapareForEditing(obj, sectionToEdit) {
+function massReplace(str,replaceWhat,replaceTo){
+    var re = new RegExp(replaceWhat, 'g');
+    return str.replace(re,replaceTo);
+}
+
+
+function prapareForEditing(obj, sectionToEdit) {    
+    previousHTMLversion = obj.innerHTML;
+
     obj.classList.remove("normal");
     obj.onclick = null;
 
@@ -480,14 +492,16 @@ function prapareForEditing(obj, sectionToEdit) {
 
     let checkCallToAction = obj.querySelector('[data-callToAction="contentSlider"]'); // 
     let isListSlider = obj.querySelector('.itemsSlider');
+    let dupeID;
 
     if (isListSlider) {
 
-        let objSectionID = isListSlider.getAttribute("id");
+        let objSectionID = isListSlider.getAttribute("id");        
         let idBuilder = returnRandom(100) + Date.now();
         objSectionID = isListSlider.getAttribute("id");
-        let CheckDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
-        CheckDuplicates.length > 1 ? objSectionID = "" : 0;
+        let checkDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
+        
+        checkDuplicates.length > 1 ? objSectionID = "" : 0;
 
         if (!objSectionID) {
 
@@ -509,14 +523,28 @@ function prapareForEditing(obj, sectionToEdit) {
     if (checkCallToAction) {
         let idBuilder = returnRandom(100) + Date.now();
 
-        objSectionID = checkCallToAction.getAttribute("id");
-        let CheckDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
-        CheckDuplicates.length > 1 ? objSectionID ="" : 0;
+        dupeID = objSectionID = checkCallToAction.getAttribute("id");
+        let checkDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
+        console.log("checkDuplicates" , checkDuplicates);
+        checkDuplicates.length > 1 ? objSectionID ="" : 0;
 
         if (!objSectionID) {
             checkCallToAction.setAttribute("id", idBuilder);
             objSectionID = idBuilder;
         }
+
+        if(checkDuplicates){
+
+            previousHTMLversion = massReplace(previousHTMLversion,dupeID,objSectionID);
+
+
+           // massReplace(str,replaceWhat,replaceTo)
+           // dupeID = objSectionID;
+
+        }
+
+
+
         let objDataHolder = checkCallToAction.querySelector('[data-slider-dataholder="1"]');
         objDataHolder.setAttribute("data-Related-id", objSectionID);
 
@@ -645,15 +673,48 @@ function prapareForEditing(obj, sectionToEdit) {
 
 
         letSectionAdminFooter.innerHTML = `
-        <div class="button button-save button-dark" data-edit="button">Save Section</div>       
+        <div class="button button-save button-dark" data-edit="button">Save Section</div> <div class="button-cancel button button-light">Cancel</div>      
         ${callToActionButtonsSet}
         <div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>`;
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {
+            previousHTMLversion ="";
             if (checkCallToAction) {
                 sliderContentBuilder(-10, objSectionID, 1);
             }
+            saveSectionSettings(obj, sectionToEdit);
+        }
+
+        let sectionCancelButton = obj.querySelector("adminfooter .button-cancel");
+        sectionCancelButton.onclick = function () {
+            console.log("CANCEL EDITIG!");
+            if(previousHTMLversion){
+                obj.innerHTML = previousHTMLversion + "<adminfooter>" + obj.querySelector("adminfooter").innerHTML + "</adminfooter>";
+
+                obj.querySelector(".swapPositionPannel .icon--edit").onclick = () => {
+                    prapareForEditing(obj, sectionToEdit);
+                }
+                obj.querySelector(".icon--up").onclick = () => {
+                    swapNodePositions(obj, 0);
+                }
+                obj.querySelector(".icon--down").onclick = () => {
+                    swapNodePositions(obj, 1);
+                }
+
+              //  setTimeout(() => {
+                  //  prapareForEditing(obj, obj);
+              //  }, 500);
+               
+
+                
+                previousHTMLversion = "";
+            }
+            if (checkCallToAction) {
+                sliderContentBuilder(-10, objSectionID, 1);
+
+            }
+
             saveSectionSettings(obj, sectionToEdit);
         }
 
