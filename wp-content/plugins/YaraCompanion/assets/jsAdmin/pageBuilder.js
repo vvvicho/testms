@@ -457,14 +457,16 @@ function contentSlide(direction, objID) {
 let previousHTMLversion = "";
 
 
-function massReplace(str,replaceWhat,replaceTo){
+function massReplace(str, replaceWhat, replaceTo) {
     var re = new RegExp(replaceWhat, 'g');
-    return str.replace(re,replaceTo);
+    return str.replace(re, replaceTo);
 }
 
 
-function prapareForEditing(obj, sectionToEdit) {    
-    previousHTMLversion = obj.innerHTML;
+function prapareForEditing(obj, sectionToEdit) {
+    if (sectionToEdit) {
+        previousHTMLversion = obj.innerHTML;
+    }
 
     obj.classList.remove("normal");
     obj.onclick = null;
@@ -496,17 +498,24 @@ function prapareForEditing(obj, sectionToEdit) {
 
     if (isListSlider) {
 
-        let objSectionID = isListSlider.getAttribute("id");        
+        dupeID = objSectionID = isListSlider.getAttribute("id");
         let idBuilder = returnRandom(100) + Date.now();
         objSectionID = isListSlider.getAttribute("id");
-        let checkDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
-        
+        let checkDuplicates = document.querySelectorAll('[id="' + objSectionID + '"]');
+
         checkDuplicates.length > 1 ? objSectionID = "" : 0;
 
         if (!objSectionID) {
 
             isListSlider.setAttribute("id", idBuilder);
             objSectionID = idBuilder;
+        }
+
+        if (checkDuplicates) {
+
+            previousHTMLversion = massReplace(previousHTMLversion, dupeID, objSectionID);
+
+
         }
 
         //isListSlider.setAttribute("id", idBuilder);            
@@ -524,22 +533,22 @@ function prapareForEditing(obj, sectionToEdit) {
         let idBuilder = returnRandom(100) + Date.now();
 
         dupeID = objSectionID = checkCallToAction.getAttribute("id");
-        let checkDuplicates = document.querySelectorAll('[id="' + objSectionID +'"]');
-        console.log("checkDuplicates" , checkDuplicates);
-        checkDuplicates.length > 1 ? objSectionID ="" : 0;
+        let checkDuplicates = document.querySelectorAll('[id="' + objSectionID + '"]');
+        console.log("checkDuplicates", checkDuplicates);
+        checkDuplicates.length > 1 ? objSectionID = "" : 0;
 
         if (!objSectionID) {
             checkCallToAction.setAttribute("id", idBuilder);
             objSectionID = idBuilder;
         }
 
-        if(checkDuplicates){
+        if (checkDuplicates) {
 
-            previousHTMLversion = massReplace(previousHTMLversion,dupeID,objSectionID);
+            previousHTMLversion = massReplace(previousHTMLversion, dupeID, objSectionID);
 
 
-           // massReplace(str,replaceWhat,replaceTo)
-           // dupeID = objSectionID;
+            // massReplace(str,replaceWhat,replaceTo)
+            // dupeID = objSectionID;
 
         }
 
@@ -679,7 +688,7 @@ function prapareForEditing(obj, sectionToEdit) {
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
         sectionSaveButton.onclick = function () {
-            previousHTMLversion ="";
+            previousHTMLversion = "";
             if (checkCallToAction) {
                 sliderContentBuilder(-10, objSectionID, 1);
             }
@@ -689,8 +698,22 @@ function prapareForEditing(obj, sectionToEdit) {
         let sectionCancelButton = obj.querySelector("adminfooter .button-cancel");
         sectionCancelButton.onclick = function () {
             console.log("CANCEL EDITIG!");
-            if(previousHTMLversion){
+            if (previousHTMLversion) {
                 obj.innerHTML = previousHTMLversion + "<adminfooter>" + obj.querySelector("adminfooter").innerHTML + "</adminfooter>";
+
+
+                console.log("check if exist");
+                let searchthepannel = obj.querySelector(".swapPositionPannel");
+                console.log(searchthepannel);
+                console.log(obj.innerHTML);
+
+                let newaddon = `<div class="swapPositionPannel hidden"><div class="adminTools icon icon--up"></div><div class="adminTools icon icon--down"></div><div class="adminTools icon icon--edit"></div></div>`;
+
+                if (!searchthepannel) {
+                    obj.innerHTML = previousHTMLversion + newaddon;
+
+                }
+
 
                 obj.querySelector(".swapPositionPannel .icon--edit").onclick = () => {
                     prapareForEditing(obj, sectionToEdit);
@@ -702,13 +725,13 @@ function prapareForEditing(obj, sectionToEdit) {
                     swapNodePositions(obj, 1);
                 }
 
-              //  setTimeout(() => {
-                  //  prapareForEditing(obj, obj);
-              //  }, 500);
-               
+                //  setTimeout(() => {
+                //  prapareForEditing(obj, obj);
+                //  }, 500);
 
-                
-                previousHTMLversion = "";
+
+
+                // previousHTMLversion = "";
             }
             if (checkCallToAction) {
                 sliderContentBuilder(-10, objSectionID, 1);
