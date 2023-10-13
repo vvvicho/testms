@@ -1,11 +1,12 @@
 <?php
 
+/*
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
 @ini_set('display_errors', E_ALL);
 
-
+*/
 /*
 $parse_uri = explode('wp-content', $_SERVER['SCRIPT_FILENAME']);
 require($parse_uri[0] . 'wp-load.php');
