@@ -15,7 +15,7 @@
         <span>Blue Box x4</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
-        <section class="bgColors--sectionLNormal">
+        <div class="bgColors--sectionLNormal section">
             <div class="warper warper--boxGallery">
                 <div class="item_12 box box--bgColor--blue fourColMid">
                     <div class="icons-upDiagram">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+</div>
 
         </div>
 

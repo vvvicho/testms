@@ -707,6 +707,8 @@ function prapareForEditing(obj, sectionToEdit) {
                 console.log(searchthepannel);
                 console.log(obj.innerHTML);
 
+
+                // check if we need it at all
                 let newaddon = `<div class="swapPositionPannel hidden"><div class="adminTools icon icon--up"></div><div class="adminTools icon icon--down"></div><div class="adminTools icon icon--edit"></div></div>`;
 
                 if (!searchthepannel) {
