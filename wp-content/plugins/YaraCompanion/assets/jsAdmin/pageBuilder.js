@@ -634,7 +634,7 @@ function prapareForEditing(obj, sectionToEdit) {
     let allpSpetial = obj.querySelectorAll('[data-edit*="pSpetial"]');
     allpSpetial.forEach(async (text) => { text.onclick = () => { editpSpetial(text) } });
 
-    //data-edit="pSpetial"
+    //data-edit="pSpetial" 
 
 
 

@@ -8,7 +8,7 @@ let findAbutton;
 let findContentHolder;
 let yaraPageEditorHead = document.createElement("div");
 yaraPageEditorHead.id = "yaraPageEditorHead";
-yaraPageEditorHead.classList.add("yaraPageEditorHead");
+yaraPageEditorHead.classList.add("yaraPageEditorHead"); 
 yaraPageEditorHead.innerHTML =
     `
 <div class="generaldivigation" id="generaldivigation">
@@ -319,16 +319,28 @@ if (isPageEditor) {
                 }, multiple: false
             });
 
+            console.log("mediaUploader");
+            console.log(mediaUploader);
+
+
+
             // When a file is selected, grab the URL and set it as the text field's value
             mediaUploader.on('select', function () {
                 attachment = mediaUploader.state().get('selection').first().toJSON();
                 $('#image-url').val(attachment.url);
                 isBgImage ? objectToUpdateSRC.setAttribute("style", "background-image:url('" + attachment.url + "')") :
                     objectToUpdateSRC.setAttribute("src", attachment.url);
-                yaraPageEditorHolder.classList.remove("hidden");
+                //yaraPageEditorHolder.classList.remove("hidden");
             });
             // Open the uploader dialog
+
+            mediaUploader.on('close', function () {
+                yaraPageEditorHolder.classList.remove("hidden");
+            });
+
+            
             mediaUploader.open();
+           // mediaUploader["$el"][0].style.zIndex = getMaxZIndex() + 10000;
         });
     })(jQuery);
 

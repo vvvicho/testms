@@ -67,6 +67,9 @@
   height: 40px;
   margin: 4px;
 }
+.adminHolder .warper--gallery--flex .objectBGcolors {
+  display: none;
+}
 .adminHolder .collorsPannel {
   position: absolute;
   top: 30px;

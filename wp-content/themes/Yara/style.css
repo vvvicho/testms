@@ -1491,6 +1491,28 @@ main .section .warper--gallery .galleryItem figure figcaption {
   line-height: 25px;
   padding: var(--spacer);
 }
+main section .warper--gallery--flex h3, main section .warper--gallery--flex .buttonHolder,
+main .section .warper--gallery--flex h3,
+main .section .warper--gallery--flex .buttonHolder {
+  width: 100%;
+}
+main section .warper--gallery--flex .galleryItem,
+main .section .warper--gallery--flex .galleryItem {
+  width: 100%;
+  display: block;
+}
+main section .warper--gallery--flex .galleryItem figure,
+main .section .warper--gallery--flex .galleryItem figure {
+  margin-bottom: calc(var(--spacer) * 1);
+}
+main section .warper--gallery--flex .galleryItem figure img,
+main .section .warper--gallery--flex .galleryItem figure img {
+  display: none;
+}
+main section .warper--gallery--flex .galleryItem figure figcaption,
+main .section .warper--gallery--flex .galleryItem figure figcaption {
+  display: block;
+}
 main section .warper--gallery--five,
 main .section .warper--gallery--five {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr !important;
@@ -1792,10 +1814,22 @@ main .section.bgColors--sectionLight .warper--gallery .galleryItem {
   main .section .warper--gallery .buttonHolder {
     margin-top: 40px;
   }
-  main section .warper--gallery--five .galleryItem figure img, main section .warper--gallery--six .galleryItem figure img,
+  main section .warper--gallery--five .galleryItem figure img, main section .warper--gallery--six .galleryItem figure img, main section .warper--gallery--flex .galleryItem figure img,
   main .section .warper--gallery--five .galleryItem figure img,
-  main .section .warper--gallery--six .galleryItem figure img {
+  main .section .warper--gallery--six .galleryItem figure img,
+  main .section .warper--gallery--flex .galleryItem figure img {
     display: block;
+  }
+  main section .warper--gallery--flex,
+  main .section .warper--gallery--flex {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 18px !important;
+  }
+  main section .warper--gallery--flex .galleryItem,
+  main .section .warper--gallery--flex .galleryItem {
+    max-width: 18%;
   }
   main section .warper--boxGallery,
   main .section .warper--boxGallery {

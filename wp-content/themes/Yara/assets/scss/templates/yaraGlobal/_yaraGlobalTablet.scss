@@ -154,7 +154,7 @@
                     .buttonHolder {
                         margin-top: 40px;
                     }
-                    &--five, &--six {                        
+                    &--five, &--six, &--flex {                        
                         .galleryItem {                           
                             figure {
                                 img{
@@ -163,7 +163,17 @@
                             }
                         }                        
                     }
+                    &--flex {
+                        display: flex !important;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        gap: 18px !important;
+                        .galleryItem{
+                            max-width: 18%;
+                        }
+                    }
                 }
+
                 &--boxGallery {
                     padding-left: calc(var(--spacer) * 3);
                     padding-right: calc(var(--spacer) * 3);
