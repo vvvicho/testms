@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        :root {
+          --gap: 16px;
+        }
+        
+        @media screen and (min-width: 599px) {
+          :root {
+            --gap: calc(16px * 2);
+          }
+        }
+        @media screen and (min-width: 1366px) {
+          :root {
+            --gap: calc(16px * 3);
+          }
+        }
+        body {
+          padding: 0;
+          margin: 0;
+          background: #fff;
+          font-weight: 400;
+          font-family: Yaramaxlf, sans-serif;
+        }
+        
+        ul,
+        li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        
+        figure,
+        picture,
+        image,
+        nav,
+        ::before,
+        ::after {
+          display: block;
+          padding: 0;
+          margin: 0;
+        }
+        
+        a {
+          text-decoration: none;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          display: block;
+          font-weight: 700;
+          margin-bottom: calc(var(--gap) / 3);
+          margin-top: calc(var(--gap) / 3);
+          letter-spacing: -0.42px;
+        }
+        
+        p {
+          margin: 0;
+          padding: 0;
+          padding-bottom: calc(var(--gap) / 3);
+        }
+        p:last-child {
+          padding-bottom: 0;
+        }
+        
+        nav {
+          padding: 24px 40px;
+        }
+        nav h1 {
+          padding: 0;
+          margin: 0;
+        }
+        
+        header {
+          height: 360px;
+          background-image: url(https://assets-global.website-files.com/60893539828245610bc38d10/654a1ae968b3148a860f562d_hero.webp);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 100%;
+          display: block;
+          position: relative;
+        }
+        header div {
+          background: rgba(39, 119, 184, 0.9490196078);
+          color: #fff;
+          margin-top: 180px;
+          margin-left: 150px;
+          position: absolute;
+          padding: 24px;
+        }
+        header div h2,
+        header div p {
+          padding: 0;
+          margin: 0;
+        }
+        header div p {
+        color: #fff;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px; /* 175% */
+          font-family: Yaramaxlf, sans-serif;
+        }
+        header div h2 {
+        color: #fff;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 48px; /* 150% */
+          font-family: Yaramaxlf, sans-serif;
+        }
+        
+        main {
+          max-width: 1366px;
+          margin: 0 auto;
+          padding: 0 30px;
+        }
+        main h3 {
+          color: #327ebc;
+          text-align: center;
+          font-family: Yaramaxlf, sans-serif;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 48px; /* 150% */
+          padding-top: 100px;
+          padding-bottom: 60px;
+        }
+        main .flex {
+          margin-top: 100px;
+        }
+        main .flex--02 {
+          display: flex;
+          gap: 60px;
+        }
+        main .flex--02 div,
+        main .flex--02 figure {
+          display: block;
+          max-width: 50%;
+        }
+        main .flex--02 figure img {
+          width: 100%;
+          height: auto;
+        }
+        main .flex h4 {
+          color: #327ebc;
+          font-family: Yaramaxlf, sans-serif;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 48px; /* 150% */
+          margin: 0;
+        }
+        main .flex p,
+        main .flex ul,
+        main .flex li {
+          color: rgba(15, 15, 15, 0.8);
+          font-family: Yaramaxlf, sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px; /* 175% */
+        }
+        main .flex li {
+          list-style: disc;
+          margin-left: 30px;
+        }
+        main .blueBox {
+          background-color: #2777b8;
+          color: #fff;
+         font-family: Yaramaxlf, sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px; /* 150% */
+          min-height: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 60px;
+          margin: 60px auto;
+          padding: 32px;
+        }
+        main .blueBox h4 {
+          color: #fff;
+         font-family: Yaramaxlf, sans-serif;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 48px; /* 150% */
+        }
+        main .blueBox .button {
+          min-width: 100px;
+          text-align: center;
+          border-radius: 4px;
+          background: #fff;
+          color: #2777b8;
+          padding: 12px 16px;
+        }
+        main .blueBox .button a {
+          color: #2777b8;
+          white-space: nowrap;
+        }/*# sourceMappingURL=yaraPlus.css.map */
+        </style>    
+</head>
+
+<body>
+    <nav>
+        <h1>
+            <img src="https://assets-global.website-files.com/60893539828245610bc38d10/654a1ae94e7f71d84cdcd25b_yara_logo.png" loading="lazy" alt="">
+        </h1>
+    </nav>
+    <header>
+        <div>
+            <p>John Deere and Yara:</p>
+            <h2>Bringing agronomic crop nutrition insights to every farmer</h2>
+        </div>
+    </header>
+    <main>
+        <h3>
+            Sign up for a chance to experience this connection firsthand!
+            We will contact you soon.
+        </h3>
+
+        <div class="_form_165"></div>
+        <script src="https://yara96797.activehosted.com/f/embed.php?id=165" type="text/javascript"
+            charset="utf-8"></script>
+        <div class="section flex flex--02">
+            <div>
+                <h4>
+                    Coming soon: Instantly transfer nitrogen application maps from Atfarm to John Deere Operations
+                    Center™
+                </h4>
+                <p>
+                    Achieve better Nitrogen Use Efficiency with Atfarm and John Deere Operations Center™.
+                </p>
+                <ul>What to expect:
+                    <li>Wirelessly transfer Variable N-Rate Maps from Atfarm to John Deere Operations Center™ in one
+                        click.</li>
+                    <li>Variable application maps automatically uploaded as WorkPlans.</li>
+                    <li>Available for any Gen4 or G5 John Deere machinery.</li>
+                </ul>
+
+            </div>
+            <figure>
+                <img src="https://assets-global.website-files.com/60893539828245610bc38d10/654a1ae9c299871d5f37b0a1_crop.webp" alt="Yara Atfarm">
+            </figure>
+        </div>
+        <div class="blueBox">
+            <h4>John Deere and Yara partner to increase fertilization efficiency</h4>
+            <div class="button"><a href="#">Read more</a></div>
+        </div>
+    </main>
+</body>
+</html>

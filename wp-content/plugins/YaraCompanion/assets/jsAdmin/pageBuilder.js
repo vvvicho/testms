@@ -462,6 +462,16 @@ function massReplace(str, replaceWhat, replaceTo) {
     return str.replace(re, replaceTo);
 }
 
+function returnYoutube(link){
+
+    let playerHTML =
+    `
+    <iframe width="560" height="315" src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    `
+    return playerHTML;
+
+}
+
 
 function prapareForEditing(obj, sectionToEdit) {
     if (sectionToEdit) {
@@ -659,6 +669,59 @@ function prapareForEditing(obj, sectionToEdit) {
             image.appendChild(imageDeleteIcon);
         }
     });
+
+
+    let allVideos = obj.querySelectorAll('[data-edit*="video"]');
+
+
+    allVideos.forEach(async (video) => {
+        video.classList.add("adminRelative");
+        let videoEditIcon = document.createElement("div");
+        videoEditIcon.classList.add("icon", "icon--video", "adminBgEdit");
+       // videoEditIcon.style.left = "55px";
+        videoEditIcon.onclick = function () {
+            console.log("add video");
+            console.log(video);
+
+            
+            if(!this.parentElement.querySelector(".videoPannel")){
+                let iconsPannel = document.createElement("iconPannel");
+                iconsPannel.classList.add("adminTools", "videoPannel");
+                let currentVideoContainer = this.parentElement.parentElement.querySelector("iframe");
+                
+
+                iconsPannel.innerHTML = `<div class="objectVideoURL"><input type="text" value="${currentVideoContainer.getAttribute("src")}"></div>${iconbuilder("save")}`;
+                this.parentElement.appendChild(iconsPannel);
+                this.parentElement.querySelector(".icon--save").onclick = function(){
+                    console.log("ADD LINK");
+                    let newVideoURL = this.parentElement.querySelector("input").value;
+                    console.log(newVideoURL);
+                    let newVideoContainer = this.parentElement.parentElement.querySelector("iframe");
+                    console.log(newVideoContainer);
+                    newVideoContainer.setAttribute("src", newVideoURL);
+                    this.parentElement.remove();
+
+
+
+                }
+
+            }
+
+
+
+
+
+
+
+           // isBgImage = 0;
+          //  objectToUpdateSRC = image.querySelector("img");
+           // showGalleryImages();
+        }
+        video.appendChild(videoEditIcon);
+    });
+
+
+
 
     let allButtons = obj.querySelectorAll('[data-edit*="button"]');
     allButtons.forEach(async (button) => {

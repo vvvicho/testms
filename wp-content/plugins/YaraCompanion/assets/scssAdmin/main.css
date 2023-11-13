@@ -195,6 +195,9 @@
 .adminHolder .icon--edit {
   background-image: url(../imagesAdmin/icons/edit.png);
 }
+.adminHolder .icon--video {
+  background-image: url(../imagesAdmin/icons/video.png);
+}
 .adminHolder .icon--save {
   background-image: url(../imagesAdmin/icons/save.png);
 }
