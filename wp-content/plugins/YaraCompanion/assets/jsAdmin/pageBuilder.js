@@ -697,10 +697,31 @@ function prapareForEditing(obj, sectionToEdit) {
                     let videoURL = this.parentElement.querySelector("input").value;
                     let videoCode =  videoURL.split('=');
                     let newVideoURL = videoURL;
-                    if(videoCode[1]){
-                         newVideoURL = "https://www.youtube.com/embed/" + videoCode[1];
+
+                    if(!newVideoURL.includes("embed")){
+
+                        if(newVideoURL.includes("youtu.be")){
+                            videoCode =  videoURL.split('/');
+                            console.log(videoCode.length);
+                            console.log(videoCode);
+                            console.log(videoCode[videoCode.length - 1]);
+                            newVideoURL = "https://www.youtube.com/embed/" + videoCode[videoCode.length - 1];  
+
+                        }else if(newVideoURL.includes("=")){
+                            videoCode =  videoURL.split('=');
+                            if(videoCode[1]){
+                                newVideoURL = "https://www.youtube.com/embed/" + videoCode[1];       
+                           }
+
+                        }
 
                     }
+
+                   
+
+
+
+
                     
 
                     console.log(newVideoURL);
