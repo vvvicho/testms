@@ -694,7 +694,15 @@ function prapareForEditing(obj, sectionToEdit) {
                 this.parentElement.appendChild(iconsPannel);
                 this.parentElement.querySelector(".icon--save").onclick = function(){
                     console.log("ADD LINK");
-                    let newVideoURL = this.parentElement.querySelector("input").value;
+                    let videoURL = this.parentElement.querySelector("input").value;
+                    let videoCode =  videoURL.split('=');
+                    let newVideoURL = videoURL;
+                    if(videoCode[1]){
+                         newVideoURL = "https://www.youtube.com/embed/" + videoCode[1];
+
+                    }
+                    
+
                     console.log(newVideoURL);
                     let newVideoContainer = this.parentElement.parentElement.querySelector("iframe");
                     console.log(newVideoContainer);
