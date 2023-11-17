@@ -31,8 +31,7 @@ $buttonLightBoxShadow:
     0px 1px 5px rgba(15, 15, 15, 0.12);
 $buttonLightBR: 8px;
 
-
-.yaraPageEditorHolder{
+.yaraPageEditorHolder {
     position: fixed !important;
     background-color: white !important;
     top: 0;
@@ -41,16 +40,13 @@ $buttonLightBR: 8px;
     overflow-y: auto;
     width: 100vw;
     height: 100vh;
-    
 }
 
-.yaraPageEditorHead{
+.yaraPageEditorHead {
     background-color: #ccc;
-    .generaldivigation{
+    .generaldivigation {
         position: relative !important;
-
     }
-
 }
 
 .adminHolder {
@@ -58,60 +54,59 @@ $buttonLightBR: 8px;
         .slider {
             overflow-x: scroll !important;
         }
-
     }
     .ltr {
         figure {
             order: 2;
         }
     }
-    .icons-ok{
+    .icons-ok {
         height: unset !important;
         min-height: 24px !important;
         textarea {
             display: none !important;
         }
-
     }
     .twoColMid {
-        .icon--edit{
+        .icon--edit {
             display: none !important;
         }
-        .icon--delete{
+        .icon--delete {
             left: 5px !important;
         }
-
     }
-    .warper--gallery--bordered{
-        .clonePannel{
-            .icon--clone, .icon--delete{
-            display: none !important;
+    .warper--gallery--bordered {
+        .clonePannel {
+            .icon--clone,
+            .icon--delete {
+                display: none !important;
             }
         }
-        .objectBGcolors{
-            ul{
-                li[data-style='bgColors--sectionLNormal']{
+        .objectBGcolors {
+            ul {
+                li[data-style="bgColors--sectionLNormal"] {
                     display: none !important;
                 }
             }
         }
     }
     .itemsSlider {
-        .objectBGcolors{
-            ul{
-                li[data-style='galleryItem--bgColorYello'],li[data-style='galleryItem--bgColorWhite']{
+        .objectBGcolors {
+            ul {
+                li[data-style="galleryItem--bgColorYello"],
+                li[data-style="galleryItem--bgColorWhite"] {
                     display: none !important;
                 }
             }
         }
     }
 
-    .objectBGcolors{
-       // border: solid 1px red;
-        ul{
+    .objectBGcolors {
+        // border: solid 1px red;
+        ul {
             display: flex !important;
             gap: 5px !important;
-            li{
+            li {
                 width: 48px !important;
                 height: 48px !important;
                 max-height: 48px !important;
@@ -120,7 +115,7 @@ $buttonLightBR: 8px;
                 margin: 0px !important;
                 border: solid 1px #ccc;
                 display: block !important;
-                div{
+                div {
                     width: 40px;
                     height: 40px;
                     margin: 4px;
@@ -128,37 +123,35 @@ $buttonLightBR: 8px;
             }
         }
     }
-    .warper--gallery--flex{
-        .objectBGcolors{
+    .warper--gallery--flex {
+        .objectBGcolors {
             display: none;
         }
-
     }
 
-
-    .collorsPannel{
+    .collorsPannel {
         position: absolute;
         top: 30px;
         right: 30px;
         background-color: white;
-        ul{
+        ul {
             display: flex !important;
             gap: 5px;
-            li{
+            li {
                 width: 48px;
                 height: 48px;
                 border: solid 1px #ccc;
                 display: block !important;
-                &[data-style='galleryItem--bgColorYello'], &[data-style='galleryItem--bgColorWhite']{
+                &[data-style="galleryItem--bgColorYello"],
+                &[data-style="galleryItem--bgColorWhite"] {
                     display: none !important;
                 }
-                div{
+                div {
                     width: 40px;
                     height: 40px;
                     margin: 4px;
                 }
             }
-
         }
     }
 
@@ -177,7 +170,7 @@ $buttonLightBR: 8px;
                 cursor: pointer;
             }
         }
-        .swapPositionPannel{
+        .swapPositionPannel {
             position: absolute;
             bottom: 30px;
             right: 30px;
@@ -246,9 +239,9 @@ $buttonLightBR: 8px;
     }
     .flagListHolder {
         display: flex !important;
-        flex-wrap: wrap!important;
-        overflow: auto!important;
-        max-height: 100px!important;
+        flex-wrap: wrap !important;
+        overflow: auto !important;
+        max-height: 100px !important;
         background-color: white;
         gap: 2px !important;
         li {
@@ -295,22 +288,22 @@ $buttonLightBR: 8px;
         }
         &--up {
             background-image: url(../imagesAdmin/icons/arr.png);
-            position: relative;            
+            position: relative;
             transform: rotate(0deg);
         }
         &--right {
             background-image: url(../imagesAdmin/icons/arr.png);
-            position: relative;            
+            position: relative;
             transform: rotate(90deg);
         }
         &--down {
             background-image: url(../imagesAdmin/icons/arr.png);
-            position: relative;            
+            position: relative;
             transform: rotate(180deg);
         }
         &--left {
             background-image: url(../imagesAdmin/icons/arr.png);
-            position: relative;            
+            position: relative;
             transform: rotate(270deg);
         }
     }
@@ -378,7 +371,7 @@ $buttonLightBR: 8px;
         left: 0;
         z-index: 10000;
         text-align: center;
-        .button{
+        .button {
             margin: auto;
             margin-top: 10px;
         }
@@ -685,4 +678,91 @@ blockconstructor {
 
 templateHidden {
     display: none;
+}
+
+
+
+// HELP PAGES
+
+.yaraHelpContainer{   
+    margin-top: 40px;
+    h3{
+        margin-bottom: 30px;
+    }
+    bug{
+        color: red;
+    }
+    section{
+        border-bottom: 2px dashed #ccc;
+        padding-bottom: 30px;
+        margin-bottom: 60px;
+        .flex{
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 50px;
+            &--x2img{
+                figure{
+                    width:45%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        ul {
+            padding-right: 30px;
+            li{
+                margin-bottom: 30px;
+            }
+        } 
+        h4{
+            text-align: right;            
+            font-size: 24px;
+            margin-bottom: 40px;
+            background: #e3f6ff;
+            padding: 20px 30px;
+            b{
+                color: #0056b8;
+            }
+        } 
+        figure{
+            max-width: 70%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            figcaption{
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        } 
+    }
+}
+
+
+
+
+//disabled sites
+
+#wp-admin-bar-blog {
+    &-18,
+    &-19,
+    &-20 {
+        display: none !important;
+        background-color: #767676 !important;
+        color: black !important;
+        a {
+            color: black !important;
+
+        }
+
+        ul {
+            background-color: #767676 !important;
+            color: black !important;
+            li {
+                background-color: #767676 !important;
+                color: black !important;
+            }
+        }
+    }
 }

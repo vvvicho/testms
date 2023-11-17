@@ -39,13 +39,15 @@
 .adminHolder .twoColMid .icon--delete {
   left: 5px !important;
 }
-.adminHolder .warper--gallery--bordered .clonePannel .icon--clone, .adminHolder .warper--gallery--bordered .clonePannel .icon--delete {
+.adminHolder .warper--gallery--bordered .clonePannel .icon--clone,
+.adminHolder .warper--gallery--bordered .clonePannel .icon--delete {
   display: none !important;
 }
 .adminHolder .warper--gallery--bordered .objectBGcolors ul li[data-style=bgColors--sectionLNormal] {
   display: none !important;
 }
-.adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorYello], .adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorWhite] {
+.adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorYello],
+.adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorWhite] {
   display: none !important;
 }
 .adminHolder .objectBGcolors ul {
@@ -565,4 +567,74 @@ blockconstructor .section {
 
 templateHidden {
   display: none;
+}
+
+.yaraHelpContainer {
+  margin-top: 40px;
+}
+.yaraHelpContainer h3 {
+  margin-bottom: 30px;
+}
+.yaraHelpContainer bug {
+  color: red;
+}
+.yaraHelpContainer section {
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 30px;
+  margin-bottom: 60px;
+}
+.yaraHelpContainer section .flex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 50px;
+}
+.yaraHelpContainer section .flex--x2img figure {
+  width: 45%;
+}
+.yaraHelpContainer section .flex--x2img figure img {
+  width: 100%;
+}
+.yaraHelpContainer section ul {
+  padding-right: 30px;
+}
+.yaraHelpContainer section ul li {
+  margin-bottom: 30px;
+}
+.yaraHelpContainer section h4 {
+  text-align: right;
+  font-size: 24px;
+  margin-bottom: 40px;
+  background: #e3f6ff;
+  padding: 20px 30px;
+}
+.yaraHelpContainer section h4 b {
+  color: #0056b8;
+}
+.yaraHelpContainer section figure {
+  max-width: 70%;
+}
+.yaraHelpContainer section figure img {
+  width: 100%;
+  height: auto;
+}
+.yaraHelpContainer section figure figcaption {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#wp-admin-bar-blog-18, #wp-admin-bar-blog-19, #wp-admin-bar-blog-20 {
+  display: none !important;
+  background-color: #767676 !important;
+  color: black !important;
+}
+#wp-admin-bar-blog-18 a, #wp-admin-bar-blog-19 a, #wp-admin-bar-blog-20 a {
+  color: black !important;
+}
+#wp-admin-bar-blog-18 ul, #wp-admin-bar-blog-19 ul, #wp-admin-bar-blog-20 ul {
+  background-color: #767676 !important;
+  color: black !important;
+}
+#wp-admin-bar-blog-18 ul li, #wp-admin-bar-blog-19 ul li, #wp-admin-bar-blog-20 ul li {
+  background-color: #767676 !important;
+  color: black !important;
 }/*# sourceMappingURL=main.css.map */

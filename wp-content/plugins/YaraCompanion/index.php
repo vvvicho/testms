@@ -26,7 +26,7 @@ define('YARA_PP_PATH', plugin_dir_path(__DIR__));
 
 function yara_init()
 {
-    include(YARA_PP_PATH . 'YaraCompanion/assets/pages/pagesEditor.php');
+    include(YARA_PP_PATH . 'YaraCompanion/assets/pages/help.php');
 }
 
 
