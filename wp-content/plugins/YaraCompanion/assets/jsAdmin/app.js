@@ -8,7 +8,7 @@ let findAbutton;
 let findContentHolder;
 let yaraPageEditorHead = document.createElement("div");
 yaraPageEditorHead.id = "yaraPageEditorHead";
-yaraPageEditorHead.classList.add("yaraPageEditorHead"); 
+yaraPageEditorHead.classList.add("yaraPageEditorHead");
 yaraPageEditorHead.innerHTML =
     `
 <div class="generaldivigation" id="generaldivigation">
@@ -124,13 +124,29 @@ function getBuilderScripts() {
     }
 }
 
-function moveHTMLtoCustomFields() {
+function moveHTMLtoCustomFields(saveState) {
     console.log("SAVE TO THE CUSTOM FIELDS FROM");
+
+
+
+
+
+
+
     let editedHTML = document.querySelector(".adminHolder--mainContent").innerHTML;
-    let headerItems = document.querySelectorAll(".adminHolder--mainContent headeritem");
+
+    let createNewBox = document.createElement("div");
+    //createNewBox.style.display = "none";
+    createNewBox.innerHTML = editedHTML;
+    createNewBox.id = "tmpBoxHolder";
+    document.querySelector(".adminHolder--mainContent").appendChild(createNewBox);
+
+
+    let headerItems = document.querySelectorAll("#tmpBoxHolder headeritem");
     let prepareNewHTML = "";
-    let mainItems = document.querySelectorAll(".adminHolder--mainContent main sectionitem");
-    let alladminPannels = document.querySelectorAll(".swapPositionPannel");
+    let mainItems = document.querySelectorAll("#tmpBoxHolder main sectionitem");
+    let alladminPannels = document.querySelectorAll("#tmpBoxHolder .swapPositionPannel");
+
 
     alladminPannels.forEach(async (element) => {
         element.remove();
@@ -138,7 +154,6 @@ function moveHTMLtoCustomFields() {
     headerItems.forEach(async (item) => {
         prepareNewHTML += item.innerHTML;
     });
-
     prepareNewHTML += "<main>";
 
     mainItems.forEach(async (item) => {
@@ -147,9 +162,48 @@ function moveHTMLtoCustomFields() {
     prepareNewHTML += "</main>";
 
     myPageInnerHTMLholderID.innerHTML = prepareNewHTML;
-    myPageInnerHTML = prepareNewHTML;
-    yaraPageEditorHolder.classList.add("hidden");
 
+    console.log(saveState);
+
+    if (saveState == "1") {
+        yaraPageEditorHolder.classList.add("hidden");
+        let taraPageBuilderLoadBTTN = document.querySelector("#yaraLoadPageBuilder");
+        taraPageBuilderLoadBTTN.onclick = () => { yaraPageEditorHolder.classList.remove("hidden") };
+    }
+
+    customFupdateButton.click();
+    setTimeout(() => {
+        checkCustomFields();
+    }, 250);
+    createNewBox.remove();
+
+
+
+    /*
+    
+        let headerItems = document.querySelectorAll(".adminHolder--mainContent headeritem");
+        let prepareNewHTML = "";
+        let mainItems = document.querySelectorAll(".adminHolder--mainContent main sectionitem");
+        let alladminPannels = document.querySelectorAll(".swapPositionPannel");
+    
+        alladminPannels.forEach(async (element) => {
+            element.remove();
+        });
+        headerItems.forEach(async (item) => {
+            prepareNewHTML += item.innerHTML;
+        });
+    
+        prepareNewHTML += "<main>";
+    
+        mainItems.forEach(async (item) => {
+            prepareNewHTML += item.innerHTML;
+        });
+        prepareNewHTML += "</main>";
+    
+        myPageInnerHTMLholderID.innerHTML = prepareNewHTML;
+        myPageInnerHTML = prepareNewHTML;
+        yaraPageEditorHolder.classList.add("hidden");
+    */
 
 }
 
@@ -175,7 +229,7 @@ function yaraLoadPageBuilderScripts() {
     xhttp.onload = function () {
         document.querySelector(".adminHolder--leftNav").innerHTML = this.response;
         //load pafr builder;        
-        document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields() };
+        document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields("1") };
         if (myPageInnerHTML) {
             document.querySelector(".adminHolder--mainContent").innerHTML = replaceStr(myPageInnerHTML) + adminFooterHTML;
 
@@ -238,7 +292,7 @@ function yaraLoadPageBuilderScripts() {
             });
 
             // edit later            
-            document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields() };
+            document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields("1") };
         }
     }
     xhttp.open("POST", advanced_script_vars.pluginDirUrl + "assets/pages/templatesLoader.php");
@@ -246,6 +300,7 @@ function yaraLoadPageBuilderScripts() {
 
 }
 
+let customFupdateButton;
 
 function checkCustomFields() {
     let holder = document.querySelector("#postcustomstuff #list-table");
@@ -259,7 +314,9 @@ function checkCustomFields() {
             //get custom html ID
             let dropdownID = document.querySelector("#list-table #the-list input[value='customContent']").getAttribute("id");
             let htmlContainerID = dropdownID.replace("-key", "-value");
+            let htmlContainerUpdateID = dropdownID.replace("-key", "-submit");
             let htmlContainer = document.querySelector("#" + htmlContainerID);
+            customFupdateButton  = document.querySelector("#" + htmlContainerUpdateID);
 
             if (htmlContainer.innerHTML) {
                 console.log("HAVE HTML INSIDE");
@@ -270,7 +327,7 @@ function checkCustomFields() {
             }
             myPageInnerHTML = htmlContainer.innerHTML;
             let taraPageBuilderLoadBTTN = document.querySelector("#yaraLoadPageBuilder");
-            taraPageBuilderLoadBTTN.onclick = () => { yaraLoadPageBuilderScripts() };            
+            taraPageBuilderLoadBTTN.onclick = () => { yaraLoadPageBuilderScripts() };
             myPageInnerHTMLholderID = htmlContainer;
         }, 300);
 
@@ -296,76 +353,77 @@ function checkCustomFields() {
 
 
 //window.onload = function () {
-function loadYaraBuilderSettings() { 
-if (isPageEditor) {
-    document.querySelector("body").appendChild(yaraPageEditorHolder);
-    yaraPageEditorHolder.appendChild(adminHolder);
+function loadYaraBuilderSettings() {
+    if (isPageEditor) {
+        document.querySelector("body").appendChild(yaraPageEditorHolder);
+        yaraPageEditorHolder.appendChild(adminHolder);
 
-    (function ($) {
-        var mediaUploader;
-        $('#upload-button').click(function (e) {
-            e.preventDefault();
-            yaraPageEditorHolder.classList.add("hidden");
-            // If the uploader object has already been created, reopen the dialog
-            if (mediaUploader) {
+        (function ($) {
+            var mediaUploader;
+            $('#upload-button').click(function (e) {
+                e.preventDefault();
+                yaraPageEditorHolder.classList.add("hidden");
+                // If the uploader object has already been created, reopen the dialog
+                if (mediaUploader) {
+                    mediaUploader.open();
+                    return;
+                }
+                // Extend the wp.media object
+                mediaUploader = wp.media.frames.file_frame = wp.media({
+                    title: 'Choose Image',
+                    button: {
+                        text: 'Choose Image'
+                    }, multiple: false
+                });
+
+                console.log("mediaUploader");
+                console.log(mediaUploader);
+
+
+
+                // When a file is selected, grab the URL and set it as the text field's value
+                mediaUploader.on('select', function () {
+                    attachment = mediaUploader.state().get('selection').first().toJSON();
+                    $('#image-url').val(attachment.url);
+                    isBgImage ? objectToUpdateSRC.setAttribute("style", "background-image:url('" + attachment.url + "')") :
+                        objectToUpdateSRC.setAttribute("src", attachment.url);
+                    //yaraPageEditorHolder.classList.remove("hidden");
+                });
+                // Open the uploader dialog
+
+                mediaUploader.on('close', function () {
+                    yaraPageEditorHolder.classList.remove("hidden");
+                });
+
+
                 mediaUploader.open();
-                return;
-            }
-            // Extend the wp.media object
-            mediaUploader = wp.media.frames.file_frame = wp.media({
-                title: 'Choose Image',
-                button: {
-                    text: 'Choose Image'
-                }, multiple: false
+                // mediaUploader["$el"][0].style.zIndex = getMaxZIndex() + 10000;
             });
+        })(jQuery);
 
-            console.log("mediaUploader");
-            console.log(mediaUploader);
+        findContentHolder = document.querySelector(".editor-styles-wrapper");
 
-
-
-            // When a file is selected, grab the URL and set it as the text field's value
-            mediaUploader.on('select', function () {
-                attachment = mediaUploader.state().get('selection').first().toJSON();
-                $('#image-url').val(attachment.url);
-                isBgImage ? objectToUpdateSRC.setAttribute("style", "background-image:url('" + attachment.url + "')") :
-                    objectToUpdateSRC.setAttribute("src", attachment.url);
-                //yaraPageEditorHolder.classList.remove("hidden");
-            });
-            // Open the uploader dialog
-
-            mediaUploader.on('close', function () {
-                yaraPageEditorHolder.classList.remove("hidden");
-            });
-
-            
-            mediaUploader.open();
-           // mediaUploader["$el"][0].style.zIndex = getMaxZIndex() + 10000;
-        });
-    })(jQuery);
-
-    findContentHolder = document.querySelector(".editor-styles-wrapper");
-
-    if (findContentHolder) {        
-        findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
-        setTimeout(() => {
-            checkCustomFields();
-        }, 300);
+        if (findContentHolder) {
+            findContentHolder.parentNode.insertBefore(yaraPageEditorHead, findContentHolder);
+            setTimeout(() => {
+                checkCustomFields();
+            }, 300);
+        }
     }
-}
 }
 
 
 function confirmObjectsLoaded() {
     findContentHolder = document.querySelector(".editor-styles-wrapper");
     if (findContentHolder) {
-        clearInterval(objectsObserver);        
+        clearInterval(objectsObserver);
         loadYaraBuilderSettings();
-    }else {       
+    } else {
         currentTryCount++;
-        if(currentTryCount > maxTryCount) {
+        if (currentTryCount > maxTryCount) {
             clearInterval(objectsObserver);
-            console.log("OBJ FALSE!!! TO MANY ATTEMPTS")        }
+            console.log("OBJ FALSE!!! TO MANY ATTEMPTS")
+        }
     }
 
 }
@@ -373,7 +431,7 @@ let maxTryCount = 15;
 let currentTryCount = 0;
 let objectsObserver;
 window.onload = function () {
-   objectsObserver = setInterval(confirmObjectsLoaded, 300);
+    objectsObserver = setInterval(confirmObjectsLoaded, 300);
 
 }
 

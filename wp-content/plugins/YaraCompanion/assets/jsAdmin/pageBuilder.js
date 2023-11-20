@@ -183,6 +183,7 @@ function saveSectionSettings(obj, sectionToEdit) {
     })
     showHideElements(1);
     setTimeout(() => {
+        moveHTMLtoCustomFields("0");
         obj.querySelectorAll(".swapPositionPannel .icon--edit").onclick = function () {
             prapareForEditing(this, sectionToEdit);
         }
@@ -888,6 +889,7 @@ function prapareForEditing(obj, sectionToEdit) {
         sectionDeleteButton.onclick = function () {
             saveSectionSettings(obj, sectionToEdit);
             obj.remove();
+            moveHTMLtoCustomFields("0");
         }
     }
 }
@@ -1034,5 +1036,8 @@ function insertMyPage(obj) {
         }
         item.remove();
     });
-    document.querySelector(".adminHolder--footer--saveButton").onclick = () => { moveHTMLtoCustomFields() };
+    document.querySelector(".adminHolder--footer--saveButton").onclick = function() {
+        console.log("SAVE")
+         moveHTMLtoCustomFields("ino");
+         };
 }
