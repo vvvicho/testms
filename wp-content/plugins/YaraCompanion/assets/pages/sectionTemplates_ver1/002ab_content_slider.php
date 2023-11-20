@@ -11,8 +11,8 @@
 
 <li class="adminHolder--leftNav--templatesList--button" onClick="insertMySection(this)" data-type="template content">
     <figure>
-        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/content.png" alt="section content">
-        <span>Content +Slider Section</span>
+        <img src="/wp-content/plugins/YaraCompanion/assets/imagesAdmin/content_slider.png" alt="section content">
+        <span>Content + Slider Section</span>
     </figure>
     <templateHidden data-repeat="1" data-head="0" data-used="0">
         <div class="bgColors--sectionLight section" data-edit="ltr" data-callToAction="contentSlider">

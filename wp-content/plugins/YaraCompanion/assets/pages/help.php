@@ -185,11 +185,52 @@
                     <li>1. Use the <b>"Update / Publish"</b> button in the top right corner of the app to publish your changes</br></br>
                         <i>Because we changed the visibility of the page to private, these changes will only be visible to Site Administrators, but not to users.</br>
                             hint: <a href="#step22">How to change the status of a page to published or private</a>
-
-
                         </i>
                     </li>
                     <li>2. See what our page looks like by clicking the <b>"View page"</b> button</li>
+                </ul>
+            </div>
+            <h4><a id="step44"></a><b>4.4</b> Page Preview</h4>
+            <div class="informationData flex flex--x2">
+                <figure>
+                    <img src="<?php echo $helpImagesPath . "heroHeadPreview_13.png"; ?>">
+                </figure>
+                <ul class="helpSteps numbers">
+                    <li><i>If your page doesn't look like the image on the left, check that you've selected the correct template</br>
+                            hint: <a href="#step4">How to choose a page template</a> Point 4 Steps 1 and 2.
+                        </i></li>
+                    <li>1. Let's continue editing our page by selecting <b>"Edit Page"</b> from the admin panel</br>
+                        Then, to continue editing already created content, press the Yara <b>"Builder button"</b></br>
+                        hint: <a href="#step4">As shown in point 4 step 4</a>
+                    </li>
+                </ul>
+            </div>
+            <h4><a id="step45"></a><b>4.5</b> Edit a page</h4>
+            <div class="informationData flex flex--x2">
+                <figure>
+                    <img src="<?php echo $helpImagesPath . "heroHeadPreview_13.png"; ?>">
+                </figure>
+                <ul class="helpSteps numbers">
+                    <li><i>If your page doesn't look like the image on the left, check that you've selected the correct template</br>
+                            hint: <a href="#step4">How to choose a page template</a> Point 4 Steps 1 and 2.
+                        </i></li>
+                    <li>1. Let's continue editing our page by selecting <b>"Edit Page"</b> from the admin panel</br>
+                        Then, to continue editing already created content, press the Yara <b>"Builder button"</b></br>
+                        hint: <a href="#step4">As shown in point 4 step 4</a>
+                    </li>
+                </ul>
+            </div>
+            <h4><a id="step46"></a><b>4.6</b> Edit a section</h4>
+            <div class="informationData flex flex--x2">
+                <figure>
+                    <img src="<?php echo $helpImagesPath . "editSection_14.png"; ?>">
+                </figure>
+                <ul class="helpSteps numbers">
+                    <li>1. In the lower right corner of each added section, there is an <b>"edit icon"</b> to start editing any section first press the <b>"edit icon"</b></li>
+                    <li>1. Let's continue editing our page by selecting <b>"Edit Page"</b> from the admin panel</br>
+                        Then, to continue editing already created content, press the Yara <b>"Builder button"</b></br>
+                        hint: <a href="#step4">As shown in point 4 step 4</a>
+                    </li>
                 </ul>
             </div>
         </section>

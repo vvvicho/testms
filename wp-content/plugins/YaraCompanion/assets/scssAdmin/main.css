@@ -46,6 +46,21 @@
 .adminHolder .warper--gallery--bordered .objectBGcolors ul li[data-style=bgColors--sectionLNormal] {
   display: none !important;
 }
+.adminHolder .warper-html {
+  width: 100%;
+  min-height: 200px;
+  border: solid 2px gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 !important;
+}
+.adminHolder .warper-html [data-edit=html] {
+  width: 100%;
+  min-height: 200px;
+}
+.adminHolder .warper-html [data-edit=html]::after {
+  content: "Custom HTML";
+}
 .adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorYello],
 .adminHolder .itemsSlider .objectBGcolors ul li[data-style=galleryItem--bgColorWhite] {
   display: none !important;
@@ -237,6 +252,10 @@
   background-image: url(../imagesAdmin/icons/arr.png);
   position: relative;
   transform: rotate(270deg);
+}
+.adminHolder .icon--html {
+  background-image: url(../imagesAdmin/icons/html.png);
+  position: relative;
 }
 .adminHolder--leftNav {
   position: fixed;

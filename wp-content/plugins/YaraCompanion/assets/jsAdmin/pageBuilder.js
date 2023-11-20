@@ -57,18 +57,29 @@ function scrollToTop(xLocation) {
 //saveTextBox
 //currentObjData = currentObjData.replace(/["']/g, "_@@");
 
-function saveTextBox(obj) {
+function saveTextBox(obj, state) {
     obj.onclick = null;
+    console.log(obj.innerHTML);
+
+    if(state == 0){
     obj.querySelector('input') ?
-        obj.innerHTML = obj.querySelector('input').replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;") :
+        obj.innerHTML = obj.querySelector('input').value.replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;") :
         obj.innerHTML = obj.querySelector('textarea').value.replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;");
+    }else {
+        obj.querySelector('input') ?
+        obj.innerHTML = obj.querySelector('input').value :
+        obj.innerHTML = obj.querySelector('textarea').value;
+    }
+    console.log(obj.innerHTML);
+
+
     setTimeout(() => { obj.onclick = function () { editTextBox(this) } }, 200);
 }
 function iconbuilder(icon) {
     return `<div class='adminTools icon icon--${icon}'></div>`;
 }
 
-function editTextBox(obj) {
+function editTextBox(obj, state) {
     let saveIconHTTML = iconbuilder("save");
     let deleteIiconHTML = cloneIconHTML = "";
     let objATT = obj.getAttribute("data-edit");
@@ -76,7 +87,7 @@ function editTextBox(obj) {
     objATT.includes("duplicate") ? cloneIconHTML = iconbuilder("clone") : 0;
     objATT.includes("delete") ? deleteIiconHTML = iconbuilder("delete") : 0;
     obj.innerHTML = returnINPUTtype(obj.innerHTML, "textarea") + "<iconPannel class='adminTools'>" + saveIconHTTML + cloneIconHTML + deleteIiconHTML + "</iconPannel>";
-    obj.querySelector(".icon--save").onclick = () => { saveTextBox(obj) };
+    obj.querySelector(".icon--save").onclick = () => { saveTextBox(obj, state) };
     objATT.includes("delete") ? obj.querySelector(".icon--delete").onclick = () => { obj.remove() } : 0;
     if (objATT.includes("duplicate")) {
         obj.querySelector(".icon--clone").onclick = function () {
@@ -592,8 +603,16 @@ function prapareForEditing(obj, sectionToEdit) {
         swapPositions.appendChild(swapIcon);
     }
 
+
+
     let alltexts = obj.querySelectorAll('[data-edit*="text"]');
-    alltexts.forEach(async (text) => { text.onclick = () => { editTextBox(text) } });
+    alltexts.forEach(async (text) => { text.onclick = () => { editTextBox(text, 0) } });
+
+    let allCustomHTML = obj.querySelectorAll('[data-edit*="html"]');
+    allCustomHTML.forEach(async (text) => { text.onclick = () => { editTextBox(text, 1) } });
+
+    
+
 
 
 
@@ -715,14 +734,7 @@ function prapareForEditing(obj, sectionToEdit) {
 
                         }
 
-                    }
-
-                   
-
-
-
-
-                    
+                    }                      
 
                     console.log(newVideoURL);
                     let newVideoContainer = this.parentElement.parentElement.querySelector("iframe");

@@ -90,6 +90,23 @@ $buttonLightBR: 8px;
             }
         }
     }
+
+    .warper-html {
+        width: 100%;
+        min-height: 200px;
+        border: solid 2px gray;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0 !important;
+        [data-edit="html"] {
+            width: 100%;
+            min-height: 200px;
+            &::after {
+                content: "Custom HTML";
+            }
+        }
+    }
+
     .itemsSlider {
         .objectBGcolors {
             ul {
@@ -305,6 +322,10 @@ $buttonLightBR: 8px;
             background-image: url(../imagesAdmin/icons/arr.png);
             position: relative;
             transform: rotate(270deg);
+        }
+        &--html {
+            background-image: url(../imagesAdmin/icons/html.png);
+            position: relative;           
         }
     }
 
@@ -680,30 +701,28 @@ templateHidden {
     display: none;
 }
 
-
-
 // HELP PAGES
 
-.yaraHelpContainer{   
+.yaraHelpContainer {
     margin-top: 40px;
-    h3{
+    h3 {
         margin-bottom: 30px;
     }
-    bug{
+    bug {
         color: red;
     }
-    section{
+    section {
         border-bottom: 2px dashed #ccc;
         padding-bottom: 30px;
         margin-bottom: 60px;
-        .flex{
+        .flex {
             display: flex;
             flex-wrap: nowrap;
             gap: 50px;
-            &--x2img{
-                figure{
-                    width:45%;
-                    img{
+            &--x2img {
+                figure {
+                    width: 45%;
+                    img {
                         width: 100%;
                     }
                 }
@@ -711,36 +730,33 @@ templateHidden {
         }
         ul {
             padding-right: 30px;
-            li{
+            li {
                 margin-bottom: 30px;
             }
-        } 
-        h4{
-            text-align: right;            
+        }
+        h4 {
+            text-align: right;
             font-size: 24px;
             margin-bottom: 40px;
             background: #e3f6ff;
             padding: 20px 30px;
-            b{
+            b {
                 color: #0056b8;
             }
-        } 
-        figure{
+        }
+        figure {
             max-width: 70%;
-            img{
+            img {
                 width: 100%;
                 height: auto;
             }
-            figcaption{
+            figcaption {
                 margin-top: 30px;
                 margin-bottom: 30px;
             }
-        } 
+        }
     }
 }
-
-
-
 
 //disabled sites
 
@@ -753,7 +769,6 @@ templateHidden {
         color: black !important;
         a {
             color: black !important;
-
         }
 
         ul {
