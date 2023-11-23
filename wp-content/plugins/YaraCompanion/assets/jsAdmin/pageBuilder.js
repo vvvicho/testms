@@ -161,7 +161,7 @@ function buttonSetUp(obj) {
     obj.querySelector("datalink").getAttribute("target") ? isBlank = 1 : isBlank = 0;
     objATT.includes("delete") ? deleteIiconHTML = iconbuilder("delete") : 0;
 
-    let allAnchorsListOptions = "";
+    let allAnchorsListOptions = "<option value=''>Anchor Section</option>";
 
     let allAnchorsList = document.querySelector(".adminHolder--mainContent").querySelectorAll('[data-anchor]');
     allAnchorsList.forEach(async (item) => {
