@@ -111,6 +111,16 @@
   height: 40px;
   margin: 4px;
 }
+.adminHolder .anchorPannel {
+  position: absolute;
+  bottom: 90px;
+  left: 0px;
+  display: flex;
+  gap: 10px;
+}
+.adminHolder .anchorPannel input {
+  max-width: 200px;
+}
 .adminHolder iconPannel {
   display: block;
   text-align: left !important;
@@ -255,6 +265,10 @@
 }
 .adminHolder .icon--html {
   background-image: url(../imagesAdmin/icons/html.png);
+  position: relative;
+}
+.adminHolder .icon--anchor {
+  background-image: url(../imagesAdmin/icons/anchor.png);
   position: relative;
 }
 .adminHolder--leftNav {

@@ -53,5 +53,46 @@ function yara_enqueue_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'yara_enqueue_scripts' );
 
-add_post_meta(460, "custom_field_name", "value",true);
+//add_post_meta(460, "custom_field_name", "value",true);
+
+function filter_links($content) { 
+	echo "REPLACE";
+	/*return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', 
+	'/<div class="wp-nocaption">\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/div>/iU', 
+	$content); */
+
+	//$patterns = array();
+	$patterns = '/datalink/';
+
+	//$replacements = array();
+	$replacements = 'a';
+
+	//return preg_replace($patterns, $replacements, $content);
+
+
+	/*return preg_replace('/<datalink><\/datalink>/iU', 
+	'/<div class="wp-nocaption">\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/div>/iU', 
+	$content); */
+	//preg_replace('/(<datalink>.+?)+(<\/datalink>)/i', '', $content);
+	preg_replace('/(<datalink .*>.+?)+(<\/datalink>)/i', '123', $content);
+
+
+
+	}
+/*
+	$string = 'The quick brown fox jumps over the lazy dog.';
+$patterns = array();
+$patterns[0] = '/quick/';
+$patterns[1] = '/brown/';
+$patterns[2] = '/fox/';
+$replacements = array();
+$replacements[2] = 'bear';
+$replacements[1] = 'black';
+$replacements[0] = 'slow';
+echo preg_replace($patterns, $replacements, $string);
+*/
+
+	//datalink
+  
+  //add_filter('the_content', 'filter_links');
 

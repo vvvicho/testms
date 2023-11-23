@@ -50,7 +50,7 @@ adminHolder.innerHTML = `
 <div class="adminHolder--mainContent" data-type="adminHolder--mainContent">
 <main></main>
 <div class="adminHolder--footer" data-type="adminHolder--footer">
-<div class="adminHolder--footer--saveButton button button-dark">SAVE TEMPLATE</div>
+<div class="adminHolder--footer--saveButton button button-dark">? CLOSE PAGE BUILDER</div>
 </div>
 </div>`;
 
@@ -62,7 +62,7 @@ adminHolder.innerHTML = `
 let adminFooterHTML =
     `
 <div class="adminHolder--footer" data-type="adminHolder--footer">
-<div class="adminHolder--footer--saveButton button button-dark">SAVE TEMPLATE</div>
+<div class="adminHolder--footer--saveButton button button-dark">CLOSE PAGE BUILDER</div>
 </div>
 `;
 

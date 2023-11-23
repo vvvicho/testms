@@ -172,6 +172,19 @@ $buttonLightBR: 8px;
         }
     }
 
+    .anchorPannel{
+        position: absolute;
+        bottom: 90px;
+        left: 0px;
+        display: flex;
+        gap: 10px;
+        input {
+            max-width: 200px;
+        }
+
+    }
+
+
     iconPannel {
         display: block;
         text-align: left !important;
@@ -325,6 +338,10 @@ $buttonLightBR: 8px;
         }
         &--html {
             background-image: url(../imagesAdmin/icons/html.png);
+            position: relative;           
+        }
+        &--anchor {
+            background-image: url(../imagesAdmin/icons/anchor.png);
             position: relative;           
         }
     }

@@ -61,14 +61,14 @@ function saveTextBox(obj, state) {
     obj.onclick = null;
     console.log(obj.innerHTML);
 
-    if(state == 0){
-    obj.querySelector('input') ?
-        obj.innerHTML = obj.querySelector('input').value.replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;") :
-        obj.innerHTML = obj.querySelector('textarea').value.replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;");
-    }else {
+    if (state == 0) {
         obj.querySelector('input') ?
-        obj.innerHTML = obj.querySelector('input').value :
-        obj.innerHTML = obj.querySelector('textarea').value;
+            obj.innerHTML = obj.querySelector('input').value.replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;") :
+            obj.innerHTML = obj.querySelector('textarea').value.replace(/["]/g, "&#180;&#180;").replace(/[']/g, "&#180;");
+    } else {
+        obj.querySelector('input') ?
+            obj.innerHTML = obj.querySelector('input').value :
+            obj.innerHTML = obj.querySelector('textarea').value;
     }
     console.log(obj.innerHTML);
 
@@ -160,6 +160,42 @@ function buttonSetUp(obj) {
     !obj.querySelector("datalink") ? obj.innerHTML = `<datalink data-href="https://google.com" target="">${obj.innerHTML}</datalink>` : 0;
     obj.querySelector("datalink").getAttribute("target") ? isBlank = 1 : isBlank = 0;
     objATT.includes("delete") ? deleteIiconHTML = iconbuilder("delete") : 0;
+
+    let allAnchorsListOptions = "";
+
+    let allAnchorsList = document.querySelector(".adminHolder--mainContent").querySelectorAll('[data-anchor]');
+    allAnchorsList.forEach(async (item) => {
+       // item.onclick = null;
+       console.log(item);
+
+       allAnchorsListOptions +=
+       `
+       <option value="${item.getAttribute('id')}">${item.getAttribute('data-anchor')}</option>
+       
+       `
+       
+       /*
+       if (item.getAttribute("data-edit") == "background" || item.getAttribute("data-edit").includes("image") || item.getAttribute("data-edit").includes("duplicateItem")) {
+            let allIcons = item.querySelectorAll(".adminBgEdit, .adminTools");
+            allIcons.forEach(async (icon) => {
+                icon.remove();
+            });
+        }*/
+
+
+    });
+
+
+    // #yaraPageEditorHolder
+
+
+    //data-anchor
+
+
+
+
+
+
     obj.innerHTML = `<label>Button Text:</label>
         <input type="text" value="${obj.querySelector("datalink").innerHTML}"/></br>
         <label>Button Target:</label>
@@ -169,10 +205,23 @@ function buttonSetUp(obj) {
         </select></br>
         <label>Button Link:</label>
         <textarea rows="2" cols="30">${obj.querySelector("datalink").getAttribute("data-href")}</textarea>
+
+        <label>Or Anchor Target:</label>
+        <select data-action="setAnchor">        
+        ${allAnchorsListOptions}        
+        </select></br></br>
+
         <iconPannel class='adminTools'>${saveIconHTTML} ${deleteIiconHTML}</iconPannel>`;
     isBlank ? obj.querySelector("select option[value='_blank']").selected = 'selected' : 0;
     obj.querySelector(".icon--save").onclick = () => { saveButtonSettings(obj) };
     objATT.includes("delete") ? obj.querySelector(".icon--delete").onclick = () => { obj.remove() } : 0;
+    obj.querySelector('[data-action="setAnchor"]').onchange = () => { 
+        console.log("dd chancge");
+        console.log(obj.querySelector("textarea").value);
+
+        obj.querySelector("textarea").value = "#" + obj.querySelector('[data-action="setAnchor"]').value;
+
+    }
 }
 
 function saveSectionSettings(obj, sectionToEdit) {
@@ -217,7 +266,7 @@ function showHideElements(state) {
                 });
             }
         });
-        let alladminPannels = document.querySelectorAll(".adminBgEdit, .sectionBGcolor, .collorsPannel");
+        let alladminPannels = document.querySelectorAll(".adminBgEdit, .sectionBGcolor, .collorsPannel, .anchorPannel");
         alladminPannels.forEach(async (element) => {
             element.remove();
         });
@@ -474,10 +523,10 @@ function massReplace(str, replaceWhat, replaceTo) {
     return str.replace(re, replaceTo);
 }
 
-function returnYoutube(link){
+function returnYoutube(link) {
 
     let playerHTML =
-    `
+        `
     <iframe width="560" height="315" src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     `
     return playerHTML;
@@ -501,7 +550,7 @@ function prapareForEditing(obj, sectionToEdit) {
         allBGcolors.forEach(async (color) => {
             allColorsIcons += `<li class="sectionBGcolor" data-color="${color.color}" data-style="${color.style}"><div style="background-color: ${color.color};"></div></li>`
         });
-        collorsPannel.innerHTML = `<ul>${allColorsIcons}</uk>`;
+        collorsPannel.innerHTML = `<ul>${allColorsIcons}</ul>`;
         obj.appendChild(collorsPannel);
         collorsPannel.querySelectorAll(".sectionBGcolor").forEach(async (color) => {
             color.onclick = () => {
@@ -511,6 +560,60 @@ function prapareForEditing(obj, sectionToEdit) {
                 obj.querySelector(".section").classList.add(color.getAttribute("data-style"));
             }
         });
+
+
+        let anchorPannel = document.createElement("div");
+
+        let isHaveAnAnchor = obj.querySelector("sectionitem .section").getAttribute("data-anchor");
+
+        if(!isHaveAnAnchor){
+            isHaveAnAnchor = "";
+        }
+
+
+
+        anchorPannel.classList.add("anchorPannel");
+        anchorPannel.innerHTML = `<div class="icon icon--anchor"></div><input type="text" value="${isHaveAnAnchor}"><div class="icon icon--save"></div><div class="icon icon--delete"></div>`
+
+
+
+        obj.appendChild(anchorPannel);
+        anchorPannel.querySelector(".icon--save").onclick = () => {
+
+            console.log("CREATE ANCHOR");
+            console.log(anchorPannel.querySelector("input").value);
+
+            let anchorValue = anchorPannel.querySelector("input").value;
+
+            if(anchorValue){
+                let isHaveAnID = obj.querySelector("sectionitem .section").getAttribute("id");
+                console.log(obj);
+                console.log(isHaveAnID);
+
+                obj.querySelector("sectionitem .section").setAttribute("data-anchor", anchorValue);
+
+                if(!isHaveAnID){
+                    obj.querySelector("sectionitem .section").setAttribute("id", anchorValue);
+                }
+
+            }
+        }
+
+        anchorPannel.querySelector(".icon--delete").onclick = () => {
+
+            anchorPannel.querySelector("input").value = "";
+            obj.querySelector("sectionitem .section").removeAttribute("data-anchor");
+
+
+
+        }
+
+
+
+
+
+
+
     }
 
 
@@ -612,7 +715,7 @@ function prapareForEditing(obj, sectionToEdit) {
     let allCustomHTML = obj.querySelectorAll('[data-edit*="html"]');
     allCustomHTML.forEach(async (text) => { text.onclick = () => { editTextBox(text, 1) } });
 
-    
+
 
 
 
@@ -698,44 +801,44 @@ function prapareForEditing(obj, sectionToEdit) {
         video.classList.add("adminRelative");
         let videoEditIcon = document.createElement("div");
         videoEditIcon.classList.add("icon", "icon--video", "adminBgEdit");
-       // videoEditIcon.style.left = "55px";
+        // videoEditIcon.style.left = "55px";
         videoEditIcon.onclick = function () {
             console.log("add video");
             console.log(video);
 
-            
-            if(!this.parentElement.querySelector(".videoPannel")){
+
+            if (!this.parentElement.querySelector(".videoPannel")) {
                 let iconsPannel = document.createElement("iconPannel");
                 iconsPannel.classList.add("adminTools", "videoPannel");
                 let currentVideoContainer = this.parentElement.parentElement.querySelector("iframe");
-                
+
 
                 iconsPannel.innerHTML = `<div class="objectVideoURL"><input type="text" value="${currentVideoContainer.getAttribute("src")}"></div>${iconbuilder("save")}`;
                 this.parentElement.appendChild(iconsPannel);
-                this.parentElement.querySelector(".icon--save").onclick = function(){
+                this.parentElement.querySelector(".icon--save").onclick = function () {
                     console.log("ADD LINK");
                     let videoURL = this.parentElement.querySelector("input").value;
-                    let videoCode =  videoURL.split('=');
+                    let videoCode = videoURL.split('=');
                     let newVideoURL = videoURL;
 
-                    if(!newVideoURL.includes("embed")){
+                    if (!newVideoURL.includes("embed")) {
 
-                        if(newVideoURL.includes("youtu.be")){
-                            videoCode =  videoURL.split('/');
+                        if (newVideoURL.includes("youtu.be")) {
+                            videoCode = videoURL.split('/');
                             console.log(videoCode.length);
                             console.log(videoCode);
                             console.log(videoCode[videoCode.length - 1]);
-                            newVideoURL = "https://www.youtube.com/embed/" + videoCode[videoCode.length - 1];  
+                            newVideoURL = "https://www.youtube.com/embed/" + videoCode[videoCode.length - 1];
 
-                        }else if(newVideoURL.includes("=")){
-                            videoCode =  videoURL.split('=');
-                            if(videoCode[1]){
-                                newVideoURL = "https://www.youtube.com/embed/" + videoCode[1];       
-                           }
+                        } else if (newVideoURL.includes("=")) {
+                            videoCode = videoURL.split('=');
+                            if (videoCode[1]) {
+                                newVideoURL = "https://www.youtube.com/embed/" + videoCode[1];
+                            }
 
                         }
 
-                    }                      
+                    }
 
                     console.log(newVideoURL);
                     let newVideoContainer = this.parentElement.parentElement.querySelector("iframe");
@@ -755,9 +858,9 @@ function prapareForEditing(obj, sectionToEdit) {
 
 
 
-           // isBgImage = 0;
-          //  objectToUpdateSRC = image.querySelector("img");
-           // showGalleryImages();
+            // isBgImage = 0;
+            //  objectToUpdateSRC = image.querySelector("img");
+            // showGalleryImages();
         }
         video.appendChild(videoEditIcon);
     });
@@ -825,11 +928,14 @@ function prapareForEditing(obj, sectionToEdit) {
                 obj.querySelector(".swapPositionPannel .icon--edit").onclick = () => {
                     prapareForEditing(obj, sectionToEdit);
                 }
-                obj.querySelector(".icon--up").onclick = () => {
-                    swapNodePositions(obj, 0);
-                }
-                obj.querySelector(".icon--down").onclick = () => {
-                    swapNodePositions(obj, 1);
+
+                if (obj.querySelector(".icon--up")) {
+                    obj.querySelector(".icon--up").onclick = () => {
+                        swapNodePositions(obj, 0);
+                    }
+                    obj.querySelector(".icon--down").onclick = () => {
+                        swapNodePositions(obj, 1);
+                    }
                 }
 
                 //  setTimeout(() => {
@@ -1036,8 +1142,8 @@ function insertMyPage(obj) {
         }
         item.remove();
     });
-    document.querySelector(".adminHolder--footer--saveButton").onclick = function() {
+    document.querySelector(".adminHolder--footer--saveButton").onclick = function () {
         console.log("SAVE")
-         moveHTMLtoCustomFields("ino");
-         };
+        moveHTMLtoCustomFields("ino");
+    };
 }
