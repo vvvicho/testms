@@ -887,19 +887,7 @@ function prapareForEditing(obj, sectionToEdit) {
                 <div class="button button-delete-slide button-light" data-edit="button" style="float:left">Delete Slider Item</div>         
             `
 
-
-        }
-
-
-        letSectionAdminFooter.innerHTML = `
-        <div class="button button-save button-dark" data-edit="button">Save Section</div> <div class="button-cancel button button-light">Cancel</div>      
-        ${callToActionButtonsSet}
-        <div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>`;
-        obj.appendChild(letSectionAdminFooter);
-        let sectionSaveButton = obj.querySelector("adminfooter .button-save");
-
-
-        let swapRightButton = obj.querySelector("adminfooter .icon--right");
+            let swapRightButton = obj.querySelector("adminfooter .icon--right");
         let swapLeftButton = obj.querySelector("adminfooter .icon--left");
 
         swapRightButton.onclick = function () {
@@ -951,6 +939,20 @@ function prapareForEditing(obj, sectionToEdit) {
 
             }
         }
+
+
+        }
+
+
+        letSectionAdminFooter.innerHTML = `
+        <div class="button button-save button-dark" data-edit="button">Save Section</div> <div class="button-cancel button button-light">Cancel</div>      
+        ${callToActionButtonsSet}
+        <div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>`;
+        obj.appendChild(letSectionAdminFooter);
+        let sectionSaveButton = obj.querySelector("adminfooter .button-save");
+
+
+        
 
 
 

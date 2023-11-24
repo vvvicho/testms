@@ -222,6 +222,12 @@ body {
   background-size: auto 24px;
   background-repeat: no-repeat;
   background-color: white;
+  transition: 0.9s;
+  cursor: pointer;
+}
+.adminHolder .icon:hover {
+  background-size: 70%;
+  transition: 0.5s;
 }
 .adminHolder .icon--edit {
   background-image: url(../imagesAdmin/icons/edit.png);
