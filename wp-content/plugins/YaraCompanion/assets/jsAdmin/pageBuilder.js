@@ -165,22 +165,22 @@ function buttonSetUp(obj) {
 
     let allAnchorsList = document.querySelector(".adminHolder--mainContent").querySelectorAll('[data-anchor]');
     allAnchorsList.forEach(async (item) => {
-       // item.onclick = null;
-       console.log(item);
+        // item.onclick = null;
+        console.log(item);
 
-       allAnchorsListOptions +=
-       `
+        allAnchorsListOptions +=
+            `
        <option value="${item.getAttribute('id')}">${item.getAttribute('data-anchor')}</option>
        
        `
-       
-       /*
-       if (item.getAttribute("data-edit") == "background" || item.getAttribute("data-edit").includes("image") || item.getAttribute("data-edit").includes("duplicateItem")) {
-            let allIcons = item.querySelectorAll(".adminBgEdit, .adminTools");
-            allIcons.forEach(async (icon) => {
-                icon.remove();
-            });
-        }*/
+
+        /*
+        if (item.getAttribute("data-edit") == "background" || item.getAttribute("data-edit").includes("image") || item.getAttribute("data-edit").includes("duplicateItem")) {
+             let allIcons = item.querySelectorAll(".adminBgEdit, .adminTools");
+             allIcons.forEach(async (icon) => {
+                 icon.remove();
+             });
+         }*/
 
 
     });
@@ -215,7 +215,7 @@ function buttonSetUp(obj) {
     isBlank ? obj.querySelector("select option[value='_blank']").selected = 'selected' : 0;
     obj.querySelector(".icon--save").onclick = () => { saveButtonSettings(obj) };
     objATT.includes("delete") ? obj.querySelector(".icon--delete").onclick = () => { obj.remove() } : 0;
-    obj.querySelector('[data-action="setAnchor"]').onchange = () => { 
+    obj.querySelector('[data-action="setAnchor"]').onchange = () => {
         console.log("dd chancge");
         console.log(obj.querySelector("textarea").value);
 
@@ -566,7 +566,7 @@ function prapareForEditing(obj, sectionToEdit) {
 
         let isHaveAnAnchor = obj.querySelector("sectionitem .section").getAttribute("data-anchor");
 
-        if(!isHaveAnAnchor){
+        if (!isHaveAnAnchor) {
             isHaveAnAnchor = "";
         }
 
@@ -585,15 +585,15 @@ function prapareForEditing(obj, sectionToEdit) {
 
             let anchorValue = anchorPannel.querySelector("input").value;
 
-            if(anchorValue){
+            if (anchorValue) {
                 let isHaveAnID = obj.querySelector("sectionitem .section").getAttribute("id");
                 console.log(obj);
                 console.log(isHaveAnID);
 
                 obj.querySelector("sectionitem .section").setAttribute("data-anchor", anchorValue);
 
-                if(!isHaveAnID){
-                    obj.querySelector("sectionitem .section").setAttribute("id", anchorValue);
+                if (!isHaveAnID) {
+                    obj.querySelector("sectionitem .section").setAttribute("id", returnRandom(100) + Date.now());
                 }
 
             }
@@ -881,7 +881,9 @@ function prapareForEditing(obj, sectionToEdit) {
 
         if (checkCallToAction) {
             callToActionButtonsSet = `
+                <div class="icon icon--left" data-edit="button" style="float:left; margin-right:10px; margin-top:5px"></div>
                 <div class="button slideCounter button-light" data-edit="button" style="float:left; margin-right:10px">1</div>
+                <div class="icon icon--right" data-edit="button" style="float:left; margin-right:10px; margin-top:5px"></div>
                 <div class="button button-delete-slide button-light" data-edit="button" style="float:left">Delete Slider Item</div>         
             `
 
@@ -895,6 +897,63 @@ function prapareForEditing(obj, sectionToEdit) {
         <div class="button button-delete button-light" data-edit="button" style="float:right">Delete Section</div>`;
         obj.appendChild(letSectionAdminFooter);
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
+
+
+        let swapRightButton = obj.querySelector("adminfooter .icon--right");
+        let swapLeftButton = obj.querySelector("adminfooter .icon--left");
+
+        swapRightButton.onclick = function () {
+            console.log("SWAP RIGHT");
+            let currentSliderID = obj.querySelector(".section").getAttribute("id");
+            let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
+            let currentSliderSection = document.getElementById(currentSliderID);
+            let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
+            let allData = allDataHolder.querySelectorAll('i');
+
+
+            let curentSlideItem = allData.item(currentSidePosition);
+            let nextSlideItem = allData.item(currentSidePosition +1);
+
+            if(nextSlideItem){
+                console.log("Have AN Item // swap objects then move +1 item");
+                swapNodePositions(curentSlideItem, 1);
+                contentSlide(1,  currentSliderID );
+                document.querySelector(".slideCounter").innerHTML = currentSidePosition + 2;
+
+            }else {
+                console.log("No more items");
+
+            }
+
+
+        }
+
+        swapLeftButton.onclick = function () {
+            console.log("SWAP LEFT");
+            let currentSliderID = obj.querySelector(".section").getAttribute("id");
+            let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
+            let currentSliderSection = document.getElementById(currentSliderID);
+            let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
+            let allData = allDataHolder.querySelectorAll('i');
+
+
+            let curentSlideItem = allData.item(currentSidePosition);
+            let nextSlideItem = allData.item(currentSidePosition -1);
+
+            if(nextSlideItem){
+                console.log("Have AN Item // swap objects then move +1 item");
+                swapNodePositions(curentSlideItem, 0);
+                contentSlide(-1,  currentSliderID );
+                document.querySelector(".slideCounter").innerHTML = currentSidePosition ;
+
+            }else {
+                console.log("No more items");
+
+            }
+        }
+
+
+
         sectionSaveButton.onclick = function () {
             previousHTMLversion = "";
             if (checkCallToAction) {

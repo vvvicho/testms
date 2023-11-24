@@ -31,6 +31,11 @@ $buttonLightBoxShadow:
     0px 1px 5px rgba(15, 15, 15, 0.12);
 $buttonLightBR: 8px;
 
+
+body {
+    font-size: unset !important;
+}
+
 .yaraPageEditorHolder {
     position: fixed !important;
     background-color: white !important;

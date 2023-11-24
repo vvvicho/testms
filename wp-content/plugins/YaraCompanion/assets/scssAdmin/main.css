@@ -1,3 +1,7 @@
+body {
+  font-size: unset !important;
+}
+
 .yaraPageEditorHolder {
   position: fixed !important;
   background-color: white !important;
