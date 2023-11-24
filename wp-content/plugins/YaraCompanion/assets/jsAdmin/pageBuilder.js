@@ -161,7 +161,7 @@ function buttonSetUp(obj) {
     obj.querySelector("datalink").getAttribute("target") ? isBlank = 1 : isBlank = 0;
     objATT.includes("delete") ? deleteIiconHTML = iconbuilder("delete") : 0;
 
-    let allAnchorsListOptions = "<option value=''>Anchor Section</option>";
+    let allAnchorsListOptions = "<option value=''>None</option>";
 
     let allAnchorsList = document.querySelector(".adminHolder--mainContent").querySelectorAll('[data-anchor]');
     allAnchorsList.forEach(async (item) => {
@@ -219,7 +219,9 @@ function buttonSetUp(obj) {
         console.log("dd chancge");
         console.log(obj.querySelector("textarea").value);
 
-        obj.querySelector("textarea").value = "#" + obj.querySelector('[data-action="setAnchor"]').value;
+        if (obj.querySelector('[data-action="setAnchor"]').value) {
+            obj.querySelector("textarea").value = "#" + obj.querySelector('[data-action="setAnchor"]').value;
+        }
 
     }
 }

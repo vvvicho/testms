@@ -296,6 +296,9 @@ body {
         background-size: auto 24px;
         background-repeat: no-repeat;
         background-color: white;
+        border-radius: 5px;
+        border: solid 1px rgb(211, 211, 211);
+        margin: 3px;
         transition: 0.9s;
         cursor: pointer;
         &:hover{
