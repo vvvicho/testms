@@ -887,59 +887,6 @@ function prapareForEditing(obj, sectionToEdit) {
                 <div class="button button-delete-slide button-light" data-edit="button" style="float:left">Delete Slider Item</div>         
             `
 
-            let swapRightButton = obj.querySelector("adminfooter .icon--right");
-        let swapLeftButton = obj.querySelector("adminfooter .icon--left");
-
-        swapRightButton.onclick = function () {
-            console.log("SWAP RIGHT");
-            let currentSliderID = obj.querySelector(".section").getAttribute("id");
-            let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
-            let currentSliderSection = document.getElementById(currentSliderID);
-            let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
-            let allData = allDataHolder.querySelectorAll('i');
-
-
-            let curentSlideItem = allData.item(currentSidePosition);
-            let nextSlideItem = allData.item(currentSidePosition +1);
-
-            if(nextSlideItem){
-                console.log("Have AN Item // swap objects then move +1 item");
-                swapNodePositions(curentSlideItem, 1);
-                contentSlide(1,  currentSliderID );
-                document.querySelector(".slideCounter").innerHTML = currentSidePosition + 2;
-
-            }else {
-                console.log("No more items");
-
-            }
-
-
-        }
-
-        swapLeftButton.onclick = function () {
-            console.log("SWAP LEFT");
-            let currentSliderID = obj.querySelector(".section").getAttribute("id");
-            let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
-            let currentSliderSection = document.getElementById(currentSliderID);
-            let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
-            let allData = allDataHolder.querySelectorAll('i');
-
-
-            let curentSlideItem = allData.item(currentSidePosition);
-            let nextSlideItem = allData.item(currentSidePosition -1);
-
-            if(nextSlideItem){
-                console.log("Have AN Item // swap objects then move +1 item");
-                swapNodePositions(curentSlideItem, 0);
-                contentSlide(-1,  currentSliderID );
-                document.querySelector(".slideCounter").innerHTML = currentSidePosition ;
-
-            }else {
-                console.log("No more items");
-
-            }
-        }
-
 
         }
 
@@ -952,7 +899,62 @@ function prapareForEditing(obj, sectionToEdit) {
         let sectionSaveButton = obj.querySelector("adminfooter .button-save");
 
 
-        
+        let swapRightButton = obj.querySelector("adminfooter .icon--right");
+        let swapLeftButton = obj.querySelector("adminfooter .icon--left");
+
+
+        if (swapRightButton) {
+
+            swapRightButton.onclick = function () {
+                console.log("SWAP RIGHT");
+                let currentSliderID = obj.querySelector(".section").getAttribute("id");
+                let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
+                let currentSliderSection = document.getElementById(currentSliderID);
+                let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
+                let allData = allDataHolder.querySelectorAll('i');
+
+
+                let curentSlideItem = allData.item(currentSidePosition);
+                let nextSlideItem = allData.item(currentSidePosition + 1);
+
+                if (nextSlideItem) {
+                    console.log("Have AN Item // swap objects then move +1 item");
+                    swapNodePositions(curentSlideItem, 1);
+                    contentSlide(1, currentSliderID);
+                    document.querySelector(".slideCounter").innerHTML = currentSidePosition + 2;
+
+                } else {
+                    console.log("No more items");
+
+                }
+
+
+            }
+
+            swapLeftButton.onclick = function () {
+                console.log("SWAP LEFT");
+                let currentSliderID = obj.querySelector(".section").getAttribute("id");
+                let allDataHolder = document.querySelector('[data-related-id="' + currentSliderID + '"]');
+                let currentSliderSection = document.getElementById(currentSliderID);
+                let currentSidePosition = Number(allDataHolder.getAttribute("data-slider-position"));
+                let allData = allDataHolder.querySelectorAll('i');
+
+
+                let curentSlideItem = allData.item(currentSidePosition);
+                let nextSlideItem = allData.item(currentSidePosition - 1);
+
+                if (nextSlideItem) {
+                    console.log("Have AN Item // swap objects then move +1 item");
+                    swapNodePositions(curentSlideItem, 0);
+                    contentSlide(-1, currentSliderID);
+                    document.querySelector(".slideCounter").innerHTML = currentSidePosition;
+
+                } else {
+                    console.log("No more items");
+
+                }
+            }
+        }
 
 
 
