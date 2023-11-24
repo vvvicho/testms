@@ -142,7 +142,8 @@ function duplicateItem(obj) {
 
 function saveButtonSettings(obj) {
     obj.onclick = null;
-    let buttonTitle = obj.querySelector("input").value;
+    let buttonTitle = obj.querySelector("input").value.replace(/\'/g, '`');
+   
     buttonTitle = buttonTitle.replace(/\s+/g, ' ');
     let buttonTarget = obj.querySelector("select").value;
     buttonTarget = buttonTarget.replace(/\s+/g, ' ');
