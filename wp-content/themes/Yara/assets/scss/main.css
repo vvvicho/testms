@@ -405,6 +405,7 @@ footer {
 .flafIcons--navigation {
   display: inline-block;
   margin-bottom: -23px;
+  cursor: pointer;
 }
 
 .icons {

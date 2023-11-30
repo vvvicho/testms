@@ -4,6 +4,19 @@ let desktopNav = document.getElementById("desktopNav");
 let findIsLandingPage = document.querySelector("body").classList.contains("page-template-landingPage");
 let generaldivigation = document.getElementById("generaldivigation");
 console.log("Landingpage: " + findIsLandingPage);
+let languageSwitch = document.querySelector(".flafIcons--navigation");
+console.log("languageSwitch");
+console.log(languageSwitch);
+
+if(languageSwitch){
+    languageSwitch.onclick = function(){
+        window.location = "https://yara.test";
+
+    }
+}
+
+
+
 desktopNav.setAttribute("data-status", "0");
 
 findIsLandingPage ? generaldivigation.classList.add("generaldivigation--lightTheme") : 0;

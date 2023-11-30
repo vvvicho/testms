@@ -20,11 +20,11 @@
 
 
 
-$multiSiteDomain = 'yaraat.farm';
+$multiSiteDomain = 'yara.test';
 
 if (file_exists(dirname(__FILE__) . '/wp-config-local.php')) {
 	// IMPORTANT: ensure your local config does not include wp-settings.php
-	$multiSiteDomain = 'evonsm.test';
+	$multiSiteDomain = 'yara.test';
 	require_once dirname(__FILE__) . '/wp-config-local.php';
 } else {
 
