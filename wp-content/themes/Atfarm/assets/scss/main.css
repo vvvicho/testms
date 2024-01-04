@@ -293,112 +293,112 @@ footer {
   min-height: 60px;
 }
 .flafIcons--uk::before {
-  background-image: url(../Yara/assets/images/icons/flags/uk.webp);
+  background-image: url(assets/images/icons/flags/uk.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--it::before {
-  background-image: url(../Yara/assets/images/icons/flags/it.webp);
+  background-image: url(assets/images/icons/flags/it.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--fr::before {
-  background-image: url(../Yara/assets/images/icons/flags/fr.webp);
+  background-image: url(assets/images/icons/flags/fr.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--bg::before {
-  background-image: url(../Yara/assets/images/icons/flags/bg.webp);
+  background-image: url(assets/images/icons/flags/bg.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--dk::before {
-  background-image: url(../Yara/assets/images/icons/flags/dk.webp);
+  background-image: url(assets/images/icons/flags/dk.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--es::before {
-  background-image: url(../Yara/assets/images/icons/flags/es.webp);
+  background-image: url(assets/images/icons/flags/es.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--lv::before {
-  background-image: url(../Yara/assets/images/icons/flags/lv.webp);
+  background-image: url(assets/images/icons/flags/lv.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--lt::before {
-  background-image: url(../Yara/assets/images/icons/flags/lt.webp);
+  background-image: url(assets/images/icons/flags/lt.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--no::before {
-  background-image: url(../Yara/assets/images/icons/flags/no.webp);
+  background-image: url(assets/images/icons/flags/no.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--pl::before {
-  background-image: url(../Yara/assets/images/icons/flags/pl.webp);
+  background-image: url(assets/images/icons/flags/pl.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--pt::before {
-  background-image: url(../Yara/assets/images/icons/flags/pt.webp);
+  background-image: url(assets/images/icons/flags/pt.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--ro::before {
-  background-image: url(../Yara/assets/images/icons/flags/ro.webp);
+  background-image: url(assets/images/icons/flags/ro.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--fi::before {
-  background-image: url(../Yara/assets/images/icons/flags/fi.webp);
+  background-image: url(assets/images/icons/flags/fi.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--se::before {
-  background-image: url(../Yara/assets/images/icons/flags/se.webp);
+  background-image: url(assets/images/icons/flags/se.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--ua::before {
-  background-image: url(../Yara/assets/images/icons/flags/ua.webp);
+  background-image: url(assets/images/icons/flags/ua.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--ar::before {
-  background-image: url(../Yara/assets/images/icons/flags/ar.webp);
+  background-image: url(assets/images/icons/flags/ar.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--mx::before {
-  background-image: url(../Yara/assets/images/icons/flags/mx.webp);
+  background-image: url(assets/images/icons/flags/mx.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--br::before {
-  background-image: url(../Yara/assets/images/icons/flags/br.webp);
+  background-image: url(assets/images/icons/flags/br.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--cf::before {
-  background-image: url(../Yara/assets/images/icons/flags/cf.webp);
+  background-image: url(assets/images/icons/flags/cf.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--za::before {
-  background-image: url(../Yara/assets/images/icons/flags/za.webp);
+  background-image: url(assets/images/icons/flags/za.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--de::before {
-  background-image: url(../Yara/assets/images/icons/flags/de.webp);
+  background-image: url(assets/images/icons/flags/de.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
 .flafIcons--ee::before {
-  background-image: url(../Yara/assets/images/icons/flags/ee.webp);
+  background-image: url(assets/images/icons/flags/ee.webp);
   background-position: left center;
   background-repeat: no-repeat;
 }
@@ -418,35 +418,35 @@ footer {
   transition: 0.3s;
 }
 .icons-navLeft {
-  background-image: url(../Yara/assets/images/navBTN.webp);
+  background-image: url(assets/images/navBTN.webp);
 }
 .icons-navRight {
-  background-image: url(../Yara/assets/images/navBTN.webp);
+  background-image: url(assets/images/navBTN.webp);
   transform: rotate(180deg);
 }
 .icons-openW {
-  background-image: url(../Yara/assets/images/icons/openW.png);
+  background-image: url(assets/images/icons/openW.png);
 }
 .icons-closeW {
-  background-image: url(../Yara/assets/images/icons/closeW.png);
+  background-image: url(assets/images/icons/closeW.png);
 }
 .icons-openB {
-  background-image: url(../Yara/assets/images/icons/openB.png);
+  background-image: url(assets/images/icons/openB.png);
 }
 .icons-closeB {
-  background-image: url(../Yara/assets/images/icons/closeB.png);
+  background-image: url(assets/images/icons/closeB.png);
 }
 .icons-searchW {
-  background-image: url(../Yara/assets/images/icons/searchW.png);
+  background-image: url(assets/images/icons/searchW.png);
 }
 .icons-searchB {
-  background-image: url(../Yara/assets/images/icons/searchB.png);
+  background-image: url(assets/images/icons/searchB.png);
 }
 .icons-ok {
   width: 24px;
   height: 24px;
   margin: 16px;
-  background-image: url(../Yara/assets/images/icons/ok.webp);
+  background-image: url(assets/images/icons/ok.webp);
   background-size: 24px;
   background-position: center center;
 }
@@ -462,7 +462,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../Yara/assets/images/icons/SearchBlue.png);
+  background-image: url(assets/images/icons/SearchBlue.png);
 }
 .icons-crop {
   position: relative;
@@ -476,7 +476,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../Yara/assets/images/icons/Crop.png);
+  background-image: url(assets/images/icons/Crop.png);
 }
 .icons-plans {
   position: relative;
@@ -490,7 +490,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../Yara/assets/images/icons/LaptopAlt.png);
+  background-image: url(assets/images/icons/LaptopAlt.png);
 }
 .icons-track {
   position: relative;
@@ -504,7 +504,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../Yara/assets/images/icons/track.png);
+  background-image: url(assets/images/icons/track.png);
 }
 .icons-tester {
   position: relative;
@@ -518,7 +518,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../Yara/assets/images/icons/tester.png);
+  background-image: url(assets/images/icons/tester.png);
 }
 .icons-clock {
   position: relative;
@@ -532,7 +532,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 0px;
-  background-image: url(../Yara/assets/images/icons/clock.png);
+  background-image: url(assets/images/icons/clock.png);
 }
 .icons-upDiagram {
   margin-top: calc(var(--gap) / 2);
@@ -543,7 +543,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../Yara/assets/images/icons/upDiagram.png);
+  background-image: url(assets/images/icons/upDiagram.png);
 }
 .icons-document {
   margin-top: calc(var(--gap) / 2);
@@ -554,7 +554,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../Yara/assets/images/icons/document.png);
+  background-image: url(assets/images/icons/document.png);
 }
 .icons-meter {
   margin-top: calc(var(--gap) / 2);
@@ -565,7 +565,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../Yara/assets/images/icons/meter.png);
+  background-image: url(assets/images/icons/meter.png);
 }
 .icons-earth {
   margin-top: calc(var(--gap) / 2);
@@ -576,7 +576,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: -20px;
-  background-image: url(../Yara/assets/images/icons/earth.png);
+  background-image: url(assets/images/icons/earth.png);
 }
 
 .bgColors--sectionLNormal {
@@ -812,7 +812,7 @@ div[data-slider-dataHolder] {
   width: 81px;
   height: 24px;
   display: block;
-  background: url(../Yara/assets/images/atfarmLogoBW.png) top center no-repeat;
+  background: url(assets/images/atfarmLogoBW.png) top center no-repeat;
   background-size: 81px auto;
 }
 .generaldivigation .logoHolder h1 {
@@ -828,20 +828,20 @@ div[data-slider-dataHolder] {
           backdrop-filter: blur(20px);
 }
 .generaldivigation:hover h2 img {
-  background-image: url(../Yara/assets/images/atfarmLogoBW.png);
+  background-image: url(assets/images/atfarmLogoBW.png);
   background-position: bottom center;
 }
 .generaldivigation:hover nav li a {
   color: rgba(15, 15, 15, 0.97);
 }
 .generaldivigation:hover nav li.icons-searchW {
-  background-image: url(../Yara/assets/images/icons/searchB.png);
+  background-image: url(assets/images/icons/searchB.png);
 }
 .generaldivigation:hover nav li.icons-openW {
-  background-image: url(../Yara/assets/images/icons/openB.png);
+  background-image: url(assets/images/icons/openB.png);
 }
 .generaldivigation:hover nav li.icons-openW[data-status="1"] {
-  background-image: url(../Yara/assets/images/icons/closeB.png);
+  background-image: url(assets/images/icons/closeB.png);
 }
 .generaldivigation:hover + .yaraHead .titleBlock {
   filter: blur(5px);
@@ -923,14 +923,14 @@ div[data-slider-dataHolder] {
           backdrop-filter: blur(20px);
 }
 .generaldivigation--lightTheme h2 img {
-  background-image: url(../Yara/assets/images/atfarmLogoBW.png) !important;
+  background-image: url(assets/images/atfarmLogoBW.png) !important;
   background-position: bottom center !important;
 }
 .generaldivigation--lightTheme nav .icons-searchW {
-  background-image: url(../Yara/assets/images/icons/searchB.png);
+  background-image: url(assets/images/icons/searchB.png);
 }
 .generaldivigation--lightTheme nav li.icons-openW {
-  background-image: url(../Yara/assets/images/icons/openB.png);
+  background-image: url(assets/images/icons/openB.png);
 }
 
 @media screen and (min-width: 739px) {
@@ -963,7 +963,7 @@ div[data-slider-dataHolder] {
   .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.--subnav::after, .generaldivigation:hover nav ul.desktopNav[data-status="0"] li.menu-item-has-children::after {
     content: "";
     display: inline-block;
-    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
+    background: url(assets/images/chevron_black.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -971,7 +971,7 @@ div[data-slider-dataHolder] {
     margin-bottom: -5px;
   }
   .generaldivigation:hover .navLeftButtons .desktopSearchButton {
-    background-image: url(../Yara/assets/images/icons/searchB.png);
+    background-image: url(assets/images/icons/searchB.png);
   }
   .generaldivigation:hover + .yaraHead .titleBlock {
     filter: blur(5px);
@@ -1053,7 +1053,7 @@ div[data-slider-dataHolder] {
   .generaldivigation nav ul.desktopNav li.--subnav::after, .generaldivigation nav ul.desktopNav li.menu-item-has-children::after {
     content: "";
     display: inline-block;
-    background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
+    background: url(assets/images/chevron.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -1093,7 +1093,7 @@ div[data-slider-dataHolder] {
   .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.--subnav::after, .generaldivigation--lightTheme nav ul.desktopNav[data-status="0"] li.menu-item-has-children::after {
     content: "";
     display: inline-block;
-    background: url(../Yara/assets/images/chevron_black.webp) top center no-repeat;
+    background: url(assets/images/chevron_black.webp) top center no-repeat;
     background-size: 20px 20px;
     width: 20px;
     height: 20px;
@@ -1101,7 +1101,7 @@ div[data-slider-dataHolder] {
     margin-bottom: -5px;
   }
   .generaldivigation--lightTheme .navLeftButtons .desktopSearchButton {
-    background-image: url(../Yara/assets/images/icons/searchB.png);
+    background-image: url(assets/images/icons/searchB.png);
   }
 }
 @media screen and (min-width: 1366px) {
