@@ -28,28 +28,28 @@ $H8Dfs: 8px;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(../Yara/assets/fonts/NatoSansCyr_400.woff2) format("woff2");
+  src: url(assets/fonts/NatoSansCyr_400.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(../Yara/assets/fonts/NatoSansCyr_500.woff2) format("woff2");
+  src: url(assets/fonts/NatoSansCyr_500.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(../Yara/assets/fonts/NatoSansCyr_700.woff2) format("woff2");
+  src: url(assets/fonts/NatoSansCyr_700.woff2) format("woff2");
 }
 @font-face {
   font-family: "NatoSans";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(../Yara/assets/fonts/NatoSansCyr_900.woff2) format("woff2");
+  src: url(assets/fonts/NatoSansCyr_900.woff2) format("woff2");
 }
 h1 {
   font-size: var(--H1fs);
@@ -842,39 +842,39 @@ div[data-slider-dataHolder] {
   }
 }
 .yaraHome .yaraHead {
-  background-image: url(../Yara/assets/images/m_hero.webp);
+  background-image: url(assets/images/m_hero.webp);
 }
 
 .yaraSolutions .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroCropMonitoring.webp);
+  background-image: url(assets/images/m_heroCropMonitoring.webp);
 }
 
 .yaraSolutionsNutrition .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroSolutionsNutrition.webp);
+  background-image: url(assets/images/m_heroSolutionsNutrition.webp);
 }
 
 .yaraSolutionsNtester .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroNtester.webp);
+  background-image: url(assets/images/m_heroNtester.webp);
 }
 
 .yaraSolutionsNrate .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroNrate.webp);
+  background-image: url(assets/images/m_heroNrate.webp);
 }
 
 .yaraSolutionsMobileApp .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroMobileApp.webp);
+  background-image: url(assets/images/m_heroMobileApp.webp);
 }
 
 .yaraSolutionsNPhoto .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroPhoto.webp);
+  background-image: url(assets/images/m_heroPhoto.webp);
 }
 
 .yaraSolutionsNuptake .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroNrateApp.webp);
+  background-image: url(assets/images/m_heroNrateApp.webp);
 }
 
 .yaraSolutionsAbout .yaraHead {
-  background-image: url(../Yara/assets/images/m_heroAbout.webp);
+  background-image: url(assets/images/m_heroAbout.webp);
 }
 
 .yaraHead {
@@ -902,7 +902,7 @@ div[data-slider-dataHolder] {
   text-align: center;
   width: calc(100% - var(--spacer) * 6);
   min-height: 48px;
-  background: url(../Yara/assets/images/chevron.webp) top center no-repeat;
+  background: url(assets/images/chevron.webp) top center no-repeat;
   background-size: 48px 48px;
   align-self: center;
 }
@@ -938,31 +938,31 @@ div[data-slider-dataHolder] {
 
 @media screen and (min-width: 599px) {
   .yaraHome .yaraHead {
-    background-image: url(../Yara/assets/images/hero.webp);
+    background-image: url(assets/images/hero.webp);
   }
   .yaraSolutions .yaraHead {
-    background-image: url(../Yara/assets/images/heroCropMonitoring.webp);
+    background-image: url(assets/images/heroCropMonitoring.webp);
   }
   .yaraSolutionsNutrition .yaraHead {
-    background-image: url(../Yara/assets/images/heroSolutionsNutrition.webp);
+    background-image: url(assets/images/heroSolutionsNutrition.webp);
   }
   .yaraSolutionsNtester .yaraHead {
-    background-image: url(../Yara/assets/images/heroNtester.webp);
+    background-image: url(assets/images/heroNtester.webp);
   }
   .yaraSolutionsNrate .yaraHead {
-    background-image: url(../Yara/assets/images/heroNrate.webp);
+    background-image: url(assets/images/heroNrate.webp);
   }
   .yaraSolutionsMobileApp .yaraHead {
-    background-image: url(../Yara/assets/images/heroMobileApp.webp);
+    background-image: url(assets/images/heroMobileApp.webp);
   }
   .yaraSolutionsNPhoto .yaraHead {
-    background-image: url(../Yara/assets/images/heroPhoto.webp);
+    background-image: url(assets/images/heroPhoto.webp);
   }
   .yaraSolutionsNuptake .yaraHead {
-    background-image: url(../Yara/assets/images/heroNrateApp.webp);
+    background-image: url(assets/images/heroNrateApp.webp);
   }
   .yaraSolutionsAbout .yaraHead {
-    background-image: url(../Yara/assets/images/heroAbout.webp);
+    background-image: url(assets/images/heroAbout.webp);
   }
   .yaraHead .titleBlock {
     max-width: var(--maxContentWidth);
