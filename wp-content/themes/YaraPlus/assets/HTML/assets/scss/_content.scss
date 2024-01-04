@@ -1,0 +1,151 @@
+:root {
+    --gap: #{$gap};
+    --spacer: #{$spacer};
+    --bodyFs: #{$bodyMFs};
+
+    --masterTitlels: #{$masterTitlels};
+    --sectionSpacer: #{$sectionSpacerMobile};
+
+    --navButtonHeight: #{$navButtonHeight};   
+
+    --iconsSquarewh: #{$iconsSquareMwh}; 
+
+    --H1fs: #{$H1Mfs};
+    --H2fs: #{$H2Mfs};
+
+    --H3fs: #{$H3Mfs};
+    --H3lh: #{$H3Mlh};
+
+    --H4fs: #{$H4Mfs};
+    --H4lh: #{$H4Mlh};
+
+    --H5fs: #{$H5Mfs};
+    --H6fs: #{$H6Mfs};
+
+    --pfs:#{$pfs};
+    --plh:#{$plh};
+
+    --HLtitlefs: #{$HLtitlefs}; 
+    --HLtitlelh: #{$HLtitlelh}; 
+    --HLtitlelhls: #{$HLtitlelhls};
+
+
+    --HLsubTitlefs: #{$HLsubTitlefs};
+    --HLsubTitlelh: #{$HLsubTitlelh};
+    --HLsubTitlelhls: #{$HLsubTitlelhls};
+
+  
+
+    --imgCaptionFs: 16px;
+    --thumbW: 140px;
+    --thumbH: 196px;
+    --generalFont: #{$generalFont};
+    --maxContentWidth: #{$maxContentWidth_mobile};
+    --buttonFS: #{$buttonFSmobile};
+    --buttonPaddingTB: #{$buttonPaddingTBmobile};
+    --buttonPaddingLR: #{$buttonPaddingLRmobile};
+    .button {
+        &-dark {
+            box-shadow: $buttonDarkBoxShadow;            
+        }
+        &-light {
+            box-shadow: $buttonLightBoxShadow;
+        }
+    }
+
+
+}
+
+@media screen and (min-width: $mobile) {
+    :root {
+        --gap: calc(#{$gap} * 2);
+        --bodyFs: #{$bodyTFs};
+
+        --iconsSquarewh: #{$iconsSquareTwh}; 
+
+        --H1fs: #{$H1Tfs};
+        --H2fs: #{$H2Tfs};
+
+        --H3fs: #{$H3Tfs};
+        --H3lh: #{$H3Tlh};
+
+
+        --H4fs: #{$H4Tfs};        
+        --H4lh: #{$H4Tlh};
+
+        --H5fs: #{$H5Tfs};
+        --H6fs: #{$H6Tfs};
+
+        --HLtitlefs: #{$HLTtitlefs}; 
+        --HLtitlelh: #{$HLTtitlelh};    
+        --HLtitlelhls: #{$HLTtitlelhls};   
+
+        --HLsubTitlefs: #{$HLTsubTitlefs};
+        --HLsubTitlelh: #{$HLTsubTitlelh};
+        --HLsubTitlelhls: #{$HLTsubTitlelhls};
+
+
+        --thumbW: 140px;
+        --thumbH: 196px;
+        --maxContentWidth: #{$maxContentWidth_tablet};
+
+        .button {
+            &-dark {
+                box-shadow: unset;                           
+            }
+            &-light {
+                box-shadow: unset;
+            }
+        }
+
+
+
+
+
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    :root {
+        --gap: calc(#{$gap} * 3);
+        --bodyFs: #{$bodyDFs};
+        --thumbW: 200px;
+        --thumbH: 280px;
+        --maxContentWidth: #{$maxContentWidth_desktop};
+
+        --sectionSpacer: #{$sectionSpacerDesktop};
+
+        --iconsSquarewh: #{$iconsSquareDwh}; 
+
+
+        --H3fs: #{$H3Dfs};
+        --H3lh: #{$H3Dlh};
+
+        --H4fs: #{$H4Dfs};        
+        --H4lh: #{$H4Dlh};
+
+        --HLtitlefs: #{$HLDtitlefs}; 
+        --HLtitlelh: #{$HLDtitlelh}; 
+        --HLtitlelhls: #{$HLTtitlelhls};   
+
+        --HLsubTitlefs: #{$HLDsubTitlefs};
+        --HLsubTitlelh: #{$HLDsubTitlelh};
+        --HLsubTitlelhls: #{$HLDsubTitlelhls};
+
+
+        --buttonFS: #{$buttonFSdesktop};
+        --buttonPaddingTB: #{$buttonPaddingTBdesktop};
+        --buttonPaddingLR: #{$buttonPaddingLRdesktop};
+
+    }
+} 
+footer {
+    max-width: var(--maxContentWidth);
+    background-color: rgb(224, 224, 224);
+}   
+main,
+footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Atfarm is easy-to-use precision agriculture software. Get instant insights for your fields and crops to improve nitrogen use efficiency. Sign up now for FREE!">
+    <meta name="keywords" content="Yara, Farming, Harvest, Crops, Fetizer">
+    <meta name="author" content="Yara">
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="assets/scss/main.css?v=787878556533">
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="assets/scss/yaraGlobal.css?v=7878785565gh33">
+    <title>Precision farming made simple – Atfarm app by Yara</title>
+
+
+<body data-page="yaraHome" class="yaraHome">
+    <div class="generaldivigation" id="generaldivigation">
+        <div class="logoHolder">
+            <h1>
+                <a href="yaraHome.html"><img src="../wp-content/themes/Yara/assets/images/YaraLogo.webp?v=2" width="48" height="48"
+                        alt="Yara Digital Products"></a>
+            </h1>
+            <h2>
+                <a href="yaraHome.html"><img src="../wp-content/themes/Yara/assets/images/pixel.png?v=4" id="atfarmLogo" width="162"
+                        height="48" alt="Atfarm"></a>
+            </h2>
+        </div>
+        <nav>
+            <ul class="mobileNavHolder">
+                <li id="mobileSearchButton" class="mobileNav icons icons-searchW"></li>
+                <li id="mobileOpenCloseButton" data-status="0" class="mobileNav icons icons-openW"></li>
+            </ul>
+            <ul id="desktopNav" class="desktopNav" data-status="0">
+                <li class="--subnav">
+                    <a href="yaraSolutions.html">Solutions</a>
+                    <ul>
+                        <li class="subListTitle">Explore Solutions</li>
+                        <li><a>Crop Satellite Monitoring</a></li>
+                        <li><a>Nutrition Plan</a></li>
+                        <li><a>N-Tester BT</a></li>
+                        <li><a>Variable N-Rate Application</a></li>
+                        <li><a>Mobile App</a></li>
+                        <li><a>N-Photo Analysis</a></li>
+                        <li><a>N-Uptake</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li>
+                    <a>About</a>
+                </li>
+                <li>
+                    <a>Contacts</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="navLeftButtons">
+            <div id="desktopSearchButton" class="desktopSearchButton icons icons-searchW"></div>
+            <div class="button button-light">Login</div>
+            <div class="button button-dark">Sign up</div>
+        </div>
+    </div>
+    <div class="yaraHead">
+        <div class="titleBlock">
+            <div>
+                <p>
+                    <strong>Accurate, efficient</strong><br>
+                    <strong>nitrogen management</strong><br>
+                    Reach your goals by focusing your nutrition strategy on the real needs of your crops.
+                </p>
+                <div class="button button-dark">Learn more</div>
+            </div>
+            <div class="icon-chevron"></div>
+        </div>
+    </div>
+    <main>
+
+
+
+
+        <section id="contentList_001" class="bgColors--sectionLight">
+            <style>
+                .fade-out {
+                    opacity: 0;
+                    transition: 0.25s;
+                }
+
+                .fade-in {
+                    opacity: 1;
+                    transition: 0.25s;
+                }
+            </style>
+            <link rel="preload" as="image" href="../wp-content/themes/Yara/assets/images/slider/fetizerOptimize_1.webp?z=11" />
+            <link rel="preload" as="image" href="../wp-content/themes/Yara/assets/images/slider/fetizerOptimize_2.webp?z=11" />
+            <link rel="preload" as="image" href="../wp-content/themes/Yara/assets/images/slider/fetizerOptimize_3.webp?z=11" />
+            <div class="warper">
+                <div class="item_12">
+                    <h3>How can Atfarm help optimise your fertiliser strategy?</h3>
+                </div>
+                <figure class="item_7">
+                    <img src="../wp-content/themes/Yara/assets/images/slider/fetizerOptimize.webp?z=11" width="677" height="508"
+                        alt="my image">
+                </figure>
+                <div class="articleInfo item_5">
+                    <div class="articleContent">
+                        <h4>Optimise nitrogen use efficiency</h4>
+                        <p>Improve crop growth and evenness by utilising the in-field measurements for variable nitrogen
+                            applications. </p>
+                        <div class="button button-dark">
+                            Sign up
+                        </div>
+                    </div>
+                </div>
+                <div class="item_12 articleNavigation">
+                    <div id="contentList_001_left" class="icons icons-navLeft"></div>
+                    <div id="contentList_001_right" class="icons icons-navRight"></div>
+                </div>
+            </div>
+
+            <script>
+
+                let dataArticleContainer = [];
+                let currentitem = 0;
+                let sectionData = document.getElementById("contentList_001");
+                let sectionDataSubTitle = sectionData.querySelector("h4");
+                let sectionDataImage = sectionData.querySelector("figure img");
+                let sectionDataContent = sectionData.querySelector("p");
+                let sectionButton = sectionData.querySelector(".button");
+
+
+                function slideLeftRight(direction) {
+                    let maxObjects = dataArticleContainer.length;
+                    console.log(maxObjects);
+                    currentitem += direction;
+                    if (currentitem < 0) {
+
+                        currentitem = maxObjects - 1;
+
+                    } else if (currentitem >= maxObjects) {
+                        currentitem = 0;
+
+                    }
+
+                    console.log(currentitem);
+
+
+                    sectionDataSubTitle.classList.add("fade-out");
+                    sectionDataContent.classList.add("fade-out");
+                    sectionDataImage.classList.add("fade-out");
+                    sectionButton.classList.add("fade-out");
+                    sectionDataSubTitle.classList.remove("fade-in");
+                    sectionDataContent.classList.remove("fade-in");
+                    sectionDataImage.classList.remove("fade-in");
+                    sectionButton.classList.remove("fade-in");
+
+
+
+
+                    setTimeout(() => {
+                        sectionDataSubTitle.innerHTML = dataArticleContainer[currentitem].subtitle;
+                        sectionDataContent.innerHTML = dataArticleContainer[currentitem].content;
+                        sectionDataImage.setAttribute("src", dataArticleContainer[currentitem].image);
+                        sectionDataSubTitle.classList.remove("fade-out");
+                        sectionDataContent.classList.remove("fade-out");
+                        sectionDataImage.classList.remove("fade-out");
+                        sectionButton.classList.remove("fade-out");
+                        sectionDataSubTitle.classList.add("fade-in");
+                        sectionDataContent.classList.add("fade-in");
+                        sectionDataImage.classList.add("fade-in");
+                        sectionButton.classList.add("fade-in");
+                    }, "250");
+
+
+
+
+
+
+                }
+
+                let slideLeftButton = document.getElementById("contentList_001_left");
+                let slideRightButton = document.getElementById("contentList_001_right");
+
+                slideLeftButton.onclick = function () {
+                    slideLeftRight(-1);
+                };
+
+                slideRightButton.onclick = function () {
+                    slideLeftRight(1);
+                };
+
+
+                dataArticleContainer[0] =
+                {
+                    image: "../wp-content/themes/Yara/assets/images/slider/fetizerOptimize.webp?z=11",
+                    subtitle: "Optimise nitrogen use efficiency ",
+                    content: "Improve crop growth and evenness by utilising the in-field measurements for variable nitrogen applications."
+                };
+                dataArticleContainer[1] =
+                {
+                    image: "../wp-content/themes/Yara/assets/images/slider/fetizerOptimize_1.webp?z=11",
+                    subtitle: "Measure N-demand ",
+                    content: "Analyse your crop throughout the season with accurate nitrogen uptake values captured by N-Photo analysis and the N-Tester BT device."
+                };
+                dataArticleContainer[2] =
+                {
+                    image: "../wp-content/themes/Yara/assets/images/slider/fetizerOptimize_2.webp?z=11",
+                    subtitle: "Create a holistic Nutrition Plan ",
+                    content: "Start every season with Nutrition Planning that gives you more than just calculations. Get the nutrition insights you need to reach your yield goals. "
+                };
+                dataArticleContainer[3] =
+                {
+                    image: "../wp-content/themes/Yara/assets/images/slider/fetizerOptimize_3.webp?z=11",
+                    subtitle: "Track crop growth",
+                    content: "Use Atfarm to measure biomass on your fields throughout the season. Satellite technology and Yara’s extensive agronomic expertise keep you informed on the progress of your crops."
+                };
+
+            </script>
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <div id="mobileApp" class="section bgColors--sectionLNormal">
+            <div class="warper">
+                <div class="articleInfo  articleInfo--qrCode item_5">
+                    <div class="articleContent">
+                        <figure>
+                            <img src="../wp-content/themes/Yara/assets/images/qr_xode.webp" width="271" height="271" alt="my image">
+                        </figure>
+                        <div class="articleDataHolder">
+                            <h4>Get the mobile app</h4>
+                            <p>Atfarm is also available on mobile devices. Turn your smartphone into a precision farming
+                                tool. </p>
+                            <div class="button button-dark">
+                                Sign up to the desktop app here
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articleContent--store">
+                        <p>Improve crop growth and evenness by utilising the in-field measurements for variable
+                            nitrogen
+                            applications. </p>
+                        <figure>
+                            <img src="../wp-content/themes/Yara/assets/images/storeButtons.webp" width="214" height="150" alt="my image">
+                        </figure>
+
+                    </div>
+                </div>
+                <figure class="item_7">
+                    <img src="../wp-content/themes/Yara/assets/images/phone.webp" width="677" height="508" alt="my image">
+                </figure>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <section id="contentSlider" class="bgColors--sectionLight">
+            <style>
+                #sliderContent_0001 {
+                    scroll-behavior: smooth;
+                    transition: 0.25s;
+                    overflow: hidden;
+                }
+            </style>
+            <div class="warper">
+                <h3 class="item_12">21,000+ Farmers and agronomists already use Atfarm</h3>
+                <div id="sliderContent_0001" class="slider item_12">
+                    <ul>
+                        <li>
+                            <p>“Atfarm is very simple to use, taking just 10 mins to load all my field boundaries over
+                                the 2200 hectares of farming.</p>
+                            <p>I like to use satellite imagery to scout for any management issues.</p>
+                            <p>The maps are a very visual way of picking out differences in growth and development to
+                                help prioritise decisions.”</p>
+                            <p class="flafIcons flafIcons--uk">Jorin Grimsdale, Farmer, UK</p>
+                        </li>
+                        <li>
+                            <p>“Nitrogen Use Efficiency is one of the most significant challenges mankind faces if we
+                                are to reduce carbon and nutrient emissions, yet feed a growing global population.</p>
+                            <p>The Yara N-Tester is a valuable and practical tool for farmers to use, backed by decades
+                                of research results, to improve efficiency.”</p>
+
+                            <p class="flafIcons flafIcons--uk">Dr Alastair Leake Director of Policy at the Game &
+                                Wildlife Conservation Trust, UK</p>
+                        </li>
+                        <li>
+                            <p>“It's much better than the solutions that we saw in the past, and we also can see the
+                                field from above and identify problematic areas or that have some deficiencies.”</p>
+
+                            <p class="flafIcons flafIcons--it">Fabiano Paganella Agronomist, Italy</p>
+                        </li>
+                        <li>
+
+
+                            <p>“If you want to take the first step towards precision agriculture, feel free to test to
+                                create simulations on Atfarm. This will allow you to understand the potential of this
+                                tool.”</p>
+                            <p class="flafIcons flafIcons--fr">Remy Dumery, Farmer, France</p>
+                        </li>
+                        <li>
+                            <p>“Atfarm is very simple to use, taking just 10 mins to load all my field boundaries over
+                                the 2200 hectares of farming.</p>
+                            <p>I like to use satellite imagery to scout for any management issues.</p>
+                            <p>The maps are a very visual way of picking out differences in growth and development to
+                                help prioritise decisions.”</p>
+                            <p class="flafIcons flafIcons--uk">Jorin Grimsdale, Farmer, UK</p>
+                        </li>
+                        <li>
+                            <p>“Nitrogen Use Efficiency is one of the most significant challenges mankind faces if we
+                                are to reduce carbon and nutrient emissions, yet feed a growing global population.</p>
+                            <p>The Yara N-Tester is a valuable and practical tool for farmers to use, backed by decades
+                                of research results, to improve efficiency.”</p>
+
+                            <p class="flafIcons flafIcons--uk">Dr Alastair Leake Director of Policy at the Game &
+                                Wildlife Conservation Trust, UK</p>
+                        </li>
+                        <li>
+                            <p>“It's much better than the solutions that we saw in the past, and we also can see the
+                                field from above and identify problematic areas or that have some deficiencies.”</p>
+
+                            <p class="flafIcons flafIcons--it">Fabiano Paganella Agronomist, Italy</p>
+                        </li>
+                        <li>
+
+
+                            <p>“If you want to take the first step towards precision agriculture, feel free to test to
+                                create simulations on Atfarm. This will allow you to understand the potential of this
+                                tool.”</p>
+                            <p class="flafIcons flafIcons--fr">Remy Dumery, Farmer, France</p>
+                        </li>
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+                <div class="item_12 articleNavigation">
+                    <div id="contentSlider_001_left" class="icons icons-navLeft"></div>
+                    <div id="contentSlider_001_right" class="icons icons-navRight"></div>
+                </div>
+                <div class="item_12 buttonHolder">
+                    <div class="button button-dark">
+                        Sign up
+                    </div>
+                </div>
+            </div>
+            <script>
+                let contentSlider = document.getElementById("sliderContent_0001");
+                let contentSliderItemsHolder = contentSlider.querySelector("ul");
+
+                let contentSlideLeftButton = document.getElementById("contentSlider_001_left");
+                let contentSlideRightButton = document.getElementById("contentSlider_001_right");
+
+
+
+                function getOffset(el) {
+                    var rect = el.getBoundingClientRect();
+                    return {
+                        left: rect.left + window.pageXOffset,
+                        top: rect.top + window.pageYOffset
+                    };
+                }
+
+
+
+                function contentSlideLeftRight(direction) {
+                    console.log(direction);
+                    let containerWidth = contentSlider.offsetWidth;
+                    let containerItemsHolderWidth = contentSliderItemsHolder.offsetWidth;
+                    let itemWidth = contentSliderItemsHolder.querySelector("li").offsetWidth;
+
+                    console.log(containerWidth + " , " + containerItemsHolderWidth);
+
+                    var rect = contentSliderItemsHolder.getBoundingClientRect();
+                    console.log(contentSlider.scrollLeft, rect.y, rect.bottom, itemWidth);
+
+                    let step = itemWidth;
+
+                    let newPosition = (contentSlider.scrollLeft + (step * direction));
+
+                    contentSlider.scrollLeft = newPosition;
+
+
+                }
+
+
+
+
+
+                contentSlideLeftButton.onclick = function () {
+                    contentSlideLeftRight(-1);
+                };
+
+                contentSlideRightButton.onclick = function () {
+                    contentSlideLeftRight(1);
+                };
+
+
+
+            </script>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section id="galleryList_04" class="bgColors--sectionLNormal">
+            <div class="warper warper--gallery">
+                <h3 class="item_12">Your digital fertilisation toolbox</h3>
+                <div class="item_3 galleryItem">
+                    <figure>
+                        <img src="../wp-content/themes/Yara/assets/images/Frame19413.webp" width="229" height="306" alt="my image">
+                        <figcaption>Easy-to-use technology</figcaption>
+                    </figure>
+                </div>
+                <div class="item_3 galleryItem">
+                    <figure>
+                        <img src="../wp-content/themes/Yara/assets/images/Group9354.webp" width="229" height="306" alt="my image">
+                        <figcaption>Powered by agronomists</figcaption>
+                    </figure>
+                </div>
+                <div class="item_3 galleryItem">
+                    <figure>
+                        <img src="../wp-content/themes/Yara/assets/images/Rectangle649.webp" width="229" height="306" alt="my image">
+                        <figcaption>Field-by-field recommendations</figcaption>
+                    </figure>
+                </div>
+                <div class="item_3 galleryItem">
+                    <figure>
+                        <img src="../wp-content/themes/Yara/assets/images/Group9356.webp" width="229" height="306" alt="my image">
+                        <figcaption>Accurate and reliable data capture</figcaption>
+                    </figure>
+                </div>
+                <div class="item_12 buttonHolder">
+                    <div class="button button-dark">
+                        Sign up
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer--items">
+            <ul>
+                <li class="list--title">
+                    Social media
+                </li>
+                <li>Facebook</li>
+                <li>Linkedin</li>
+            </ul>
+
+            <ul>
+                <li class="list--title">
+                    About us
+                </li>
+                <li>Privacy Policy</li>
+                <li>Terms and Conditions</li>
+            </ul>
+            <ul>
+                <li>
+                    © Atfarm 2022 All rights reserved
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script async="" src="assets/js/app.js?v=787878556533"></script> 
+</body>
+
+</html>

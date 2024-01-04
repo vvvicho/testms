@@ -1,0 +1,231 @@
+@font-face {
+  font-family: "NatoSans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/NatoSansCyr_400.woff2) format("woff2");
+}
+@font-face {
+  font-family: "NatoSans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/NatoSansCyr_500.woff2) format("woff2");
+}
+@font-face {
+  font-family: "NatoSans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/NatoSansCyr_700.woff2) format("woff2");
+}
+@font-face {
+  font-family: "NatoSans";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(../fonts/NatoSansCyr_900.woff2) format("woff2");
+}
+:root {
+  --gap: 16px;
+}
+
+@media screen and (min-width: 599px) {
+  :root {
+    --gap: calc(16px * 2);
+  }
+}
+@media screen and (min-width: 1366px) {
+  :root {
+    --gap: calc(16px * 3);
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  font-weight: 400;
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure,
+picture,
+image,
+nav,
+::before,
+::after {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  font-weight: 700;
+  margin-bottom: calc(var(--gap) / 3);
+  margin-top: calc(var(--gap) / 3);
+  letter-spacing: -0.42px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  padding-bottom: calc(var(--gap) / 3);
+}
+p:last-child {
+  padding-bottom: 0;
+}
+
+nav {
+  padding: 24px 40px;
+}
+nav h1 {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 360px;
+  background-image: url(../imagesYplus/hero.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+header div {
+  background: rgba(39, 119, 184, 0.9490196078);
+  color: #fff;
+  margin-top: 180px;
+  margin-left: 150px;
+  position: absolute;
+  padding: 24px;
+}
+header div h2,
+header div p {
+  padding: 0;
+  margin: 0;
+}
+header div p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 175% */
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+}
+header div h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 150% */
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+}
+
+main {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+main h3 {
+  color: #327ebc;
+  text-align: center;
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 150% */
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+main .flex {
+  margin-top: 100px;
+}
+main .flex--02 {
+  display: flex;
+  gap: 60px;
+}
+main .flex--02 div,
+main .flex--02 figure {
+  display: block;
+  max-width: 50%;
+}
+main .flex--02 figure img {
+  width: 100%;
+  height: auto;
+}
+main .flex h4 {
+  color: #327ebc;
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 150% */
+  margin: 0;
+}
+main .flex p,
+main .flex ul,
+main .flex li {
+  color: rgba(15, 15, 15, 0.8);
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 175% */
+}
+main .flex li {
+  list-style: disc;
+  margin-left: 30px;
+}
+main .blueBox {
+  background-color: #2777b8;
+  color: #fff;
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin: 60px auto;
+  padding: 32px;
+}
+main .blueBox h4 {
+  color: #fff;
+  font-family: "NatoSans", Arial, Roboto, Helvetica, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 150% */
+}
+main .blueBox .button {
+  min-width: 100px;
+  text-align: center;
+  border-radius: 4px;
+  background: #fff;
+  color: #2777b8;
+  padding: 12px 16px;
+}
+main .blueBox .button a {
+  color: #2777b8;
+  white-space: nowrap;
+}/*# sourceMappingURL=yaraPlus.css.map */

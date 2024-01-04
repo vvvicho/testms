@@ -1,0 +1,146 @@
+.yaraHome {
+    @media screen and (min-width: $mobile) {
+        main {
+            section,
+            .section {
+                .warper {
+                    max-width: var(--maxContentWidth);
+                    margin: auto;
+                    padding-left: calc(var(--spacer) * 3);
+                    padding-right: calc(var(--spacer) * 3);
+
+                    .item_4 {
+                        grid-column: span 4;
+                    }
+                    .item_8 {
+                        grid-column: span 8;
+                    }
+                    .item_12 {
+                        grid-column: span 12;
+                    }
+
+                    .articleInfo {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .articleContent {
+                            h4 {
+                                margin-bottom: calc(var(--spacer) * 2);
+                            }
+                            P {
+                                &:last-of-type {
+                                    padding-bottom: calc(var(--spacer) * 3);
+                                }
+                            }
+                        }
+                        &--qrCode {
+                            .articleContent {
+                                display: flex;
+                                justify-content: space-between;
+                                &--store {
+                                    display: none;
+                                }
+                                figure {
+                                    margin-bottom: calc(var(--spacer) * 5);
+                                    img {
+                                        width: 80%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .slider {
+                        ul {
+                            li {
+                                width: calc(100vw / 3.5);
+                                p {
+                                    padding-bottom: calc(var(--spacer) * 3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $tablet) {
+        main {
+            section,
+            .section {
+                .warper {
+                    display: grid;
+                    gap: 0px var(--sectionSpacer);
+                    grid-template-columns: #{repeats("1fr", 12)};
+
+                    .item_3 {
+                        grid-column: span 3;
+                    }
+
+                    figure {
+                        margin-bottom: calc(var(--spacer) * 2);
+                    }
+                    .articleInfo {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .articleContent {
+                            h4 {
+                                margin-bottom: calc(var(--spacer) * 2);
+                            }
+                            P {
+                                &:last-of-type {
+                                    padding-bottom: calc(var(--spacer) * 3);
+                                }
+                            }
+                        }
+                        &--qrCode {
+                            .articleContent {
+                                display: block;
+                                figure {
+                                    margin-bottom: calc(var(--spacer) * 5);
+                                    img {
+                                        width: 80%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .slider {
+                        ul {
+                            li {
+                                width: calc(var(--maxContentWidth) / 5.4);
+
+                                p {
+                                    padding-bottom: calc(var(--spacer) * 3);
+                                }
+                            }
+                        }
+                    }
+                    &--gallery {
+                        gap: 0px 20px;
+                        .galleryItem {
+                            display: block;
+                            background-color: #f3f6f9;
+                            figure {
+                                width: 100%;
+                                height: auto;
+                                figcaption {
+                                    display: block;
+                                    font-weight: 700;
+                                    font-size: 16px;
+                                    line-height: 25px;
+                                    padding-left: var(--spacer);
+                                    padding-right: var(--spacer);
+                                    padding-bottom: var(--spacer);
+                                }
+                            }
+                        }
+                        .buttonHolder {
+                            margin-top: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

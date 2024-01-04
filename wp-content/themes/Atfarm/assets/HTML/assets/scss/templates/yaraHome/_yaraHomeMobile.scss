@@ -1,0 +1,126 @@
+.yaraHome {
+    main {
+        // max-width: var(--maxContentWidth);
+        margin-bottom: calc(var(--gap) / 2);
+        //padding-left: calc(var(--spacer) * 3);
+
+        // padding-right: calc(var(--spacer) * 3);
+        section,
+        .section {
+            .warper {
+                transition: 0.5s;
+                display: block;
+                padding-bottom: var(--sectionSpacer);
+                padding-top: var(--sectionSpacer);
+                margin-left: calc(var(--spacer) * 3);
+                margin-right: calc(var(--spacer) * 3);
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: var(--sectionSpacer);
+                    font-weight: 900;
+                }
+
+                .articleInfo {
+                    margin-bottom: calc(var(--spacer) * 3);
+                }
+
+                figure {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: calc(var(--spacer) * 3);
+                    img {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: auto 677 / 508;
+                    }
+                }
+                .articleInfo {
+                    &--qrCode {
+                        .articleContent {
+                            display: none;
+                            &--store {
+                                p {
+                                    text-align: center;
+                                    font-size: 14px;
+                                    margin-bottom: calc(var(--spacer) * 3);
+                                }
+                                figure {
+                                    text-align: center;
+                                    img {
+                                        max-width: 214px;
+                                        margin: auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .articleContent {
+                        h4 {
+                            margin-top: 0;
+                            margin-bottom: var(--spacer);
+                            font-weight: 700;
+                        }
+                        P {
+                            &:last-of-type {
+                                padding-bottom: calc(var(--spacer) * 2);
+                            }
+                        }
+                    }
+                }
+                .slider {
+                    overflow: hidden;
+                    overflow-x: scroll;
+                    -webkit-overflow-scrolling: touch;
+                    scroll-snap-type: x mandatory;
+                    transition: 0.5s;
+                    margin-bottom: calc(var(--spacer) * 3);
+                    ul {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        width: fit-content;
+                        gap: calc(var(--spacer) * 3);
+                        li {
+                            scroll-snap-align: start;
+                            width: calc(100vw - (var(--spacer) * 12));
+                            padding-top: calc(var(--spacer) * 5);
+                            padding-left: calc(var(--spacer) * 3);
+                            padding-right: calc(var(--spacer) * 3);
+                            min-height: 360px;
+                            display: block;
+                            background-color: $sectionNormalBGcolor;
+                            p {
+                                padding-bottom: calc(var(--spacer) * 3);
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+                &--gallery {
+                    .galleryItem {
+                        display: none;
+                        &:first-of-type {
+                            display: block;
+                        }
+                        figure {
+                            figcaption {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .buttonHolder {
+                    text-align: center;
+                    margin-top: 30px;
+                }
+
+                .articleNavigation {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.article {    
+    @media screen and (min-width: $desktop) {
+        main {
+            grid-template-areas:                
+            "#{repeats("#{$_2article}", 9)} #{repeats("#{$_5related}", 3)}" 
+            "#{repeats("#{$_6connections}", 6)} #{repeats("#{$_7feedback}", 6)}";
+
+            .#{$_2article} {
+                .articleHolder {
+                    display: grid;                    
+                    gap: 0px calc(var(--gap) / 2);                    
+                    grid-template-columns: #{repeats("1fr", 3)};
+                    grid-template-rows: auto;
+
+                    article{
+                        &:first-child {
+                            grid-row-end: span 2;
+                            grid-column-end: span 3;
+                        }
+                    }
+
+                    figure {
+                        width: 100%;                    
+                        img {
+                            width: 100%;
+                            aspect-ratio: $imageLargeAspectRatio;                        
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

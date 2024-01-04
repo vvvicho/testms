@@ -1,0 +1,478 @@
+.ltr {
+    figure {
+        order: 2;
+    }
+    .articleInfo {
+        order: 1;
+    }
+    .articleNavigation {
+        order: 3;
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.button {
+    display: inline-block;
+    padding: var(--buttonPaddingTB) var(--buttonPaddingLR) var(--buttonPaddingTB) var(--buttonPaddingLR);
+    font-size: var(--buttonFS);
+    line-height: var(--buttonFS);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    width: max-content;
+    cursor: pointer;
+    &-dark {
+        background-color: $buttonDarkBGColor;
+        color: $buttonDarkFONTColor;
+        // box-shadow: $buttonDarkBoxShadow;
+        border-radius: $buttonDarkBR;
+        a {
+            color: $buttonDarkFONTColor;
+        }
+    }
+    &-light {
+        background-color: $buttonLightBGColor;
+        color: $buttonLightFONTColor;
+        // box-shadow: $buttonLightBoxShadow;
+        border-radius: $buttonLightBR;
+        a {
+            color: $buttonLightFONTColor;
+        }
+    }
+}
+
+.flafIcons {
+    display: flex;
+    font-size: 14px !important;
+    align-items: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    i {
+        font-style: normal;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    &::before {
+        content: " ";
+        display: block;
+        min-width: 40px;
+        min-height: 60px;
+    }
+    &--uk {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/uk.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--it {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/it.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--fr {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/fr.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--bg {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/bg.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--dk {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/dk.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--es {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/es.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--lv {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/lv.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--lt {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/lt.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--no {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/no.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--pl {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/pl.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--pt {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/pt.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--ro {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/ro.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--fi {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/fi.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--se {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/se.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--ua {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/ua.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--ar {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/ar.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--mx {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/mx.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--br {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/br.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--cf {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/cf.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--za {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/za.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--de {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/de.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+    &--ee {
+        &::before {
+            background-image: url(../Yara/assets/images/icons/flags/ee.webp);
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--navigation {
+        display: inline-block;
+        margin-bottom: -23px;
+        cursor: pointer;
+    }
+}
+
+.icons {
+    display: block;
+    width: var(--iconsSquarewh);
+    height: var(--iconsSquarewh);
+    background: top left no-repeat;
+    background-size: var(--iconsSquarewh);
+    cursor: pointer;
+    transition: 0.3s;
+
+    &-navLeft {
+        background-image: url(../Yara/assets/images/navBTN.webp);
+    }
+    &-navRight {
+        background-image: url(../Yara/assets/images/navBTN.webp);
+        transform: rotate(180deg);
+    }
+
+    &-openW {
+        background-image: url(../Yara/assets/images/icons/openW.png);
+    }
+    &-closeW {
+        background-image: url(../Yara/assets/images/icons/closeW.png);
+    }
+    &-openB {
+        background-image: url(../Yara/assets/images/icons/openB.png);
+    }
+    &-closeB {
+        background-image: url(../Yara/assets/images/icons/closeB.png);
+    }
+    &-searchW {
+        background-image: url(../Yara/assets/images/icons/searchW.png);
+    }
+    &-searchB {
+        background-image: url(../Yara/assets/images/icons/searchB.png);
+    }
+    &-ok {
+        width: 24px;
+        height: 24px;
+        margin: 16px;
+        background-image: url(../Yara/assets/images/icons/ok.webp);
+        background-size: 24px;
+
+        background-position: center center;
+    }
+    &-searchBlue {
+        position: relative;
+        padding-left: 55px;
+        &::before {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../Yara/assets/images/icons/SearchBlue.png);
+        }
+    }
+    &-crop {
+        position: relative;
+        padding-left: 55px;
+        &::before {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../Yara/assets/images/icons/Crop.png);
+        }
+    }
+    &-plans {
+        position: relative;
+        padding-left: 55px;
+        &::before {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../Yara/assets/images/icons/LaptopAlt.png);
+        }
+    }
+    &-track {
+        position: relative;
+        padding-left: 55px;
+        &::before {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../Yara/assets/images/icons/track.png);
+        }
+    }
+    &-tester {
+        position: relative;
+        padding-left: 55px;
+        &::before {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../Yara/assets/images/icons/tester.png);
+        }
+    }
+    &-clock {
+        position: relative;
+        padding-left: 55px;
+        &::before {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            background-image: url(../Yara/assets/images/icons/clock.png);
+        }
+    }
+    &-upDiagram {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../Yara/assets/images/icons/upDiagram.png);
+        }
+    }
+    &-document {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../Yara/assets/images/icons/document.png);
+        }
+    }
+    &-meter {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../Yara/assets/images/icons/meter.png);
+        }
+    }
+    &-earth {
+        margin-top: calc(var(--gap) / 2);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: -20px;
+            background-image: url(../Yara/assets/images/icons/earth.png);
+        }
+    }
+}
+
+.bgColors {
+    &--sectionLNormal {
+        background-color: $sectionNormalBGcolor;
+    }
+    &--sectionLight {
+        background-color: $sectionLightBGcolor;
+    }
+}
+
+.box {
+    &--bgColor {
+        &--blue {
+            background-color: $boxBlueBgColor;
+        }
+    }
+}
+
+.twoColMid {
+    display: grid;
+    gap: 0 16px;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 20px;
+    padding-bottom: 16px;
+}
+
+.treeColMid {
+    display: grid;
+    gap: 0 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 20px;
+    padding-bottom: 16px;
+}
+
+.fourColMid {
+    display: grid;
+    gap: 0 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 20px;
+    padding-bottom: 16px;
+}
+
+.mhide {
+    display: none;
+}
+
+div[data-slider-dataHolder] {
+    display: none !important;
+}
+
+@media screen and (min-width: $mobile) {
+    .mhide {
+        display: block;
+    }
+    .thide {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .thide {
+        display: block;
+    }
+}

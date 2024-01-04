@@ -1,0 +1,32 @@
+.home {    
+    @media screen and (min-width: $desktop) {
+        main {
+            grid-template-areas:
+                "#{repeats("#{$_1lead}", 12)}"
+                "#{repeats("#{$_2article}", 12)}"
+                "#{repeats("#{$_3news}", 4)} #{repeats("#{$_4team}", 4)} #{repeats("#{$_5related}", 4)}"
+                "#{repeats("#{$_6connections}", 6)} #{repeats("#{$_7feedback}", 6)}";
+            .#{$_2article},
+            .#{$_3news},
+            .#{$_4team},
+            .#{$_5related} {
+                grid-row: unset;
+            }
+            .#{$_6connections},
+            .#{$_7feedback} {
+                margin-bottom: 0;
+            }
+
+            .#{$_2article} {
+                figure {
+                    width: $imageLargeWidth;
+                    float: left;
+                    img {
+                        width: 100%;
+                        aspect-ratio: $imageLargeAspectRatio;                        
+                    }
+                }
+            }
+        }
+    }
+}

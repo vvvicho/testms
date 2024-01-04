@@ -1,0 +1,67 @@
+@media screen and (min-width: $mobile) {
+    .yaraHome {
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/hero.webp) ;
+        }
+    }
+    .yaraSolutions{
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroCropMonitoring.webp) ;
+        }
+    }
+    .yaraSolutionsNutrition{
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroSolutionsNutrition.webp) ;
+        }
+    }
+    .yaraSolutionsNtester{
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroNtester.webp) ;
+        }
+    }
+    .yaraSolutionsNrate{
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroNrate.webp) ;
+        }
+    }
+    .yaraSolutionsMobileApp{
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroMobileApp.webp) ;
+        }
+    }
+
+    .yaraSolutionsNPhoto{
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroPhoto.webp) ;
+        }
+    }
+    .yaraSolutionsNuptake{
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroNrateApp.webp) ;
+        }
+    }
+    .yaraSolutionsAbout{   
+        .yaraHead{
+            background-image: url(../../../../assets/HTML/assets/images/heroAbout.webp) ;
+        } 
+
+}
+    
+    .yaraHead {
+        .titleBlock {
+            max-width: var(--maxContentWidth);
+            padding-left: calc(var(--spacer) * 3);
+            padding-right: calc(var(--spacer) * 3);
+            margin: auto;
+            p {
+                padding-bottom: calc(var(--spacer) * 3);
+                font-weight: 500;
+                strong {
+                    &:last-of-type {
+                        margin-bottom: calc(var(--spacer) * 3);
+                    }
+                }
+            }
+        }
+    }
+}

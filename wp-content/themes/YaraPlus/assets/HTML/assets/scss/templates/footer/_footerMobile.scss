@@ -1,0 +1,32 @@
+footer {
+    background-color: white;
+    border-top: 1px solid #e9e9eb;
+    padding-bottom: 40px;
+    margin-left: calc(var(--spacer) * 3);
+    margin-right: calc(var(--spacer) * 3);
+
+    .footer {
+        &--items {
+            ul {
+                padding-top: 40px;
+                li {
+                    font-family: var(--generalFont);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 160%;
+                    &.list {
+                        &--title {
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 140%; /* 22.4px */
+                            letter-spacing: -0.16px;
+                            padding-bottom: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

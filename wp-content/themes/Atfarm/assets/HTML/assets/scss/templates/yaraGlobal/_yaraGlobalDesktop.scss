@@ -1,0 +1,24 @@
+
+    @media screen and (min-width: $desktop) {
+        main {
+            section,
+            .section {
+                .warper {
+                    &--gallery {
+                        div {
+                            figure {
+                                figcaption {
+                                    font-size: 18px;
+                                    line-height: 25px;
+                                    padding-left: calc(var(--spacer) * 2);
+                                    padding-right: calc(var(--spacer) * 2);
+                                    padding-bottom: calc(var(--spacer) * 2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+

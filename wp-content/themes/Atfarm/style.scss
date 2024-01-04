@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Yara Atfarm Theme
+Theme URI: https://yara.com/
+Author: Yara Team (http://yara.com)
+Author URI: https://yara.com/
+Description: Yara Atfarm theme
+Tested up to: 8.1
+Requires PHP: 7.0
+Version: 1.0
+Text Domain: Yara Atfarm
+Tags: Yara Atfarm
+
+Yara Atfarm Theme, (C) 2023 Yara.com
+*/
+
+@import "assets/scss/variables";
+@import "assets/scss/typography";
+@import "assets/scss/functions";
+@import "assets/scss/normalize";
+
+@import "assets/scss/content"; 
+@import "assets/scss/components";
+
+@import "assets/scss/templates/landingPage/landingPage";
+
+@import "assets/scss/templates/header/header"; 
+@import "assets/scss/templates/navigation/navigation";
+@import "assets/scss/templates/yaraGlobal/yaraGlobal";
+@import "assets/scss/templates/footer/footer";  

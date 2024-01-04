@@ -1,0 +1,44 @@
+@media screen and (min-width: $desktop) {
+    .generaldivigation {
+        padding-left: calc(var(--spacer) * 5);
+        padding-right: calc(var(--spacer) * 5);
+        width: calc(100% - var(--spacer) * 10);
+        .logoHolder {
+            h2 {
+                img {
+                    width: 162px;
+                    height: 48px;
+                    background-size: 162px auto;
+                }
+            }
+            h1 {
+                margin-right: 12px;
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+
+        nav {
+            ul.desktopNav {
+                li {
+                    display: inline-block;
+                    padding-left: calc(var(--spacer) * 2);
+                    padding-right: calc(var(--spacer) * 2);
+                    margin-left: calc(var(--spacer) * 1);
+                    margin-right: calc(var(--spacer) * 1);
+                    &.--subnav, &.menu-item-has-children {
+                        &:hover {
+                            a + ul {
+                                li {
+                                    padding-left: calc(var(--spacer) * 7);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
