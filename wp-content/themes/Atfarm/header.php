@@ -24,7 +24,7 @@
     <meta name="description" content="Atfarm is easy-to-use precision agriculture software. Get instant insights for your fields and crops to improve nitrogen use efficiency. Sign up now for FREE!">
     <meta name="keywords" content="Yara, Farming, Harvest, Crops, Fetizer">
     <meta name="author" content="Yara">
-    <title>Precision farming made simple – Atfarm app by Yara</title>
+    <title><?php echo get_the_title(); ?></title>
 
 
 

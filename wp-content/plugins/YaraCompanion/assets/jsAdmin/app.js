@@ -1,5 +1,8 @@
 console.log(advanced_script_vars.pluginDirUrl);
 console.log(advanced_script_vars.yaraPreventCache);
+console.log(advanced_script_vars.activeTheme);
+
+
 
 let isPageEditor = document.querySelector("body").classList.contains("post-type-page");
 isPageEditor ? console.log("isPageEditor") : console.log("iit is not sPageEditor");
@@ -7,6 +10,8 @@ isPageEditor ? console.log("isPageEditor") : console.log("iit is not sPageEditor
 let findAbutton;
 let findContentHolder;
 let yaraPageEditorHead = document.createElement("div");
+let themeURL = advanced_script_vars.activeTheme;
+
 yaraPageEditorHead.id = "yaraPageEditorHead";
 yaraPageEditorHead.classList.add("yaraPageEditorHead");
 yaraPageEditorHead.innerHTML =
@@ -14,10 +19,10 @@ yaraPageEditorHead.innerHTML =
 <div class="generaldivigation" id="generaldivigation">
 <div class="logoHolder">
             <h1>
-                <a href="javascript:;"><img src="../wp-content/themes/Yara/assets/images/YaraLogo.webp?v=25" width="48" height="48" alt="Yara Digital Products"></a>
+                <a href="javascript:;"><img src="${themeURL}/assets/images/YaraLogo.webp?v=25" width="48" height="48" alt="Yara Digital Products"></a>
             </h1>
             <h2>
-                <a href="javascript:;"><img src=../wp-content/themes/Yara/assets/images/pixel.png?v=45" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
+                <a href="javascript:;"><img src=${themeURL}/assets/images/pixel.png?v=45" id="atfarmLogo" width="162" height="48" alt="Atfarm"></a>
             </h2>
         </div>      
         <div class="navLeftButtons">            

@@ -43,8 +43,9 @@ function yara_companion_functions()
     $yaraData['pluginDirUrl'] = YARA_CC_PATH;
     $yaraData['itemsData'] =  "123 dy data";
     $yaraData['yaraPreventCache'] =  $yaraPreventCache;
+    $yaraData['activeTheme'] = get_template_directory_uri();
     wp_enqueue_style('yara-admin-style',  YARA_CC_PATH . 'assets/scssAdmin/main.css', false, $yaraPreventCache, 'all');
-    wp_enqueue_style('yara-pagesMain-style',  get_site_url() . '/wp-content/themes/Yara/style.css', false, $yaraPreventCache, 'all');
+    wp_enqueue_style('yara-pagesMain-style',   get_template_directory_uri() . '/style.css', false, $yaraPreventCache, 'all');
    // wp_enqueue_style('yara-pagesComponents-style',  YARA_CC_PATH . '../../themes/Yara/assets/scss/yaraGlobal.css', false, '1.0', 'all');
    // wp_enqueue_script('advanced-page-script', YARA_CC_PATH . '../../themes/Yara/assets/js/app.js', NULL, '1.0.1', true);
     wp_enqueue_script('advanced-script', YARA_CC_PATH . 'assets/jsAdmin/app.js', NULL, $yaraPreventCache, true);
